@@ -54,3 +54,4 @@ private/
 
 - 别在这里放密钥、密码、内部网址。私人数据虽然不进 Git，也可能被你复制、备份到别处。
 - 想确认没被 Git 跟踪：`git status --ignored private/`，或 `git check-ignore -v private/issue-03/private.json`。
+- 不要把私人构建的 HTML 发布到 GitHub Pages，也不要复制到 `examples/` 或仓库根目录再提交。手机上看私人版，请在电脑或 AI 应用的内置浏览器里打开，或用「文件」App 预览。

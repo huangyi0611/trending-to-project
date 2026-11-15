@@ -2,6 +2,17 @@
  "issue": "03",
  "title": "GitHub 热榜拆解 · 个人项目适配与技术精进 / 第三期 · 2026年11月11日",
  "date": "2026-11-11",
+ "summary": "让 AI 查数前先统一术语。另外还有界面零件、多 bot 助手、并行工位、浏览器操作、需求追问和 PR 审查这些能马上用的工具。",
+ "lead": "NVIDIA/auto-ontology",
+ "projects": [
+  "auto-ontology",
+  "astryx",
+  "OpenMausBot",
+  "worktrunk",
+  "agent-browser",
+  "skills（mattpocock）",
+  "pr-agent"
+ ],
  "kit_note_suffix": "前置条件来自仓库 README（2026-11-15 读取）；难度和耗时是估计。",
  "kit_labels": {
   "mine_title": "① 给你的项目用",

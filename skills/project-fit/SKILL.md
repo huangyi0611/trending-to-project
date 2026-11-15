@@ -43,3 +43,12 @@ description: "Match trending GitHub repos to your own project, locally and priva
 - 信息不够就问用户，别猜。
 - 生成的提示词必须带安全规矩：不把密钥、密码、验证码、用户数据写进代码、文档、提交记录或日志；只开新分支和 PR，合并和上线生产由人确认。
 - 大白话，句子短，英文术语第一次出现时用括号给中文解释。
+
+## 手机上怎么看
+
+手机的分享菜单里一般没有「用 Safari / Chrome 打开」本地 HTML 的选项。
+
+- 直接看已经发布的网页：<https://huangyi0611.github.io/trending-to-project/> ，某一期在 `examples/issue-03.html` 这个路径下。
+- 自己发布：把本仓库 fork 到你的账号，打开 Settings → Pages，Source 选 Deploy from a branch，Branch 选 `main`，文件夹选 `/ (root)`。几分钟后即可用 `https://<账号>.github.io/<仓库名>/` 在手机浏览器里打开。详细步骤见仓库 README「手机上怎么看」。
+- 公开版页面不发网络请求、不存数据，发布到 GitHub Pages 不会泄露读者的项目信息。
+- 不要把私人构建（已写入你自己项目内容的 HTML，通常在 `output/` 或 `private/out/`）发布到 GitHub Pages，也不要提交进仓库。私人版请在电脑或 AI 应用的内置浏览器里打开，或用手机「文件」App 预览（预览时弹窗和复制按钮可能不能用）。

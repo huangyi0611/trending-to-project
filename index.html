@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- 本文件由 build.py 根据 template/index.html 和 data/public/issue-*/issue.json 生成。请勿手改。改数据后运行 python3 build.py --index 或 python3 build.py --issue XX。 -->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="GitHub 热榜拆解 · 个人项目适配与技术精进。每期拆解 GitHub 热门项目，写成打开就能看的网页。" />
+<title>GitHub 热榜拆解 · 个人项目适配与技术精进</title>
+<style>
+  /* 本文件是首页模板，由 build.py 填入各期卡片后写出仓库根目录的 index.html。请勿手改生成后的 index.html。 */
+  :root {
+    --bg: #e8e8ea;
+    --card: #ffffff;
+    --ink: #1a1a1a;
+    --muted: #6b6b70;
+    --soft: #f3f3f5;
+    --accent: #111;
+    --rec: #c45c26;
+    --border: rgba(0,0,0,.06);
+    --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.06);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.55;
+    padding: 28px 16px 64px;
+  }
+  .page { max-width: 720px; margin: 0 auto; }
+  header.hero { padding: 8px 4px 6px; margin-bottom: 22px; }
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--rec);
+    background: #fff1e8;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+  }
+  header.hero h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    line-height: 1.3;
+  }
+  header.hero .sub {
+    margin: 10px 0 0;
+    font-size: 15px;
+    color: #333;
+    max-width: 36em;
+  }
+  header.hero .hint {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--muted);
+    background: #fff;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+  }
+  .issue-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+  a.issue-card {
+    display: block;
+    background: var(--card);
+    border-radius: 18px;
+    padding: 20px 22px 18px;
+    box-shadow: var(--shadow);
+    color: var(--ink);
+    text-decoration: none;
+    border: 1px solid transparent;
+  }
+  a.issue-card:hover { border-color: rgba(196,92,38,.28); }
+  .icard-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+  .icard-top h2 { margin: 0; font-size: 22px; font-weight: 700; }
+  .icard-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+  .rec-tag {
+    display: inline-block; background: #fff1e8; color: var(--rec);
+    font-size: 11px; padding: 2px 8px; border-radius: 999px; font-weight: 600;
+  }
+  .date-tag {
+    display: inline-block; background: #ececef; color: #444;
+    font-size: 11px; padding: 2px 8px; border-radius: 999px;
+  }
+  .lead { margin: 0 0 6px; font-size: 15px; color: #333; }
+  .psum { margin: 0 0 6px; font-size: 13.5px; color: #444; }
+  .plist { margin: 0 0 10px; font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .go {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--rec);
+  }
+  a.issue-card:hover .go { text-decoration: underline; }
+  .links {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 16px 18px;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+  }
+  .links h2 { margin: 0 0 10px; font-size: 13px; color: var(--muted); font-weight: 600; }
+  .links ul { margin: 0; padding-left: 18px; font-size: 14px; }
+  .links li { margin: 6px 0; }
+  .links a { color: var(--ink); }
+  .footer-note {
+    margin-top: 8px; padding: 18px 20px; background: var(--card);
+    border-radius: 16px; font-size: 12.5px; color: var(--muted); box-shadow: var(--shadow);
+  }
+  .footer-note p { margin: 0 0 8px; }
+  .footer-note p:last-child { margin-bottom: 0; }
+  .footer-note a { color: #444; }
+  @media (max-width: 560px) {
+    header.hero h1 { font-size: 22px; }
+    .icard-top { flex-direction: column; gap: 8px; }
+    .icard-tags { justify-content: flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="hero">
+    <div class="eyebrow">源码公开 · 仅限非商业使用</div>
+    <h1>GitHub 热榜拆解</h1>
+    <p class="sub">个人项目适配与技术精进。每期从 GitHub 热门榜里挑 1 个最推荐的项目，加上 5–6 个值得看的项目，拆成一个打开就能看的网页。写给独立开发者，也写给不是程序员、想从 GitHub 上学点真本事的人。</p>
+    <div class="hint">页面不联网、不保存任何信息 · 手机浏览器直接打开即可</div>
+  </header>
+
+  <section class="issue-list" aria-label="各期目录">
+    <a class="issue-card" href="examples/issue-03.html">
+      <div class="icard-top"><h2>第 3 期</h2><div class="icard-tags"><span class="rec-tag">最新</span><span class="date-tag">2026年11月11日</span><span class="date-tag">共 7 项</span></div></div>
+      <p class="lead">本期最推荐 <strong>NVIDIA/auto-ontology</strong></p>
+      <p class="psum">让 AI 查数前先统一术语。另外还有界面零件、多 bot 助手、并行工位、浏览器操作、需求追问和 PR 审查这些能马上用的工具。</p>
+      <p class="plist">auto-ontology · astryx · OpenMausBot · worktrunk · agent-browser · skills（mattpocock） · pr-agent</p>
+      <span class="go">打开这一期</span>
+    </a>
+  </section>
+
+  <nav class="links" aria-label="说明与许可">
+    <h2>说明与许可</h2>
+    <ul>
+      <li><a href="README.md">使用说明（README）</a></li>
+      <li><a href="docs/USAGE.md">分步使用说明</a></li>
+      <li><a href="LICENSE">代码许可：PolyForm Noncommercial 1.0.0</a></li>
+      <li><a href="LICENSE-CONTENT.md">内容许可：CC BY-NC-SA 4.0</a></li>
+      <li><a href="NOTICE.md">版权、专利说明与免责声明</a></li>
+      <li><a href="https://github.com/huangyi0611/trending-to-project">GitHub 仓库</a></li>
+    </ul>
+  </nav>
+
+  <footer class="footer-note">
+    <p>作者：假笑黄黄AI版（小红书）。本页和各期页面打开时都不发网络请求，也不在手机或电脑上保存任何信息。你在某一期页面里填写的项目简介，只留在你自己的浏览器内存里，刷新就消失。</p>
+    <p>源码公开（source-available），仅限非商业使用：个人学习、个人知识库、改进你自己的非商业项目。与 GitHub 以及收录项目没有隶属关系。完整许可与免责见上面的链接。</p>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 """GitHub 热榜拆解 · 个人项目适配与技术精进（trending-to-project）：把 data/ 里的数据拼成一个单文件 HTML。
 
-公开构建（默认）：只读 data/public/，输出到 examples/issue-XX.html。
+公开构建（默认）：只读 data/public/，输出到 examples/issue-XX.html，并更新仓库根目录的 index.html。
     python3 build.py --issue 03
+
+只更新首页（根据 data/public/issue-*/issue.json 生成 index.html）：
+    python3 build.py --index
 
 私人构建（可选）：额外读你自己电脑上的私人数据目录（默认 private/，已被 .gitignore 忽略）。
     python3 build.py --issue 03 --private private/ --out private/out/issue-03.html
+    私人构建不会改 index.html，也不要把私人产物发到 GitHub Pages。
 
 本脚本不联网、不读环境变量、不读任何密钥。
 """
@@ -27,12 +31,87 @@ def load_json(p, default=None):
         return json.load(f)
 
 
+def cn_date(s):
+    parts = (s or '').split('-')
+    if len(parts) == 3 and all(parts):
+        return '%s年%d月%d日' % (parts[0], int(parts[1]), int(parts[2]))
+    return s or ''
+
+
+def collect_issues():
+    pub = os.path.join(ROOT, 'data', 'public')
+    items = []
+    for name in sorted(os.listdir(pub)):
+        if not name.startswith('issue-'):
+            continue
+        path = os.path.join(pub, name, 'issue.json')
+        if os.path.isfile(path):
+            data = load_json(path)
+            if data:
+                items.append(data)
+    items.sort(key=lambda x: int(str(x.get('issue', '0'))), reverse=True)
+    return items
+
+
+def issue_card_html(data, latest=False):
+    num = str(data.get('issue', '')).zfill(2)
+    n = int(num) if num.isdigit() else num
+    href = 'examples/issue-%s.html' % num
+    date = cn_date(data.get('date', ''))
+    summary = data.get('summary') or ''
+    lead = data.get('lead') or ''
+    projects = data.get('projects') or []
+    n_cards = len(data.get('cards') or {})
+    tags = []
+    if latest:
+        tags.append('<span class="rec-tag">最新</span>')
+    tags.append('<span class="date-tag">%s</span>' % html.escape(date))
+    if n_cards:
+        tags.append('<span class="date-tag">共 %d 项</span>' % n_cards)
+    lead_html = ''
+    if lead:
+        lead_html = '<p class="lead">本期最推荐 <strong>%s</strong></p>' % html.escape(lead)
+    proj_html = ''
+    if projects:
+        proj_html = '<p class="plist">%s</p>' % html.escape(' · '.join(projects))
+    sum_html = '<p class="psum">%s</p>' % html.escape(summary) if summary else ''
+    return (
+        '    <a class="issue-card" href="%s">\n'
+        '      <div class="icard-top"><h2>第 %s 期</h2><div class="icard-tags">%s</div></div>\n'
+        '      %s\n'
+        '      %s\n'
+        '      %s\n'
+        '      <span class="go">打开这一期</span>\n'
+        '    </a>'
+    ) % (html.escape(href, quote=True), n, ''.join(tags), lead_html, sum_html, proj_html)
+
+
+def write_index():
+    items = collect_issues()
+    if not items:
+        sys.exit('没有找到 data/public/issue-*/issue.json，无法生成首页')
+    cards = '\n'.join(issue_card_html(it, latest=(i == 0)) for i, it in enumerate(items))
+    tpl = read(os.path.join(ROOT, 'template', 'index.html'))
+    out = tpl.replace('__ISSUE_CARDS__', cards)
+    dest = os.path.join(ROOT, 'index.html')
+    with open(dest, 'w', encoding='utf-8') as f:
+        f.write(out)
+    print('已生成 %s（%d 期）' % (os.path.relpath(dest, os.getcwd()), len(items)))
+
+
 # ---------------------------------------------------------------- 参数
-ap = argparse.ArgumentParser(description='构建一期「GitHub 热榜拆解」HTML')
-ap.add_argument('--issue', required=True, help='期号，比如 03')
+ap = argparse.ArgumentParser(description='构建一期「GitHub 热榜拆解」HTML，或更新首页 index.html')
+ap.add_argument('--issue', default=None, help='期号，比如 03')
+ap.add_argument('--index', action='store_true', help='根据 data/public/issue-*/issue.json 生成仓库根目录的 index.html')
 ap.add_argument('--private', default=None, help='私人数据目录（可选）。不给就是公开构建')
 ap.add_argument('--out', default=None, help='输出文件路径')
 args = ap.parse_args()
+
+if args.index and not args.issue:
+    write_index()
+    raise SystemExit(0)
+if not args.issue:
+    ap.error('请指定 --issue（比如 03），或使用 --index 只更新首页')
 
 ISSUE = args.issue.zfill(2)
 PUB = os.path.join(ROOT, 'data', 'public')
@@ -388,3 +467,5 @@ with open(OUT, 'w', encoding='utf-8') as f:
 print('已生成 %s（%s构建，%d 字符，词条 %d 条）' % (os.path.relpath(OUT, os.getcwd()), '私人' if PRIVATE else '公开', len(out), len(G)))
 if missing_code:
     print('提示：这些 <code> 还没有释义词条：', missing_code)
+if not PRIVATE:
+    write_index()

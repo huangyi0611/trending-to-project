@@ -38,11 +38,47 @@
 
 ## 怎么看现成的 HTML
 
+电脑上：
+
 1. 打开 `examples/` 文件夹，双击 `issue-03.html`（第三期），浏览器会直接打开。
 2. 页面上的蓝色词可以点，或者用鼠标选中任意技术词，会弹出释义。
 3. 每张卡末尾有「复制」按钮，复制提示词，粘贴到 Claude Code、Codex、Cursor、ChatGPT 等任意 AI 工具里。
 
-手机上看：把 HTML 文件发到手机，用浏览器打开即可。
+手机上请看下一节。也可以直接打开已经发布的网页：<https://huangyi0611.github.io/trending-to-project/>。
+
+## 手机上怎么看
+
+手机从分享菜单里打不开本地 HTML 文件，菜单里通常没有 Safari 或 Chrome。用下面几种办法。
+
+**直接打开作者发布的网页（最快）**
+
+- 首页：<https://huangyi0611.github.io/trending-to-project/>
+- 第三期：<https://huangyi0611.github.io/trending-to-project/examples/issue-03.html>
+
+用 Safari 点开即可，词条弹窗和复制按钮都能用。这个链接可以发到小红书或其他地方。
+
+**给自己做一个同样能在手机上打开的网址**
+
+你可以把本仓库复制到自己的 GitHub 账号，再用 GitHub Pages（GitHub 提供的免费网页托管）生成一个网址：
+
+1. 打开仓库页面，点右上角 Fork，把仓库复制到你的账号下。仓库需要是公开的（免费账号才能用 GitHub Pages）。
+2. 打开你账号下的这个仓库，进入 Settings（设置）→ Pages。
+3. 在 Build and deployment（构建和部署）里，Source（来源）选 Deploy from a branch（从分支部署）；Branch（分支）选 `main`，文件夹选 `/ (root)`，点 Save（保存）。
+4. 等一两分钟。Settings → Pages 页顶会出现网址：`https://<你的GitHub账号>.github.io/<仓库名>/`。某一期在：`https://<你的GitHub账号>.github.io/<仓库名>/examples/issue-03.html`（把 `03` 换成期号）。
+
+作者这边已经按上面的方式打开了，所以你不用再设置，也能直接看上面的链接。
+
+**这样放上网安不安全？**
+
+公开版页面打开时不发任何网络请求，也不在手机或电脑上存数据。你把它发布到 GitHub Pages，不会泄露读者的项目信息。读者如果在页面上填写了「连接你的项目」，那些字只留在读者自己的浏览器内存里，刷新就消失，作者和 GitHub 都看不到。
+
+有一类文件不能上网：用私人构建生成的、已经写进你自己项目内容的页面。这类文件默认在 `private/out/` 或 `output/`（都已被忽略，不会被提交）。不要把它们复制到 `examples/` 或仓库根目录，也不要发布到 GitHub Pages。私人版请在自己电脑上打开，或发到手机「文件」App 里预览，或在 AI 应用自带的浏览器里打开。
+
+**其他办法**
+
+- 把 HTML 存到 iPhone「文件」App 再点开：能看到排版，词条弹窗和复制按钮可能不能用。
+- 在带内置浏览器的 AI 应用里打开这个文件或链接，交互功能通常可用。
+- 在电脑上用 Chrome 或 Safari 打开，功能是完整的。
 
 ## 怎么自己生成一期
 
@@ -60,7 +96,7 @@ pip install -r requirements.txt
 python3 build.py --issue 03
 ```
 
-做新的一期：复制 `data/public/issue-03/` 改名为 `issue-04/`，改里面的卡片内容、`issue.json` 和 `toolmap.js`，再运行 `python3 build.py --issue 04`。详细步骤见 [docs/USAGE.md](docs/USAGE.md)。
+做新的一期：复制 `data/public/issue-03/` 改名为 `issue-04/`，改里面的卡片内容、`issue.json` 和 `toolmap.js`，再运行 `python3 build.py --issue 04`。构建时会同时根据各期的 `issue.json` 更新仓库根目录的 `index.html`（GitHub Pages 的首页），不用手改首页。也可以单独运行 `python3 build.py --index`。详细步骤见 [docs/USAGE.md](docs/USAGE.md)。
 
 ## 怎么用「交互生成」的那三块
 
@@ -166,16 +202,18 @@ python3 build.py --issue 03
 ├── NOTICE.md                    # 版权、专利说明、免责声明、更正与下架
 ├── SECURITY.md                  # 怎么报告安全问题
 ├── requirements.txt             # 唯一依赖：beautifulsoup4
-├── build.py                     # 构建脚本：公开构建 / 私人构建
+├── build.py                     # 构建脚本：公开构建 / 私人构建 / 首页
 ├── my-project.example.yaml      # 虚构示例，复制成 my-project.yaml 再填
 ├── .gitignore
+├── .nojekyll                    # 让 GitHub Pages 原样提供文件
+├── index.html                   # 各期目录首页（由 build.py 根据各期 issue.json 生成，请勿手改）
 ├── data/public/
 │   ├── glossary.json            # 释义词库（各期共用）
 │   └── issue-03/
-│       ├── issue.json           # 标题、每张卡的难度、耗时、前置条件、通用版提示词、方向标签
+│       ├── issue.json           # 标题、首页摘要、每张卡的难度、耗时、前置条件、通用版提示词、方向标签
 │       ├── toolmap.js           # 工具地图数据
 │       └── parts/               # 每张卡的正文（HTML 片段）
-├── template/                    # 页面外壳：样式、释义弹窗、复制按钮、「连接你的项目」
+├── template/                    # 页面外壳：样式、释义弹窗、复制按钮、「连接你的项目」、首页模板
 ├── skills/project-fit/
 │   ├── SKILL.md                 # 本地 skill：Match trending GitHub repos to your own project, locally and privately.
 │   └── prompt-template.md       # 提示词模板（网页和脚本共用）
@@ -197,8 +235,8 @@ python3 build.py --issue 03
 
 **GitHub 热榜拆解 · 个人项目适配与技术精进** (`trending-to-project`) breaks down each issue's GitHub Trending picks (one top pick plus 5–6 projects) into a single, self-contained HTML page: what each project does, its highlights, drawbacks with workarounds, difficulty, prerequisites, a copy-to-AI prompt, a tool map, and a pop-up glossary. Written in plain Chinese for indie developers and non-programmers.
 
-- **Read**: open `examples/issue-03.html` in any browser. No install, no network.
-- **Build**: `pip install -r requirements.txt && python3 build.py --issue 03`.
+- **Read**: open `examples/issue-03.html` in any browser (no install, no network), or on a phone open https://huangyi0611.github.io/trending-to-project/ . To get your own phone-friendly URL, fork the repo and enable GitHub Pages (Settings → Pages → Deploy from a branch → `main` / `/ (root)`). Never publish a private/personalized build that already contains your own project content.
+- **Build**: `pip install -r requirements.txt && python3 build.py --issue 03` (also refreshes `index.html` from `data/public/issue-*/issue.json`; or run `python3 build.py --index`).
 - **Personalize** with the `project-fit` skill — *Match trending GitHub repos to your own project, locally and privately.* The "fit scenarios", "how it maps to your project" and "prompt for your project" sections are generated only after you provide your own project info, either in the page (assembled in memory, never sent anywhere) or locally via `skills/project-fit/SKILL.md` with your own AI tool and a git-ignored `my-project.yaml`.
 - **Privacy**: zero network requests, no analytics, no third-party scripts, no storage writes, no secrets in the repo. Verify with your browser's Network panel and the grep commands above.
 - **License**: source-available, **non-commercial use only** (this is not OSI open source). Code: PolyForm Noncommercial 1.0.0 (`LICENSE`). Content: CC BY-NC-SA 4.0 (`LICENSE-CONTENT.md`). Allowed: personal learning, personal knowledge bases, improving your own non-commercial projects. Not allowed: commercial use, resale, paid courses or content, SaaS, bundling into commercial products. For a commercial license, contact the author. Being able to view or fork this public repo on GitHub does not grant commercial rights.
