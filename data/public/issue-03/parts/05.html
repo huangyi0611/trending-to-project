@@ -1,0 +1,83 @@
+  <article class="project" id="p05">
+    <div class="rank">#05</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ 浏览器</span>
+        <span class="pill">无障碍树</span>
+        <span class="pill">给 AI 用的 CLI</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">🌐</div>
+        <div>
+          <h2 class="pname">agent-browser</h2>
+          <p class="pdesc">Vercel Labs 在 GitHub 上开源的浏览器自动化 CLI，专门给 Agent 用：先把网页拍成一份文字版快照（基于 accessibility tree，也就是无障碍树），每个元素带 <code>@e1</code> 这样的编号，再按编号去点击、填写。浏览器通过 CDP 一直开着，不用每步重启。自带和版本匹配的 skill，也可以开成 MCP 服务。</p>
+          <p class="prepo"><a href="https://github.com/vercel-labs/agent-browser" target="_blank" rel="noopener">vercel-labs/agent-browser</a> · <a href="https://agent-browser.dev" target="_blank" rel="noopener">agent-browser.dev</a></p>
+          <span class="license">开源协议 Apache-2.0</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">49,275</div></div>
+      <div class="metric"><div class="label">↗ 本周新增</div><div class="value">+3,606</div><div class="hint">周榜 · 2026-11-11</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">Rust</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">3,452</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li><code>open</code>（打开）→ <code>snapshot</code>（拍快照）→ <code>click @e1</code>（点击）这样的短循环；编号失效时会要求重新拍快照。</li>
+          <li>点击前先检查元素是否被挡住、能不能点，失败就直接报错，不会假装成功。</li>
+          <li>能截图、录屏、管理 cookie 和登录状态；支持同时开多个 session、使用云端浏览器服务，以及 iOS 模拟器里的 Safari 等（见文档）。</li>
+          <li><code>agent-browser skills get core</code> 能取出和当前版本匹配的操作说明，避免「说明书和程序版本对不上」。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">让 AI 看网页的结构图</div>
+          <p>纯看截图、按坐标点，费 token 又容易点歪。用无障碍树加固定编号，更省 token，也更容易写成固定脚本。它和第二期的 agent-desktop（桌面版无障碍树）是同一个思路，搬到了浏览器上。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>想让 AI 打开网页做验收、填表、抓公开网页结构的人。它对原生 iOS 界面自动化支持有限（文档里有模拟器的用法可以试）。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：未解决的 issue 约 562 个，功能面很宽，最容易踩坑的是权限和登录状态。</strong>
+          <span class="fix">应对：先跑通 open / snapshot / click / close 四步。涉及登录时用官方的 session / auth（登录管理）功能，并设好允许访问的网站名单；别让 AI 拿着已登录的浏览器随便逛。</span></li>
+        <li><strong>缺点2：编号会过期。</strong>页面一跳转或内容一变（DOM 变了），旧的 <code>@e1</code> 就失效了。
+          <span class="fix">应对：每次跳转后重新 snapshot。写 skill 时把「先快照再操作」写成必做步骤，和官方的 core skill 保持一致。</span></li>
+        <li><strong>缺点3：它干不了所有爬虫的活，也替代不了后端 API。</strong>遇到反爬、强验证码、纯画布（canvas）做的网页，还是很难办。
+          <span class="fix">应对：能调官方 API 就别走浏览器。公开信息优先用 WebFetch 或 API；浏览器留给「必须点界面才能验收」的情况。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>核心发现：AI 操作界面时，带编号的结构比截图坐标更适合当「手」。拍快照、动手、再看一眼，被做成几条短命令，正好符合 AI 调用工具的习惯。</p>
+          <p>skill 和 CLI 版本绑定也很重要。作者清楚：说明书一旦和程序对不上，AI 就会乱来。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>Playwright、Puppeteer 这类脚本适合人写的固定测试；agent-browser 适合 AI 边看边点。爬虫框架（比如 Scrapling）偏向批量采集。选一个主要工具，别让 AI 同时拿着三套浏览器工具又没有先后顺序。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 周榜（2026-11-11）；本周约 +3,606，总星约 4.9 万。和第二期的 agent-desktop 出自同一团队，补上了浏览器这一块。</p>
+          <div class="risk"><strong>风险：</strong>Apache-2.0。由 Vercel Labs 维护，更新快；issue 多，说明用的人多，也说明边角问题多。接入登录状态前先读官方的 Security（安全）文档。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>

@@ -1,0 +1,83 @@
+  <article class="project" id="p04">
+    <div class="rank">#04</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ Git / 并行</span>
+        <span class="pill">worktree 命令行工具</span>
+        <span class="pill">多 Agent</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">🌲</div>
+        <div>
+          <h2 class="pname">worktrunk</h2>
+          <p class="pdesc">GitHub 上开源的 CLI，让 git worktree（同一个项目分出多张独立工作台）用起来像切换分支一样简单，专为同时跑多个 Agent 设计。用分支名找到对应文件夹，一条命令就能创建、切换、清理；还带 hooks（到点自动执行的脚本）、合并流程，在支持的磁盘上用 copy-on-write（写时复制）共享编译缓存。</p>
+          <p class="prepo"><a href="https://github.com/max-sixty/worktrunk" target="_blank" rel="noopener">max-sixty/worktrunk</a> · <a href="https://worktrunk.dev" target="_blank" rel="noopener">worktrunk.dev</a></p>
+          <span class="license">双协议：MIT 或 Apache-2.0（任选其一）</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">12,406</div></div>
+      <div class="metric"><div class="label">↗ 本周新增</div><div class="value">+2,093</div><div class="hint">周榜 · 2026-11-11</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">Rust</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">488</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li><code>wt switch -c</code>：新建分支和 worktree 并进入文件夹；加上 <code>-x claude</code> 还能马上启动 AI。</li>
+          <li><code>wt list</code>：查看每个 worktree 改了什么、比主线（main）多了哪些提交；还支持拉取 PR、合并和清理。</li>
+          <li>hooks：创建、合并前后自动装依赖、启动本地开发服务等。</li>
+          <li>在 APFS、btrfs、XFS 这类支持写时复制的磁盘上，多个 worktree 可以共用 <code>node_modules</code>、<code>target/</code> 这类缓存文件夹，不用每次重新安装。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">给每个并行的 AI 分一张工位</div>
+          <p>git 自带的 worktree 能用，但命令长、路径难记。Worktrunk 把「给每个 AI 一张干净桌子」变成几句日常口令。同时开 5–10 个任务时，这是最先让人头疼的地方。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>已经在电脑上同时跑好几个 Claude Code、Codex 或 Cursor Agent，却还在手敲 <code>git worktree add</code> 的人；只用一个 AI 改一个项目的，可以先不装。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：又要学一套命令，可能和你的 shell 别名、编辑器自带的 worktree 功能冲突。</strong>
+          <span class="fix">应对：只在真要并行的项目里用；先学会 switch / list / remove 三个命令。Windows 上它和系统自带的 <code>wt</code>（Windows Terminal 终端）重名，可以改用 <code>git-wt</code>，或关掉冲突的别名。</span></li>
+        <li><strong>缺点2：共享缓存要看磁盘格式。</strong>磁盘不支持写时复制（CoW）时，「瞬间装好依赖」的效果出不来。
+          <span class="fix">应对：先查官方文档支不支持你的磁盘格式。不支持就每个 worktree 各自装依赖，或者把项目放到 APFS / btrfs 磁盘上再试。</span></li>
+        <li><strong>缺点3：多条线怎么合并，还得人来定顺序。</strong>工具只管工位，不管产品决策；几个 AI 同时改同一块代码，照样会冲突。
+          <span class="fix">应对：按模块分任务；合并前用 <code>wt list</code> 或 PR 检查一遍。比如「登录功能一条 worktree、支付流程另一条」，避免两边改同一个文件。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>多个 AI 并行时，卡住人的往往是文件夹和分支的琐事，跟模型聪不聪明关系不大。把 worktree 的创建、切换、清理变成几个固定动作，能省很多力气。</p>
+          <p>hooks 和共享缓存说明作者懂真实痛点：每开一个 worktree 都要重新 npm install 一遍，并行的好处就被吃掉了。这个工具补的是 git 本身用起来不顺手的地方，没有再包一层 AI。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>一个 AI 改一条分支，git 自带命令就够。经常同时跑 3 个以上任务，再装 Worktrunk。它不管浏览器，也不管语义层，和本期其他项目互相补充。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 周榜（2026-11-11）；本周约 +2,093。多个 AI 并行干活的刚需，文档完整。</p>
+          <div class="risk"><strong>风险：</strong>MIT 或 Apache-2.0，宽松。未解决的 issue 约 57 个，比较可控。维护活跃。GitHub 自动识别许可证（SPDX）显示 NOASSERTION，以仓库里 LICENSE 和 Cargo.toml 文件写的「MIT OR Apache-2.0」为准。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>

@@ -1,0 +1,84 @@
+  <article class="project featured" id="p01">
+    <div class="rank">#01</div>
+    <div class="rec-banner">★ 本期最推荐</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ 语义层</span>
+        <span class="pill">Docker 部署</span>
+        <span class="pill">MCP / skill</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">🧭</div>
+        <div>
+          <h2 class="pname">auto-ontology</h2>
+          <p class="pdesc">NVIDIA 在 GitHub 上开源的语义层工具。它先读你的数据库，整理出一份「业务词典」（Ontology：每个业务词是什么、表和表怎么关联、指标怎么算），人确认后再交给 Agent 去查数。每个答案都附上查询语句（SQL）和步骤；数据覆盖不到的问题，它会直接说「答不了」。后端用 FastAPI + Postgres，可以通过 MCP、API 或自带的 skill 接进你的 AI 工具。</p>
+          <p class="prepo"><a href="https://github.com/NVIDIA/auto-ontology" target="_blank" rel="noopener">NVIDIA/auto-ontology</a></p>
+          <span class="license">开源协议 Apache-2.0（仓库暂不接受外部 PR，发现问题可以开 issue）</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">11,484</div></div>
+      <div class="metric"><div class="label">↗ 本周新增</div><div class="value">+9,621</div><div class="hint">周榜 · 2026-11-11</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">Python</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">944</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li>读数据库的表结构、样本数据和历史查询，整理出业务词、表之间的关系和能反复用的计算公式（SQL），存进 Postgres（用 pgvector 做相似内容搜索）。</li>
+          <li>人在界面里核对、修改，再「认证」这些定义；之后谁问「收入」「客户」，都按同一套公式算。</li>
+          <li>把你用日常语言问的问题翻成 SQL 去查（Text-to-SQL），返回答案、SQL 和推理步骤；还能先用 <code>check_answerable</code> 看看这个问题数据能不能答。</li>
+          <li>可以通过 MCP、REST API 或三个官方 skill（安装 / 管理 / 查询）接进你现有的 AI 工具。默认用 NVIDIA NIM 跑模型，也能换成其他兼容 OpenAI 格式的模型服务。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">先把「词」认准，再让 AI 去查数</div>
+          <p>它解决的问题是：AI 给的数字靠不靠谱。定义由人确认过，答不上来就明说，用到的 SQL 也摆出来给你核对。比让模型直接对着原始数据表自由发挥稳得多。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>手上有表格或数据库、想让 AI 帮忙查数，却常遇到「同一个指标两种算法」的人。也适合想给读书笔记、知识库先建一份术语表的人，比只把原文切成小段去搜更准。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：它是一整套平台，体量大。</strong>要同时跑网页前端（Next.js）、两个 FastAPI 服务和 Postgres 数据库，还要模型密钥；在自己电脑上用 Docker Compose 一键启动也要花些功夫。
+          <span class="fix">应对：先学它的思路，不必整套搬进正式产品。一般的小产品或内容项目只抄三步就够：整理术语 → 人确认定义 → 答不了就说答不了。真想试，用官方的 Docker Compose 和示例数据库跑通聊天功能，再决定接不接自己的数据。</span></li>
+        <li><strong>缺点2：默认的安全设置要盯紧。</strong>仓库写明 3001、3002 这两个端口只能放在内网；负责导入数据的服务几乎不验证身份，直接相信前端转过来的用户信息。打开可选的 KumoRFM 预测功能后，还会把表里的数据上传到对方服务器。
+          <span class="fix">应对：对外只开 3000 端口，后端端口别暴露到公网。数据没审查完之前，不要填 <code>KUMO_RFM_API_KEY</code>。密钥和数据库密码按官方说明改掉默认值。</span></li>
+        <li><strong>缺点3：不收外部代码贡献，也要留意绑定某一家模型服务。</strong>维护完全由 NVIDIA 团队负责；默认模型走 NIM，不过可以换。
+          <span class="fix">应对：把它当一份能跑的参考样板来学，别指望给它提 PR 一起共建。需求和 bug 通过 issue 反馈。自己部署时先配好自己的模型服务地址，免得整个流程只能用一家的云端模型。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>价值在于给 AI 一份大家公认、可以核对的背景资料。AI 会查数据库、会写 SQL，可如果「收入」在两个系统里算法不同，查得再快也没用。这个项目把术语、关系和认证过的计算公式放在第一位，每个答案都带出处。</p>
+          <p>流程也清楚：先生成草稿 → 人认证 → 再回答。常见做法是把整个数据库的表结构（schema）塞给模型碰运气，它反过来先定规矩。它还把「预测未来」和「查已有数据」分开处理（预测可选用 KumoRFM），这种分拣本身就值得学。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>只用 RAG（把文档切成小段再搜），适合文章、PDF 这类没有固定格式的资料；只把原始表结构喂给模型，起步快，但指标口径会越用越乱。完整的 Auto Ontology 适合多个系统、要求口径统一的查数场景。个人项目多数用不上整套平台，先做术语表和「答不了就拒绝」更划算，图谱可视化以后再说。仓库还说能和 Apache Ossie（一种交换语义模型的格式）互相导入导出，等你以后要跨工具共享再看。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 周榜第 1（2026-11-11 抓取）；本周 +9,621（总星约 11,484，几乎都是这一周涨的）。它正好回答了很多人关心的「AI 查数靠不靠谱」，所以选作本期最推荐。</p>
+          <div class="risk"><strong>风险：</strong>Apache-2.0 本身很宽松，但项目声明暂不接受外部贡献，发展方向由 NVIDIA 团队决定。未解决的 issue 约 114 个。部署时要注意端口和数据外传。项目 2026 年 4 月创建，近期仍在更新（抓取时最近一次推送约 2026-11-11 03:31，北京时间）。用到的第三方组件见仓库里的 THIRD_PARTY_NOTICES 文件。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>

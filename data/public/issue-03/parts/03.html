@@ -1,0 +1,83 @@
+  <article class="project" id="p03">
+    <div class="rank">#03</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ AI 桌面助手</span>
+        <span class="pill">数据存本机</span>
+        <span class="pill">多 bot</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">🐭</div>
+        <div>
+          <h2 class="pname">OpenMausBot</h2>
+          <p class="pdesc">GitHub 上的开源项目，功能对标 xAI 的同类 AI 助手产品：在一个聊天应用里管理一队 Agent。每个 bot 可以换模型，也可以有自己的电脑（云桌面、本机里的虚拟机，或经你确认后直接用本机），危险操作要你点「允许」。默认数据存在本机（local-first，放在 <code>~/.openmausbot</code> 文件夹），可以接你电脑上已登录的 Claude Code、Codex、Grok 命令行工具。桌面端用 Electron 开发。</p>
+          <p class="prepo"><a href="https://github.com/milind-soni/OpenMausBot" target="_blank" rel="noopener">milind-soni/OpenMausBot</a> · <a href="https://www.openmausbot.com" target="_blank" rel="noopener">openmausbot.com</a></p>
+          <span class="license">核心代码 Apache-2.0；<code>enterprise/</code> 目录是 source-available，整体属于 open-core 模式</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">20,697</div></div>
+      <div class="metric"><div class="label">↗ 本周新增</div><div class="value">+8,951</div><div class="hint">周榜 · 2026-11-11</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">TypeScript</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">2,867</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li>把多个 bot 当联系人管理：每个 bot 的人设、模型、电脑、连接的应用都可以不同。</li>
+          <li>跑命令、改文件这类有风险的动作，会变成聊天里的「允许 / 拒绝」卡片。</li>
+          <li>可以通过 Composio 这类连接器接 Gmail、Slack、GitHub 等（授权给多大权限要自己把关）。</li>
+          <li>支持用一份 Markdown 文件（「团队包」）一次导入整组 bot、频道和建议的定时任务；也能分享部门模板（不含密钥和聊天记录）。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">像通讯录一样管一队 AI</div>
+          <p>它把「一个全能助手」拆成能分工的一队人，默认数据和密钥都留在本机。如果你已经在用托管式的 AI 助手产品，想看看开源版怎么做「成员列表 + 审批 + 电脑」，这个仓库很适合对照。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>想在自己电脑上跑多个角色的 AI、又需要审批关卡的人。做协作产品的人，也可以只借鉴它「邀请 / 分享部门 / 权限卡片」的产品设计。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：体量大，未解决的 issue 约 981 个，功能边界还在变。</strong>比如 README 写明，Ubuntu 在 Wayland 桌面下的本机控制功能，因为一个 issue 暂时关闭。
+          <span class="fix">应对：先当产品参考、在本机试用，别一上来就改它的核心当自己的后端。关注版本发布（releases）和安全说明（SECURITY），正式用之前只给最小权限。</span></li>
+        <li><strong>缺点2：许可证是 open-core。</strong>删掉 <code>enterprise/</code> 目录后才是纯开源软件（OSS）；企业目录另有许可，正式使用其中的功能要授权。
+          <span class="fix">应对：自用或二次开发前，先确认没用到 enterprise 目录。要分发或替别人托管前，读一遍 LICENSING.md；它的商标名也不能直接拿来当自己的产品名。</span></li>
+        <li><strong>缺点3：控制本机和连接第三方账号的权限很大。</strong>bot 一旦拿到你的电脑和邮箱，误点一次「允许」代价不小。
+          <span class="fix">应对：保持默认的「先问再做」；本机控制只在你主动打开后才生效。连接器一个一个开，定期检查授权。正式环境的密钥别靠在聊天里粘贴一次来管理。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>价值在产品骨架：多个 bot、每个 bot 一台电脑、危险动作变成卡片、团队配置能打包分享且默认不带密钥。这些比再包一层聊天接口难做得多。</p>
+          <p>「数据存本机 + 本机运行的 harness」也值得看：程序和对话记录（transcript）都留在你自己电脑上，云端只是一台可选的电脑，数据以本机为准。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>只需要一个写代码的 AI，继续用 Cursor 或 Claude Code 就行。要「一队分好角色的助理 + 审批」，才值得装这类桌面应用。别和本期的 agent-browser、第二期的 agent-desktop 叠成三套电脑控制工具，先定场景再装。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 周榜第 4 左右（2026-11-11）；本周约 +8,951。适合想把数据和密钥留在自己电脑上的 AI 助手用户。</p>
+          <div class="risk"><strong>风险：</strong>核心 Apache-2.0，宽松；enterprise 目录要另看许可。issue 很多；项目 2026 年 8 月创建，更新很快。仓库声明和 xAI、Meta、OpenAI、Manus 都没有关系，还提醒别被同名的加密货币骗局误导。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>

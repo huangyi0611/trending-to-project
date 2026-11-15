@@ -1,0 +1,101 @@
+{
+ "issue": "03",
+ "title": "GitHub 热榜拆解 · 个人项目适配与技术精进 / 第三期 · 2026年11月11日",
+ "date": "2026-11-11",
+ "kit_note_suffix": "前置条件来自仓库 README（2026-11-15 读取）；难度和耗时是估计。",
+ "kit_labels": {
+  "mine_title": "① 给你的项目用",
+  "mine_sub_public": "连接你的项目后生成",
+  "generic_title": "② 通用版",
+  "generic_sub": "谁都能用"
+ },
+ "cards": {
+  "p01": {
+   "stars": 5,
+   "time": "约 2–3 小时（跑通官方示例库）",
+   "prereq": "Docker（含 Compose v2）、uv、NVIDIA 的 API key（以 nvapi- 开头，在 build.nvidia.com 申请）；想接 Claude Desktop 还要能运行 npx（会用到 mcp-remote）。不想装也行：只学「术语表 → 人确认 → 再问数」的做法，什么都不用装。",
+   "note": "README 的 Quickstart 要在 .env 文件里改 6 个以上密码和密钥，还要导入一个示例数据库，对非程序员偏难。",
+   "generic": "我不是程序员。我手上有一份表格数据（Excel 或一个数据库），想让 AI 回答「这个月卖了多少」这类问题，但怕它编数字。请参考 GitHub 项目 NVIDIA/auto-ontology 的思路，一步步带我：\n1. 用大白话解释它的三步：整理术语 → 人确认 → 再问数，并说明为什么这样不容易出错。\n2. 先不装任何东西。帮我把数据整理成一张「术语表」：每个词什么意思、用哪一列、怎么算。拿不准的先问我。\n3. 之后我每次提问，你先说用了术语表里哪一条、怎么算的；数据里没有的就直接说「答不了」，不要估。\n4. 如果我想真的装它：告诉我要先装 Docker、uv，再申请 NVIDIA API key，然后按 README 的 Quickstart 一步一步带我。每一步等我回复「好了」再继续。密钥只让我自己填进 .env，不要让我贴到聊天里。",
+   "scene_tags": [
+    "后端",
+    "工程框架",
+    "实用 skills"
+   ]
+  },
+  "p02": {
+   "stars": 3,
+   "time": "约 1 小时（已有 React 项目时）",
+   "prereq": "Node，加上 npm / pnpm / yarn 任意一个安装工具；项目要用 React 19 或更新版本。只有给 Astryx 仓库本身贡献代码，才需要 Node 22+ 和 pnpm 11。iOS、Android 原生 App 装不上它，只能借鉴写法。",
+   "note": "装包只要几条命令；难点是你得先有一个 React 19 项目。",
+   "generic": "我不是程序员，想做一个好看、统一的小网页（比如个人作品集或简单后台），听说 Meta 开源了 Astryx 设计系统。请一步步带我：\n1. 先帮我检查电脑上有没有 Node，没有就教我装。\n2. 用 Vite 建一个 React 19 项目，再按 Astryx README 装 @astryxdesign/core、一个主题包和 @astryxdesign/cli。\n3. 用 Astryx 的 CLI 列出可用组件，帮我挑 5 个以内就够用的（按钮、卡片、表单之类），解释每个是干嘛的。\n4. 做一个页面，跑起来给我看效果；每一步等我回复「好了」再继续。\n5. 告诉我它还是 Beta，哪些包不稳定、我该锁定什么版本。",
+   "scene_tags": [
+    "UI设计",
+    "前端",
+    "工程框架"
+   ]
+  },
+  "p03": {
+   "stars": 2,
+   "time": "约 20–30 分钟（下载安装包）",
+   "prereq": "macOS、Windows、Ubuntu 24.04 安装包任选；电脑上至少装好并登录一个命令行 AI：claude、codex 或 grok（Grok 也可以在设置里填 xAI 的 API key）。从源码运行才需要 Node 24+ 和 pnpm。Composio、Boat、ElevenLabs 等密钥都是可选的。",
+   "note": "装包本身简单；真正花时间的是把每个 bot 的权限设对。",
+   "generic": "我不是程序员，想在自己电脑上试试 OpenMausBot，让几个 AI 分工帮我干活（比如一个查资料、一个写文案、一个整理表格）。请一步步带我：\n1. 告诉我该下载哪个安装包（我的电脑是：____），怎么装。\n2. 检查我有没有已登录的 claude / codex / grok 命令行工具之一，没有的话带我装一个。\n3. 建 2 个 bot，各写一句人设，设置成「改文件、跑命令前必须先问我」。\n4. 先别连 Gmail、Slack 这类账号；解释如果以后要连，权限风险在哪。\n5. 每一步等我回复「好了」再继续。",
+   "scene_tags": [
+    "工程框架",
+    "实用 skills",
+    "前端"
+   ]
+  },
+  "p04": {
+   "stars": 2,
+   "time": "约 15 分钟",
+   "prereq": "Git；安装方式任选一种：Homebrew（macOS / Linux）、Cargo、Winget（Windows，命令叫 git-wt）；装完运行一次 <code>wt config shell install</code>。想一条命令直接启动 AI，要先装好 Claude Code 这类 CLI。",
+   "note": "一条命令装好；需要先大概懂 Git 分支是什么。",
+   "generic": "我用 Claude Code（或 Codex）做一个小项目，想让两个 AI 同时干两件事（比如一个改页面、一个修 bug），又怕它们改同一个文件打架。请一步步带我用 Worktrunk：\n1. 用大白话解释 git worktree 是什么，和普通分支有什么不同。\n2. 带我安装（我的电脑是：____），并运行 wt config shell install。\n3. 用 wt switch -c 开两个工位，各自启动一个 AI，分别给它们一个任务。\n4. 教我用 wt list 看进度，做完用 wt remove 清理。\n5. 提醒我合并前要自己看一遍改动；每一步等我回复「好了」再继续。",
+   "scene_tags": [
+    "工程框架",
+    "实用 skills",
+    "后端",
+    "前端"
+   ]
+  },
+  "p05": {
+   "stars": 2,
+   "time": "约 15–20 分钟",
+   "prereq": "npm（需要 Node）或 Homebrew 任选；装完运行一次 <code>agent-browser install</code> 下载 Chrome for Testing（Linux 加 <code>--with-deps</code>）；也可以用 <code>npx agent-browser</code> 不安装直接试。从源码编译才需要 Node 24+、pnpm 11 和 Rust。",
+   "note": "一条命令装好；写成固定的验收步骤要多花点时间。",
+   "generic": "我不是程序员。我做了一个网页（或者想检查某个网站的报名流程能不能走通），想让 AI 自己打开浏览器点一遍，并截图给我看。请一步步带我用 agent-browser：\n1. 检查我电脑有没有 Node，没有就教我装；然后安装 agent-browser 并运行 agent-browser install。\n2. 先打开 example.com，用 snapshot 让我看看它是怎么「看」网页的（每个按钮会有 @e1 这样的编号）。\n3. 再打开我的网页：____，按这个流程点一遍：____，每一步截图。\n4. 把哪一步卡住、看到什么报错，用大白话告诉我。\n5. 遇到要登录、输验证码的页面就停下来让我自己输。每一步等我回复「好了」再继续。",
+   "scene_tags": [
+    "实用 skills",
+    "前端",
+    "工程框架"
+   ]
+  },
+  "p06": {
+   "stars": 1,
+   "time": "约 10 分钟",
+   "prereq": "一个支持 skill 的编程 AI：Claude Code、Codex、Copilot、Gemini CLI、VS Code 等（README 里有各自的一行安装命令）；用 <code>skills.sh</code> 方式安装要能运行 npx（需要 Node）。装完在项目里运行一次 <code>/setup-matt-pocock-skills</code>。",
+   "note": "README 写「30 秒装好」；熟悉被 AI 追问的对话方式再花几分钟。",
+   "generic": "我不是程序员，想用 AI 做一个小工具（比如记账小程序 / 读书笔记整理），但每次都跟 AI 说不清楚要什么。请模仿 mattpocock/skills 里的 /grill-me，一步步带我：\n1. 先别写任何代码。一次只问我一个问题，问清楚：给谁用、最重要的 3 个功能、哪些先不做、怎么算「做好了」。\n2. 每问完 5 个问题，用 5 行以内总结你目前理解的需求，让我改。\n3. 最后整理成一页需求说明，再加一份「用词表」：我说的每个词在这个工具里具体指什么。\n4. 如果我在用 Claude Code / Codex，告诉我怎么按 README 一行命令装上这套 skills。",
+   "scene_tags": [
+    "实用 skills",
+    "工程框架",
+    "后端",
+    "前端"
+   ]
+  },
+  "p07": {
+   "stars": 3,
+   "time": "约 30–45 分钟",
+   "prereq": "一个 GitHub 仓库并打开 GitHub Actions；一个模型的 API key（README 示例用 OPENAI_KEY，也可以通过 LiteLLM 换成 Claude、Gemini、Ollama 等），存进 GitHub Secrets；GITHUB_TOKEN 由 Action 自动提供。只有在自己电脑上跑命令行版，才需要 Python 和 pip（Python 版本以 README 为准）。",
+   "note": "复制一个 workflow 文件就能跑；花时间的是配密钥和写自己的审查清单。",
+   "generic": "我有一个 GitHub 仓库（不太懂代码），想每次有人（或 AI）提交改动时，先有个 AI 帮我审一遍、用大白话说说改了什么、有没有风险。请一步步带我用开源的 pr-agent：\n1. 用大白话解释 PR、GitHub Actions、Secrets 分别是什么。\n2. 带我在仓库里新建 .github/workflows/pr-agent.yml，内容按 pr-agent README 的 GitHub Action 示例来。\n3. 教我去仓库 Settings → Secrets 添加模型的 API key（我自己填，不要让我贴到聊天里）。\n4. 开一个很小的测试 PR，看 AI 留下的 /describe 和 /review 评论，教我怎么读。\n5. 提醒我：AI 审查会漏也会误报，合并前还是要自己看。每一步等我回复「好了」再继续。",
+   "scene_tags": [
+    "工程框架",
+    "实用 skills",
+    "后端",
+    "前端"
+   ]
+  }
+ }
+}

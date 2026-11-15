@@ -1,0 +1,52 @@
+<body>
+<div class="page">
+
+  <header class="issue-header">
+    <div>
+      <h1>GitHub 热榜拆解 / 第三期<span class="branch-tag">个人项目适配与技术精进</span><span class="branch-tag plus-tag">复制给 AI · 公开版</span></h1>
+      <div class="date">2026年11月11日 · 北京时间</div>
+      <p class="issue-meta">
+        怎么选的：从本周 GitHub Trending 里挑，避开第一、二期推过的仓库（2026-11-11 抓取，以周榜为主、日榜补充）。本期偏向这几类：让 AI 查数前先统一说法（语义层 / Ontology）、人和 AI 共用一套界面零件、能自己部署的多 bot 助手、让多个 AI 同时干活不打架（worktree）、让 AI 自己操作浏览器（Computer Use）、拿来就能用的工程 skill，以及开源的 PR 自动审查。
+      </p>
+      <div class="hint-line">选中或点按蓝色词条可看释义</div>
+    </div>
+  </header>
+
+
+  <section class="toolmap" id="toolmap" aria-label="独立开发者 GitHub 工具地图">
+    <div class="toolmap-hd">
+      <div>
+        <h2>独立开发者 GitHub 工具地图</h2>
+        <p class="sub">做一个产品，从想法到发布分 8 步。每个开源项目放在它负责的那一步：黑色是本期（点了跳到卡片），浅灰是往期（点了去 GitHub）。</p>
+      </div>
+    </div>
+    <div class="steps3">
+      <span><b>1</b>看地图：找到你卡在哪一步</span>
+      <span><b>2</b>看难度星：挑一个今天能装上的</span>
+      <span><b>3</b>复制提示词：交给 AI 带你做</span>
+    </div>
+    <div class="flow" id="flow"></div>
+    <div class="map-legend">
+      <span><i style="background:#c45c26"></i>本期最推荐</span>
+      <span><i style="background:#111"></i>本期项目 · 星数=上手难度</span>
+      <span><i style="background:#dcdce0"></i>往期项目（标期号）</span>
+    </div>
+    <div class="map-advice" id="map-advice">
+      <strong>非程序员建议顺序：</strong>先装 <a href="#p06">mattpocock/skills</a>（1 星，约 10 分钟），开工前让 AI 把需求追问清楚，最省返工；再装 <a href="#p05">agent-browser</a>，让 AI 自己点网页、截图给你看；有了 GitHub 仓库，再加 <a href="#p07">pr-agent</a> 自动审 PR。<a href="#p04">worktrunk</a> 等你同时开 2 个以上 AI 再装；<a href="#p01">auto-ontology</a> 和 <a href="#p03">OpenMausBot</a> 体量大，先学思路，可以不装；<a href="#p02">astryx</a> 只有做 React 网页时才用得上。
+    </div>
+  </section>
+
+  <nav class="toc">
+    <h2>本期目录 · 共 7 项</h2>
+    <ol>
+      <li><a href="#toolmap">独立开发者 GitHub 工具地图</a></li>
+      <li><a href="#p01">auto-ontology</a><span class="rec-tag">本期最推荐</span><span class="diff-mini" title="上手难度">★★★★★</span><span class="time-mini">约 2–3 小时</span></li>
+      <li><a href="#p02">astryx</a><span class="diff-mini" title="上手难度">★★★</span><span class="time-mini">约 1 小时</span></li>
+      <li><a href="#p03">OpenMausBot</a><span class="diff-mini" title="上手难度">★★</span><span class="time-mini">约 20–30 分钟</span></li>
+      <li><a href="#p04">worktrunk</a><span class="diff-mini" title="上手难度">★★</span><span class="time-mini">约 15 分钟</span></li>
+      <li><a href="#p05">agent-browser</a><span class="diff-mini" title="上手难度">★★</span><span class="time-mini">约 15–20 分钟</span></li>
+      <li><a href="#p06">skills（mattpocock）</a><span class="diff-mini" title="上手难度">★</span><span class="time-mini">约 10 分钟</span></li>
+      <li><a href="#p07">pr-agent</a><span class="diff-mini" title="上手难度">★★★</span><span class="time-mini">约 30–45 分钟</span></li>
+    </ol>
+  </nav>
+  <!--SLOT:connect-->

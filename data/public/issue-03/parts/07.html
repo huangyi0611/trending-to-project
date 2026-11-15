@@ -1,0 +1,83 @@
+  <article class="project" id="p07">
+    <div class="rank">#07</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ PR 审查</span>
+        <span class="pill">自己部署</span>
+        <span class="pill">GitHub Actions</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">🔎</div>
+        <div>
+          <h2 class="pname">pr-agent</h2>
+          <p class="pdesc">GitHub 上开源的 PR 审查 Agent：在 PR 下面用 <code>/review</code>、<code>/describe</code>、<code>/improve</code>、<code>/ask</code> 等命令，自动写说明、提审查意见和改进建议。可以放进 GitHub Actions 跑、当 CLI 用，或者部署在自己的服务器上，也支持 GitLab、Bitbucket、Azure DevOps 等平台。仓库写明：这是社区维护的开源项目，<strong>和 Qodo 公司的免费版、托管产品是两回事</strong>。</p>
+          <p class="prepo"><a href="https://github.com/The-PR-Agent/pr-agent" target="_blank" rel="noopener">The-PR-Agent/pr-agent</a> · <a href="https://docs.pr-agent.ai/" target="_blank" rel="noopener">docs.pr-agent.ai</a></p>
+          <span class="license">开源协议 MIT</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">15,885</div></div>
+      <div class="metric"><div class="label">↗ 本周新增</div><div class="value">+1,591</div><div class="hint">周榜 · 2026-11-11</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">Python</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">2,170</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li>PR 新建或更新时自动审查；也可以在评论里手动发命令。</li>
+          <li>遇到改动很大的 PR，按文档里的压缩办法处理，不会把全部改动（diff）硬塞给模型。</li>
+          <li>通过 LiteLLM 切换 OpenAI、Claude、Gemini、Ollama 等模型。</li>
+          <li>提示词和审查类别都能在配置文件里改，方便放进团队自己的审查清单。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">AI 先审一遍，合并按钮还在人手里</div>
+          <p>它让每条 PR 都先有一份能读懂的审查意见；机器说「没问题」也不代表可以合并。这正好对应「AI 可以改代码、提 PR，合并和上线必须人确认」的规矩。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>已经让 AI 提 PR、需要一条稳定的自动预审流程，又希望代码只经过自己的模型密钥或自己部署的服务的人。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：AI 审查会漏，也会误报，不能当合并许可。</strong>
+          <span class="fix">应对：只把它当第一轮意见。合并前仍按你的清单人工确认（状态流转、登录验证、权限这些关键地方尤其要看）。</span></li>
+        <li><strong>缺点2：代码会发给你配置的模型服务商。</strong>自己部署也不等于数据不出门。
+          <span class="fix">应对：读仓库里的 Data Privacy（数据隐私）说明。敏感项目用自己控制的模型地址（或本地模型），限制 Action 密钥的权限范围，别让私钥出现在日志里。</span></li>
+        <li><strong>缺点3：有已知的安全注意事项，名字也容易和商业产品搞混。</strong>比如 README 写明，<code>/help_docs</code> 命令从 v0.36.1 版起因为可能泄露凭据暂时关闭（issue #2445）；Docker 镜像的名字也换过。
+          <span class="fix">应对：别开已经关闭或没修好的命令；锁定检查过的版本，镜像名用 <code>pragent/pr-agent</code>（0.34.2 及以上）。开源的 PR-Agent 和 Qodo 的托管产品要分开配置。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>价值在于能接进现有的 Git 流程：一条命令、大 PR 能压缩、提示词能改、模型能换。比起再做一个聊天里的审查机器人，它更贴近团队平时的做法。</p>
+          <p>它也提醒你分清产品边界：开源的老项目和公司托管的产品已经分家了。选工具前先想好，你要自己部署，还是要商业平台。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>只是自己偶尔看看改动，编辑器自带的审查或人工看就够。PR 多、希望评论区格式统一，再装 pr-agent。GitHub 官方或其他商业审查工具功能更全，但数据去向和价格不同，按隐私要求和预算选一个主工具。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 周榜（2026-11-11）；本周约 +1,591。项目本身比较老（约 2023 年开始），因为移交给社区维护、加上审查需求一直在，再次变热。和你「AI 提 PR、人确认合并」的工作方式对得上。</p>
+          <div class="risk"><strong>风险：</strong>MIT。已转为社区维护，发展方向看志愿维护者。未解决的 issue 约 41 个。使用前核对被关闭的命令、镜像来源和密钥泄露相关的 issue。它和 Qodo 官方的免费服务是两回事。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>

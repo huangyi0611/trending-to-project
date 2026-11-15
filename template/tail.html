@@ -1,0 +1,234 @@
+</div>
+
+<div id="term-pop" role="dialog" aria-modal="false" aria-label="词条释义">
+  <div class="pop-hd">
+    <div>
+      <div class="pop-title">词条释义</div>
+      <div class="pop-term" id="pop-term">—</div>
+    </div>
+    <button type="button" class="pop-x" id="pop-close" aria-label="关闭">×</button>
+  </div>
+  <div id="pop-body"></div>
+</div>
+
+<script>
+
+__GLOSSARY_JS__
+
+
+
+const pop = document.getElementById('term-pop');
+const popTerm = document.getElementById('pop-term');
+const popBody = document.getElementById('pop-body');
+const popClose = document.getElementById('pop-close');
+
+function normalize(s) {
+  return (s || '').trim().replace(/\s+/g, ' ');
+}
+
+function isAsciiKey(k){ return /[A-Za-z0-9]/.test(k); }
+function hasWord(hay, k){
+  const i = hay.toLowerCase().indexOf(k.toLowerCase());
+  if (i < 0) return false;
+  if (!isAsciiKey(k)) return true;
+  const b = hay[i-1] || ' ', a = hay[i+k.length] || ' ';
+  return !/[A-Za-z0-9_]/.test(b) && !/[A-Za-z0-9_]/.test(a);
+}
+function lookup(raw) {
+  let q = normalize(raw);
+  if (!q || q.length > 64) return null;
+  if (GLOSSARY[q]) return { key: q, data: GLOSSARY[q] };
+  const lower = q.toLowerCase();
+  for (const k of Object.keys(GLOSSARY)) {
+    if (k.toLowerCase() === lower) return { key: k, data: GLOSSARY[k] };
+  }
+  // 自家项目名、常见词不释义
+  for (const s of GLOSS_STOP) { if (lower === s.toLowerCase()) return null; q = q.split(s).join(' '); }
+  const keys = Object.keys(GLOSSARY).sort((a,b) => b.length - a.length);
+  for (const k of keys) {
+    if (k.length >= 2 && hasWord(q, k)) return { key: k, data: GLOSSARY[k] };
+  }
+  return null;
+}
+
+function renderHit(key, data) {
+  popTerm.textContent = data.main ? (key + ' · ' + data.main) : key;
+  const blk = (h, v) => v ? `<div class="blk"><h4>${h}</h4><p>${esc(v)}</p></div>` : '';
+  popBody.innerHTML = blk('是什么', data.what) + blk('相当于', data.like) + blk('为什么需要', data.why) + blk('出处 · 谁在用', data.src);
+}
+
+function renderMiss(q) {
+  popTerm.textContent = q.slice(0, 40) || '（空）';
+  popBody.innerHTML = `<p class="miss">词库里还没有这条。本页释义是预置的，没有联网 AI。可以换一个蓝色词条，或选更短的技术词再试。</p>`;
+}
+
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function placePop(clientX, clientY) {
+  pop.classList.add('open');
+  const pad = 12;
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  // measure
+  pop.style.left = '0px';
+  pop.style.top = '0px';
+  const rect = pop.getBoundingClientRect();
+  let left = clientX + 8;
+  let top = clientY + 12;
+  if (left + rect.width > vw - pad) left = Math.max(pad, vw - rect.width - pad);
+  if (top + rect.height > vh - pad) top = Math.max(pad, clientY - rect.height - 12);
+  pop.style.left = left + 'px';
+  pop.style.top = top + 'px';
+}
+
+function showForText(text, x, y) {
+  const hit = lookup(text);
+  if (!hit) return;
+  renderHit(hit.key, hit.data);
+  placePop(x, y);
+}
+
+function hidePop() {
+  pop.classList.remove('open');
+}
+
+popClose.addEventListener('click', (e) => { e.stopPropagation(); hidePop(); });
+
+document.addEventListener('click', (e) => {
+  const t = e.target.closest && e.target.closest('span.term');
+  if (t) {
+    e.preventDefault();
+    e.stopPropagation();
+    const key = t.getAttribute('data-term') || t.textContent;
+    const hit = lookup(key) || (GLOSSARY[key] ? { key, data: GLOSSARY[key] } : null);
+    if (hit) renderHit(hit.key, hit.data);
+    else renderMiss(key);
+    placePop(e.clientX, e.clientY);
+    return;
+  }
+  if (!pop.contains(e.target)) hidePop();
+});
+
+let selectTimer = null;
+function onSelectionChange(ev) {
+  clearTimeout(selectTimer);
+  selectTimer = setTimeout(() => {
+    const sel = window.getSelection();
+    if (!sel || sel.isCollapsed) return;
+    const text = normalize(sel.toString());
+    if (!text || text.length < 2) return;
+    // ignore huge selections
+    if (text.length > 48) return;
+    if (window.__copyBusy) return;
+    let x = 16, y = 80;
+    try {
+      const r = sel.getRangeAt(0).getBoundingClientRect();
+      if (r && (r.width || r.height)) {
+        x = r.left + r.width / 2;
+        y = r.bottom;
+      }
+    } catch (_) {}
+    if (ev && ev.clientX) { x = ev.clientX; y = ev.clientY; }
+    showForText(text, x, y);
+  }, 280);
+}
+
+document.addEventListener('mouseup', onSelectionChange);
+document.addEventListener('touchend', onSelectionChange, { passive: true });
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') hidePop();
+});
+
+
+</script>
+
+<script>
+/* ===== 工具地图数据：每期往 TOOLMAP_ISSUES 里追加一组即可 ===== */
+__TOOLMAP_JS__
+(function renderToolMap(){
+  const flow = document.getElementById('flow');
+  if (!flow) return;
+  const esc2 = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  TOOLMAP_STAGES.forEach((st, idx) => {
+    const col = document.createElement('div');
+    col.className = 'stage';
+    col.dataset.stage = st.key;
+    let chips = '';
+    TOOLMAP_ISSUES.filter(g => g.current).forEach(g => g.items.filter(it => it.stage === st.key).forEach(it => {
+      chips += '<a class="chip cur' + (it.rec ? ' rec' : '') + '" href="#' + it.id + '" title="' + esc2(it.repo) + '">' +
+        '<span class="c-name">' + esc2(it.name) + ' <span class="c-star">' + '★'.repeat(it.stars) + '</span></span>' +
+        '<span class="c-what">' + esc2(it.what) + '</span></a>';
+    }));
+    TOOLMAP_ISSUES.filter(g => !g.current).forEach(g => g.items.filter(it => it.stage === st.key).forEach(it => {
+      chips += '<a class="chip past" href="https://github.com/' + esc2(it.repo) + '" target="_blank" rel="noopener" title="第' + g.issue + '期 · ' + esc2(it.repo) + ((typeof GLOSSARY !== 'undefined' && GLOSSARY[it.repo]) ? ' · ' + esc2(GLOSSARY[it.repo].what) : '') + '">' +
+        '<span class="c-iss">第' + g.issue + '期</span>' + esc2(it.repo.split('/')[1]) + '</a>';
+    }));
+    if (!chips) chips = '<div class="stage-empty">暂无</div>';
+    col.innerHTML = '<div class="stage-hd"><span class="stage-no">' + (idx + 1) + '</span><span class="stage-name">' + esc2(st.name) + '</span></div><div class="chips">' + chips + '</div>';
+    flow.appendChild(col);
+  });
+})();
+
+/* ===== 复制按钮：clipboard → execCommand → 选中文字兜底 ===== */
+(function setupCopy(){
+  const toast = document.createElement('div');
+  toast.className = 'copy-toast';
+  document.body.appendChild(toast);
+  let tt = null;
+  function showToast(msg){ toast.textContent = msg; toast.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => toast.classList.remove('show'), 2200); }
+  function selectEl(el){
+    const r = document.createRange(); r.selectNodeContents(el);
+    const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+  function legacyCopy(text){
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;';
+    document.body.appendChild(ta);
+    ta.focus(); ta.select();
+    try { ta.setSelectionRange(0, text.length); } catch (_) {}
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (_) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+  function mark(btn, cls, label){
+    btn.classList.remove('ok', 'warn'); btn.classList.add(cls); btn.textContent = label;
+    setTimeout(() => { btn.classList.remove(cls); btn.textContent = '复制'; }, 2000);
+  }
+  window.__copyBusy = false;
+  document.addEventListener('click', async (e) => {
+    const exp = e.target.closest && e.target.closest('[data-expand]');
+    if (exp) {
+      const box = exp.closest('.prompt'); box.classList.toggle('expanded');
+      exp.textContent = box.classList.contains('expanded') ? '收起' : '展开全文';
+      return;
+    }
+    const btn = e.target.closest && e.target.closest('[data-copy]');
+    if (!btn) return;
+    e.preventDefault(); e.stopPropagation();
+    const pre = btn.closest('.prompt').querySelector('.prompt-text');
+    const text = pre.textContent;
+    window.__copyBusy = true;
+    let ok = false;
+    if (navigator.clipboard && window.isSecureContext !== false) {
+      try { await navigator.clipboard.writeText(text); ok = true; } catch (_) { ok = false; }
+    }
+    if (!ok) ok = legacyCopy(text);
+    if (ok) { mark(btn, 'ok', '已复制 ✓'); showToast('已复制，粘贴给 AI 即可'); }
+    else {
+      const box = pre.closest('.prompt'); box.classList.add('expanded');
+      const eb = box.querySelector('[data-expand]'); if (eb) eb.textContent = '收起';
+      selectEl(pre);
+      mark(btn, 'warn', '已选中');
+      showToast('浏览器不让自动复制：文字已选中，请按 Ctrl/⌘+C 或长按「拷贝」');
+    }
+    setTimeout(() => { window.__copyBusy = false; }, 600);
+  }, true);
+})();
+</script>
+<!--__CONNECT_JS__--></body>
+</html>

@@ -1,0 +1,83 @@
+  <article class="project" id="p02">
+    <div class="rank">#02</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ 界面零件库</span>
+        <span class="pill">AI 也能用</span>
+        <span class="pill">React 19</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">🧩</div>
+        <div>
+          <h2 class="pname">astryx</h2>
+          <p class="pdesc">Meta 在 GitHub 上开源的设计系统（目前是 Beta 测试版）：150 多个照顾无障碍使用的界面组件，加上主题、页面模板和 CLI。人和 Agent 看同一套说明来搭界面。底层用 React 19 和 StyleX；官方说使用时也能用 <code>className</code>、Tailwind 或普通 CSS 改样式，不用绑死某个打包插件。</p>
+          <p class="prepo"><a href="https://github.com/meta/astryx" target="_blank" rel="noopener">meta/astryx</a> · <a href="https://astryx.atmeta.com" target="_blank" rel="noopener">astryx.atmeta.com</a></p>
+          <span class="license">开源协议 MIT</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">23,057</div></div>
+      <div class="metric"><div class="label">↗ 今日新增</div><div class="value">+3,108</div><div class="hint">日榜 · 2026-11-11</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">TypeScript</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">1,829</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li>一整套能拼装的组件、品牌级主题（含深色模式）和现成的页面模板。</li>
+          <li>用 CLI 查组件文档、生成项目骨架、换主题、批量自动改代码（codemod），人和 AI 走同一个入口。</li>
+          <li>想大改某个组件时，可以用 swizzle 把组件源码复制到自己项目里随便改。</li>
+          <li>官方说它在 Meta 内部用了约八年、支撑过大量应用才开源；有公开文档、组件展示页（Storybook）和在线试玩页（Sandbox）可以对照。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">人和 AI 共用同一个零件盒</div>
+          <p>组件库很多，它的特别之处是规矩统一、文档齐全，AI 才能猜准下一个组件该怎么用。只给模型看截图或零散例子，很难做到这一点。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>在做 React 网页或管理后台、想让 AI 帮忙搭页面的人。做 iOS 原生 App 的人，更适合把它当「零件说明怎么写」的参考，不用直接装。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：只适用于 React 网页。</strong>它是 React 组件，放不进 iOS、Android 原生工程。
+          <span class="fix">应对：别为了追热度把原生 App 改写成 React。可以抄的是：统一命名、统一的组件参数（props）写法、给 AI 一份「什么场景选哪个组件」的短文档。以后做 React 网页时，再考虑引入。</span></li>
+        <li><strong>缺点2：还在 Beta 测试期，未解决的 issue 约 691 个。</strong>图表等包还标着 canary，稳不稳定要自己判断。
+          <span class="fix">应对：正式使用先锁定版本号，只装真正用到的包（core 加一个主题）。关注更新日志（changelog），开源不等于稳定。</span></li>
+        <li><strong>缺点3：swizzle 之后容易和官方版本走散。</strong>源码复制进你的仓库后，官方修的 bug 不会自动同步过来。
+          <span class="fix">应对：能用主题变量和 <code>className</code> 改的，就别 swizzle。真复制出来了，记下改了哪几个文件、为什么改，并安排好以后怎么跟上官方版本。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>好的设计系统省掉的是「每次从零猜界面」的功夫。对 AI 尤其明显：命名、参数、组合方式一致，生成的结果才可预期。Astryx 把给人看的文档和给 AI 用的 CLI 做成同一套，方向是对的。</p>
+          <p>它的另一个思路是「多给建议、少加限制」：组件尽量照你传入的值显示，设计建议写在文档和示例里，框架本身不跟你较劲。这对人和模型都更友好。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>只要几个按钮，用平台自带的组件（比如手机系统自带的控件）就够。网页多、人和 AI 一起改，完整的设计系统才划算。Astryx、Material、Ant Design 别同时用三套；选定一套，例外情况写进一份短规范。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 日榜靠前（2026-11-11）；当天约 +3,108。大厂开源，明确写给 AI 用，和做界面的需求相关。</p>
+          <div class="risk"><strong>风险：</strong>MIT 协议，很宽松。还在 Beta，未解决的 issue 很多。由 Meta 维护，发展方向由官方决定。抓取时最近一次推送约 2026-11-11 10:22（北京时间），很活跃，但对外接口（API）还可能调整。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>

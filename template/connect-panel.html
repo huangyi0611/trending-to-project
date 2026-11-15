@@ -1,0 +1,26 @@
+  <section class="connect" id="connect" aria-label="连接你的项目">
+    <div class="connect-hd">
+      <h2>连接你的项目 <span class="connect-opt">可选</span></h2>
+      <p class="sub">每张卡的「适合场景」「② 对照你的项目」「① 给你的项目用」要结合你自己的项目才写得准，所以先空着。填几句项目简介，本页会在你的浏览器里拼出提示词，你复制给自己的 AI 工具，就能得到这三块内容。</p>
+    </div>
+    <div class="connect-safe no-term">
+      <b>隐私：</b>你填的内容只放在这个页面的内存里，不联网、不上传、不保存，刷新或点「清空」就没了。本页没有任何统计代码和第三方脚本。也请别填密钥、密码、内部网址和用户数据，项目简介写到「别人看了能懂你在做什么」就够。
+    </div>
+    <div class="connect-form">
+      <label>项目名称<input type="text" id="cx-name" maxlength="80" placeholder="例如：小区二手书交换小程序" autocomplete="off"></label>
+      <label>用了哪些技术（不知道可以空着）<input type="text" id="cx-stack" maxlength="300" placeholder="例如：微信小程序 + 云开发数据库" autocomplete="off"></label>
+      <label>一两句话介绍<textarea id="cx-summary" rows="3" maxlength="1200" placeholder="例如：让同一个小区的邻居互相借书、换书，按楼栋显示附近的书。" autocomplete="off"></textarea></label>
+      <label>最近想解决的问题（可选）<textarea id="cx-goals" rows="2" maxlength="800" placeholder="例如：想让 AI 帮我写测试，减少每次上线前手动点一遍。" autocomplete="off"></textarea></label>
+      <div class="connect-actions">
+        <button type="button" class="cx-btn" id="cx-make">生成提示词</button>
+        <button type="button" class="cx-btn ghost" id="cx-clear">清空</button>
+        <span class="cx-status" id="cx-status" aria-live="polite"></span>
+      </div>
+    </div>
+    <div class="prompt connect-all" id="cx-all" hidden>
+      <div class="prompt-hd"><div class="pt">整期一次生成<small>本期全部项目一起分析</small></div><button type="button" class="copy-btn" data-copy>复制</button></div>
+      <pre class="prompt-text"></pre>
+      <button type="button" class="expand-btn" data-expand>展开全文</button>
+    </div>
+    <p class="connect-alt">更省事的做法：在自己电脑上填好 <code>my-project.yaml</code>，让你自己的 AI 工具运行仓库里的 <code>skills/project-fit/SKILL.md</code>。详见仓库 README。</p>
+  </section>
