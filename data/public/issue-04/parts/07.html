@@ -1,0 +1,83 @@
+  <article class="project" id="p07">
+    <div class="rank">#07</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ 产品宣传片</span>
+        <span class="pill">Remotion</span>
+        <span class="pill">剪映草稿</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">🎬</div>
+        <div>
+          <h2 class="pname">video-shotcraft</h2>
+          <p class="pdesc">GitHub 上的开源项目，开发者 Vincentwei1021 做的视频 skill。对 Claude Code 或 Codex 说一句「给我的产品做个宣传片」，AI 会截取产品的真实页面，从镜头库里挑镜头、写分镜，用 Remotion 做成动画，配上卡点音乐和音效，逐帧检查后交给你一个 MP4。画面都是代码照着你的截图和文案画出来的，清晰，还能接着改。</p>
+          <p class="prepo"><a href="https://github.com/Vincentwei1021/video-shotcraft" target="_blank" rel="noopener">Vincentwei1021/video-shotcraft</a> · <a href="https://vincentwei1021.github.io/video-shotcraft/" target="_blank" rel="noopener">镜头库 Gallery</a></p>
+          <span class="license">开源协议 Apache-2.0（渲染用的 Remotion 另有许可，见缺点2）</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">20,105</div></div>
+      <div class="metric"><div class="label">↗ 本月新增</div><div class="value">+7,937</div><div class="hint">月榜 · 2026-11-16</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">TypeScript</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">1,878</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li>镜头库：124 张「镜头配方卡」、150 个镜头，分开场、运镜、转场、文字、界面入场、数据、收尾等 10 类，在线 Gallery 能预览、复制镜头名。</li>
+          <li>全流程：截取真实页面 → 定视觉方向 → 分镜 → Remotion 动画 → 卡点和音效 → 逐帧检查 → 输出 1920×1080 的 MP4。</li>
+          <li>出片后打开一个类似剪映的浏览器编辑器（Motion Workbench），能改文案、颜色、剪辑、换镜头再导出。</li>
+          <li>可以导出剪映草稿：镜头、字幕、音效、背景音乐分轨，在剪映里接着剪（README 写明在 macOS 剪映专业版 11.2 上验证过）。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">不会剪视频，也能让 AI 照着「镜头配方」做宣传片</div>
+          <p>它把剪辑师的手艺拆成了 124 张配方卡：每个镜头怎么动、配什么节奏都写清楚，AI 照着配方拼片子。导出剪映草稿对中文创作者特别友好：AI 出初稿，人在剪映里精修。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>要给产品、开源项目或自己的小红书账号做宣传视频的独立开发者和内容创作者。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：环境要求不低，国内下载可能卡住。</strong>要 Node.js 和 npm、ffmpeg；卡点分析要 uv；截页面要 puppeteer。Remotion 第一次渲染要下载自带的无头 Chrome，国内网络可能下不来。
+          <span class="fix">应对：优先在 macOS 上用（作者主要在 macOS 测试）；下载卡住时按 README 的说明手动指定浏览器路径；GitHub 慢就从国内镜像 AtomGit 克隆。</span></li>
+        <li><strong>缺点2：Remotion 的许可要看清楚。</strong>个人、3 人以内的营利公司、非营利组织可以免费用，商用也行；更大的营利公司要买公司授权。
+          <span class="fix">应对：个人账号做宣传片一般在免费范围内；团队变大前，先查 remotion.dev 上的授权条款。</span></li>
+        <li><strong>缺点3：个人维护，风格比较固定。</strong>镜头库是作者调出来的，偏「科技产品发布会」风格；剪映导出的 Windows 版还没测试。
+          <span class="fix">应对：先用 Ink Press 模板跑通一条，再按需要挑镜头；最后的精修放到剪映里做。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>价值在于把审美变成能复用的配方。每张镜头卡写清动效、节奏和适用场景，再配一份能运行的 Remotion 代码。AI 从库里挑选、组合、调参数，结果稳定，也改得动。思路和设计系统一样：先攒零件，再拼成品。</p>
+          <p>逐帧检查是另一个亮点：渲染完用 ffmpeg 抽帧，按视觉检查标准自查一遍，才交给人。AI 产出先自检再交付，这条规矩放到任何内容生成上都适用。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>第一期的 hyperframes 是「写 HTML 出视频」的通用底座；第二期的 OpenMontage 偏全流程视频制作；video-shotcraft 专做产品宣传片，带现成镜头库和剪映导出。只想做产品介绍短片，选它最快；要做讲解类的口播视频，看作者的姊妹项目 video-talkcraft。视频工具别同时装好几个，先选一个跑通。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 月榜（本月 +7,937，2026-11-16 抓取）。补上工具地图里「发布和内容」这一步，对要做小红书和产品宣传的独立开发者最直接。</p>
+          <div class="risk"><strong>风险：</strong>Apache-2.0，Remotion 另有许可（见缺点2）。个人维护，抓取时最近一次推送 2026-11-15 21:34（北京时间），未解决的 issue 约 5 个。README 里有赞助商广告。可选的社交平台发布功能要调用第三方服务 Upload-Post，用之前先确认文案和平台。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>

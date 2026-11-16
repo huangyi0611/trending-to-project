@@ -34,6 +34,7 @@
 
 - 首页：<https://huangyi0611.github.io/trending-to-project/>
 - 第三期：<https://huangyi0611.github.io/trending-to-project/examples/issue-03.html>
+- 第四期：<https://huangyi0611.github.io/trending-to-project/examples/issue-04.html>
 
 用 Safari 点开即可，词条弹窗和复制按钮都能用。这个链接可以发到小红书或其他地方。
 

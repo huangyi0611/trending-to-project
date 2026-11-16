@@ -1,0 +1,83 @@
+  <article class="project" id="p04">
+    <div class="rank">#04</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ AI 交付流水线</span>
+        <span class="pill">人工审批节点</span>
+        <span class="pill">自己部署</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">🏭</div>
+        <div>
+          <h2 class="pname">LoopForge</h2>
+          <p class="pdesc">GitHub 上的开源项目，腾讯开源的「AI 写代码车间」，部署在你自己的服务器上。你在聊天里提需求，主控 bot（Main Bot）开一个 Docker 沙盒、拉下你的仓库，把活分给规划、实现、审查、测试几个角色，最后开 PR。用顺手的做法可以存成 SOP（标准作业流程），以后每次按同样的步骤走，关键节点停下来等人批准。干活的是 Claude Code、Codex、CodeBuddy 等十种 AI 编程工具。</p>
+          <p class="prepo"><a href="https://github.com/Tencent/LoopForge" target="_blank" rel="noopener">Tencent/LoopForge</a></p>
+          <span class="license">开源协议 MIT（第三方组件按各自许可；GitHub 自动识别显示 NOASSERTION，以仓库 LICENSE 文件为准）</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">1,616</div></div>
+      <div class="metric"><div class="label">↗ 今日新增</div><div class="value">+423</div><div class="hint">日榜 · 2026-11-16</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">Go</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">282</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li>两种用法：和 Main Bot 聊天，适合探索和小修；跑 SOP，适合步骤固定、需要签字的交付。两条路挂在同一份「需求」上，每个改动对应哪个需求、花了多少钱都看得到。</li>
+          <li>SOP 设计器：在画布上摆「Agent 节点、脚本节点、人工审批节点、子流程」，检查没过可以退回前面某一步重做。自带后端、前端、修 bug、产品文档几套模板。</li>
+          <li>每次运行都留记录：每个节点的状态、工具调用、日志和产出文件快照，可以暂停、重试，或从任意一步重跑。</li>
+          <li>不想搭服务器：LoopForge Local 用 <code>npx -y loopforge-cli@latest install claude</code> 把内置流程装进你现有的 AI 工具，再用 <code>/start-devflow</code> 开工。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">把「AI 一次性发挥」变成「每次按同一套流程交付」</div>
+          <p>直接让 AI「修个 bug」，结果全看那一次的运气：可能跳过计划、忘了测试、自己审自己。LoopForge 把计划、实现、审查、测试拆给不同角色，中间插进不用 AI 的脚本（跑测试、跑检查）和人工审批。README 记了一次真实运行：四个角色完成一个 Python 修复，三个真实测试通过，等人批准后，还核对了被批准的代码没有再被改动。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>想让 AI 稳定交付、愿意花时间搭一套流程的独立开发者或小团队。只是偶尔让 AI 改改代码的人，用 Local 版或先学思路就够。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：平台版体量大，默认设置面向「可信团队」。</strong>要 Docker、Compose、Python 3，会起 MySQL 和平台服务；默认在所有网卡上监听 8090 端口，登录的人能看到整个实例的项目数据。
+          <span class="fix">应对：个人先用 LoopForge Local，或只在本机试玩。真要放上云服务器，先按官方部署文档配好 HTTPS、关掉公开注册（<code>AGENTFLOW_ALLOW_SIGNUP=false</code>），端口别直接暴露到公网。</span></li>
+        <li><strong>缺点2：内置角色默认用腾讯的 CodeBuddy。</strong>需求澄清、通知摘要、Bot 回复和运行评估目前也走 CodeBuddy。
+          <span class="fix">应对：每个角色可以单独换执行工具和模型；先确认手上有哪家的密钥，再挑模板。</span></li>
+        <li><strong>缺点3：项目很新，变化快。</strong>2026 年 7 月创建，抓取时最新的是 v0.3.9 候选版；聊天工作台目前只有中文界面。
+          <span class="fix">应对：部署时锁定一个正式版本号，升级前看 CHANGELOG；先用 demo 项目里「脚本 + 人工审批」的示例 SOP 练手，不需要 API key。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>价值在于把软件工程里成熟的做法搬给 AI：职责分离（写代码的和审代码的分开）、确定性步骤用脚本（README 的说法是「不需要 AI 的地方就不用 AI」）、关卡式审批、每一步留证据。AI 是流程里的工人，流程由人设计，能复用，能追溯。</p>
+          <p>它还把账算清楚：按公开报价统计每次运行、每段对话用了多少 token、花了多少钱。交付了什么和花了多少放在同一张表上，用 AI 干活才算真正管得住。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>一个人用一个 AI：用不上它，Plannotator 守住计划和合并两个关口就够。一个人同时开几个 AI：第三期的 worktrunk 管并行不打架。要固定流程、角色分工、审批和成本报表：用 LoopForge。全套都上管理成本高，个人开发者建议先把它的 SOP 思路抄成一份文字清单。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 日榜（今日 +423，2026-11-16 抓取）。大厂开源、MIT 许可，切中「AI 交付要有人签字」这个需求；星数还不多，流程设计很值得学。</p>
+          <div class="risk"><strong>风险：</strong>MIT。腾讯团队维护，2026 年 7 月创建，更新频繁（一周内发了 v0.3.6、v0.3.8 和 v0.3.9 候选版）。未解决的 issue 约 45 个。部署时注意端口、账号和公开注册设置。第三方组件（含修改过的 obra/superpowers）见仓库里的 THIRD_PARTY_NOTICES.md。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>

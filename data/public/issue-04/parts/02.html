@@ -1,0 +1,83 @@
+  <article class="project" id="p02">
+    <div class="rank">#02</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ 网页新写法</span>
+        <span class="pill">skill + CLI</span>
+        <span class="pill">有对照评测</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">🌐</div>
+        <div>
+          <h2 class="pname">modern-web-guidance-src</h2>
+          <p class="pdesc">GitHub 上的开源项目，Google Chrome 团队牵头，Microsoft Edge、Mozilla Firefox 和 MDN 团队一起维护。它是一套给 AI 编程工具用的网页知识包：AI 写网页时，先按需查一篇最新的官方写法指南，少写过时、臃肿的代码。这个仓库是源码库，放指南的编写、校准和评测工具；用户实际安装的是 <code>GoogleChrome/modern-web-guidance</code>。</p>
+          <p class="prepo"><a href="https://github.com/GoogleChrome/modern-web-guidance-src" target="_blank" rel="noopener">GoogleChrome/modern-web-guidance-src</a> · <a href="https://developer.chrome.com/docs/modern-web-guidance" target="_blank" rel="noopener">developer.chrome.com/docs/modern-web-guidance</a></p>
+          <span class="license">开源协议 Apache-2.0</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">7,273</div></div>
+      <div class="metric"><div class="label">↗ 今日新增</div><div class="value">+1,219</div><div class="hint">日榜 · 2026-11-16</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">TypeScript</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">606</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li>一条命令装进 AI 工具：<code>npx modern-web-guidance@latest install</code> 会打开安装向导；也支持 <code>npx skills add</code>、<code>gh skill install</code> 和 Claude Code、Codex 的插件市场。</li>
+          <li>AI 写网页时按需查指南，覆盖约 250 个现代网页功能：弹窗、悬浮提示、页面切换动画、深色模式、表单校验、图片加载提速、无障碍（读屏和键盘操作）等。</li>
+          <li>不装也能试：<code>search</code> 搜指南，<code>retrieve</code> 取一篇全文，<code>legacy-scan .</code> 扫一遍你的代码，找出能换成新写法的老代码。</li>
+          <li>另有一个 Chrome 扩展开发的知识包，讲 Manifest V3、后台脚本和上架 Chrome Web Store。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">有对照实验：装上以后，AI 写网页的通过率涨了约 30 个百分点</div>
+          <p>它每隔两天用真实网页任务测一次：同一个 AI，不装指南和装了指南各做一遍，用自动化检查打分。README 公布的 11 月 8 日结果：Claude Code 从 57% 提到 88%，Codex 从 54% 提到 82%，Antigravity 从 58% 提到 94%。拿做对率说话，很实在。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>让 AI 写网页、落地页、小工具页面的人。非程序员做个人主页、活动页也用得上：AI 少用笨重的老办法，页面更快，手机上也更顺。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：只管网页。</strong>它讲的是浏览器里的 HTML、CSS、JavaScript，对手机原生 App 和后端接口帮不上忙。
+          <span class="fix">应对：只在网页项目里装。原生 App 的界面规范，看平台官方文档。</span></li>
+        <li><strong>缺点2：默认收集匿名使用数据。</strong>README 写明会收集安装次数、调用它的 AI 工具名、查了哪些指南、AI 生成的搜索词；不收集你的原始提示词。
+          <span class="fix">应对：在 shell 配置文件里加 <code>DISABLE_TELEMETRY=1</code> 关掉。</span></li>
+        <li><strong>缺点3：新写法要看浏览器支持。</strong>它覆盖到最前沿的功能，有些功能旧浏览器还不认。
+          <span class="fix">应对：让 AI 每用一个新功能都说明哪些浏览器支持、不支持时怎么降级（README 也强调用轻量的降级办法）；上线前用手机 Safari 和一个旧版浏览器各看一次。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>价值在于对付 AI 的「知识过期」：模型训练数据里老代码多，它就习惯写老办法。这个项目把指南压得很短（装进 AI 的入口说明约 205 个 token），用到时才查全文，不多占 AI 的上下文。</p>
+          <p>更值得学的是评测方法：每个任务先准备标准答案（打分器必须给 100% 通过）和没改过的原始网页（必须 100% 不通过），用来校准打分器；再比较 AI 装与不装指南的通过率。模型本来就会的内容删掉，只留真正能提分的。这套「先出考卷再写教材」的做法，任何写 skill 的人都能照搬。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>只想让 AI 做的页面更好看：第一、二期的 impeccable、hallmark 管审美。想让页面用对浏览器新功能、跑得快、读屏能用：用这一个。审美和写法是两件事，可以同时装；每多装一个 skill，AI 要读的说明就多一份，先挑你最缺的那个。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 日榜今日 +1,219，是本次日榜涨得最快的（2026-11-16 抓取）。三大浏览器团队和 MDN 一起维护，评测数据公开，内容可信度高。</p>
+          <div class="risk"><strong>风险：</strong>Apache-2.0。浏览器厂商团队维护，抓取时最近一次推送约 2026-11-15 20:09（北京时间）。源码库未解决的 issue 约 306 个，多数是对指南内容的反馈。注意默认开启的匿名统计。用户安装的分发库 GoogleChrome/modern-web-guidance 约 17,991 星。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>

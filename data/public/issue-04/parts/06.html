@@ -1,0 +1,83 @@
+  <article class="project" id="p06">
+    <div class="rank">#06</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ AI 设计稿</span>
+        <span class="pill">Stitch MCP</span>
+        <span class="pill">设计 ⇄ 代码</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">🎨</div>
+        <div>
+          <h2 class="pname">stitch-skills</h2>
+          <p class="pdesc">GitHub 上的开源项目，Google Labs 给自家 AI 设计工具 Stitch 做的一套 skill。装进 Claude Code、Codex、Cursor 等工具后，AI 能帮你在 Stitch 里生成界面设计稿、改稿、出几个版本，再把设计稿转成 React 或 React Native 代码；也能反过来，从你现有的网页代码里整理出一份设计规范（DESIGN.md）传到 Stitch。</p>
+          <p class="prepo"><a href="https://github.com/google-labs-code/stitch-skills" target="_blank" rel="noopener">google-labs-code/stitch-skills</a> · <a href="https://stitch.withgoogle.com" target="_blank" rel="noopener">stitch.withgoogle.com</a></p>
+          <span class="license">开源协议 Apache-2.0</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">9,356</div></div>
+      <div class="metric"><div class="label">↗ 今日新增</div><div class="value">+247</div><div class="hint">日榜 · 2026-11-16</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">TypeScript</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">1,130</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li>设计：用文字或图片生成新界面、改已有界面、出几个版本；把设计规范 DESIGN.md 套到所有页面上。</li>
+          <li>设计变代码：把 Stitch 设计稿转成 React 组件、React Native 组件或 React + Vite 后台页面，并检查颜色、字号这些设计变量前后一致。</li>
+          <li>代码变设计：从现有前端代码里提取 DESIGN.md，或把正在运行的网页存成单个 HTML 再传到 Stitch。</li>
+          <li>小工具：enhance-prompt 把模糊的界面想法改写成专业的设计提示词；还能用 Remotion 把设计稿做成演示视频。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">设计规范写成一个 DESIGN.md，人和 AI 共用</div>
+          <p>它把设计系统落成一个纯文本文件 DESIGN.md：颜色、字体、间距、组件风格都写在里面。AI 生成新页面时照着它来，换个工具也能接着用。没有设计师的独立开发者，靠它统一界面风格最省事。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>没有设计师、想快速出界面草稿的独立开发者；想先看到「长什么样」再决定做不做的非程序员。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：离不开 Google Stitch。</strong>所有 skill 都要先配好 Stitch MCP 服务，设计稿存在 Google 的服务上。
+          <span class="fix">应对：先在 Stitch 网页版试几次，觉得好用再装 skill。不想依赖云服务，就只学它的 DESIGN.md 写法。</span></li>
+        <li><strong>缺点2：转代码只有 React 一系。</strong>设计稿转代码只有 React、React Native、React + Vite 几条路，没有手机原生界面框架的输出。
+          <span class="fix">应对：原生 App 只把设计稿当参考图，再让 AI 照着截图用你自己的界面框架实现。</span></li>
+        <li><strong>缺点3：仓库更新放缓，单独挑着装容易缺东西。</strong>抓取时最近一次推送是 2026-08-18（北京时间），最新版 v1.0 发布于 2026 年 5 月；skill 之间有依赖。
+          <span class="fix">应对：按 README 推荐的插件方式整套装；遇到问题先翻 issue（未解决约 12 个）。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>价值在于把设计变成 AI 能读、能改、能传递的文本。DESIGN.md 相当于设计系统的「源代码」：放在仓库里，能看历史、能比差异。设计和代码双向转换，也是大厂设计团队在追的方向。</p>
+          <p>它按 Agent Skills 开放标准写，每个 skill 只管一件事（出图、提取规范、转代码、做视频），彼此靠 DESIGN.md 串起来，是「小模块 + 统一接口」的好例子。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>只想让 AI 做的页面少点「AI 味」：第二期的 hallmark 或第一期的 impeccable 更直接，也不依赖云服务。想要看得见的设计稿、几个版本对比着挑：用 Stitch 加这套 skill。已经有成熟组件库：第三期 astryx 那类设计系统更合适。三条路选一条做主线，DESIGN.md 的写法哪条都能借鉴。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 日榜（今日 +247，2026-11-16 抓取）。Google 官方出品，覆盖「想法 → 设计稿 → 代码」一整段，对没有设计师的独立开发者很实用。</p>
+          <div class="risk"><strong>风险：</strong>Apache-2.0。Google Labs 维护，但仓库最近三个月没有推送（最近一次 2026-08-18），可能进入低频维护。依赖 Stitch 云服务，服务条款和可用地区以 Google 为准。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>

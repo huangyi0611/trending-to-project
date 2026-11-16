@@ -1,0 +1,109 @@
+{
+ "issue": "04",
+ "title": "GitHub 热榜拆解 · 个人项目适配与技术精进 / 第四期 · 2026年11月16日",
+ "date": "2026-11-16",
+ "summary": "AI 干活时人始终在场：动手前批改计划、合并前自动挑错、按固定流程交付。另外还有让 AI 写对网页的知识包、给 skill 打分、AI 设计稿和 AI 宣传片。",
+ "lead": "backnotprop/plannotator",
+ "projects": [
+  "Plannotator",
+  "modern-web-guidance-src",
+  "open-code-review",
+  "LoopForge",
+  "SkillEvaluator",
+  "stitch-skills",
+  "video-shotcraft"
+ ],
+ "kit_note_suffix": "前置条件来自仓库 README（2026-11-16 读取）；难度和耗时是估计。",
+ "kit_labels": {
+  "mine_title": "① 给你的项目用",
+  "mine_sub_public": "连接你的项目后生成",
+  "generic_title": "② 通用版",
+  "generic_sub": "谁都能用"
+ },
+ "cards": {
+  "p01": {
+   "stars": 2,
+   "time": "约 15–20 分钟",
+   "prereq": "一个支持的 AI 编程工具（Claude Code、Codex、Gemini CLI 0.36.0+、Copilot CLI、OpenCode 等其一）；macOS / Linux / WSL 用 curl 运行安装脚本，Windows 用 PowerShell 安装脚本。Claude Code 还要在里面装插件：<code>/plugin marketplace add backnotprop/plannotator</code>。",
+   "note": "README 写明一条安装命令会自动识别你装了哪些 AI 工具并完成配置；审计划不用敲命令，下次 AI 出计划时自动弹出。",
+   "generic": "我在用 AI 编程工具（Claude Code、Codex 或 Cursor）做一个小项目，经常遇到 AI 理解错需求、一口气改了很多文件。请参考 GitHub 项目 backnotprop/plannotator，一步步带我：\n1. 用大白话解释它做什么：AI 出计划时在浏览器里打开，我批注完再让 AI 动手。\n2. 先问清楚我用的是哪个 AI 工具、电脑是什么系统，再给我看 README 里对应的安装命令，解释每一段在做什么。等我回复「好了」再继续。\n3. 装好后带我练一次：让 AI 给一个小改动出计划，我在 Plannotator 里批注两处再发回去，看 AI 怎么改。\n4. 再练一次代码审查：运行 /plannotator-review，教我怎么逐行写意见。\n5. 提醒我隐私设置：私密项目别用分享链接，教我用 PLANNOTATOR_SHARE=disabled 关掉分享。\n要求：每一步等我确认再继续；不要让我把任何密钥贴到聊天里；涉及合并代码或上线的操作，先停下来问我。",
+   "scene_tags": [
+    "工程框架",
+    "实用 skills",
+    "前端",
+    "后端"
+   ]
+  },
+  "p02": {
+   "stars": 1,
+   "time": "约 5–10 分钟",
+   "prereq": "能运行 npx 的 Node 环境（README 没写最低版本，以 README 为准）；一个支持 skill 的 AI 编程工具（Claude Code、Codex、Antigravity 等）。",
+   "note": "README 的 Quickstart 只有一条安装命令，会打开交互式向导；也可以先用 search 命令试用，不用安装。",
+   "generic": "我想让 AI 帮我做网页（比如个人主页或活动页），希望它用最新、最省事的网页写法。请参考 GitHub 项目 GoogleChrome/modern-web-guidance-src（用户安装的是 GoogleChrome/modern-web-guidance），一步步带我：\n1. 用大白话解释它是什么，以及 README 里「装与不装」的对照评测说明了什么。\n2. 先不安装：带我运行 npx modern-web-guidance@latest search \"dark mode\"，看看它返回什么。\n3. 再带我装进我的 AI 工具，装之前先告诉我会改哪些文件；顺便教我设置 DISABLE_TELEMETRY=1 关掉匿名统计。\n4. 装好后让 AI 用它改我页面上的一个具体地方（比如弹窗或图片加载），改前改后各截一张图给我看。\n5. 每用一个新的网页功能，都告诉我哪些浏览器支持、不支持时怎么降级。\n要求：每一步等我回复「好了」再继续；不要让我把任何密钥贴到聊天里。",
+   "scene_tags": [
+    "前端",
+    "UI",
+    "实用 skills"
+   ]
+  },
+  "p03": {
+   "stars": 2,
+   "time": "约 15–20 分钟",
+   "prereq": "Git 2.41 或更新版本；npm（安装命令 <code>npm install -g @alibaba-group/open-code-review</code>）；一个模型服务的 API key，或者用委托模式借你现有 AI 工具的模型。",
+   "note": "README 写明装好后先运行 ocr config provider 和 ocr config model 配模型，交互界面会自动测试能不能连上。",
+   "generic": "我在用 AI 写一个小项目，代码没人帮我审。请参考 GitHub 项目 alibaba/open-code-review，一步步带我：\n1. 用大白话解释它和直接让 AI 审代码有什么区别（README 里「确定性工程 + Agent」那一节）。\n2. 先检查我的 Git 版本是否在 2.41 以上，再带我安装 ocr 命令行工具。\n3. 带我选审查方式：如果我已经在用 Claude Code、Codex 或 Cursor，优先用委托模式，不另配密钥；需要配模型时，让我自己在配置向导里输入密钥，不要贴到聊天里。\n4. 在我的项目里先跑一次 ocr review，把结果按严重程度整理成清单，用大白话解释每条意见。\n5. 我选出要修的条目后再修，修完再跑一次确认。\n要求：每一步等我回复「好了」再继续；只在新分支上改，合并前先停下来问我。",
+   "scene_tags": [
+    "后端",
+    "工程框架",
+    "实用 skills"
+   ]
+  },
+  "p04": {
+   "stars": 4,
+   "time": "平台版约 30–60 分钟；Local 版约 10 分钟",
+   "prereq": "平台版：先装 Git，安装脚本会检查 Docker、Compose、Python 3 和 curl；Local 版：Node.js 20+、Python 3.8+ 和一个 AI 编程工具。跑 demo 不需要 API key，让 AI 真干活要对应工具的密钥。",
+   "note": "README 写明新账号会自动加入 demo 项目，里面「脚本 + 人工审批」的 SOP 不需要任何密钥就能跑。",
+   "generic": "我想让 AI 交付代码时更有章法：先计划、再实现、再审查、再测试，关键地方等我批准。请参考 GitHub 项目 Tencent/LoopForge，一步步带我：\n1. 用大白话解释 SOP、角色、人工审批节点分别是什么，以及平台版和 Local 版怎么选。\n2. 我是个人开发者，先带我装 Local 版：确认我有 Node.js 20+ 和 Python 3.8+，再在我的项目目录里装到我用的 AI 工具。\n3. 带我用 /start-devflow 跑一个很小的需求，每到一个阶段停下来，告诉我现在在哪一步、产出了什么文件。\n4. 结束后帮我把这次流程整理成一页纸的清单（计划 → 实现 → 审查 → 测试 → 我批准），以后不用工具也能照做。\n要求：每一步等我回复「好了」再继续；密钥只让我自己填进环境变量，不要贴到聊天里；合并代码和上线前必须问我。",
+   "scene_tags": [
+    "工程框架",
+    "后端",
+    "实用 skills"
+   ]
+  },
+  "p05": {
+   "stars": 3,
+   "time": "约 15–30 分钟（只跑第一层）",
+   "prereq": "Git 和 uv（uv 会自动准备 Python 3.13）；也可以 <code>pip install skillevaluator</code>（Python 3.12–3.14）。第一层不需要 API key；用模型打分要 NVIDIA Build 的 API key；第三层还要 Docker。",
+   "note": "README 的「Run without an LLM」一节不需要 API key、GPU 或 Docker，用自带示例几分钟就能出分。",
+   "generic": "我写了（或装了）一个给 AI 用的 skill，想知道它写得好不好。请参考 GitHub 项目 NVIDIA/SkillEvaluator，一步步带我：\n1. 用大白话解释它的三层检查分别查什么，哪几层不花钱。\n2. 带我装好 uv，先用官方自带的示例跑一次第一层，教我看懂报告里的分数和扣分项。\n3. 再对我自己的 skill 文件夹跑第一层（加 --tiers 1），把扣分项按「必须改 / 建议改」整理给我。\n4. 我选定要改的地方后，帮我改 SKILL.md，再跑一次对比分数。\n5. 第三层实测先不跑；我想跑时，先告诉我要准备什么、大概花多少钱。\n要求：每一步等我回复「好了」再继续；需要 API key 时只告诉我放进哪个环境变量，不要让我贴到聊天里。",
+   "scene_tags": [
+    "实用 skills",
+    "工程框架"
+   ]
+  },
+  "p06": {
+   "stars": 3,
+   "time": "约 30 分钟（含配置 Stitch MCP）",
+   "prereq": "一个支持 skill 的 AI 编程工具；能运行 npx（安装用 <code>npx plugins add</code> 或 <code>npx skills add</code>）；按 Stitch 官方说明配好 Stitch MCP 服务（需要 Google 账号）。",
+   "note": "README 写明所有 skill 都依赖 Stitch MCP，先按 Stitch 的 MCP 设置说明注册好服务，再装 skill。",
+   "generic": "我没有设计师，想先看到产品界面长什么样。请参考 GitHub 项目 google-labs-code/stitch-skills，一步步带我：\n1. 用大白话解释 Stitch、Stitch MCP 和这套 skill 是什么关系，DESIGN.md 又是什么。\n2. 带我按 Stitch 官方说明配好 MCP，再把 skill 装进我的 AI 工具。需要登录或密钥的地方让我自己操作，不要贴到聊天里。\n3. 我用一句话描述一个页面（比如「待办清单首页」），先用 enhance-prompt 把描述改专业，再生成 2 个版本给我挑。\n4. 我选定后，帮我生成一份 DESIGN.md，用大白话解释里面每一项。\n5. 最后告诉我：要变成代码能转成什么；如果我的项目不用 React，这份设计稿该怎么用。\n要求：每一步等我回复「好了」再继续。",
+   "scene_tags": [
+    "UI",
+    "前端",
+    "实用 skills"
+   ]
+  },
+  "p07": {
+   "stars": 3,
+   "time": "约 30–60 分钟（含首次渲染）",
+   "prereq": "Node.js 和 npm、ffmpeg / ffprobe；卡点分析要 uv；截页面要 puppeteer（脚本会按需安装）；再加上 Claude Code 或 Codex。README 写明主要在 macOS 上测试。",
+   "note": "README 写明最简单的安装方式是把仓库链接直接发给 AI，让它帮你装；第一次渲染时 Remotion 会自动下载无头 Chrome。",
+   "generic": "我想给我的产品（或我的小红书账号）做一条 30 秒左右的宣传短片，但我不会剪辑。请参考 GitHub 项目 Vincentwei1021/video-shotcraft，一步步带我：\n1. 用大白话解释它怎么做视频：截图 → 分镜 → 动画 → 配乐 → 检查 → 出片。\n2. 检查我的电脑有没有 Node.js、npm、ffmpeg，缺什么告诉我怎么装；再帮我装好这个 skill。\n3. 先用 Ink Press 模板做一条：我提供产品截图、一句口号和 logo，你先出分镜给我确认，再渲染。\n4. 出片后教我用 Motion Workbench 改文案和颜色；如果我用剪映，教我导出剪映草稿。\n5. 提醒我素材和音乐的版权，以及 Remotion 的使用条款。\n要求：每一步等我回复「好了」再继续；不要替我发布到任何社交平台，发布前必须问我。",
+   "scene_tags": [
+    "实用 skills",
+    "UI",
+    "前端"
+   ]
+  }
+ }
+}

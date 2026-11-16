@@ -1,0 +1,84 @@
+  <article class="project featured" id="p01">
+    <div class="rank">#01</div>
+    <div class="rec-banner">★ 本期最推荐</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ 人在回路</span>
+        <span class="pill">计划批注</span>
+        <span class="pill">代码审查</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">📝</div>
+        <div>
+          <h2 class="pname">Plannotator</h2>
+          <p class="pdesc">GitHub 上的开源项目。AI 写代码前会先出一份计划（plan），Plannotator 把这份计划在浏览器里打开，你像批改作文一样划线、写批注，点一下就把意见发回给 AI；AI 改完，还会标出计划前后的差别。代码写完，它也能打开审查页面，让你逐行点评本地改动或 GitHub 上的 PR。支持 Claude Code、Codex、Gemini CLI、Copilot CLI、OpenCode 等十来种 AI 编程工具。</p>
+          <p class="prepo"><a href="https://github.com/backnotprop/plannotator" target="_blank" rel="noopener">backnotprop/plannotator</a> · <a href="https://plannotator.ai" target="_blank" rel="noopener">plannotator.ai</a></p>
+          <span class="license">开源协议 MIT 或 Apache-2.0 双许可，任选其一（GitHub 自动识别显示 Apache-2.0）</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">11,915</div></div>
+      <div class="metric"><div class="label">↗ 本周新增</div><div class="value">+1,719</div><div class="hint">周榜 · 2026-11-16</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">TypeScript</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">1,086</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li>审计划：AI 准备动手时，计划自动在浏览器里弹出。你逐段批注，点「通过」AI 才往下做；点「打回」，批注会整理好发回去，AI 改完再给你看前后差别。</li>
+          <li>审代码：<code>/plannotator-review</code> 打开本地还没提交的改动，或一个 GitHub / GitLab 的 PR，逐行写意见，意见直接回到 AI 的对话里。</li>
+          <li>批注任何文档：<code>/plannotator-annotate</code> 能打开 Markdown 文件、整个文件夹、网址或 HTML 页面；<code>/plannotator-last</code> 批注 AI 刚才那条回复。</li>
+          <li>Inbox（收件箱）：几个 AI 同时干活时，把问题、文件、待审内容都投到一个本地窗口，你有空再统一回复，AI 不用干等。批准过的计划还能自动存进 Obsidian、Notion 或 Bear。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">给 AI 的计划配一支红笔</div>
+          <p>AI 最贵的错，是一开始方向就错，写了几百行才发现。Plannotator 把「审计划」做得像改作文一样顺手：划一句，写一句意见，点发送。人只在两个关口出手：动手前看计划，合并前看改动。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>已经在用 Claude Code、Codex 这类工具写代码，常遇到「AI 理解错需求、一口气改了一大片」的人。不会写代码也能用：看得懂计划、会写中文批注就行。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：计划自动弹出，要靠各家 AI 工具的钩子（hooks）。</strong>Codex 用的是还在实验的 Stop 钩子，原生 Windows 要手动配置；Droid 目前只支持手动命令。
+          <span class="fix">应对：先用最稳的 <code>/plannotator-last</code> 和 <code>/plannotator-review</code> 两个手动命令，熟了再开自动审计划。装完先在一个练手仓库里试一次。</span></li>
+        <li><strong>缺点2：有几个功能会联网。</strong>页面打开时会向 GitHub 查新版本；批注网址默认经 Jina Reader 抓取；「问 AI」会把相关内容发给你配置的模型；分享链接时内容跟着链接走，小份内容只压缩、没加密。
+          <span class="fix">应对：私密代码别用分享链接，可以设置 <code>PLANNOTATOR_SHARE=disabled</code> 把分享关掉。远程模式会在所有网卡上开端口、不用登录，只在可信网络里用。</span></li>
+        <li><strong>缺点3：安装是「一行命令下载脚本直接运行」，还会改你 AI 工具的配置。</strong>
+          <span class="fix">应对：先打开安装脚本看一眼，或加 <code>--minimal</code> 只装主程序；想撤销就运行 <code>plannotator uninstall</code>，默认保留你的计划和历史。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>价值在于把「人在回路」（Human-in-the-loop，关键一步由人拍板）放在最便宜的位置。计划只有几十行，改计划几分钟；等代码写完再返工，代价大得多。它挂在 AI 工具自带的钩子上（AI 准备结束计划模式时触发），你的工作习惯不用变。</p>
+          <p>设计也克制：数据默认留在本机，不收集使用数据；意见按结构化格式发回 AI，AI 改完显示计划前后差别，人一眼看出改了哪里。能批注的对象从代码扩大到计划、文档和 HTML 页面，AI 产出的东西都能过一遍人眼。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>只想审代码：第三期的 pr-agent，或本期的 open-code-review，让 AI 先审一遍就够。想把计划、文档、代码都过一遍人眼：用 Plannotator。团队要固定流程、多个角色、审批节点：看本期的 LoopForge。三者可以叠加：Plannotator 管人怎么批，open-code-review 管 AI 先挑错，LoopForge 管整条流程怎么排。个人开发者先装 Plannotator 一个就够。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 日榜（今日 +866）和周榜（本周 +1,719）同时在榜（2026-11-16 抓取）。它解决用 AI 写代码最常见的痛点「方向跑偏」，装上当天就能用，所以选作本期最推荐。</p>
+          <div class="risk"><strong>风险：</strong>MIT 或 Apache-2.0 双许可，很宽松。主要由作者 backnotprop 个人维护，更新非常快（抓取时最新版 v0.28.65，2026-11-15 发布，一周内连发多个版本），命令和设置可能会变。未解决的 issue 约 108 个。团队协作用的 Workspaces 是另外的托管产品，不在开源范围里。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>

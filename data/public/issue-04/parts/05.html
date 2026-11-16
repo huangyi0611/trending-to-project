@@ -1,0 +1,83 @@
+  <article class="project" id="p05">
+    <div class="rank">#05</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ skill 评测</span>
+        <span class="pill">三层质检</span>
+        <span class="pill">能接 CI</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">🧪</div>
+        <div>
+          <h2 class="pname">SkillEvaluator</h2>
+          <p class="pdesc">GitHub 上的开源项目，NVIDIA 开源的 skill 评测工具。skill 是交给 AI 的一份任务说明书（一个文件夹，里面有 SKILL.md 和配套文件）。它先查这份说明书写得规不规范、安不安全，再找出重复、互相打架的内容，最后让 AI 带着 skill 和不带 skill 各做一遍任务，看这份 skill 到底有没有用。</p>
+          <p class="prepo"><a href="https://github.com/NVIDIA/SkillEvaluator" target="_blank" rel="noopener">NVIDIA/SkillEvaluator</a></p>
+          <span class="license">开源协议 Apache-2.0</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">1,772</div></div>
+      <div class="metric"><div class="label">↗ 今日新增</div><div class="value">+122</div><div class="hint">日榜 · 2026-11-16</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">Python</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">234</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li>第一层「校验」：查格式、安全和兼容性，不需要 API key。官方示例 skill 得 86.2 分（B），默认 70 分及格。</li>
+          <li>第二层「去重」：找出说明里重复或重叠的内容；还能拿你的几个 skill 互相比，看有没有抢活的。</li>
+          <li>第三层「实测」：在沙盒里让 AI 带 / 不带这个 skill 做同样的任务，比较结果。需要模型服务、受支持的 AI 工具和 Docker。</li>
+          <li>接进 GitHub：<code>skillevaluator ci init</code> 自动开一个 PR，以后每次改 skill 都自动检查；也能当 skill 装进 Claude Code、Codex，直接问「我的 skill 好不好」。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">给 skill 做体检，再做对照实验</div>
+          <p>大家都在写 skill，很少有人测过它到底让 AI 变好了没有。SkillEvaluator 拆成三层：前两层几分钟出结果，第一层连密钥都不用；第三层用对照实验看真实效果。写 skill 的人终于有了能量化的分数。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>自己写 skill、或者装了很多别人 skill 的人。非程序员也能用第一层：把 skill 文件夹交给它，看报告里哪里扣分。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：第三层门槛高，可能花钱。</strong>要模型服务和沙盒（默认 Docker），README 提醒模型和托管沙盒会产生费用。
+          <span class="fix">应对：先只跑第一层（加 <code>--tiers 1</code>），确实需要再开第三层，开之前看官方的成本说明。</span></li>
+        <li><strong>缺点2：分数只是参考。</strong>第一层查的是写法，及格不等于好用；第三层自动生成的测试用例覆盖有限，README 也提醒要人工复核。
+          <span class="fix">应对：给自己的 skill 写几条真实任务和期望结果，放进 <code>evals/EVAL.md</code>，让实测贴近你的用法。</span></li>
+        <li><strong>缺点3：第一层会自动下载安全扫描工具，对 Python 版本有要求。</strong>缺 SkillSpector、Gitleaks 时会自动下载固定版本；需要 Python 3.12 以上。
+          <span class="fix">应对：用 uv 运行，它会自动准备 Python；公司电脑先确认能不能下载这些工具。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>价值在于把「写说明书」变成能测的工程。三层逐级加码：便宜的静态检查挡住大部分问题，贵的实测只留给通过前两层的 skill，这是工程里常见的漏斗式质检。</p>
+          <p>第二层很有远见：skill 装多了，说明之间会重复、打架，AI 反而不知道听谁的。用相似度检测提前发现，和代码里「消除重复」是一个道理。它是 NVIDIA「Verified Skills」流程的一部分，还配了论文。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>只写一两个 skill：第一层体检就够。skill 多了、开始互相干扰：加第二层。skill 要给很多人用，或者你想证明它真有效：上第三层。本期 modern-web-guidance 用的也是「装与不装」对照的思路，可以一起看。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 日榜（今日 +122，2026-11-16 抓取）。skill 是这几期反复出现的主题，这是第一个专门给 skill 打分的大厂工具，正好补上质量这一环。</p>
+          <div class="risk"><strong>风险：</strong>Apache-2.0。NVIDIA 团队维护，迭代很快（一周内从 v0.7.2 到 v0.9.0），命令和参数可能调整。未解决的 issue 约 10 个。用 NVIDIA Build 的免费额度有使用条款和频率限制。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>

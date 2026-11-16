@@ -1,0 +1,83 @@
+  <article class="project" id="p03">
+    <div class="rank">#03</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ AI 代码审查</span>
+        <span class="pill">规则 + Agent</span>
+        <span class="pill">命令行 / CI</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">🔍</div>
+        <div>
+          <h2 class="pname">open-code-review</h2>
+          <p class="pdesc">GitHub 上的开源项目，阿里巴巴把内部用了两年的 AI 代码审查工具开源了（README 称服务过数万名开发者）。它读你的 Git 改动，先按规则挑出要审的文件，再交给 AI 细查，最后给出精确到行的意见。命令行工具叫 <code>ocr</code>，也能装进 Claude Code、Codex、Cursor，或接进 GitHub Actions 自动跑。</p>
+          <p class="prepo"><a href="https://github.com/alibaba/open-code-review" target="_blank" rel="noopener">alibaba/open-code-review</a> · <a href="https://open-codereview.ai" target="_blank" rel="noopener">open-codereview.ai</a></p>
+          <span class="license">开源协议 Apache-2.0</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">52,192</div></div>
+      <div class="metric"><div class="label">↗ 今日新增</div><div class="value">+691</div><div class="hint">日榜 · 2026-11-16</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">Go</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">4,121</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li><code>ocr review</code> 审本地还没提交的改动；也能审一个分支相对 main 的全部改动，或者单个提交。</li>
+          <li><code>ocr scan</code> 不看改动，直接把整个仓库或某个目录从头扫一遍。</li>
+          <li>内置多种语言的审查规则，比如空指针、线程安全、XSS（网页注入攻击）、SQL 注入；规则可以按路径自己调。</li>
+          <li>委托模式（Delegation Mode）：挑文件、配规则由它来做，审查交给你正在用的 AI 工具，不用另配模型密钥。结果可以存成 JSON，交给 AI 接着修。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">死板的活交给程序，灵活的活交给 AI</div>
+          <p>通用 AI 审大改动时爱偷懒，只看几个文件，行号还常对不上。它把「审哪些文件、哪些文件一起看、套哪条规则、意见落在哪一行」都用固定程序管住，AI 只负责判断。README 公布的对比：同一个模型下误报更少，token 用量约为通用 Agent 的 1/9。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>自己写代码、或让 AI 写代码，却没人帮忙审的独立开发者；想在合并前多一道自动检查的小团队。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：它故意少报。</strong>README 写明它的查全率（Recall）低于通用 Agent，用这个换更少的误报。
+          <span class="fix">应对：把它当第一道筛子。登录、权限、支付这类关键代码，人还要亲自看一遍。</span></li>
+        <li><strong>缺点2：默认模式要配自己的模型和密钥，改动的代码会发给你选的模型服务。</strong>
+          <span class="fix">应对：私密代码选可信的模型服务；或者用委托模式，让你已经在用的 AI 工具来审。密钥只填进它的配置向导或环境变量。</span></li>
+        <li><strong>缺点3：对 Git 版本有要求，支持哪些语言要自己试。</strong>前置条件写明 Git ≥ 2.41；README 没列出完整的语言清单。
+          <span class="fix">应对：先运行 <code>git --version</code> 确认版本；冷门语言先跑一次看意见质量，不理想就只用它审后端代码。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>价值在于「确定性工程 + Agent」的分工：必须不出错的步骤（挑文件、分组、配规则、定位到行）用普通程序写死，需要判断的部分交给 AI。大改动拆成几组，每组交给一个独立的子 Agent，彼此上下文不干扰，改动再大也稳。</p>
+          <p>它还公开了评测集 AACR-Bench：50 个热门开源仓库的 200 个真实 PR，80 多位资深工程师标注了 1,505 个真问题。给 AI 工具做评测先备好人工标注的标准答案，这点和本期 modern-web-guidance 的做法一致。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>第三期的 pr-agent 擅长在 GitHub 的 PR 页面里对话式审查；open-code-review 擅长在本地命令行和 CI 里批量、精确地审。想在 PR 页面里看 AI 点评，用 pr-agent；想合并前在本地跑一遍、结果存成 JSON 让 AI 接着修，用 open-code-review。两个都接进 CI 会重复评论，选一个就好。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 日榜（今日 +691，2026-11-16 抓取），总星 52,192。大厂内部长期使用后开源，有公开评测集，正好补上「AI 写、AI 审、人拍板」中间那一环。</p>
+          <div class="risk"><strong>风险：</strong>Apache-2.0。阿里巴巴团队维护，更新很快（抓取时最新版 v1.13.10，2026-11-15 发布）。未解决的 issue 约 144 个，待合并的 PR 约 205 个。支持接入 OpenTelemetry 做运行观测，具体默认行为以官方 Telemetry 文档为准。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>
