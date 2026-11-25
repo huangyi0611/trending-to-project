@@ -11,7 +11,7 @@ It is not a Xiaohongshu official interface and is not a compliance certificate.
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <meta name="referrer" content="no-referrer" />
 <title>GitHub 热榜拆解 · 离线阅读</title>
 <link rel="stylesheet" href="./app.css" />
@@ -25,7 +25,11 @@ It is not a Xiaohongshu official interface and is not a compliance certificate.
     <p class="hint">点蓝色词看释义。仓库名只作文字，不跳转。这不是小红书官方界面。</p>
   </header>
 
-  <div class="switch" id="issue-switch" role="tablist" aria-label="选择期数"></div>
+  <p id="startup-status" class="hint" role="status">正在读取本包里的第03期和第04期快照。若卡片一直不出现，请退出后重新打开。</p>
+  <div class="switch" id="issue-switch" role="tablist" aria-label="选择期数">
+    <button type="button" role="tab" data-issue="03" aria-selected="false"><strong>第三期</strong><small>2026-11-11 采样</small></button>
+    <button type="button" role="tab" data-issue="04" aria-selected="true"><strong>第四期</strong><small>2026-11-16 采样</small></button>
+  </div>
   <p class="snapshot" id="snapshot"></p>
   <p class="lead" id="lead"></p>
   <details class="fold" id="meta-fold">
@@ -64,6 +68,13 @@ It is not a Xiaohongshu official interface and is not a compliance certificate.
   <article class="detail" id="detail" aria-live="polite"></article>
 
   <footer class="footer-note" id="foot"></footer>
+  <footer class="footer-note" id="legal">
+    <h2>许可与署名</h2>
+    <p>Required Notice: Copyright (c) 2026 假笑黄黄AI版（小红书）</p>
+    <p>作者：假笑黄黄AI版。代码按 PolyForm Noncommercial 1.0.0，仅限非商业使用。正式文本：https://polyformproject.org/licenses/noncommercial/1.0.0</p>
+    <p>本页文字、释义和卡片按 CC BY-NC-SA 4.0：署名、非商业、相同方式共享。正式文本：https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans</p>
+    <p>上面的网址只作文字，不是链接。这不是小红书官方界面，也不是平台审核通过的证明。联系邮箱：yihuangolivia@gmail.com</p>
+  </footer>
 </div>
 
 <button type="button" id="pop-back" class="pop-back" hidden aria-label="关闭释义"></button>

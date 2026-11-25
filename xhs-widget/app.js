@@ -5,6 +5,10 @@
   var DATA = window.XHS_DATA;
   if (!DATA || !DATA.issues || !DATA.issues.length) return;
 
+  function clearNode(node) {
+    while (node.firstChild) node.removeChild(node.firstChild);
+  }
+
   var state = { issueId: '04', cardId: '', q: '', scroll: false };
   var pop = document.getElementById('term-pop');
   var popTerm = document.getElementById('pop-term');
@@ -148,7 +152,7 @@
 
   function showTerm(raw, x, y, allowMiss) {
     var hit = lookup(raw);
-    popBody.replaceChildren();
+    clearNode(popBody);
     if (!hit) {
       if (!allowMiss) return;
       popTerm.textContent = norm(raw).slice(0, 40) || '（空）';
@@ -188,7 +192,7 @@
 
   function renderSwitch() {
     var box = document.getElementById('issue-switch');
-    box.replaceChildren();
+    clearNode(box);
     DATA.issues.forEach(function (it) {
       var b = document.createElement('button');
       b.type = 'button';
@@ -208,7 +212,7 @@
   function renderChrome() {
     var iss = currentIssue();
     var snap = document.getElementById('snapshot');
-    snap.replaceChildren();
+    clearNode(snap);
     var mark = document.createElement('strong');
     mark.textContent = '离线快照';
     snap.appendChild(mark);
@@ -225,7 +229,7 @@
 
   function renderMap(iss) {
     var flow = document.getElementById('flow');
-    flow.replaceChildren();
+    clearNode(flow);
     iss.stages.forEach(function (st, idx) {
       var col = document.createElement('div');
       col.className = 'stage';
@@ -288,7 +292,7 @@
     var iss = currentIssue();
     var list = document.getElementById('list');
     var count = document.getElementById('search-count');
-    list.replaceChildren();
+    clearNode(list);
     var shown = 0;
     iss.cards.forEach(function (card) {
       if (!matches(card, state.q)) return;
@@ -367,7 +371,7 @@
     state.cardId = card.id;
     var root = document.getElementById('detail');
     root.className = 'detail' + (card.featured ? ' is-featured' : '');
-    root.replaceChildren();
+    clearNode(root);
     if (card.featured) {
       var banner = document.createElement('div');
       banner.className = 'rec-banner';
@@ -576,7 +580,7 @@
   function renderFoot() {
     var iss = currentIssue();
     var foot = document.getElementById('foot');
-    foot.replaceChildren();
+    clearNode(foot);
     var h = document.createElement('h2');
     h.textContent = '来源、许可与边界';
     foot.appendChild(h);
@@ -584,7 +588,7 @@
       iss.captureText,
       iss.kitNote,
       '作者：假笑黄黄AI版。此页是作者把已公开内容做成的离线阅读工具，不是小红书官方界面，也没有通过平台审核认证。',
-      '代码按 PolyForm Noncommercial 1.0.0，仅限非商业使用。卡片、释义等文字按 CC BY-NC-SA 4.0：署名、非商业、相同方式共享。两份许可的正式文本网址写在 index.html 开头注释里，这里不做成可点击链接。',
+      '代码按 PolyForm Noncommercial 1.0.0，仅限非商业使用。卡片、释义等文字按 CC BY-NC-SA 4.0：署名、非商业、相同方式共享。正式文本网址写在本页底部，不做成可点击链接。',
       '公开仓库已写明的联系邮箱：yihuangolivia@gmail.com。与 GitHub 以及各个收录项目没有隶属、合作或背书。各项目以其自己仓库的许可证为准。',
       '本页只放入第03期和第04期的公开正文。没有项目输入、没有提示词生成、没有第一期和第二期的正文。工具地图上的往期名字来自这两期公开地图，点不开外站。',
       '筛选词只留在这一页的内存里，不写入存储，也不发送。页面不加载外部字体、图片或脚本。'
@@ -609,6 +613,8 @@
       var map = document.getElementById('map-fold');
       if (map && window.innerWidth >= 720) map.open = true;
     }
+    var startup = document.getElementById('startup-status');
+    if (startup) startup.hidden = true;
   }
 
   function selectIssue(id) {
