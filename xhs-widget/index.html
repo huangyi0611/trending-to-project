@@ -46,6 +46,24 @@ It is not a Xiaohongshu official interface and is not a compliance certificate.
     <p class="search-count" id="search-count"></p>
   </div>
 
+  <section class="fit" id="fit" aria-label="给我的项目用">
+    <h2>给我的项目用</h2>
+    <p class="fit-note">离线规则匹配：只把你现在填写的字，和当前这一期的公开卡片对照。不读取项目文件，不联网，也不是 AI 诊断。这些字只留在这一页的内存里。</p>
+    <label for="fit-purpose">项目用途</label>
+    <textarea id="fit-purpose" rows="2" autocomplete="off" placeholder="例如：给自己的读书笔记做一个能搜索的小网页"></textarea>
+    <label for="fit-stack">技术栈（可以空着，也可以写不懂）</label>
+    <textarea id="fit-stack" rows="2" autocomplete="off" placeholder="例如：不懂，或只知道要用网页"></textarea>
+    <label for="fit-pain">当前难点</label>
+    <textarea id="fit-pain" rows="2" autocomplete="off" placeholder="例如：AI 做出的界面不统一"></textarea>
+    <label for="fit-goal">想实现的功能</label>
+    <textarea id="fit-goal" rows="2" autocomplete="off" placeholder="例如：先看到页面长什么样"></textarea>
+    <div class="fit-actions">
+      <button type="button" id="fit-run">看相关项目</button>
+      <button type="button" id="fit-clear">清空</button>
+    </div>
+    <div id="fit-out" aria-live="polite"></div>
+  </section>
+
   <details class="fold toolmap" id="map-fold">
     <summary>工具地图</summary>
     <div id="toolmap">

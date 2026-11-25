@@ -9,7 +9,7 @@
     while (node.firstChild) node.removeChild(node.firstChild);
   }
 
-  var state = { issueId: '04', cardId: '', q: '', scroll: false };
+  var state = { issueId: '04', cardId: '', q: '', scroll: false, fitRan: false, fitSwitched: false };
   var pop = document.getElementById('term-pop');
   var popTerm = document.getElementById('pop-term');
   var popBody = document.getElementById('pop-body');
@@ -615,6 +615,211 @@
     }
     var startup = document.getElementById('startup-status');
     if (startup) startup.hidden = true;
+    renderFit();
+  }
+
+  var FIT_SIGNALS = [
+    { words: ['计划', '批注', '动手前', '理解错', '方向跑偏'], accept: ['批改计划', '计划'] },
+    { words: ['审查', '挑错', '代码审查', 'review'], accept: ['挑错', '审一遍'] },
+    { words: ['合并', 'pr', 'pull request'], accept: ['合并', 'PR', '挑错', '审一遍'] },
+    { words: ['术语', '口径', '查数', '表格', '数据库', '指标', '业务词典'], accept: ['术语', '查数'] },
+    { words: ['界面', '设计稿', '好看', '配色', 'ui', '组件'], accept: ['界面零件', '设计稿', '界面'] },
+    { words: ['网页', '网站', 'html', 'css'], accept: ['网页'] },
+    { words: ['验收', '截图', '走查', '点网页'], accept: ['截图', '点网页'] },
+    { words: ['并行', '同时改', '打架', 'worktree'], accept: ['并行', '不打架'] },
+    { words: ['分头', '多个助手', '多bot', '几个助手', 'bot'], accept: ['分头', 'bot'] },
+    { words: ['说不清', '追问', '需求'], accept: ['追问', '需求'] },
+    { words: ['打分', '评估skill', 'skill好不好'], accept: ['打分'] },
+    { words: ['流程', '审批', 'sop', '交付'], accept: ['固定流程', '批准'] },
+    { words: ['宣传片', '短视频', '视频', '剪辑', '分镜'], accept: ['宣传片', '镜头'] }
+  ];
+  var FIT_STACK = [
+    { word: 'react', accept: 'React' },
+    { word: 'docker', accept: 'Docker' },
+    { word: 'python', accept: 'Python' },
+    { word: 'node', accept: 'Node' }
+  ];
+  var FIT_PLACE = {
+    idea: '建议接在「想法」：先看它怎么分工，不必先装整套。',
+    spec: '建议接在「写需求」：动手改文件之前。',
+    code: '建议接在「写代码」：有人同时改同一份项目的时候。',
+    memory: '建议接在「记忆和上下文」：让 AI 写网页或记资料之前。',
+    data: '建议接在「数据和知识」：让 AI 查数或回答业务问题之前。',
+    ui: '建议接在「界面」：先出零件或设计稿，再写页面。',
+    qa: '建议接在「测试、审查和安全」：合并或上线之前。',
+    ship: '建议接在「发布和内容」：要对外展示的时候。'
+  };
+
+  function plainHtml(html) {
+    var box = document.createElement('div');
+    box.innerHTML = html || '';
+    return norm(box.textContent || '');
+  }
+
+  function clip(text, n) {
+    var s = norm(text);
+    if (s.length <= n) return s;
+    return s.slice(0, n) + '…';
+  }
+
+  function fitInputs() {
+    function val(id) {
+      var el = document.getElementById(id);
+      return el ? norm(el.value) : '';
+    }
+    var stack = val('fit-stack');
+    if (/^(不懂|不知道|不会|没有|无|空|不了解)$/.test(stack)) stack = '';
+    return {
+      purpose: val('fit-purpose'),
+      stack: stack,
+      pain: val('fit-pain'),
+      goal: val('fit-goal')
+    };
+  }
+
+  function fitBlob(input) {
+    var parts = [input.purpose, input.stack, input.pain, input.goal];
+    var out = [];
+    for (var i = 0; i < parts.length; i++) if (parts[i]) out.push(parts[i]);
+    return out.join(' ');
+  }
+
+  function hasText(hay, needle) {
+    return hay.toLowerCase().indexOf(String(needle).toLowerCase()) >= 0;
+  }
+
+  function stageOf(iss, card) {
+    var map = iss.currentMap || [];
+    for (var i = 0; i < map.length; i++) {
+      if (map[i].id === card.id) return map[i];
+    }
+    return null;
+  }
+
+  function matchFit(iss, input) {
+    var blob = fitBlob(input);
+    if (blob.length < 2) return { kind: 'empty', items: [] };
+    var items = [];
+    var cards = iss.cards || [];
+    for (var c = 0; c < cards.length; c++) {
+      var card = cards[c];
+      var stage = stageOf(iss, card);
+      var brief = card.name + ' ' + (card.blurb || '') + ' ' + (stage && stage.what ? stage.what : '');
+      var prereq = plainHtml(card.kit && card.kit.prereqHtml);
+      var hits = [];
+      var score = 0;
+      for (var s = 0; s < FIT_SIGNALS.length; s++) {
+        var sig = FIT_SIGNALS[s];
+        var said = '';
+        for (var w = 0; w < sig.words.length; w++) {
+          if (hasText(blob, sig.words[w])) { said = sig.words[w]; break; }
+        }
+        if (!said) continue;
+        var found = '';
+        for (var a = 0; a < sig.accept.length; a++) {
+          if (hasText(brief, sig.accept[a])) { found = sig.accept[a]; break; }
+        }
+        if (!found) continue;
+        score += 3;
+        hits.push({ said: said, found: found, via: '公开一句话' });
+      }
+      if (input.stack) {
+        for (var k = 0; k < FIT_STACK.length; k++) {
+          if (hasText(input.stack, FIT_STACK[k].word) && hasText(prereq, FIT_STACK[k].accept)) {
+            score += 3;
+            hits.push({ said: input.stack, found: FIT_STACK[k].accept, via: '需要先装什么' });
+            break;
+          }
+        }
+      }
+      if (score >= 3 && hits.length) items.push({ card: card, stage: stage, score: score, hits: hits, prereq: prereq });
+    }
+    items.sort(function (a, b) {
+      if (b.score !== a.score) return b.score - a.score;
+      if (a.card.featured !== b.card.featured) return a.card.featured ? -1 : 1;
+      return a.card.id < b.card.id ? -1 : 1;
+    });
+    if (!items.length) return { kind: 'weak', items: [] };
+    return { kind: 'ok', items: items.slice(0, 3) };
+  }
+
+  function addP(parent, text) {
+    var p = document.createElement('p');
+    p.textContent = text;
+    parent.appendChild(p);
+    return p;
+  }
+
+  function renderFit() {
+    var out = document.getElementById('fit-out');
+    if (!out) return;
+    clearNode(out);
+    if (!state.fitRan) {
+      addP(out, '填写后点「看相关项目」。换期不会把这些字发出去，也不会偷偷清掉。').className = 'fit-status';
+      return;
+    }
+    var iss = currentIssue();
+    var input = fitInputs();
+    var matched = matchFit(iss, input);
+    var head = document.createElement('p');
+    head.className = 'fit-status';
+    var switched = state.fitSwitched ? '你刚换了期，填写还在，没有发送。' : '';
+    head.textContent = '当前对照' + iss.label + '的公开卡片。这是规则匹配，不是 AI 读代码，也不是实时热榜。' + switched;
+    out.appendChild(head);
+    var echo = document.createElement('p');
+    echo.className = 'fit-status';
+    echo.textContent = '你填写的用途：' + clip(input.purpose, 80);
+    out.appendChild(echo);
+    if (matched.kind === 'empty') {
+      addP(out, '信息不够，所以先不推荐。至少用一句话写清项目用途、难点或想做的功能。');
+      return;
+    }
+    if (matched.kind === 'weak') {
+      addP(out, '和这一期的公开一句话都对不上，匹配不足，不强推本期最推荐。可以换一种说法，例如「合并前审查」「做网页界面」或「让 AI 查数」。');
+      return;
+    }
+    for (var i = 0; i < matched.items.length; i++) {
+      var item = matched.items[i];
+      var card = item.card;
+      var box = document.createElement('article');
+      box.className = 'fit-hit';
+      var h = document.createElement('h3');
+      h.textContent = card.name;
+      box.appendChild(h);
+      var why = [];
+      for (var n = 0; n < item.hits.length; n++) {
+        why.push('你写了「' + item.hits[n].said + '」，对上这张卡' + item.hits[n].via + '里的「' + item.hits[n].found + '」');
+      }
+      addP(box, why.join('。') + '。公开一句话：' + (card.blurb || '（这张卡没有单独的一句话）') + '。');
+      var place = item.stage && FIT_PLACE[item.stage.stage] ? FIT_PLACE[item.stage.stage] : '先只读这张卡，确认它是不是你现在这一步。';
+      addP(box, place);
+      addP(box, '最小尝试：先看公开的「需要先装什么」：' + (clip(item.prereq, 90) || '这张卡没有单独列出前置条件') + '。难度是估计的 ' + ((card.kit && card.kit.stars) || '?') + ' 星，不是实测。');
+      addP(box, '风险：' + (clip(plainHtml(card.consHtml), 100) || '展开这张卡看「缺点与应对」。'));
+      var open = document.createElement('button');
+      open.type = 'button';
+      open.className = 'fit-open';
+      open.setAttribute('data-card', card.id);
+      open.textContent = '打开这张卡';
+      box.appendChild(open);
+      out.appendChild(box);
+    }
+  }
+
+  function runFit() {
+    state.fitRan = true;
+    state.fitSwitched = false;
+    renderFit();
+  }
+
+  function clearFit() {
+    var ids = ['fit-purpose', 'fit-stack', 'fit-pain', 'fit-goal'];
+    for (var i = 0; i < ids.length; i++) {
+      var el = document.getElementById(ids[i]);
+      if (el) el.value = '';
+    }
+    state.fitRan = false;
+    state.fitSwitched = false;
+    renderFit();
   }
 
   function selectIssue(id) {
@@ -624,6 +829,7 @@
     state.q = '';
     qInput.value = '';
     state.scroll = false;
+    if (state.fitRan) state.fitSwitched = true;
     hidePop();
     render();
   }
@@ -671,6 +877,9 @@
     if (e.key === 'Escape') hidePop();
   });
 
+  document.getElementById('fit-run').addEventListener('click', runFit);
+  document.getElementById('fit-clear').addEventListener('click', clearFit);
+
   qInput.addEventListener('input', function () {
     state.q = qInput.value;
     renderList();
@@ -686,7 +895,7 @@
   document.addEventListener('touchend', queueSelection);
 
   function queueSelection(ev) {
-    if (ev.target && ev.target.closest && ev.target.closest('input, button, #term-pop')) return;
+    if (ev.target && ev.target.closest && ev.target.closest('input, textarea, button, #term-pop')) return;
     clearTimeout(selectTimer);
     selectTimer = setTimeout(function () {
       var sel = window.getSelection();

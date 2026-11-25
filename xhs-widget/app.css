@@ -143,6 +143,60 @@ button { cursor: pointer; }
 .fold[open] > summary::after { content: "收起"; }
 .fold > summary + * , #toolmap, #meta { padding: 0 14px 14px; }
 .toolmap { margin-bottom: 18px; }
+.fit {
+  background: var(--card);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 16px 14px 14px;
+  margin: 0 0 16px;
+}
+.fit h2 {
+  margin: 0 0 8px;
+  font-family: Georgia, "Songti SC", "Noto Serif SC", serif;
+  font-size: 20px;
+}
+.fit-note { margin: 0 0 4px; font-size: 13px; color: #444; }
+.fit label { display: block; margin: 10px 0 6px; font-size: 12px; font-weight: 700; color: var(--muted); }
+.fit textarea {
+  display: block;
+  width: 100%;
+  min-height: 64px;
+  border: none;
+  border-radius: 12px;
+  background: var(--soft);
+  padding: 10px 12px;
+  font-size: 16px;
+  resize: vertical;
+}
+.fit-actions { margin-top: 4px; }
+.fit-actions button {
+  min-height: 44px;
+  margin: 8px 8px 0 0;
+  border: none;
+  border-radius: 999px;
+  padding: 0 16px;
+  font-weight: 700;
+}
+#fit-run { background: var(--rec); color: #fff; }
+#fit-clear { background: #111; color: #fff; }
+.fit-status { margin: 12px 0 0; font-size: 13.5px; color: #333; }
+.fit-hit {
+  margin-top: 10px;
+  background: var(--soft);
+  border-radius: 14px;
+  padding: 12px;
+}
+.fit-hit h3 { margin: 0 0 6px; font-size: 16px; }
+.fit-hit p { margin: 0 0 6px; font-size: 13.5px; }
+.fit-open {
+  min-height: 36px;
+  border: none;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  padding: 0 12px;
+  font-weight: 700;
+}
 .toolmap-hd h2, .sec-title {
   margin: 0;
   font-family: Georgia, "Songti SC", "Noto Serif SC", serif;
