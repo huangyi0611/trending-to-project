@@ -1,0 +1,1678 @@
+{
+  "name": "trending-to-project",
+  "title": "GitHub 热榜拆解",
+  "author": "假笑黄黄AI版",
+  "kind": "public-snapshot",
+  "issuesAvailable": [
+    "03",
+    "04"
+  ],
+  "notLiveTrending": true,
+  "note": "只有第03期和第04期的公开采样。星数、Forks、新增都是采样值，不是实时热榜。本文件不含第01期和第02期正文。",
+  "issues": [
+    {
+      "id": "03",
+      "label": "第三期",
+      "title": "GitHub 热榜拆解 · 个人项目适配与技术精进 / 第三期 · 2026年11月11日",
+      "date": "2026-11-11",
+      "summary": "让 AI 查数前先统一术语。另外还有界面零件、多 bot 助手、并行工位、浏览器操作、需求追问和 PR 审查这些能马上用的工具。",
+      "lead": "NVIDIA/auto-ontology",
+      "sampling": {
+        "date": "2026-11-11",
+        "when": "2026-11-11（北京时间，约上午 10:25）",
+        "statement": "星数、Forks、语言来自 GitHub API；本周或当天新增来自 GitHub Trending 周榜 / 日榜，抓取时间 2026-11-11（北京时间，约上午 10:25）。 许可证以各仓库公开的 LICENSE / LICENSING 文件为准；OpenMausBot 是混合许可（核心 Apache-2.0，enterprise/另算），Worktrunk 是 MIT OR Apache-2.0（GitHub 自动识别显示 NOASSERTION，以仓库文件为准）。",
+        "starsAreSnapshot": true
+      },
+      "howChosen": "怎么选的：从本周 GitHub Trending 里挑，避开第一、二期推过的仓库（2026-11-11 抓取，以周榜为主、日榜补充）。本期偏向这几类：让 AI 查数前先统一说法（语义层 / Ontology）、人和 AI 共用一套界面零件、能自己部署的多 bot 助手、让多个 AI 同时干活不打架（worktree）、让 AI 自己操作浏览器（Computer Use）、拿来就能用的工程 skill，以及开源的 PR 自动审查。",
+      "advice": "非程序员建议顺序： 先装 mattpocock/skills （1 星，约 10 分钟），开工前让 AI 把需求追问清楚，最省返工；再装 agent-browser，让 AI 自己点网页、截图给你看；有了 GitHub 仓库，再加 pr-agent 自动审 PR。 worktrunk 等你同时开 2 个以上 AI 再装； auto-ontology 和 OpenMausBot 体量大，先学思路，可以不装； astryx 只有做 React 网页时才用得上。",
+      "kitNote": "前置条件来自仓库 README（2026-11-15 读取）；难度和耗时是估计。",
+      "stages": [
+        {
+          "key": "idea",
+          "name": "想法"
+        },
+        {
+          "key": "spec",
+          "name": "写需求"
+        },
+        {
+          "key": "code",
+          "name": "写代码"
+        },
+        {
+          "key": "memory",
+          "name": "记忆和上下文"
+        },
+        {
+          "key": "data",
+          "name": "数据和知识"
+        },
+        {
+          "key": "ui",
+          "name": "界面"
+        },
+        {
+          "key": "qa",
+          "name": "测试、审查和安全"
+        },
+        {
+          "key": "ship",
+          "name": "发布和内容"
+        }
+      ],
+      "map": [
+        {
+          "id": "p03",
+          "name": "OpenMausBot",
+          "stage": "idea",
+          "what": "让一队 bot 分头调研、起草",
+          "stars": 2,
+          "rec": false
+        },
+        {
+          "id": "p06",
+          "name": "mattpocock skills",
+          "stage": "spec",
+          "what": "先被 AI 追问清楚再开工",
+          "stars": 1,
+          "rec": false
+        },
+        {
+          "id": "p04",
+          "name": "worktrunk",
+          "stage": "code",
+          "what": "多个 Agent 并行写码不打架",
+          "stars": 2,
+          "rec": false
+        },
+        {
+          "id": "p01",
+          "name": "auto-ontology",
+          "stage": "data",
+          "what": "先认准术语再让 AI 查数",
+          "stars": 5,
+          "rec": true
+        },
+        {
+          "id": "p02",
+          "name": "astryx",
+          "stage": "ui",
+          "what": "人和 AI 共用一套界面零件",
+          "stars": 3,
+          "rec": false
+        },
+        {
+          "id": "p05",
+          "name": "agent-browser",
+          "stage": "qa",
+          "what": "AI 自己点网页验收截图",
+          "stars": 2,
+          "rec": false
+        },
+        {
+          "id": "p07",
+          "name": "pr-agent",
+          "stage": "qa",
+          "what": "每个 PR 先让 AI 审一遍",
+          "stars": 3,
+          "rec": false
+        }
+      ],
+      "pastNamesOnly": [
+        {
+          "issue": 1,
+          "stage": "qa",
+          "label": "elephant-goldfish-model"
+        },
+        {
+          "issue": 1,
+          "stage": "memory",
+          "label": "context-mode"
+        },
+        {
+          "issue": 1,
+          "stage": "ui",
+          "label": "impeccable"
+        },
+        {
+          "issue": 1,
+          "stage": "memory",
+          "label": "claude-mem"
+        },
+        {
+          "issue": 1,
+          "stage": "ship",
+          "label": "hyperframes"
+        },
+        {
+          "issue": 1,
+          "stage": "idea",
+          "label": "knowledge-work-plugins"
+        },
+        {
+          "issue": 1,
+          "stage": "qa",
+          "label": "security-audit-skill"
+        },
+        {
+          "issue": 2,
+          "stage": "spec",
+          "label": "skills"
+        },
+        {
+          "issue": 2,
+          "stage": "code",
+          "label": "t3code"
+        },
+        {
+          "issue": 2,
+          "stage": "code",
+          "label": "superpowers"
+        },
+        {
+          "issue": 2,
+          "stage": "data",
+          "label": "DeepTutor"
+        },
+        {
+          "issue": 2,
+          "stage": "ui",
+          "label": "hallmark"
+        },
+        {
+          "issue": 2,
+          "stage": "ship",
+          "label": "OpenMontage"
+        },
+        {
+          "issue": 2,
+          "stage": "qa",
+          "label": "agent-desktop"
+        }
+      ],
+      "cards": [
+        {
+          "id": "p01",
+          "rank": "#01",
+          "name": "auto-ontology",
+          "featured": true,
+          "blurb": "先认准术语再让 AI 查数",
+          "repo": "NVIDIA/auto-ontology",
+          "pills": [
+            ">_ 语义层",
+            "Docker 部署",
+            "MCP / skill"
+          ],
+          "tags": [
+            "后端",
+            "工程框架",
+            "实用 skills"
+          ],
+          "stageKey": "data",
+          "stageName": "数据和知识",
+          "description": "NVIDIA 在 GitHub 上开源的 语义层 工具。它先读你的数据库，整理出一份「业务词典」（Ontology：每个业务词是什么、表和表怎么关联、指标怎么算），人确认后再交给 Agent 去查数。每个答案都附上查询语句（SQL）和步骤；数据覆盖不到的问题，它会直接说「答不了」。后端用 FastAPI + Postgres，可以通过 MCP、 API 或自带的 skill 接进你的 AI 工具。",
+          "license": "开源协议 Apache-2.0 （仓库暂不接受外部 PR，发现问题可以开 issue）",
+          "metrics": [
+            {
+              "label": "★ STAR",
+              "value": "11,484",
+              "hint": ""
+            },
+            {
+              "label": "↗ 本周新增",
+              "value": "+9,621",
+              "hint": "周榜 · 2026-11-11"
+            },
+            {
+              "label": "</> 语言",
+              "value": "Python",
+              "hint": ""
+            },
+            {
+              "label": "⑂ FORKS",
+              "value": "944",
+              "hint": ""
+            }
+          ],
+          "starSnapshot": "11,484",
+          "canDo": [
+            "读数据库的表结构、样本数据和历史查询，整理出业务词、表之间的关系和能反复用的计算公式（SQL），存进 Postgres （用 pgvector 做相似内容搜索）。",
+            "人在界面里核对、修改，再「认证」这些定义；之后谁问「收入」「客户」，都按同一套公式算。",
+            "把你用日常语言问的问题翻成 SQL 去查（Text-to-SQL），返回答案、SQL 和推理步骤；还能先用 check_answerable 看看这个问题数据能不能答。",
+            "可以通过 MCP、 REST API 或三个官方 skill（安装 / 管理 / 查询）接进你现有的 AI 工具。默认用 NVIDIA NIM 跑模型，也能换成其他兼容 OpenAI 格式的模型服务。"
+          ],
+          "highlightTitle": "先把「词」认准，再让 AI 去查数",
+          "highlight": "它解决的问题是：AI 给的数字靠不靠谱。定义由人确认过，答不上来就明说，用到的 SQL 也摆出来给你核对。比让模型直接对着原始数据表自由发挥稳得多。",
+          "audience": "手上有表格或数据库、想让 AI 帮忙查数，却常遇到「同一个指标两种算法」的人。也适合想给读书笔记、知识库先建一份术语表的人，比只把原文切成小段去搜更准。",
+          "drawbacks": [
+            {
+              "problem": "缺点1：它是一整套平台，体量大。 要同时跑网页前端（Next.js）、两个 FastAPI 服务和 Postgres 数据库，还要模型密钥；在自己电脑上用 Docker Compose 一键启动也要花些功夫。",
+              "response": "先学它的思路，不必整套搬进正式产品。一般的小产品或内容项目只抄三步就够：整理术语 → 人确认定义 → 答不了就说答不了。真想试，用官方的 Docker Compose 和示例数据库跑通聊天功能，再决定接不接自己的数据。"
+            },
+            {
+              "problem": "缺点2：默认的安全设置要盯紧。 仓库写明 3001、3002 这两个端口只能放在内网；负责导入数据的服务几乎不验证身份，直接相信前端转过来的用户信息。打开可选的 KumoRFM 预测功能后，还会把表里的数据上传到对方服务器。",
+              "response": "对外只开 3000 端口，后端端口别暴露到公网。数据没审查完之前，不要填 KUMO_RFM_API_KEY。密钥和数据库密码按官方说明改掉默认值。"
+            },
+            {
+              "problem": "缺点3：不收外部代码贡献，也要留意绑定某一家模型服务。 维护完全由 NVIDIA 团队负责；默认模型走 NIM，不过可以换。",
+              "response": "把它当一份能跑的参考样板来学，别指望给它提 PR 一起共建。需求和 bug 通过 issue 反馈。自己部署时先配好自己的模型服务地址，免得整个流程只能用一家的云端模型。"
+            }
+          ],
+          "sections": [
+            {
+              "title": "技术含金量",
+              "text": "价值在于给 AI 一份大家公认、可以核对的背景资料。AI 会查数据库、会写 SQL，可如果「收入」在两个系统里算法不同，查得再快也没用。这个项目把术语、关系和认证过的计算公式放在第一位，每个答案都带出处。 流程也清楚：先生成草稿 → 人认证 → 再回答。常见做法是把整个数据库的表结构（schema）塞给模型碰运气，它反过来先定规矩。它还把「预测未来」和「查已有数据」分开处理（预测可选用 KumoRFM），这种分拣本身就值得学。"
+            },
+            {
+              "title": "技术关联",
+              "text": "① 热门技术取舍： 只用 RAG （把文档切成小段再搜），适合文章、PDF 这类没有固定格式的资料；只把原始表结构喂给模型，起步快，但指标口径会越用越乱。完整的 Auto Ontology 适合多个系统、要求口径统一的查数场景。个人项目多数用不上整套平台，先做术语表和「答不了就拒绝」更划算，图谱可视化以后再说。仓库还说能和 Apache Ossie （一种交换语义模型的格式）互相导入导出，等你以后要跨工具共享再看。"
+            },
+            {
+              "title": "上榜原因 · 许可证与维护风险",
+              "text": "上榜依据： GitHub Trending 周榜第 1（2026-11-11 抓取）；本周 +9,621（总星约 11,484，几乎都是这一周涨的）。它正好回答了很多人关心的「AI 查数靠不靠谱」，所以选作本期最推荐。 风险： Apache-2.0 本身很宽松，但项目声明暂不接受外部贡献，发展方向由 NVIDIA 团队决定。未解决的 issue 约 114 个。部署时要注意端口和数据外传。项目 2026 年 4 月创建，近期仍在更新（抓取时最近一次推送约 2026-11-11 03:31，北京时间）。用到的第三方组件见仓库里的 THIRD_PARTY_NOTICES 文件。"
+            }
+          ],
+          "difficulty": {
+            "stars": 5,
+            "outOf": 5,
+            "timeEstimate": "约 2–3 小时（跑通官方示例库）",
+            "prerequisites": "Docker （含 Compose v2）、 uv、NVIDIA 的 API key （以 nvapi- 开头，在 build.nvidia.com 申请）；想接 Claude Desktop 还要能运行 npx （会用到 mcp-remote）。不想装也行：只学「术语表 → 人确认 → 再问数」的做法，什么都不用装。",
+            "note": "README 的 Quickstart 要在 .env 文件里改 6 个以上密码和密钥，还要导入一个示例数据库，对非程序员偏难。 前置条件来自仓库 README（2026-11-15 读取）；难度和耗时是估计。"
+          },
+          "searchText": "auto-ontology NVIDIA/auto-ontology 先认准术语再让 AI 查数 NVIDIA 在 GitHub 上开源的 语义层 工具。它先读你的数据库，整理出一份「业务词典」（Ontology：每个业务词是什么、表和表怎么关联、指标怎么算），人确认后再交给 Agent 去查数。每个答案都附上查询语句（SQL）和步骤；数据覆盖不到的问题，它会直接说「答不了」。后端用 FastAPI + Postgres，可以通过 MCP、 API 或自带的 skill 接进你的 AI 工具。 开源协议 Apache-2.0 （仓库暂不接受外部 PR，发现问题可以开 issue） 先把「词」认准，再让 AI 去查数 它解决的问题是：AI 给的数字靠不靠谱。定义由人确认过，答不上来就明说，用到的 SQL 也摆出来给你核对。比让模型直接对着原始数据表自由发挥稳得多。 手上有表格或数据库、想让 AI 帮忙查数，却常遇到「同一个指标两种算法」的人。也适合想给读书笔记、知识库先建一份术语表的人，比只把原文切成小段去搜更准。 >_ 语义层 Docker 部署 MCP / skill 后端 工程框架 实用 skills 数据和知识 读数据库的表结构、样本数据和历史查询，整理出业务词、表之间的关系和能反复用的计算公式（SQL），存进 Postgres （用 pgvector 做相似内容搜索）。 人在界面里核对、修改，再「认证」这些定义；之后谁问「收入」「客户」，都按同一套公式算。 把你用日常语言问的问题翻成 SQL 去查（Text-to-SQL），返回答案、SQL 和推理步骤；还能先用 check_answerable 看看这个问题数据能不能答。 可以通过 MCP、 REST API 或三个官方 skill（安装 / 管理 / 查询）接进你现有的 AI 工具。默认用 NVIDIA NIM 跑模型，也能换成其他兼容 OpenAI 格式的模型服务。 缺点1：它是一整套平台，体量大。 要同时跑网页前端（Next.js）、两个 FastAPI 服务和 Postgres 数据库，还要模型密钥；在自己电脑上用 Docker Compose 一键启动也要花些功夫。 先学它的思路，不必整套搬进正式产品。一般的小产品或内容项目只抄三步就够：整理术语 → 人确认定义 → 答不了就说答不了。真想试，用官方的 Docker Compose 和示例数据库跑通聊天功能，再决定接不接自己的数据。 缺点2：默认的安全设置要盯紧。 仓库写明 3001、3002 这两个端口只能放在内网；负责导入数据的服务几乎不验证身份，直接相信前端转过来的用户信息。打开可选的 KumoRFM 预测功能后，还会把表里的数据上传到对方服务器。 对外只开 3000 端口，后端端口别暴露到公网。数据没审查完之前，不要填 KUMO_RFM_API_KEY。密钥和数据库密码按官方说明改掉默认值。 缺点3：不收外部代码贡献，也要留意绑定某一家模型服务。 维护完全由 NVIDIA 团队负责；默认模型走 NIM，不过可以换。 把它当一份能跑的参考样板来学，别指望给它提 PR 一起共建。需求和 bug 通过 issue 反馈。自己部署时先配好自己的模型服务地址，免得整个流程只能用一家的云端模型。 技术含金量 价值在于给 AI 一份大家公认、可以核对的背景资料。AI 会查数据库、会写 SQL，可如果「收入」在两个系统里算法不同，查得再快也没用。这个项目把术语、关系和认证过的计算公式放在第一位，每个答案都带出处。 流程也清楚：先生成草稿 → 人认证 → 再回答。常见做法是把整个数据库的表结构（schema）塞给模型碰运气，它反过来先定规矩。它还把「预测未来」和「查已有数据」分开处理（预测可选用 KumoRFM），这种分拣本身就值得学。 技术关联 ① 热门技术取舍： 只用 RAG （把文档切成小段再搜），适合文章、PDF 这类没有固定格式的资料；只把原始表结构喂给模型，起步快，但指标口径会越用越乱。完整的 Auto Ontology 适合多个系统、要求口径统一的查数场景。个人项目多数用不上整套平台，先做术语表和「答不了就拒绝」更划算，图谱可视化以后再说。仓库还说能和 Apache Ossie （一种交换语义模型的格式）互相导入导出，等你以后要跨工具共享再看。 上榜原因 · 许可证与维护风险 上榜依据： GitHub Trending 周榜第 1（2026-11-11 抓取）；本周 +9,621（总星约 11,484，几乎都是这一周涨的）。它正好回答了很多人关心的「AI 查数靠不靠谱」，所以选作本期最推荐。 风险： Apache-2.0 本身很宽松，但项目声明暂不接受外部贡献，发展方向由 NVIDIA 团队决定。未解决的 issue 约 114 个。部署时要注意端口和数据外传。项目 2026 年 4 月创建，近期仍在更新（抓取时最近一次推送约 2026-11-11 03:31，北京时间）。用到的第三方组件见仓库里的 THIRD_PARTY_NOTICES 文件。"
+        },
+        {
+          "id": "p02",
+          "rank": "#02",
+          "name": "astryx",
+          "featured": false,
+          "blurb": "人和 AI 共用一套界面零件",
+          "repo": "meta/astryx · astryx.atmeta.com",
+          "pills": [
+            ">_ 界面零件库",
+            "AI 也能用",
+            "React 19"
+          ],
+          "tags": [
+            "UI设计",
+            "前端",
+            "工程框架"
+          ],
+          "stageKey": "ui",
+          "stageName": "界面",
+          "description": "Meta 在 GitHub 上开源的设计系统（目前是 Beta 测试版）：150 多个照顾无障碍使用的界面组件，加上主题、页面模板和 CLI。人和 Agent 看同一套说明来搭界面。底层用 React 19 和 StyleX；官方说使用时也能用 className、 Tailwind 或普通 CSS 改样式，不用绑死某个打包插件。",
+          "license": "开源协议 MIT",
+          "metrics": [
+            {
+              "label": "★ STAR",
+              "value": "23,057",
+              "hint": ""
+            },
+            {
+              "label": "↗ 今日新增",
+              "value": "+3,108",
+              "hint": "日榜 · 2026-11-11"
+            },
+            {
+              "label": "</> 语言",
+              "value": "TypeScript",
+              "hint": ""
+            },
+            {
+              "label": "⑂ FORKS",
+              "value": "1,829",
+              "hint": ""
+            }
+          ],
+          "starSnapshot": "23,057",
+          "canDo": [
+            "一整套能拼装的组件、品牌级主题（含深色模式）和现成的页面模板。",
+            "用 CLI 查组件文档、生成项目骨架、换主题、批量自动改代码（codemod），人和 AI 走同一个入口。",
+            "想大改某个组件时，可以用 swizzle 把组件源码复制到自己项目里随便改。",
+            "官方说它在 Meta 内部用了约八年、支撑过大量应用才开源；有公开文档、组件展示页（Storybook）和在线试玩页（Sandbox）可以对照。"
+          ],
+          "highlightTitle": "人和 AI 共用同一个零件盒",
+          "highlight": "组件库很多，它的特别之处是规矩统一、文档齐全，AI 才能猜准下一个组件该怎么用。只给模型看截图或零散例子，很难做到这一点。",
+          "audience": "在做 React 网页或管理后台、想让 AI 帮忙搭页面的人。做 iOS 原生 App 的人，更适合把它当「零件说明怎么写」的参考，不用直接装。",
+          "drawbacks": [
+            {
+              "problem": "缺点1：只适用于 React 网页。 它是 React 组件，放不进 iOS、Android 原生工程。",
+              "response": "别为了追热度把原生 App 改写成 React。可以抄的是：统一命名、统一的组件参数（props）写法、给 AI 一份「什么场景选哪个组件」的短文档。以后做 React 网页时，再考虑引入。"
+            },
+            {
+              "problem": "缺点2：还在 Beta 测试期，未解决的 issue 约 691 个。 图表等包还标着 canary，稳不稳定要自己判断。",
+              "response": "正式使用先锁定版本号，只装真正用到的包（core 加一个主题）。关注更新日志（changelog），开源不等于稳定。"
+            },
+            {
+              "problem": "缺点3： swizzle 之后容易和官方版本走散。 源码复制进你的仓库后，官方修的 bug 不会自动同步过来。",
+              "response": "能用主题变量和 className 改的，就别 swizzle。真复制出来了，记下改了哪几个文件、为什么改，并安排好以后怎么跟上官方版本。"
+            }
+          ],
+          "sections": [
+            {
+              "title": "技术含金量",
+              "text": "好的设计系统省掉的是「每次从零猜界面」的功夫。对 AI 尤其明显：命名、参数、组合方式一致，生成的结果才可预期。 Astryx 把给人看的文档和给 AI 用的 CLI 做成同一套，方向是对的。 它的另一个思路是「多给建议、少加限制」：组件尽量照你传入的值显示，设计建议写在文档和示例里，框架本身不跟你较劲。这对人和模型都更友好。"
+            },
+            {
+              "title": "技术关联",
+              "text": "① 热门技术取舍： 只要几个按钮，用平台自带的组件（比如手机系统自带的控件）就够。网页多、人和 AI 一起改，完整的设计系统才划算。 Astryx、 Material、 Ant Design 别同时用三套；选定一套，例外情况写进一份短规范。"
+            },
+            {
+              "title": "上榜原因 · 许可证与维护风险",
+              "text": "上榜依据： GitHub Trending 日榜靠前（2026-11-11）；当天约 +3,108。大厂开源，明确写给 AI 用，和做界面的需求相关。 风险： MIT 协议，很宽松。还在 Beta，未解决的 issue 很多。由 Meta 维护，发展方向由官方决定。抓取时最近一次推送约 2026-11-11 10:22（北京时间），很活跃，但对外接口（API）还可能调整。"
+            }
+          ],
+          "difficulty": {
+            "stars": 3,
+            "outOf": 5,
+            "timeEstimate": "约 1 小时（已有 React 项目时）",
+            "prerequisites": "Node，加上 npm / pnpm / yarn 任意一个安装工具；项目要用 React 19 或更新版本。只有给 Astryx 仓库本身贡献代码，才需要 Node 22+ 和 pnpm 11。iOS、Android 原生 App 装不上它，只能借鉴写法。",
+            "note": "装包只要几条命令；难点是你得先有一个 React 19 项目。 前置条件来自仓库 README （2026-11-15 读取）；难度和耗时是估计。"
+          },
+          "searchText": "astryx meta/astryx · astryx.atmeta.com 人和 AI 共用一套界面零件 Meta 在 GitHub 上开源的设计系统（目前是 Beta 测试版）：150 多个照顾无障碍使用的界面组件，加上主题、页面模板和 CLI。人和 Agent 看同一套说明来搭界面。底层用 React 19 和 StyleX；官方说使用时也能用 className、 Tailwind 或普通 CSS 改样式，不用绑死某个打包插件。 开源协议 MIT 人和 AI 共用同一个零件盒 组件库很多，它的特别之处是规矩统一、文档齐全，AI 才能猜准下一个组件该怎么用。只给模型看截图或零散例子，很难做到这一点。 在做 React 网页或管理后台、想让 AI 帮忙搭页面的人。做 iOS 原生 App 的人，更适合把它当「零件说明怎么写」的参考，不用直接装。 >_ 界面零件库 AI 也能用 React 19 UI设计 前端 工程框架 界面 一整套能拼装的组件、品牌级主题（含深色模式）和现成的页面模板。 用 CLI 查组件文档、生成项目骨架、换主题、批量自动改代码（codemod），人和 AI 走同一个入口。 想大改某个组件时，可以用 swizzle 把组件源码复制到自己项目里随便改。 官方说它在 Meta 内部用了约八年、支撑过大量应用才开源；有公开文档、组件展示页（Storybook）和在线试玩页（Sandbox）可以对照。 缺点1：只适用于 React 网页。 它是 React 组件，放不进 iOS、Android 原生工程。 别为了追热度把原生 App 改写成 React。可以抄的是：统一命名、统一的组件参数（props）写法、给 AI 一份「什么场景选哪个组件」的短文档。以后做 React 网页时，再考虑引入。 缺点2：还在 Beta 测试期，未解决的 issue 约 691 个。 图表等包还标着 canary，稳不稳定要自己判断。 正式使用先锁定版本号，只装真正用到的包（core 加一个主题）。关注更新日志（changelog），开源不等于稳定。 缺点3： swizzle 之后容易和官方版本走散。 源码复制进你的仓库后，官方修的 bug 不会自动同步过来。 能用主题变量和 className 改的，就别 swizzle。真复制出来了，记下改了哪几个文件、为什么改，并安排好以后怎么跟上官方版本。 技术含金量 好的设计系统省掉的是「每次从零猜界面」的功夫。对 AI 尤其明显：命名、参数、组合方式一致，生成的结果才可预期。 Astryx 把给人看的文档和给 AI 用的 CLI 做成同一套，方向是对的。 它的另一个思路是「多给建议、少加限制」：组件尽量照你传入的值显示，设计建议写在文档和示例里，框架本身不跟你较劲。这对人和模型都更友好。 技术关联 ① 热门技术取舍： 只要几个按钮，用平台自带的组件（比如手机系统自带的控件）就够。网页多、人和 AI 一起改，完整的设计系统才划算。 Astryx、 Material、 Ant Design 别同时用三套；选定一套，例外情况写进一份短规范。 上榜原因 · 许可证与维护风险 上榜依据： GitHub Trending 日榜靠前（2026-11-11）；当天约 +3,108。大厂开源，明确写给 AI 用，和做界面的需求相关。 风险： MIT 协议，很宽松。还在 Beta，未解决的 issue 很多。由 Meta 维护，发展方向由官方决定。抓取时最近一次推送约 2026-11-11 10:22（北京时间），很活跃，但对外接口（API）还可能调整。"
+        },
+        {
+          "id": "p03",
+          "rank": "#03",
+          "name": "OpenMausBot",
+          "featured": false,
+          "blurb": "让一队 bot 分头调研、起草",
+          "repo": "milind-soni/OpenMausBot · openmausbot.com",
+          "pills": [
+            ">_ AI 桌面助手",
+            "数据存本机",
+            "多 bot"
+          ],
+          "tags": [
+            "工程框架",
+            "实用 skills",
+            "前端"
+          ],
+          "stageKey": "idea",
+          "stageName": "想法",
+          "description": "GitHub 上的开源项目，功能对标 xAI 的同类 AI 助手产品：在一个聊天应用里管理一队 Agent。每个 bot 可以换模型，也可以有自己的电脑（云桌面、本机里的虚拟机，或经你确认后直接用本机），危险操作要你点「允许」。默认数据存在本机（local-first，放在 ~/.openmausbot 文件夹），可以接你电脑上已登录的 Claude Code、 Codex、 Grok 命令行工具。桌面端用 Electron 开发。",
+          "license": "核心代码 Apache-2.0； enterprise/ 目录是 source-available，整体属于 open-core 模式",
+          "metrics": [
+            {
+              "label": "★ STAR",
+              "value": "20,697",
+              "hint": ""
+            },
+            {
+              "label": "↗ 本周新增",
+              "value": "+8,951",
+              "hint": "周榜 · 2026-11-11"
+            },
+            {
+              "label": "</> 语言",
+              "value": "TypeScript",
+              "hint": ""
+            },
+            {
+              "label": "⑂ FORKS",
+              "value": "2,867",
+              "hint": ""
+            }
+          ],
+          "starSnapshot": "20,697",
+          "canDo": [
+            "把多个 bot 当联系人管理：每个 bot 的人设、模型、电脑、连接的应用都可以不同。",
+            "跑命令、改文件这类有风险的动作，会变成聊天里的「允许 / 拒绝」卡片。",
+            "可以通过 Composio 这类连接器接 Gmail、 Slack、 GitHub 等（授权给多大权限要自己把关）。",
+            "支持用一份 Markdown 文件（「团队包」）一次导入整组 bot、频道和建议的定时任务；也能分享部门模板（不含密钥和聊天记录）。"
+          ],
+          "highlightTitle": "像通讯录一样管一队 AI",
+          "highlight": "它把「一个全能助手」拆成能分工的一队人，默认数据和密钥都留在本机。如果你已经在用托管式的 AI 助手产品，想看看开源版怎么做「成员列表 + 审批 + 电脑」，这个仓库很适合对照。",
+          "audience": "想在自己电脑上跑多个角色的 AI、又需要审批关卡的人。做协作产品的人，也可以只借鉴它「邀请 / 分享部门 / 权限卡片」的产品设计。",
+          "drawbacks": [
+            {
+              "problem": "缺点1：体量大，未解决的 issue 约 981 个，功能边界还在变。 比如 README 写明， Ubuntu 在 Wayland 桌面下的本机控制功能，因为一个 issue 暂时关闭。",
+              "response": "先当产品参考、在本机试用，别一上来就改它的核心当自己的后端。关注版本发布（releases）和安全说明（SECURITY），正式用之前只给最小权限。"
+            },
+            {
+              "problem": "缺点2：许可证是 open-core。 删掉 enterprise/ 目录后才是纯开源软件（OSS）；企业目录另有许可，正式使用其中的功能要授权。",
+              "response": "自用或二次开发前，先确认没用到 enterprise 目录。要分发或替别人托管前，读一遍 LICENSING.md；它的商标名也不能直接拿来当自己的产品名。"
+            },
+            {
+              "problem": "缺点3：控制本机和连接第三方账号的权限很大。 bot 一旦拿到你的电脑和邮箱，误点一次「允许」代价不小。",
+              "response": "保持默认的「先问再做」；本机控制只在你主动打开后才生效。连接器一个一个开，定期检查授权。正式环境的密钥别靠在聊天里粘贴一次来管理。"
+            }
+          ],
+          "sections": [
+            {
+              "title": "技术含金量",
+              "text": "价值在产品骨架：多个 bot、每个 bot 一台电脑、危险动作变成卡片、团队配置能打包分享且默认不带密钥。这些比再包一层聊天接口难做得多。 「数据存本机 + 本机运行的 harness 」也值得看：程序和对话记录（transcript）都留在你自己电脑上，云端只是一台可选的电脑，数据以本机为准。"
+            },
+            {
+              "title": "技术关联",
+              "text": "① 热门技术取舍： 只需要一个写代码的 AI，继续用 Cursor 或 Claude Code 就行。要「一队分好角色的助理 + 审批」，才值得装这类桌面应用。别和本期的 agent-browser、第二期的 agent-desktop 叠成三套电脑控制工具，先定场景再装。"
+            },
+            {
+              "title": "上榜原因 · 许可证与维护风险",
+              "text": "上榜依据： GitHub Trending 周榜第 4 左右（2026-11-11）；本周约 +8,951。适合想把数据和密钥留在自己电脑上的 AI 助手用户。 风险： 核心 Apache-2.0，宽松； enterprise 目录要另看许可。 issue 很多；项目 2026 年 8 月创建，更新很快。仓库声明和 xAI、Meta、OpenAI、 Manus 都没有关系，还提醒别被同名的加密货币骗局误导。"
+            }
+          ],
+          "difficulty": {
+            "stars": 2,
+            "outOf": 5,
+            "timeEstimate": "约 20–30 分钟（下载安装包）",
+            "prerequisites": "macOS、Windows、 Ubuntu 24.04 安装包任选；电脑上至少装好并登录一个命令行 AI： claude、 codex 或 grok （Grok 也可以在设置里填 xAI 的 API key）。从源码运行才需要 Node 24+ 和 pnpm。 Composio、 Boat、 ElevenLabs 等密钥都是可选的。",
+            "note": "装包本身简单；真正花时间的是把每个 bot 的权限设对。 前置条件来自仓库 README （2026-11-15 读取）；难度和耗时是估计。"
+          },
+          "searchText": "OpenMausBot milind-soni/OpenMausBot · openmausbot.com 让一队 bot 分头调研、起草 GitHub 上的开源项目，功能对标 xAI 的同类 AI 助手产品：在一个聊天应用里管理一队 Agent。每个 bot 可以换模型，也可以有自己的电脑（云桌面、本机里的虚拟机，或经你确认后直接用本机），危险操作要你点「允许」。默认数据存在本机（local-first，放在 ~/.openmausbot 文件夹），可以接你电脑上已登录的 Claude Code、 Codex、 Grok 命令行工具。桌面端用 Electron 开发。 核心代码 Apache-2.0； enterprise/ 目录是 source-available，整体属于 open-core 模式 像通讯录一样管一队 AI 它把「一个全能助手」拆成能分工的一队人，默认数据和密钥都留在本机。如果你已经在用托管式的 AI 助手产品，想看看开源版怎么做「成员列表 + 审批 + 电脑」，这个仓库很适合对照。 想在自己电脑上跑多个角色的 AI、又需要审批关卡的人。做协作产品的人，也可以只借鉴它「邀请 / 分享部门 / 权限卡片」的产品设计。 >_ AI 桌面助手 数据存本机 多 bot 工程框架 实用 skills 前端 想法 把多个 bot 当联系人管理：每个 bot 的人设、模型、电脑、连接的应用都可以不同。 跑命令、改文件这类有风险的动作，会变成聊天里的「允许 / 拒绝」卡片。 可以通过 Composio 这类连接器接 Gmail、 Slack、 GitHub 等（授权给多大权限要自己把关）。 支持用一份 Markdown 文件（「团队包」）一次导入整组 bot、频道和建议的定时任务；也能分享部门模板（不含密钥和聊天记录）。 缺点1：体量大，未解决的 issue 约 981 个，功能边界还在变。 比如 README 写明， Ubuntu 在 Wayland 桌面下的本机控制功能，因为一个 issue 暂时关闭。 先当产品参考、在本机试用，别一上来就改它的核心当自己的后端。关注版本发布（releases）和安全说明（SECURITY），正式用之前只给最小权限。 缺点2：许可证是 open-core。 删掉 enterprise/ 目录后才是纯开源软件（OSS）；企业目录另有许可，正式使用其中的功能要授权。 自用或二次开发前，先确认没用到 enterprise 目录。要分发或替别人托管前，读一遍 LICENSING.md；它的商标名也不能直接拿来当自己的产品名。 缺点3：控制本机和连接第三方账号的权限很大。 bot 一旦拿到你的电脑和邮箱，误点一次「允许」代价不小。 保持默认的「先问再做」；本机控制只在你主动打开后才生效。连接器一个一个开，定期检查授权。正式环境的密钥别靠在聊天里粘贴一次来管理。 技术含金量 价值在产品骨架：多个 bot、每个 bot 一台电脑、危险动作变成卡片、团队配置能打包分享且默认不带密钥。这些比再包一层聊天接口难做得多。 「数据存本机 + 本机运行的 harness 」也值得看：程序和对话记录（transcript）都留在你自己电脑上，云端只是一台可选的电脑，数据以本机为准。 技术关联 ① 热门技术取舍： 只需要一个写代码的 AI，继续用 Cursor 或 Claude Code 就行。要「一队分好角色的助理 + 审批」，才值得装这类桌面应用。别和本期的 agent-browser、第二期的 agent-desktop 叠成三套电脑控制工具，先定场景再装。 上榜原因 · 许可证与维护风险 上榜依据： GitHub Trending 周榜第 4 左右（2026-11-11）；本周约 +8,951。适合想把数据和密钥留在自己电脑上的 AI 助手用户。 风险： 核心 Apache-2.0，宽松； enterprise 目录要另看许可。 issue 很多；项目 2026 年 8 月创建，更新很快。仓库声明和 xAI、Meta、OpenAI、 Manus 都没有关系，还提醒别被同名的加密货币骗局误导。"
+        },
+        {
+          "id": "p04",
+          "rank": "#04",
+          "name": "worktrunk",
+          "featured": false,
+          "blurb": "多个 Agent 并行写码不打架",
+          "repo": "max-sixty/worktrunk · worktrunk.dev",
+          "pills": [
+            ">_ Git / 并行",
+            "worktree 命令行工具",
+            "多 Agent"
+          ],
+          "tags": [
+            "工程框架",
+            "实用 skills",
+            "后端",
+            "前端"
+          ],
+          "stageKey": "code",
+          "stageName": "写代码",
+          "description": "GitHub 上开源的 CLI，让 git worktree （同一个项目分出多张独立工作台）用起来像切换 分支 一样简单，专为同时跑多个 Agent 设计。用分支名找到对应文件夹，一条命令就能创建、切换、清理；还带 hooks （到点自动执行的脚本）、合并流程，在支持的磁盘上用 copy-on-write （写时复制）共享编译缓存。",
+          "license": "双协议： MIT 或 Apache-2.0 （任选其一）",
+          "metrics": [
+            {
+              "label": "★ STAR",
+              "value": "12,406",
+              "hint": ""
+            },
+            {
+              "label": "↗ 本周新增",
+              "value": "+2,093",
+              "hint": "周榜 · 2026-11-11"
+            },
+            {
+              "label": "</> 语言",
+              "value": "Rust",
+              "hint": ""
+            },
+            {
+              "label": "⑂ FORKS",
+              "value": "488",
+              "hint": ""
+            }
+          ],
+          "starSnapshot": "12,406",
+          "canDo": [
+            "wt switch -c：新建 分支 和 worktree 并进入文件夹；加上 -x claude 还能马上启动 AI。",
+            "wt list：查看每个 worktree 改了什么、比主线（main）多了哪些提交；还支持拉取 PR、合并和清理。",
+            "hooks：创建、合并前后自动装依赖、启动本地开发服务等。",
+            "在 APFS、btrfs、XFS 这类支持写时复制的磁盘上，多个 worktree 可以共用 node_modules、 target/ 这类缓存文件夹，不用每次重新安装。"
+          ],
+          "highlightTitle": "给每个并行的 AI 分一张工位",
+          "highlight": "git 自带的 worktree 能用，但命令长、路径难记。 Worktrunk 把「给每个 AI 一张干净桌子」变成几句日常口令。同时开 5–10 个任务时，这是最先让人头疼的地方。",
+          "audience": "已经在电脑上同时跑好几个 Claude Code、 Codex 或 Cursor Agent，却还在手敲 git worktree add 的人；只用一个 AI 改一个项目的，可以先不装。",
+          "drawbacks": [
+            {
+              "problem": "缺点1：又要学一套命令，可能和你的 shell 别名、编辑器自带的 worktree 功能冲突。",
+              "response": "只在真要并行的项目里用；先学会 switch / list / remove 三个命令。Windows 上它和系统自带的 wt （Windows Terminal 终端）重名，可以改用 git-wt，或关掉冲突的别名。"
+            },
+            {
+              "problem": "缺点2：共享缓存要看磁盘格式。 磁盘不支持写时复制（CoW）时，「瞬间装好依赖」的效果出不来。",
+              "response": "先查官方文档支不支持你的磁盘格式。不支持就每个 worktree 各自装依赖，或者把项目放到 APFS / btrfs 磁盘上再试。"
+            },
+            {
+              "problem": "缺点3：多条线怎么合并，还得人来定顺序。 工具只管工位，不管产品决策；几个 AI 同时改同一块代码，照样会冲突。",
+              "response": "按模块分任务；合并前用 wt list 或 PR 检查一遍。比如「登录功能一条 worktree、支付流程另一条」，避免两边改同一个文件。"
+            }
+          ],
+          "sections": [
+            {
+              "title": "技术含金量",
+              "text": "多个 AI 并行时，卡住人的往往是文件夹和 分支 的琐事，跟模型聪不聪明关系不大。把 worktree 的创建、切换、清理变成几个固定动作，能省很多力气。 hooks 和共享缓存说明作者懂真实痛点：每开一个 worktree 都要重新 npm install 一遍，并行的好处就被吃掉了。这个工具补的是 git 本身用起来不顺手的地方，没有再包一层 AI。"
+            },
+            {
+              "title": "技术关联",
+              "text": "① 热门技术取舍： 一个 AI 改一条 分支， git 自带命令就够。经常同时跑 3 个以上任务，再装 Worktrunk。它不管浏览器，也不管 语义层，和本期其他项目互相补充。"
+            },
+            {
+              "title": "上榜原因 · 许可证与维护风险",
+              "text": "上榜依据： GitHub Trending 周榜（2026-11-11）；本周约 +2,093。多个 AI 并行干活的刚需，文档完整。 风险： MIT 或 Apache-2.0，宽松。未解决的 issue 约 57 个，比较可控。维护活跃。 GitHub 自动识别许可证（SPDX）显示 NOASSERTION，以仓库里 LICENSE 和 Cargo.toml 文件写的「 MIT OR Apache-2.0 」为准。"
+            }
+          ],
+          "difficulty": {
+            "stars": 2,
+            "outOf": 5,
+            "timeEstimate": "约 15 分钟",
+            "prerequisites": "Git；安装方式任选一种： Homebrew （macOS / Linux）、 Cargo、 Winget （Windows，命令叫 git-wt）；装完运行一次 wt config shell install。想一条命令直接启动 AI，要先装好 Claude Code 这类 CLI。",
+            "note": "一条命令装好；需要先大概懂 Git 分支 是什么。 前置条件来自仓库 README （2026-11-15 读取）；难度和耗时是估计。"
+          },
+          "searchText": "worktrunk max-sixty/worktrunk · worktrunk.dev 多个 Agent 并行写码不打架 GitHub 上开源的 CLI，让 git worktree （同一个项目分出多张独立工作台）用起来像切换 分支 一样简单，专为同时跑多个 Agent 设计。用分支名找到对应文件夹，一条命令就能创建、切换、清理；还带 hooks （到点自动执行的脚本）、合并流程，在支持的磁盘上用 copy-on-write （写时复制）共享编译缓存。 双协议： MIT 或 Apache-2.0 （任选其一） 给每个并行的 AI 分一张工位 git 自带的 worktree 能用，但命令长、路径难记。 Worktrunk 把「给每个 AI 一张干净桌子」变成几句日常口令。同时开 5–10 个任务时，这是最先让人头疼的地方。 已经在电脑上同时跑好几个 Claude Code、 Codex 或 Cursor Agent，却还在手敲 git worktree add 的人；只用一个 AI 改一个项目的，可以先不装。 >_ Git / 并行 worktree 命令行工具 多 Agent 工程框架 实用 skills 后端 前端 写代码 wt switch -c：新建 分支 和 worktree 并进入文件夹；加上 -x claude 还能马上启动 AI。 wt list：查看每个 worktree 改了什么、比主线（main）多了哪些提交；还支持拉取 PR、合并和清理。 hooks：创建、合并前后自动装依赖、启动本地开发服务等。 在 APFS、btrfs、XFS 这类支持写时复制的磁盘上，多个 worktree 可以共用 node_modules、 target/ 这类缓存文件夹，不用每次重新安装。 缺点1：又要学一套命令，可能和你的 shell 别名、编辑器自带的 worktree 功能冲突。 只在真要并行的项目里用；先学会 switch / list / remove 三个命令。Windows 上它和系统自带的 wt （Windows Terminal 终端）重名，可以改用 git-wt，或关掉冲突的别名。 缺点2：共享缓存要看磁盘格式。 磁盘不支持写时复制（CoW）时，「瞬间装好依赖」的效果出不来。 先查官方文档支不支持你的磁盘格式。不支持就每个 worktree 各自装依赖，或者把项目放到 APFS / btrfs 磁盘上再试。 缺点3：多条线怎么合并，还得人来定顺序。 工具只管工位，不管产品决策；几个 AI 同时改同一块代码，照样会冲突。 按模块分任务；合并前用 wt list 或 PR 检查一遍。比如「登录功能一条 worktree、支付流程另一条」，避免两边改同一个文件。 技术含金量 多个 AI 并行时，卡住人的往往是文件夹和 分支 的琐事，跟模型聪不聪明关系不大。把 worktree 的创建、切换、清理变成几个固定动作，能省很多力气。 hooks 和共享缓存说明作者懂真实痛点：每开一个 worktree 都要重新 npm install 一遍，并行的好处就被吃掉了。这个工具补的是 git 本身用起来不顺手的地方，没有再包一层 AI。 技术关联 ① 热门技术取舍： 一个 AI 改一条 分支， git 自带命令就够。经常同时跑 3 个以上任务，再装 Worktrunk。它不管浏览器，也不管 语义层，和本期其他项目互相补充。 上榜原因 · 许可证与维护风险 上榜依据： GitHub Trending 周榜（2026-11-11）；本周约 +2,093。多个 AI 并行干活的刚需，文档完整。 风险： MIT 或 Apache-2.0，宽松。未解决的 issue 约 57 个，比较可控。维护活跃。 GitHub 自动识别许可证（SPDX）显示 NOASSERTION，以仓库里 LICENSE 和 Cargo.toml 文件写的「 MIT OR Apache-2.0 」为准。"
+        },
+        {
+          "id": "p05",
+          "rank": "#05",
+          "name": "agent-browser",
+          "featured": false,
+          "blurb": "AI 自己点网页验收截图",
+          "repo": "vercel-labs/agent-browser · agent-browser.dev",
+          "pills": [
+            ">_ 浏览器",
+            "无障碍树",
+            "给 AI 用的 CLI"
+          ],
+          "tags": [
+            "实用 skills",
+            "前端",
+            "工程框架"
+          ],
+          "stageKey": "qa",
+          "stageName": "测试、审查和安全",
+          "description": "Vercel Labs 在 GitHub 上开源的浏览器自动化 CLI，专门给 Agent 用：先把网页拍成一份文字版快照（基于 accessibility tree，也就是无障碍树），每个元素带 @e1 这样的编号，再按编号去点击、填写。浏览器通过 CDP 一直开着，不用每步重启。自带和版本匹配的 skill，也可以开成 MCP 服务。",
+          "license": "开源协议 Apache-2.0",
+          "metrics": [
+            {
+              "label": "★ STAR",
+              "value": "49,275",
+              "hint": ""
+            },
+            {
+              "label": "↗ 本周新增",
+              "value": "+3,606",
+              "hint": "周榜 · 2026-11-11"
+            },
+            {
+              "label": "</> 语言",
+              "value": "Rust",
+              "hint": ""
+            },
+            {
+              "label": "⑂ FORKS",
+              "value": "3,452",
+              "hint": ""
+            }
+          ],
+          "starSnapshot": "49,275",
+          "canDo": [
+            "open （打开）→ snapshot （拍快照）→ click @e1 （点击）这样的短循环；编号失效时会要求重新拍快照。",
+            "点击前先检查元素是否被挡住、能不能点，失败就直接报错，不会假装成功。",
+            "能截图、录屏、管理 cookie 和登录状态；支持同时开多个 session、使用云端浏览器服务，以及 iOS 模拟器 里的 Safari 等（见文档）。",
+            "agent-browser skills get core 能取出和当前版本匹配的操作说明，避免「说明书和程序版本对不上」。"
+          ],
+          "highlightTitle": "让 AI 看网页的结构图",
+          "highlight": "纯看截图、按坐标点，费 token 又容易点歪。用 无障碍树 加固定编号，更省 token，也更容易写成固定脚本。它和第二期的 agent-desktop （桌面版无障碍树）是同一个思路，搬到了浏览器上。",
+          "audience": "想让 AI 打开网页做验收、填表、抓公开网页结构的人。它对原生 iOS 界面自动化支持有限（文档里有模拟器的用法可以试）。",
+          "drawbacks": [
+            {
+              "problem": "缺点1：未解决的 issue 约 562 个，功能面很宽，最容易踩坑的是权限和登录状态。",
+              "response": "先跑通 open / snapshot / click / close 四步。涉及登录时用官方的 session / auth （登录管理）功能，并设好允许访问的网站名单；别让 AI 拿着已登录的浏览器随便逛。"
+            },
+            {
+              "problem": "缺点2：编号会过期。 页面一跳转或内容一变（DOM 变了），旧的 @e1 就失效了。",
+              "response": "每次跳转后重新 snapshot。写 skill 时把「先快照再操作」写成必做步骤，和官方的 core skill 保持一致。"
+            },
+            {
+              "problem": "缺点3：它干不了所有爬虫的活，也替代不了后端 API。 遇到反爬、强验证码、纯画布（canvas）做的网页，还是很难办。",
+              "response": "能调官方 API 就别走浏览器。公开信息优先用 WebFetch 或 API；浏览器留给「必须点界面才能验收」的情况。"
+            }
+          ],
+          "sections": [
+            {
+              "title": "技术含金量",
+              "text": "核心发现：AI 操作界面时，带编号的结构比截图坐标更适合当「手」。拍快照、动手、再看一眼，被做成几条短命令，正好符合 AI 调用工具的习惯。 skill 和 CLI 版本绑定也很重要。作者清楚：说明书一旦和程序对不上，AI 就会乱来。"
+            },
+            {
+              "title": "技术关联",
+              "text": "① 热门技术取舍： Playwright、 Puppeteer 这类脚本适合人写的固定测试； agent-browser 适合 AI 边看边点。爬虫框架（比如 Scrapling）偏向批量采集。选一个主要工具，别让 AI 同时拿着三套浏览器工具又没有先后顺序。"
+            },
+            {
+              "title": "上榜原因 · 许可证与维护风险",
+              "text": "上榜依据： GitHub Trending 周榜（2026-11-11）；本周约 +3,606，总星约 4.9 万。和第二期的 agent-desktop 出自同一团队，补上了浏览器这一块。 风险： Apache-2.0。由 Vercel Labs 维护，更新快； issue 多，说明用的人多，也说明边角问题多。接入登录状态前先读官方的 Security （安全）文档。"
+            }
+          ],
+          "difficulty": {
+            "stars": 2,
+            "outOf": 5,
+            "timeEstimate": "约 15–20 分钟",
+            "prerequisites": "npm （需要 Node）或 Homebrew 任选；装完运行一次 agent-browser install 下载 Chrome for Testing （Linux 加 --with-deps）；也可以用 npx agent-browser 不安装直接试。从源码编译才需要 Node 24+、 pnpm 11 和 Rust。",
+            "note": "一条命令装好；写成固定的验收步骤要多花点时间。 前置条件来自仓库 README （2026-11-15 读取）；难度和耗时是估计。"
+          },
+          "searchText": "agent-browser vercel-labs/agent-browser · agent-browser.dev AI 自己点网页验收截图 Vercel Labs 在 GitHub 上开源的浏览器自动化 CLI，专门给 Agent 用：先把网页拍成一份文字版快照（基于 accessibility tree，也就是无障碍树），每个元素带 @e1 这样的编号，再按编号去点击、填写。浏览器通过 CDP 一直开着，不用每步重启。自带和版本匹配的 skill，也可以开成 MCP 服务。 开源协议 Apache-2.0 让 AI 看网页的结构图 纯看截图、按坐标点，费 token 又容易点歪。用 无障碍树 加固定编号，更省 token，也更容易写成固定脚本。它和第二期的 agent-desktop （桌面版无障碍树）是同一个思路，搬到了浏览器上。 想让 AI 打开网页做验收、填表、抓公开网页结构的人。它对原生 iOS 界面自动化支持有限（文档里有模拟器的用法可以试）。 >_ 浏览器 无障碍树 给 AI 用的 CLI 实用 skills 前端 工程框架 测试、审查和安全 open （打开）→ snapshot （拍快照）→ click @e1 （点击）这样的短循环；编号失效时会要求重新拍快照。 点击前先检查元素是否被挡住、能不能点，失败就直接报错，不会假装成功。 能截图、录屏、管理 cookie 和登录状态；支持同时开多个 session、使用云端浏览器服务，以及 iOS 模拟器 里的 Safari 等（见文档）。 agent-browser skills get core 能取出和当前版本匹配的操作说明，避免「说明书和程序版本对不上」。 缺点1：未解决的 issue 约 562 个，功能面很宽，最容易踩坑的是权限和登录状态。 先跑通 open / snapshot / click / close 四步。涉及登录时用官方的 session / auth （登录管理）功能，并设好允许访问的网站名单；别让 AI 拿着已登录的浏览器随便逛。 缺点2：编号会过期。 页面一跳转或内容一变（DOM 变了），旧的 @e1 就失效了。 每次跳转后重新 snapshot。写 skill 时把「先快照再操作」写成必做步骤，和官方的 core skill 保持一致。 缺点3：它干不了所有爬虫的活，也替代不了后端 API。 遇到反爬、强验证码、纯画布（canvas）做的网页，还是很难办。 能调官方 API 就别走浏览器。公开信息优先用 WebFetch 或 API；浏览器留给「必须点界面才能验收」的情况。 技术含金量 核心发现：AI 操作界面时，带编号的结构比截图坐标更适合当「手」。拍快照、动手、再看一眼，被做成几条短命令，正好符合 AI 调用工具的习惯。 skill 和 CLI 版本绑定也很重要。作者清楚：说明书一旦和程序对不上，AI 就会乱来。 技术关联 ① 热门技术取舍： Playwright、 Puppeteer 这类脚本适合人写的固定测试； agent-browser 适合 AI 边看边点。爬虫框架（比如 Scrapling）偏向批量采集。选一个主要工具，别让 AI 同时拿着三套浏览器工具又没有先后顺序。 上榜原因 · 许可证与维护风险 上榜依据： GitHub Trending 周榜（2026-11-11）；本周约 +3,606，总星约 4.9 万。和第二期的 agent-desktop 出自同一团队，补上了浏览器这一块。 风险： Apache-2.0。由 Vercel Labs 维护，更新快； issue 多，说明用的人多，也说明边角问题多。接入登录状态前先读官方的 Security （安全）文档。"
+        },
+        {
+          "id": "p06",
+          "rank": "#06",
+          "name": "skills",
+          "featured": false,
+          "blurb": "先被 AI 追问清楚再开工",
+          "repo": "mattpocock/skills · aihero.dev/skills",
+          "pills": [
+            ">_ 工程方法",
+            "可组合的 skill",
+            "TDD / 词汇表"
+          ],
+          "tags": [
+            "实用 skills",
+            "工程框架",
+            "后端",
+            "前端"
+          ],
+          "stageKey": "spec",
+          "stageName": "写需求",
+          "description": "GitHub 上的开源项目， Matt Pocock 公开的日常工程 skill 合集，自称「给真在做产品的人用，不搞 vibe coding 」。每个 skill 都小、能改、能组合，用来追问需求（grill）、共建词汇表、先写测试再写代码（TDD）、排查 bug、检查代码结构。和第二期的 anthropics/skills 的区别：那个是官方的 skill 写法样板，这个是一套能直接调用的工程菜谱。",
+          "license": "开源协议 MIT",
+          "metrics": [
+            {
+              "label": "★ STAR",
+              "value": "320,999",
+              "hint": ""
+            },
+            {
+              "label": "↗ 本周新增",
+              "value": "+9,872",
+              "hint": "周榜 · 2026-11-11"
+            },
+            {
+              "label": "</> 语言",
+              "value": "Shell",
+              "hint": ""
+            },
+            {
+              "label": "⑂ FORKS",
+              "value": "26,912",
+              "hint": ""
+            }
+          ],
+          "starSnapshot": "320,999",
+          "canDo": [
+            "你主动调用的： /grill-with-docs、 /to-spec、 /to-tickets、 /implement、 /triage 等，把「先问清楚再动手」变成固定流程。",
+            "模型会自动调用的： /tdd、 /diagnosing-bugs、 /code-review、 /codebase-design 等守规矩的步骤。",
+            "强调项目里的 共享语言：把行话写进 GLOSSARY.md 和 ADR，免得 AI 每次用 20 个词解释一个概念。",
+            "能装进 Claude Code、 Codex、 Copilot、 Gemini CLI 或其他 AI 工具。官方说明：插件方式会自动更新， skills.sh 方式复制的是能改的文件，两种别同时装，否则会重复。"
+          ],
+          "highlightTitle": "先对齐说法，再让 AI 写代码",
+          "highlight": "作者把常见的失败说得很直白：没对齐、太啰嗦、没反馈、系统越改越乱。他给的办法都是老功夫：追问（grilling）、词汇表、「红灯 → 绿灯 → 重构」的测试节奏、定期检查模块设计。",
+          "audience": "已经会用 AI 改代码，但经常「做出来不对」或「代码越来越难改」的人；尤其是有很多自己业务词（比如会员等级、订单状态）的产品。",
+          "drawbacks": [
+            {
+              "problem": "缺点1：skill 很多，全打开反而成了新负担。 作者自己也在批评 GSD、 BMAD、 Spec-Kit 这类「接管整个开发过程」的方法。",
+              "response": "每个仓库先跑一次 /setup-matt-pocock-skills，只留追问、词汇表、 TDD、代码审查这几个，其他的等真遇到问题再加。"
+            },
+            {
+              "problem": "缺点2：容易和官方 skill 规范、其他 skill 包重复安装。",
+              "response": "skill 的目录结构继续按 anthropics/skills 或你自己的 SKILL.md 规范来；这套只当「怎么做事」的菜谱。同名命令先看会不会覆盖你已有的 skill。"
+            },
+            {
+              "problem": "缺点3：旧代码的问题它解决不了。 仓库写明 /improve-codebase-architecture 只负责找问题，老代码不会被自动理顺。",
+              "response": "把它的结果当候选清单，每次只改一处值得深挖的模块。别指望一条命令把整个仓库重整一遍。"
+            }
+          ],
+          "sections": [
+            {
+              "title": "技术含金量",
+              "text": "价值在于把工程基本功变成能重复执行的动作。共享语言（接近领域驱动设计里的「统一语言」）能同时省 token、减少命名混乱； TDD 给 AI 一个不会跑偏的反馈；「深模块」（出自《 A Philosophy of Software Design 》一书）用来对付「AI 写得越快，代码烂得越快」。 它故意做得小、能组合，没有再做一个包揽全部流程的大系统，和「一个 skill 只做一件事」的原则一致。"
+            },
+            {
+              "title": "技术关联",
+              "text": "① 热门技术取舍： 只需要官方 skill 目录结构，用第二期的 anthropics/skills。只需要设计审美，用 hallmark 或 impeccable。想解决「每天怎么和 AI 对齐」，用这一套。三个流程框架别叠在一起用。"
+            },
+            {
+              "title": "上榜原因 · 许可证与维护风险",
+              "text": "上榜依据： GitHub Trending 周榜（2026-11-11）；本周约 +9,872，总星数很高。作为第二期官方 skill 样板的「实战补充」入选。 风险： MIT。个人维护的热门仓库，更新快，命令和约定可能会变。用插件方式安装时注意自动更新的范围； fork 一份后要自己跟进变化。未解决的 issue 约 233 个。"
+            }
+          ],
+          "difficulty": {
+            "stars": 1,
+            "outOf": 5,
+            "timeEstimate": "约 10 分钟",
+            "prerequisites": "一个支持 skill 的编程 AI： Claude Code、 Codex、 Copilot、 Gemini CLI、 VS Code 等（README 里有各自的一行安装命令）；用 skills.sh 方式安装要能运行 npx （需要 Node）。装完在项目里运行一次 /setup-matt-pocock-skills。",
+            "note": "README 写「30 秒装好」；熟悉被 AI 追问的对话方式再花几分钟。 前置条件来自仓库 README（2026-11-15 读取）；难度和耗时是估计。"
+          },
+          "searchText": "skills mattpocock/skills · aihero.dev/skills 先被 AI 追问清楚再开工 GitHub 上的开源项目， Matt Pocock 公开的日常工程 skill 合集，自称「给真在做产品的人用，不搞 vibe coding 」。每个 skill 都小、能改、能组合，用来追问需求（grill）、共建词汇表、先写测试再写代码（TDD）、排查 bug、检查代码结构。和第二期的 anthropics/skills 的区别：那个是官方的 skill 写法样板，这个是一套能直接调用的工程菜谱。 开源协议 MIT 先对齐说法，再让 AI 写代码 作者把常见的失败说得很直白：没对齐、太啰嗦、没反馈、系统越改越乱。他给的办法都是老功夫：追问（grilling）、词汇表、「红灯 → 绿灯 → 重构」的测试节奏、定期检查模块设计。 已经会用 AI 改代码，但经常「做出来不对」或「代码越来越难改」的人；尤其是有很多自己业务词（比如会员等级、订单状态）的产品。 >_ 工程方法 可组合的 skill TDD / 词汇表 实用 skills 工程框架 后端 前端 写需求 你主动调用的： /grill-with-docs、 /to-spec、 /to-tickets、 /implement、 /triage 等，把「先问清楚再动手」变成固定流程。 模型会自动调用的： /tdd、 /diagnosing-bugs、 /code-review、 /codebase-design 等守规矩的步骤。 强调项目里的 共享语言：把行话写进 GLOSSARY.md 和 ADR，免得 AI 每次用 20 个词解释一个概念。 能装进 Claude Code、 Codex、 Copilot、 Gemini CLI 或其他 AI 工具。官方说明：插件方式会自动更新， skills.sh 方式复制的是能改的文件，两种别同时装，否则会重复。 缺点1：skill 很多，全打开反而成了新负担。 作者自己也在批评 GSD、 BMAD、 Spec-Kit 这类「接管整个开发过程」的方法。 每个仓库先跑一次 /setup-matt-pocock-skills，只留追问、词汇表、 TDD、代码审查这几个，其他的等真遇到问题再加。 缺点2：容易和官方 skill 规范、其他 skill 包重复安装。 skill 的目录结构继续按 anthropics/skills 或你自己的 SKILL.md 规范来；这套只当「怎么做事」的菜谱。同名命令先看会不会覆盖你已有的 skill。 缺点3：旧代码的问题它解决不了。 仓库写明 /improve-codebase-architecture 只负责找问题，老代码不会被自动理顺。 把它的结果当候选清单，每次只改一处值得深挖的模块。别指望一条命令把整个仓库重整一遍。 技术含金量 价值在于把工程基本功变成能重复执行的动作。共享语言（接近领域驱动设计里的「统一语言」）能同时省 token、减少命名混乱； TDD 给 AI 一个不会跑偏的反馈；「深模块」（出自《 A Philosophy of Software Design 》一书）用来对付「AI 写得越快，代码烂得越快」。 它故意做得小、能组合，没有再做一个包揽全部流程的大系统，和「一个 skill 只做一件事」的原则一致。 技术关联 ① 热门技术取舍： 只需要官方 skill 目录结构，用第二期的 anthropics/skills。只需要设计审美，用 hallmark 或 impeccable。想解决「每天怎么和 AI 对齐」，用这一套。三个流程框架别叠在一起用。 上榜原因 · 许可证与维护风险 上榜依据： GitHub Trending 周榜（2026-11-11）；本周约 +9,872，总星数很高。作为第二期官方 skill 样板的「实战补充」入选。 风险： MIT。个人维护的热门仓库，更新快，命令和约定可能会变。用插件方式安装时注意自动更新的范围； fork 一份后要自己跟进变化。未解决的 issue 约 233 个。"
+        },
+        {
+          "id": "p07",
+          "rank": "#07",
+          "name": "pr-agent",
+          "featured": false,
+          "blurb": "每个 PR 先让 AI 审一遍",
+          "repo": "The-PR-Agent/pr-agent · docs.pr-agent.ai",
+          "pills": [
+            ">_ PR 审查",
+            "自己部署",
+            "GitHub Actions"
+          ],
+          "tags": [
+            "工程框架",
+            "实用 skills",
+            "后端",
+            "前端"
+          ],
+          "stageKey": "qa",
+          "stageName": "测试、审查和安全",
+          "description": "GitHub 上开源的 PR 审查 Agent：在 PR 下面用 /review、 /describe、 /improve、 /ask 等命令，自动写说明、提审查意见和改进建议。可以放进 GitHub Actions 跑、当 CLI 用，或者部署在自己的服务器上，也支持 GitLab、 Bitbucket、 Azure DevOps 等平台。仓库写明：这是社区维护的开源项目， 和 Qodo 公司的免费版、托管产品是两回事。",
+          "license": "开源协议 MIT",
+          "metrics": [
+            {
+              "label": "★ STAR",
+              "value": "15,885",
+              "hint": ""
+            },
+            {
+              "label": "↗ 本周新增",
+              "value": "+1,591",
+              "hint": "周榜 · 2026-11-11"
+            },
+            {
+              "label": "</> 语言",
+              "value": "Python",
+              "hint": ""
+            },
+            {
+              "label": "⑂ FORKS",
+              "value": "2,170",
+              "hint": ""
+            }
+          ],
+          "starSnapshot": "15,885",
+          "canDo": [
+            "PR 新建或更新时自动审查；也可以在评论里手动发命令。",
+            "遇到改动很大的 PR，按文档里的压缩办法处理，不会把全部改动（diff）硬塞给模型。",
+            "通过 LiteLLM 切换 OpenAI、 Claude、 Gemini、 Ollama 等模型。",
+            "提示词和审查类别都能在配置文件里改，方便放进团队自己的审查清单。"
+          ],
+          "highlightTitle": "AI 先审一遍，合并按钮还在人手里",
+          "highlight": "它让每条 PR 都先有一份能读懂的审查意见；机器说「没问题」也不代表可以合并。这正好对应「AI 可以改代码、提 PR，合并和上线必须人确认」的规矩。",
+          "audience": "已经让 AI 提 PR、需要一条稳定的自动预审流程，又希望代码只经过自己的模型密钥或自己部署的服务的人。",
+          "drawbacks": [
+            {
+              "problem": "缺点1：AI 审查会漏，也会误报，不能当合并许可。",
+              "response": "只把它当第一轮意见。合并前仍按你的清单人工确认（状态流转、登录验证、权限这些关键地方尤其要看）。"
+            },
+            {
+              "problem": "缺点2：代码会发给你配置的模型服务商。 自己部署也不等于数据不出门。",
+              "response": "读仓库里的 Data Privacy （数据隐私）说明。敏感项目用自己控制的模型地址（或本地模型），限制 Action 密钥的权限范围，别让私钥出现在日志里。"
+            },
+            {
+              "problem": "缺点3：有已知的安全注意事项，名字也容易和商业产品搞混。 比如 README 写明， /help_docs 命令从 v0.36.1 版起因为可能泄露凭据暂时关闭（issue #2445）； Docker 镜像的名字也换过。",
+              "response": "别开已经关闭或没修好的命令；锁定检查过的版本，镜像名用 pragent/pr-agent （0.34.2 及以上）。开源的 PR-Agent 和 Qodo 的托管产品要分开配置。"
+            }
+          ],
+          "sections": [
+            {
+              "title": "技术含金量",
+              "text": "价值在于能接进现有的 Git 流程：一条命令、大 PR 能压缩、提示词能改、模型能换。比起再做一个聊天里的审查机器人，它更贴近团队平时的做法。 它也提醒你分清产品边界：开源的老项目和公司托管的产品已经分家了。选工具前先想好，你要自己部署，还是要商业平台。"
+            },
+            {
+              "title": "技术关联",
+              "text": "① 热门技术取舍： 只是自己偶尔看看改动，编辑器自带的审查或人工看就够。 PR 多、希望评论区格式统一，再装 pr-agent。 GitHub 官方或其他商业审查工具功能更全，但数据去向和价格不同，按隐私要求和预算选一个主工具。"
+            },
+            {
+              "title": "上榜原因 · 许可证与维护风险",
+              "text": "上榜依据： GitHub Trending 周榜（2026-11-11）；本周约 +1,591。项目本身比较老（约 2023 年开始），因为移交给社区维护、加上审查需求一直在，再次变热。和你「AI 提 PR、人确认合并」的工作方式对得上。 风险： MIT。已转为社区维护，发展方向看志愿维护者。未解决的 issue 约 41 个。使用前核对被关闭的命令、镜像来源和密钥泄露相关的 issue。它和 Qodo 官方的免费服务是两回事。"
+            }
+          ],
+          "difficulty": {
+            "stars": 3,
+            "outOf": 5,
+            "timeEstimate": "约 30–45 分钟",
+            "prerequisites": "一个 GitHub 仓库并打开 GitHub Actions；一个模型的 API key （README 示例用 OPENAI_KEY，也可以通过 LiteLLM 换成 Claude、 Gemini、 Ollama 等），存进 GitHub Secrets； GITHUB_TOKEN 由 Action 自动提供。只有在自己电脑上跑命令行版，才需要 Python 和 pip （Python 版本以 README 为准）。",
+            "note": "复制一个 workflow 文件就能跑；花时间的是配密钥和写自己的审查清单。 前置条件来自仓库 README（2026-11-15 读取）；难度和耗时是估计。"
+          },
+          "searchText": "pr-agent The-PR-Agent/pr-agent · docs.pr-agent.ai 每个 PR 先让 AI 审一遍 GitHub 上开源的 PR 审查 Agent：在 PR 下面用 /review、 /describe、 /improve、 /ask 等命令，自动写说明、提审查意见和改进建议。可以放进 GitHub Actions 跑、当 CLI 用，或者部署在自己的服务器上，也支持 GitLab、 Bitbucket、 Azure DevOps 等平台。仓库写明：这是社区维护的开源项目， 和 Qodo 公司的免费版、托管产品是两回事。 开源协议 MIT AI 先审一遍，合并按钮还在人手里 它让每条 PR 都先有一份能读懂的审查意见；机器说「没问题」也不代表可以合并。这正好对应「AI 可以改代码、提 PR，合并和上线必须人确认」的规矩。 已经让 AI 提 PR、需要一条稳定的自动预审流程，又希望代码只经过自己的模型密钥或自己部署的服务的人。 >_ PR 审查 自己部署 GitHub Actions 工程框架 实用 skills 后端 前端 测试、审查和安全 PR 新建或更新时自动审查；也可以在评论里手动发命令。 遇到改动很大的 PR，按文档里的压缩办法处理，不会把全部改动（diff）硬塞给模型。 通过 LiteLLM 切换 OpenAI、 Claude、 Gemini、 Ollama 等模型。 提示词和审查类别都能在配置文件里改，方便放进团队自己的审查清单。 缺点1：AI 审查会漏，也会误报，不能当合并许可。 只把它当第一轮意见。合并前仍按你的清单人工确认（状态流转、登录验证、权限这些关键地方尤其要看）。 缺点2：代码会发给你配置的模型服务商。 自己部署也不等于数据不出门。 读仓库里的 Data Privacy （数据隐私）说明。敏感项目用自己控制的模型地址（或本地模型），限制 Action 密钥的权限范围，别让私钥出现在日志里。 缺点3：有已知的安全注意事项，名字也容易和商业产品搞混。 比如 README 写明， /help_docs 命令从 v0.36.1 版起因为可能泄露凭据暂时关闭（issue #2445）； Docker 镜像的名字也换过。 别开已经关闭或没修好的命令；锁定检查过的版本，镜像名用 pragent/pr-agent （0.34.2 及以上）。开源的 PR-Agent 和 Qodo 的托管产品要分开配置。 技术含金量 价值在于能接进现有的 Git 流程：一条命令、大 PR 能压缩、提示词能改、模型能换。比起再做一个聊天里的审查机器人，它更贴近团队平时的做法。 它也提醒你分清产品边界：开源的老项目和公司托管的产品已经分家了。选工具前先想好，你要自己部署，还是要商业平台。 技术关联 ① 热门技术取舍： 只是自己偶尔看看改动，编辑器自带的审查或人工看就够。 PR 多、希望评论区格式统一，再装 pr-agent。 GitHub 官方或其他商业审查工具功能更全，但数据去向和价格不同，按隐私要求和预算选一个主工具。 上榜原因 · 许可证与维护风险 上榜依据： GitHub Trending 周榜（2026-11-11）；本周约 +1,591。项目本身比较老（约 2023 年开始），因为移交给社区维护、加上审查需求一直在，再次变热。和你「AI 提 PR、人确认合并」的工作方式对得上。 风险： MIT。已转为社区维护，发展方向看志愿维护者。未解决的 issue 约 41 个。使用前核对被关闭的命令、镜像来源和密钥泄露相关的 issue。它和 Qodo 官方的免费服务是两回事。"
+        }
+      ]
+    },
+    {
+      "id": "04",
+      "label": "第四期",
+      "title": "GitHub 热榜拆解 · 个人项目适配与技术精进 / 第四期 · 2026年11月16日",
+      "date": "2026-11-16",
+      "summary": "AI 干活时人始终在场：动手前批改计划、合并前自动挑错、按固定流程交付。另外还有让 AI 写对网页的知识包、给 skill 打分、AI 设计稿和 AI 宣传片。",
+      "lead": "backnotprop/plannotator",
+      "sampling": {
+        "date": "2026-11-16",
+        "when": "2026-11-16（北京时间，约上午 10:35）",
+        "statement": "星数、Forks、语言、许可证来自 GitHub API；今日、本周或本月新增来自 GitHub Trending 日榜 / 周榜 / 月榜，抓取时间 2026-11-16（北京时间，约上午 10:35）。未解决的 issue 数来自 GitHub 搜索，同一时间读取。 许可证以各仓库公开的 LICENSE 文件为准：Plannotator 是 MIT 或 Apache-2.0 双许可（GitHub 自动识别显示 Apache-2.0）；LoopForge 是 MIT（GitHub 显示 NOASSERTION，以仓库文件为准）；video-shotcraft 本身是 Apache-2.0，渲染依赖的 Remotion 另有许可。",
+        "starsAreSnapshot": true
+      },
+      "howChosen": "怎么选的：从 GitHub Trending 日榜、周榜、月榜里挑（2026-11-16 上午 10:35 抓取），避开第一到三期推过的仓库，再去掉和独立开发关系不大的（社交账号搜索、炒股分析、记账 App、物理仿真）。本周周榜新面孔少，所以以日榜为主、月榜补充。本期主线是「AI 干活时人始终在场」：动手前批改计划、合并前自动挑错、按固定流程交付；再加上让 AI 写对网页的知识包、给 skill 打分的工具、AI 设计稿和 AI 宣传片。",
+      "advice": "非程序员三步上手： ① 先装 Plannotator （2 星，约 15–20 分钟），AI 每次出计划，你先批改再放行；② 要做网页，就加 modern-web-guidance （1 星，约 5–10 分钟），让 AI 少写过时代码；③ 有了 GitHub 仓库，再加 open-code-review，合并前自动挑错。 SkillEvaluator 等你自己写 skill 再用； LoopForge 体量大，先学它的流程思路； stitch-skills 和 video-shotcraft 等到要出设计稿、做宣传片时再装。",
+      "kitNote": "前置条件来自仓库 README（2026-11-16 读取）；难度和耗时是估计。",
+      "stages": [
+        {
+          "key": "idea",
+          "name": "想法"
+        },
+        {
+          "key": "spec",
+          "name": "写需求"
+        },
+        {
+          "key": "code",
+          "name": "写代码"
+        },
+        {
+          "key": "memory",
+          "name": "记忆和上下文"
+        },
+        {
+          "key": "data",
+          "name": "数据和知识"
+        },
+        {
+          "key": "ui",
+          "name": "界面"
+        },
+        {
+          "key": "qa",
+          "name": "测试、审查和安全"
+        },
+        {
+          "key": "ship",
+          "name": "发布和内容"
+        }
+      ],
+      "map": [
+        {
+          "id": "p01",
+          "name": "Plannotator",
+          "stage": "spec",
+          "what": "AI 动手前先批改计划",
+          "stars": 2,
+          "rec": true
+        },
+        {
+          "id": "p04",
+          "name": "LoopForge",
+          "stage": "code",
+          "what": "按固定流程让 AI 交付，关键处人批准",
+          "stars": 4,
+          "rec": false
+        },
+        {
+          "id": "p02",
+          "name": "modern-web-guidance-src",
+          "stage": "memory",
+          "what": "给 AI 补上最新网页写法",
+          "stars": 1,
+          "rec": false
+        },
+        {
+          "id": "p06",
+          "name": "stitch-skills",
+          "stage": "ui",
+          "what": "让 AI 出设计稿和 DESIGN.md",
+          "stars": 3,
+          "rec": false
+        },
+        {
+          "id": "p03",
+          "name": "open-code-review",
+          "stage": "qa",
+          "what": "合并前让 AI 精确挑错",
+          "stars": 2,
+          "rec": false
+        },
+        {
+          "id": "p05",
+          "name": "SkillEvaluator",
+          "stage": "qa",
+          "what": "给 skill 打分，看它有没有用",
+          "stars": 3,
+          "rec": false
+        },
+        {
+          "id": "p07",
+          "name": "video-shotcraft",
+          "stage": "ship",
+          "what": "让 AI 按镜头配方做宣传片",
+          "stars": 3,
+          "rec": false
+        }
+      ],
+      "pastNamesOnly": [
+        {
+          "issue": 1,
+          "stage": "qa",
+          "label": "elephant-goldfish-model"
+        },
+        {
+          "issue": 1,
+          "stage": "memory",
+          "label": "context-mode"
+        },
+        {
+          "issue": 1,
+          "stage": "ui",
+          "label": "impeccable"
+        },
+        {
+          "issue": 1,
+          "stage": "memory",
+          "label": "claude-mem"
+        },
+        {
+          "issue": 1,
+          "stage": "ship",
+          "label": "hyperframes"
+        },
+        {
+          "issue": 1,
+          "stage": "idea",
+          "label": "knowledge-work-plugins"
+        },
+        {
+          "issue": 1,
+          "stage": "qa",
+          "label": "security-audit-skill"
+        },
+        {
+          "issue": 2,
+          "stage": "spec",
+          "label": "skills"
+        },
+        {
+          "issue": 2,
+          "stage": "code",
+          "label": "t3code"
+        },
+        {
+          "issue": 2,
+          "stage": "code",
+          "label": "superpowers"
+        },
+        {
+          "issue": 2,
+          "stage": "data",
+          "label": "DeepTutor"
+        },
+        {
+          "issue": 2,
+          "stage": "ui",
+          "label": "hallmark"
+        },
+        {
+          "issue": 2,
+          "stage": "ship",
+          "label": "OpenMontage"
+        },
+        {
+          "issue": 2,
+          "stage": "qa",
+          "label": "agent-desktop"
+        },
+        {
+          "issue": 3,
+          "stage": "idea",
+          "label": "OpenMausBot"
+        },
+        {
+          "issue": 3,
+          "stage": "spec",
+          "label": "skills"
+        },
+        {
+          "issue": 3,
+          "stage": "code",
+          "label": "worktrunk"
+        },
+        {
+          "issue": 3,
+          "stage": "data",
+          "label": "auto-ontology"
+        },
+        {
+          "issue": 3,
+          "stage": "ui",
+          "label": "astryx"
+        },
+        {
+          "issue": 3,
+          "stage": "qa",
+          "label": "agent-browser"
+        },
+        {
+          "issue": 3,
+          "stage": "qa",
+          "label": "pr-agent"
+        }
+      ],
+      "cards": [
+        {
+          "id": "p01",
+          "rank": "#01",
+          "name": "Plannotator",
+          "featured": true,
+          "blurb": "AI 动手前先批改计划",
+          "repo": "backnotprop/plannotator · plannotator.ai",
+          "pills": [
+            ">_ 人在回路",
+            "计划批注",
+            "代码审查"
+          ],
+          "tags": [
+            "工程框架",
+            "实用 skills",
+            "前端",
+            "后端"
+          ],
+          "stageKey": "spec",
+          "stageName": "写需求",
+          "description": "GitHub 上的开源项目。AI 写代码前会先出一份计划（plan）， Plannotator 把这份计划在浏览器里打开，你像批改作文一样划线、写批注，点一下就把意见发回给 AI；AI 改完，还会标出计划前后的差别。代码写完，它也能打开审查页面，让你逐行点评本地改动或 GitHub 上的 PR。支持 Claude Code、 Codex、 Gemini CLI、 Copilot CLI、 OpenCode 等十来种 AI 编程工具。",
+          "license": "开源协议 MIT 或 Apache-2.0 双许可，任选其一（GitHub 自动识别显示 Apache-2.0）",
+          "metrics": [
+            {
+              "label": "★ STAR",
+              "value": "11,915",
+              "hint": ""
+            },
+            {
+              "label": "↗ 本周新增",
+              "value": "+1,719",
+              "hint": "周榜 · 2026-11-16"
+            },
+            {
+              "label": "</> 语言",
+              "value": "TypeScript",
+              "hint": ""
+            },
+            {
+              "label": "⑂ FORKS",
+              "value": "1,086",
+              "hint": ""
+            }
+          ],
+          "starSnapshot": "11,915",
+          "canDo": [
+            "审计划：AI 准备动手时，计划自动在浏览器里弹出。你逐段批注，点「通过」AI 才往下做；点「打回」，批注会整理好发回去，AI 改完再给你看前后差别。",
+            "审代码： /plannotator-review 打开本地还没提交的改动，或一个 GitHub / GitLab 的 PR，逐行写意见，意见直接回到 AI 的对话里。",
+            "批注任何文档： /plannotator-annotate 能打开 Markdown 文件、整个文件夹、网址或 HTML 页面； /plannotator-last 批注 AI 刚才那条回复。",
+            "Inbox （收件箱）：几个 AI 同时干活时，把问题、文件、待审内容都投到一个本地窗口，你有空再统一回复，AI 不用干等。批准过的计划还能自动存进 Obsidian、 Notion 或 Bear。"
+          ],
+          "highlightTitle": "给 AI 的计划配一支红笔",
+          "highlight": "AI 最贵的错，是一开始方向就错，写了几百行才发现。 Plannotator 把「审计划」做得像改作文一样顺手：划一句，写一句意见，点发送。人只在两个关口出手：动手前看计划，合并前看改动。",
+          "audience": "已经在用 Claude Code、 Codex 这类工具写代码，常遇到「AI 理解错需求、一口气改了一大片」的人。不会写代码也能用：看得懂计划、会写中文批注就行。",
+          "drawbacks": [
+            {
+              "problem": "缺点1：计划自动弹出，要靠各家 AI 工具的钩子（hooks）。 Codex 用的是还在实验的 Stop 钩子，原生 Windows 要手动配置； Droid 目前只支持手动命令。",
+              "response": "先用最稳的 /plannotator-last 和 /plannotator-review 两个手动命令，熟了再开自动审计划。装完先在一个练手仓库里试一次。"
+            },
+            {
+              "problem": "缺点2：有几个功能会联网。 页面打开时会向 GitHub 查新版本；批注网址默认经 Jina Reader 抓取；「问 AI」会把相关内容发给你配置的模型；分享链接时内容跟着链接走，小份内容只压缩、没加密。",
+              "response": "私密代码别用分享链接，可以设置 PLANNOTATOR_SHARE=disabled 把分享关掉。远程模式会在所有网卡上开端口、不用登录，只在可信网络里用。"
+            },
+            {
+              "problem": "缺点3：安装是「一行命令下载脚本直接运行」，还会改你 AI 工具的配置。",
+              "response": "先打开安装脚本看一眼，或加 --minimal 只装主程序；想撤销就运行 plannotator uninstall，默认保留你的计划和历史。"
+            }
+          ],
+          "sections": [
+            {
+              "title": "技术含金量",
+              "text": "价值在于把「 人在回路 」（Human-in-the-loop，关键一步由人拍板）放在最便宜的位置。计划只有几十行，改计划几分钟；等代码写完再返工，代价大得多。它挂在 AI 工具自带的钩子上（AI 准备结束计划模式时触发），你的工作习惯不用变。 设计也克制：数据默认留在本机，不收集使用数据；意见按结构化格式发回 AI，AI 改完显示计划前后差别，人一眼看出改了哪里。能批注的对象从代码扩大到计划、文档和 HTML 页面，AI 产出的东西都能过一遍人眼。"
+            },
+            {
+              "title": "技术关联",
+              "text": "① 热门技术取舍： 只想审代码：第三期的 pr-agent，或本期的 open-code-review，让 AI 先审一遍就够。想把计划、文档、代码都过一遍人眼：用 Plannotator。团队要固定流程、多个角色、审批节点：看本期的 LoopForge。三者可以叠加：Plannotator 管人怎么批，open-code-review 管 AI 先挑错，LoopForge 管整条流程怎么排。个人开发者先装 Plannotator 一个就够。"
+            },
+            {
+              "title": "上榜原因 · 许可证与维护风险",
+              "text": "上榜依据： GitHub Trending 日榜（今日 +866）和周榜（本周 +1,719）同时在榜（2026-11-16 抓取）。它解决用 AI 写代码最常见的痛点「方向跑偏」，装上当天就能用，所以选作本期最推荐。 风险： MIT 或 Apache-2.0 双许可，很宽松。主要由作者 backnotprop 个人维护，更新非常快（抓取时最新版 v0.28.65，2026-11-15 发布，一周内连发多个版本），命令和设置可能会变。未解决的 issue 约 108 个。团队协作用的 Workspaces 是另外的托管产品，不在开源范围里。"
+            }
+          ],
+          "difficulty": {
+            "stars": 2,
+            "outOf": 5,
+            "timeEstimate": "约 15–20 分钟",
+            "prerequisites": "一个支持的 AI 编程工具（Claude Code、 Codex、 Gemini CLI 0.36.0+、 Copilot CLI、 OpenCode 等其一）；macOS / Linux / WSL 用 curl 运行安装脚本，Windows 用 PowerShell 安装脚本。Claude Code 还要在里面装插件： /plugin marketplace add backnotprop/plannotator。",
+            "note": "README 写明一条安装命令会自动识别你装了哪些 AI 工具并完成配置；审计划不用敲命令，下次 AI 出计划时自动弹出。 前置条件来自仓库 README（2026-11-16 读取）；难度和耗时是估计。"
+          },
+          "searchText": "Plannotator backnotprop/plannotator · plannotator.ai AI 动手前先批改计划 GitHub 上的开源项目。AI 写代码前会先出一份计划（plan）， Plannotator 把这份计划在浏览器里打开，你像批改作文一样划线、写批注，点一下就把意见发回给 AI；AI 改完，还会标出计划前后的差别。代码写完，它也能打开审查页面，让你逐行点评本地改动或 GitHub 上的 PR。支持 Claude Code、 Codex、 Gemini CLI、 Copilot CLI、 OpenCode 等十来种 AI 编程工具。 开源协议 MIT 或 Apache-2.0 双许可，任选其一（GitHub 自动识别显示 Apache-2.0） 给 AI 的计划配一支红笔 AI 最贵的错，是一开始方向就错，写了几百行才发现。 Plannotator 把「审计划」做得像改作文一样顺手：划一句，写一句意见，点发送。人只在两个关口出手：动手前看计划，合并前看改动。 已经在用 Claude Code、 Codex 这类工具写代码，常遇到「AI 理解错需求、一口气改了一大片」的人。不会写代码也能用：看得懂计划、会写中文批注就行。 >_ 人在回路 计划批注 代码审查 工程框架 实用 skills 前端 后端 写需求 审计划：AI 准备动手时，计划自动在浏览器里弹出。你逐段批注，点「通过」AI 才往下做；点「打回」，批注会整理好发回去，AI 改完再给你看前后差别。 审代码： /plannotator-review 打开本地还没提交的改动，或一个 GitHub / GitLab 的 PR，逐行写意见，意见直接回到 AI 的对话里。 批注任何文档： /plannotator-annotate 能打开 Markdown 文件、整个文件夹、网址或 HTML 页面； /plannotator-last 批注 AI 刚才那条回复。 Inbox （收件箱）：几个 AI 同时干活时，把问题、文件、待审内容都投到一个本地窗口，你有空再统一回复，AI 不用干等。批准过的计划还能自动存进 Obsidian、 Notion 或 Bear。 缺点1：计划自动弹出，要靠各家 AI 工具的钩子（hooks）。 Codex 用的是还在实验的 Stop 钩子，原生 Windows 要手动配置； Droid 目前只支持手动命令。 先用最稳的 /plannotator-last 和 /plannotator-review 两个手动命令，熟了再开自动审计划。装完先在一个练手仓库里试一次。 缺点2：有几个功能会联网。 页面打开时会向 GitHub 查新版本；批注网址默认经 Jina Reader 抓取；「问 AI」会把相关内容发给你配置的模型；分享链接时内容跟着链接走，小份内容只压缩、没加密。 私密代码别用分享链接，可以设置 PLANNOTATOR_SHARE=disabled 把分享关掉。远程模式会在所有网卡上开端口、不用登录，只在可信网络里用。 缺点3：安装是「一行命令下载脚本直接运行」，还会改你 AI 工具的配置。 先打开安装脚本看一眼，或加 --minimal 只装主程序；想撤销就运行 plannotator uninstall，默认保留你的计划和历史。 技术含金量 价值在于把「 人在回路 」（Human-in-the-loop，关键一步由人拍板）放在最便宜的位置。计划只有几十行，改计划几分钟；等代码写完再返工，代价大得多。它挂在 AI 工具自带的钩子上（AI 准备结束计划模式时触发），你的工作习惯不用变。 设计也克制：数据默认留在本机，不收集使用数据；意见按结构化格式发回 AI，AI 改完显示计划前后差别，人一眼看出改了哪里。能批注的对象从代码扩大到计划、文档和 HTML 页面，AI 产出的东西都能过一遍人眼。 技术关联 ① 热门技术取舍： 只想审代码：第三期的 pr-agent，或本期的 open-code-review，让 AI 先审一遍就够。想把计划、文档、代码都过一遍人眼：用 Plannotator。团队要固定流程、多个角色、审批节点：看本期的 LoopForge。三者可以叠加：Plannotator 管人怎么批，open-code-review 管 AI 先挑错，LoopForge 管整条流程怎么排。个人开发者先装 Plannotator 一个就够。 上榜原因 · 许可证与维护风险 上榜依据： GitHub Trending 日榜（今日 +866）和周榜（本周 +1,719）同时在榜（2026-11-16 抓取）。它解决用 AI 写代码最常见的痛点「方向跑偏」，装上当天就能用，所以选作本期最推荐。 风险： MIT 或 Apache-2.0 双许可，很宽松。主要由作者 backnotprop 个人维护，更新非常快（抓取时最新版 v0.28.65，2026-11-15 发布，一周内连发多个版本），命令和设置可能会变。未解决的 issue 约 108 个。团队协作用的 Workspaces 是另外的托管产品，不在开源范围里。"
+        },
+        {
+          "id": "p02",
+          "rank": "#02",
+          "name": "modern-web-guidance-src",
+          "featured": false,
+          "blurb": "给 AI 补上最新网页写法",
+          "repo": "GoogleChrome/modern-web-guidance-src · developer.chrome.com/docs/modern-web-guidance",
+          "pills": [
+            ">_ 网页新写法",
+            "skill + CLI",
+            "有对照评测"
+          ],
+          "tags": [
+            "前端",
+            "UI",
+            "实用 skills"
+          ],
+          "stageKey": "memory",
+          "stageName": "记忆和上下文",
+          "description": "GitHub 上的开源项目，Google Chrome 团队牵头， Microsoft Edge、 Mozilla Firefox 和 MDN 团队一起维护。它是一套给 AI 编程工具用的网页知识包：AI 写网页时，先按需查一篇最新的官方写法指南，少写过时、臃肿的代码。这个仓库是源码库，放指南的编写、校准和评测工具；用户实际安装的是 GoogleChrome/modern-web-guidance。",
+          "license": "开源协议 Apache-2.0",
+          "metrics": [
+            {
+              "label": "★ STAR",
+              "value": "7,273",
+              "hint": ""
+            },
+            {
+              "label": "↗ 今日新增",
+              "value": "+1,219",
+              "hint": "日榜 · 2026-11-16"
+            },
+            {
+              "label": "</> 语言",
+              "value": "TypeScript",
+              "hint": ""
+            },
+            {
+              "label": "⑂ FORKS",
+              "value": "606",
+              "hint": ""
+            }
+          ],
+          "starSnapshot": "7,273",
+          "canDo": [
+            "一条命令装进 AI 工具： npx modern-web-guidance@latest install 会打开安装向导；也支持 npx skills add、 gh skill install 和 Claude Code、 Codex 的插件市场。",
+            "AI 写网页时按需查指南，覆盖约 250 个现代网页功能：弹窗、悬浮提示、页面切换动画、深色模式、表单校验、图片加载提速、无障碍（读屏和键盘操作）等。",
+            "不装也能试： search 搜指南， retrieve 取一篇全文， legacy-scan . 扫一遍你的代码，找出能换成新写法的老代码。",
+            "另有一个 Chrome 扩展开发的知识包，讲 Manifest V3、后台脚本和上架 Chrome Web Store。"
+          ],
+          "highlightTitle": "有对照实验：装上以后，AI 写网页的通过率涨了约 30 个百分点",
+          "highlight": "它每隔两天用真实网页任务测一次：同一个 AI，不装指南和装了指南各做一遍，用自动化检查打分。 README 公布的 11 月 8 日结果：Claude Code 从 57% 提到 88%，Codex 从 54% 提到 82%， Antigravity 从 58% 提到 94%。拿做对率说话，很实在。",
+          "audience": "让 AI 写网页、落地页、小工具页面的人。非程序员做个人主页、活动页也用得上：AI 少用笨重的老办法，页面更快，手机上也更顺。",
+          "drawbacks": [
+            {
+              "problem": "缺点1：只管网页。 它讲的是浏览器里的 HTML、 CSS、 JavaScript，对手机原生 App 和后端接口帮不上忙。",
+              "response": "只在网页项目里装。原生 App 的界面规范，看平台官方文档。"
+            },
+            {
+              "problem": "缺点2：默认收集匿名使用数据。 README 写明会收集安装次数、调用它的 AI 工具名、查了哪些指南、AI 生成的搜索词；不收集你的原始提示词。",
+              "response": "在 shell 配置文件里加 DISABLE_TELEMETRY=1 关掉。"
+            },
+            {
+              "problem": "缺点3：新写法要看浏览器支持。 它覆盖到最前沿的功能，有些功能旧浏览器还不认。",
+              "response": "让 AI 每用一个新功能都说明哪些浏览器支持、不支持时怎么降级（README 也强调用轻量的降级办法）；上线前用手机 Safari 和一个旧版浏览器各看一次。"
+            }
+          ],
+          "sections": [
+            {
+              "title": "技术含金量",
+              "text": "价值在于对付 AI 的「知识过期」：模型训练数据里老代码多，它就习惯写老办法。这个项目把指南压得很短（装进 AI 的入口说明约 205 个 token），用到时才查全文，不多占 AI 的 上下文。 更值得学的是评测方法：每个任务先准备标准答案（打分器必须给 100% 通过）和没改过的原始网页（必须 100% 不通过），用来校准打分器；再比较 AI 装与不装指南的通过率。模型本来就会的内容删掉，只留真正能提分的。这套「先出考卷再写教材」的做法，任何写 skill 的人都能照搬。"
+            },
+            {
+              "title": "技术关联",
+              "text": "① 热门技术取舍： 只想让 AI 做的页面更好看：第一、二期的 impeccable、 hallmark 管审美。想让页面用对浏览器新功能、跑得快、读屏能用：用这一个。审美和写法是两件事，可以同时装；每多装一个 skill，AI 要读的说明就多一份，先挑你最缺的那个。"
+            },
+            {
+              "title": "上榜原因 · 许可证与维护风险",
+              "text": "上榜依据： GitHub Trending 日榜今日 +1,219，是本次日榜涨得最快的（2026-11-16 抓取）。三大浏览器团队和 MDN 一起维护，评测数据公开，内容可信度高。 风险： Apache-2.0。浏览器厂商团队维护，抓取时最近一次推送约 2026-11-15 20:09（北京时间）。源码库未解决的 issue 约 306 个，多数是对指南内容的反馈。注意默认开启的匿名统计。用户安装的分发库 GoogleChrome/modern-web-guidance 约 17,991 星。"
+            }
+          ],
+          "difficulty": {
+            "stars": 1,
+            "outOf": 5,
+            "timeEstimate": "约 5–10 分钟",
+            "prerequisites": "能运行 npx 的 Node 环境（README 没写最低版本，以 README 为准）；一个支持 skill 的 AI 编程工具（Claude Code、 Codex、 Antigravity 等）。",
+            "note": "README 的 Quickstart 只有一条安装命令，会打开交互式向导；也可以先用 search 命令试用，不用安装。 前置条件来自仓库 README（2026-11-16 读取）；难度和耗时是估计。"
+          },
+          "searchText": "modern-web-guidance-src GoogleChrome/modern-web-guidance-src · developer.chrome.com/docs/modern-web-guidance 给 AI 补上最新网页写法 GitHub 上的开源项目，Google Chrome 团队牵头， Microsoft Edge、 Mozilla Firefox 和 MDN 团队一起维护。它是一套给 AI 编程工具用的网页知识包：AI 写网页时，先按需查一篇最新的官方写法指南，少写过时、臃肿的代码。这个仓库是源码库，放指南的编写、校准和评测工具；用户实际安装的是 GoogleChrome/modern-web-guidance。 开源协议 Apache-2.0 有对照实验：装上以后，AI 写网页的通过率涨了约 30 个百分点 它每隔两天用真实网页任务测一次：同一个 AI，不装指南和装了指南各做一遍，用自动化检查打分。 README 公布的 11 月 8 日结果：Claude Code 从 57% 提到 88%，Codex 从 54% 提到 82%， Antigravity 从 58% 提到 94%。拿做对率说话，很实在。 让 AI 写网页、落地页、小工具页面的人。非程序员做个人主页、活动页也用得上：AI 少用笨重的老办法，页面更快，手机上也更顺。 >_ 网页新写法 skill + CLI 有对照评测 前端 UI 实用 skills 记忆和上下文 一条命令装进 AI 工具： npx modern-web-guidance@latest install 会打开安装向导；也支持 npx skills add、 gh skill install 和 Claude Code、 Codex 的插件市场。 AI 写网页时按需查指南，覆盖约 250 个现代网页功能：弹窗、悬浮提示、页面切换动画、深色模式、表单校验、图片加载提速、无障碍（读屏和键盘操作）等。 不装也能试： search 搜指南， retrieve 取一篇全文， legacy-scan . 扫一遍你的代码，找出能换成新写法的老代码。 另有一个 Chrome 扩展开发的知识包，讲 Manifest V3、后台脚本和上架 Chrome Web Store。 缺点1：只管网页。 它讲的是浏览器里的 HTML、 CSS、 JavaScript，对手机原生 App 和后端接口帮不上忙。 只在网页项目里装。原生 App 的界面规范，看平台官方文档。 缺点2：默认收集匿名使用数据。 README 写明会收集安装次数、调用它的 AI 工具名、查了哪些指南、AI 生成的搜索词；不收集你的原始提示词。 在 shell 配置文件里加 DISABLE_TELEMETRY=1 关掉。 缺点3：新写法要看浏览器支持。 它覆盖到最前沿的功能，有些功能旧浏览器还不认。 让 AI 每用一个新功能都说明哪些浏览器支持、不支持时怎么降级（README 也强调用轻量的降级办法）；上线前用手机 Safari 和一个旧版浏览器各看一次。 技术含金量 价值在于对付 AI 的「知识过期」：模型训练数据里老代码多，它就习惯写老办法。这个项目把指南压得很短（装进 AI 的入口说明约 205 个 token），用到时才查全文，不多占 AI 的 上下文。 更值得学的是评测方法：每个任务先准备标准答案（打分器必须给 100% 通过）和没改过的原始网页（必须 100% 不通过），用来校准打分器；再比较 AI 装与不装指南的通过率。模型本来就会的内容删掉，只留真正能提分的。这套「先出考卷再写教材」的做法，任何写 skill 的人都能照搬。 技术关联 ① 热门技术取舍： 只想让 AI 做的页面更好看：第一、二期的 impeccable、 hallmark 管审美。想让页面用对浏览器新功能、跑得快、读屏能用：用这一个。审美和写法是两件事，可以同时装；每多装一个 skill，AI 要读的说明就多一份，先挑你最缺的那个。 上榜原因 · 许可证与维护风险 上榜依据： GitHub Trending 日榜今日 +1,219，是本次日榜涨得最快的（2026-11-16 抓取）。三大浏览器团队和 MDN 一起维护，评测数据公开，内容可信度高。 风险： Apache-2.0。浏览器厂商团队维护，抓取时最近一次推送约 2026-11-15 20:09（北京时间）。源码库未解决的 issue 约 306 个，多数是对指南内容的反馈。注意默认开启的匿名统计。用户安装的分发库 GoogleChrome/modern-web-guidance 约 17,991 星。"
+        },
+        {
+          "id": "p03",
+          "rank": "#03",
+          "name": "open-code-review",
+          "featured": false,
+          "blurb": "合并前让 AI 精确挑错",
+          "repo": "alibaba/open-code-review · open-codereview.ai",
+          "pills": [
+            ">_ AI 代码审查",
+            "规则 + Agent",
+            "命令行 / CI"
+          ],
+          "tags": [
+            "后端",
+            "工程框架",
+            "实用 skills"
+          ],
+          "stageKey": "qa",
+          "stageName": "测试、审查和安全",
+          "description": "GitHub 上的开源项目，阿里巴巴把内部用了两年的 AI 代码审查工具开源了（README 称服务过数万名开发者）。它读你的 Git 改动，先按规则挑出要审的文件，再交给 AI 细查，最后给出精确到行的意见。命令行工具叫 ocr，也能装进 Claude Code、 Codex、 Cursor，或接进 GitHub Actions 自动跑。",
+          "license": "开源协议 Apache-2.0",
+          "metrics": [
+            {
+              "label": "★ STAR",
+              "value": "52,192",
+              "hint": ""
+            },
+            {
+              "label": "↗ 今日新增",
+              "value": "+691",
+              "hint": "日榜 · 2026-11-16"
+            },
+            {
+              "label": "</> 语言",
+              "value": "Go",
+              "hint": ""
+            },
+            {
+              "label": "⑂ FORKS",
+              "value": "4,121",
+              "hint": ""
+            }
+          ],
+          "starSnapshot": "52,192",
+          "canDo": [
+            "ocr review 审本地还没提交的改动；也能审一个 分支 相对 main 的全部改动，或者单个提交。",
+            "ocr scan 不看改动，直接把整个仓库或某个目录从头扫一遍。",
+            "内置多种语言的审查规则，比如空指针、线程安全、 XSS （网页注入攻击）、 SQL 注入；规则可以按路径自己调。",
+            "委托模式（Delegation Mode）：挑文件、配规则由它来做，审查交给你正在用的 AI 工具，不用另配模型密钥。结果可以存成 JSON，交给 AI 接着修。"
+          ],
+          "highlightTitle": "死板的活交给程序，灵活的活交给 AI",
+          "highlight": "通用 AI 审大改动时爱偷懒，只看几个文件，行号还常对不上。它把「审哪些文件、哪些文件一起看、套哪条规则、意见落在哪一行」都用固定程序管住，AI 只负责判断。 README 公布的对比：同一个模型下误报更少， token 用量约为通用 Agent 的 1/9。",
+          "audience": "自己写代码、或让 AI 写代码，却没人帮忙审的独立开发者；想在合并前多一道自动检查的小团队。",
+          "drawbacks": [
+            {
+              "problem": "缺点1：它故意少报。 README 写明它的查全率（Recall）低于通用 Agent，用这个换更少的误报。",
+              "response": "把它当第一道筛子。登录、权限、支付这类关键代码，人还要亲自看一遍。"
+            },
+            {
+              "problem": "缺点2：默认模式要配自己的模型和密钥，改动的代码会发给你选的模型服务。",
+              "response": "私密代码选可信的模型服务；或者用委托模式，让你已经在用的 AI 工具来审。密钥只填进它的配置向导或环境变量。"
+            },
+            {
+              "problem": "缺点3：对 Git 版本有要求，支持哪些语言要自己试。 前置条件写明 Git ≥ 2.41；README 没列出完整的语言清单。",
+              "response": "先运行 git --version 确认版本；冷门语言先跑一次看意见质量，不理想就只用它审后端代码。"
+            }
+          ],
+          "sections": [
+            {
+              "title": "技术含金量",
+              "text": "价值在于「确定性工程 + Agent 」的分工：必须不出错的步骤（挑文件、分组、配规则、定位到行）用普通程序写死，需要判断的部分交给 AI。大改动拆成几组，每组交给一个独立的子 Agent，彼此 上下文 不干扰，改动再大也稳。 它还公开了评测集 AACR-Bench：50 个热门开源仓库的 200 个真实 PR，80 多位资深工程师标注了 1,505 个真问题。给 AI 工具做评测先备好人工标注的标准答案，这点和本期 modern-web-guidance 的做法一致。"
+            },
+            {
+              "title": "技术关联",
+              "text": "① 热门技术取舍： 第三期的 pr-agent 擅长在 GitHub 的 PR 页面里对话式审查； open-code-review 擅长在本地命令行和 CI 里批量、精确地审。想在 PR 页面里看 AI 点评，用 pr-agent；想合并前在本地跑一遍、结果存成 JSON 让 AI 接着修，用 open-code-review。两个都接进 CI 会重复评论，选一个就好。"
+            },
+            {
+              "title": "上榜原因 · 许可证与维护风险",
+              "text": "上榜依据： GitHub Trending 日榜（今日 +691，2026-11-16 抓取），总星 52,192。大厂内部长期使用后开源，有公开评测集，正好补上「AI 写、AI 审、人拍板」中间那一环。 风险： Apache-2.0。阿里巴巴团队维护，更新很快（抓取时最新版 v1.13.10，2026-11-15 发布）。未解决的 issue 约 144 个，待合并的 PR 约 205 个。支持接入 OpenTelemetry 做运行观测，具体默认行为以官方 Telemetry 文档为准。"
+            }
+          ],
+          "difficulty": {
+            "stars": 2,
+            "outOf": 5,
+            "timeEstimate": "约 15–20 分钟",
+            "prerequisites": "Git 2.41 或更新版本； npm （安装命令 npm install -g @alibaba-group/open-code-review）；一个模型服务的 API key，或者用委托模式借你现有 AI 工具的模型。",
+            "note": "README 写明装好后先运行 ocr config provider 和 ocr config model 配模型，交互界面会自动测试能不能连上。 前置条件来自仓库 README（2026-11-16 读取）；难度和耗时是估计。"
+          },
+          "searchText": "open-code-review alibaba/open-code-review · open-codereview.ai 合并前让 AI 精确挑错 GitHub 上的开源项目，阿里巴巴把内部用了两年的 AI 代码审查工具开源了（README 称服务过数万名开发者）。它读你的 Git 改动，先按规则挑出要审的文件，再交给 AI 细查，最后给出精确到行的意见。命令行工具叫 ocr，也能装进 Claude Code、 Codex、 Cursor，或接进 GitHub Actions 自动跑。 开源协议 Apache-2.0 死板的活交给程序，灵活的活交给 AI 通用 AI 审大改动时爱偷懒，只看几个文件，行号还常对不上。它把「审哪些文件、哪些文件一起看、套哪条规则、意见落在哪一行」都用固定程序管住，AI 只负责判断。 README 公布的对比：同一个模型下误报更少， token 用量约为通用 Agent 的 1/9。 自己写代码、或让 AI 写代码，却没人帮忙审的独立开发者；想在合并前多一道自动检查的小团队。 >_ AI 代码审查 规则 + Agent 命令行 / CI 后端 工程框架 实用 skills 测试、审查和安全 ocr review 审本地还没提交的改动；也能审一个 分支 相对 main 的全部改动，或者单个提交。 ocr scan 不看改动，直接把整个仓库或某个目录从头扫一遍。 内置多种语言的审查规则，比如空指针、线程安全、 XSS （网页注入攻击）、 SQL 注入；规则可以按路径自己调。 委托模式（Delegation Mode）：挑文件、配规则由它来做，审查交给你正在用的 AI 工具，不用另配模型密钥。结果可以存成 JSON，交给 AI 接着修。 缺点1：它故意少报。 README 写明它的查全率（Recall）低于通用 Agent，用这个换更少的误报。 把它当第一道筛子。登录、权限、支付这类关键代码，人还要亲自看一遍。 缺点2：默认模式要配自己的模型和密钥，改动的代码会发给你选的模型服务。 私密代码选可信的模型服务；或者用委托模式，让你已经在用的 AI 工具来审。密钥只填进它的配置向导或环境变量。 缺点3：对 Git 版本有要求，支持哪些语言要自己试。 前置条件写明 Git ≥ 2.41；README 没列出完整的语言清单。 先运行 git --version 确认版本；冷门语言先跑一次看意见质量，不理想就只用它审后端代码。 技术含金量 价值在于「确定性工程 + Agent 」的分工：必须不出错的步骤（挑文件、分组、配规则、定位到行）用普通程序写死，需要判断的部分交给 AI。大改动拆成几组，每组交给一个独立的子 Agent，彼此 上下文 不干扰，改动再大也稳。 它还公开了评测集 AACR-Bench：50 个热门开源仓库的 200 个真实 PR，80 多位资深工程师标注了 1,505 个真问题。给 AI 工具做评测先备好人工标注的标准答案，这点和本期 modern-web-guidance 的做法一致。 技术关联 ① 热门技术取舍： 第三期的 pr-agent 擅长在 GitHub 的 PR 页面里对话式审查； open-code-review 擅长在本地命令行和 CI 里批量、精确地审。想在 PR 页面里看 AI 点评，用 pr-agent；想合并前在本地跑一遍、结果存成 JSON 让 AI 接着修，用 open-code-review。两个都接进 CI 会重复评论，选一个就好。 上榜原因 · 许可证与维护风险 上榜依据： GitHub Trending 日榜（今日 +691，2026-11-16 抓取），总星 52,192。大厂内部长期使用后开源，有公开评测集，正好补上「AI 写、AI 审、人拍板」中间那一环。 风险： Apache-2.0。阿里巴巴团队维护，更新很快（抓取时最新版 v1.13.10，2026-11-15 发布）。未解决的 issue 约 144 个，待合并的 PR 约 205 个。支持接入 OpenTelemetry 做运行观测，具体默认行为以官方 Telemetry 文档为准。"
+        },
+        {
+          "id": "p04",
+          "rank": "#04",
+          "name": "LoopForge",
+          "featured": false,
+          "blurb": "按固定流程让 AI 交付，关键处人批准",
+          "repo": "Tencent/LoopForge",
+          "pills": [
+            ">_ AI 交付流水线",
+            "人工审批节点",
+            "自己部署"
+          ],
+          "tags": [
+            "工程框架",
+            "后端",
+            "实用 skills"
+          ],
+          "stageKey": "code",
+          "stageName": "写代码",
+          "description": "GitHub 上的开源项目，腾讯开源的「AI 写代码车间」，部署在你自己的服务器上。你在聊天里提需求，主控 bot （Main Bot）开一个 Docker 沙盒、拉下你的仓库，把活分给规划、实现、审查、测试几个角色，最后开 PR。用顺手的做法可以存成 SOP （标准作业流程），以后每次按同样的步骤走，关键节点停下来等人批准。干活的是 Claude Code、 Codex、 CodeBuddy 等十种 AI 编程工具。",
+          "license": "开源协议 MIT （第三方组件按各自许可；GitHub 自动识别显示 NOASSERTION，以仓库 LICENSE 文件为准）",
+          "metrics": [
+            {
+              "label": "★ STAR",
+              "value": "1,616",
+              "hint": ""
+            },
+            {
+              "label": "↗ 今日新增",
+              "value": "+423",
+              "hint": "日榜 · 2026-11-16"
+            },
+            {
+              "label": "</> 语言",
+              "value": "Go",
+              "hint": ""
+            },
+            {
+              "label": "⑂ FORKS",
+              "value": "282",
+              "hint": ""
+            }
+          ],
+          "starSnapshot": "1,616",
+          "canDo": [
+            "两种用法：和 Main Bot 聊天，适合探索和小修；跑 SOP，适合步骤固定、需要签字的交付。两条路挂在同一份「需求」上，每个改动对应哪个需求、花了多少钱都看得到。",
+            "SOP 设计器：在画布上摆「 Agent 节点、脚本节点、人工审批节点、子流程」，检查没过可以退回前面某一步重做。自带后端、前端、修 bug、产品文档几套模板。",
+            "每次运行都留记录：每个节点的状态、工具调用、日志和产出文件快照，可以暂停、重试，或从任意一步重跑。",
+            "不想搭服务器： LoopForge Local 用 npx -y loopforge-cli@latest install claude 把内置流程装进你现有的 AI 工具，再用 /start-devflow 开工。"
+          ],
+          "highlightTitle": "把「AI 一次性发挥」变成「每次按同一套流程交付」",
+          "highlight": "直接让 AI「修个 bug」，结果全看那一次的运气：可能跳过计划、忘了测试、自己审自己。 LoopForge 把计划、实现、审查、测试拆给不同角色，中间插进不用 AI 的脚本（跑测试、跑检查）和人工审批。 README 记了一次真实运行：四个角色完成一个 Python 修复，三个真实测试通过，等人批准后，还核对了被批准的代码没有再被改动。",
+          "audience": "想让 AI 稳定交付、愿意花时间搭一套流程的独立开发者或小团队。只是偶尔让 AI 改改代码的人，用 Local 版或先学思路就够。",
+          "drawbacks": [
+            {
+              "problem": "缺点1：平台版体量大，默认设置面向「可信团队」。 要 Docker、 Compose、 Python 3，会起 MySQL 和平台服务；默认在所有网卡上监听 8090 端口，登录的人能看到整个实例的项目数据。",
+              "response": "个人先用 LoopForge Local，或只在本机试玩。真要放上云服务器，先按官方部署文档配好 HTTPS、关掉公开注册（AGENTFLOW_ALLOW_SIGNUP=false），端口别直接暴露到公网。"
+            },
+            {
+              "problem": "缺点2：内置角色默认用腾讯的 CodeBuddy。 需求澄清、通知摘要、 Bot 回复和运行评估目前也走 CodeBuddy。",
+              "response": "每个角色可以单独换执行工具和模型；先确认手上有哪家的密钥，再挑模板。"
+            },
+            {
+              "problem": "缺点3：项目很新，变化快。 2026 年 7 月创建，抓取时最新的是 v0.3.9 候选版；聊天工作台目前只有中文界面。",
+              "response": "部署时锁定一个正式版本号，升级前看 CHANGELOG；先用 demo 项目里「脚本 + 人工审批」的示例 SOP 练手，不需要 API key。"
+            }
+          ],
+          "sections": [
+            {
+              "title": "技术含金量",
+              "text": "价值在于把软件工程里成熟的做法搬给 AI：职责分离（写代码的和审代码的分开）、确定性步骤用脚本（README 的说法是「不需要 AI 的地方就不用 AI」）、关卡式审批、每一步留证据。AI 是流程里的工人，流程由人设计，能复用，能追溯。 它还把账算清楚：按公开报价统计每次运行、每段对话用了多少 token、花了多少钱。交付了什么和花了多少放在同一张表上，用 AI 干活才算真正管得住。"
+            },
+            {
+              "title": "技术关联",
+              "text": "① 热门技术取舍： 一个人用一个 AI：用不上它， Plannotator 守住计划和合并两个关口就够。一个人同时开几个 AI：第三期的 worktrunk 管并行不打架。要固定流程、角色分工、审批和成本报表：用 LoopForge。全套都上管理成本高，个人开发者建议先把它的 SOP 思路抄成一份文字清单。"
+            },
+            {
+              "title": "上榜原因 · 许可证与维护风险",
+              "text": "上榜依据： GitHub Trending 日榜（今日 +423，2026-11-16 抓取）。大厂开源、 MIT 许可，切中「AI 交付要有人签字」这个需求；星数还不多，流程设计很值得学。 风险： MIT。腾讯团队维护，2026 年 7 月创建，更新频繁（一周内发了 v0.3.6、 v0.3.8 和 v0.3.9 候选版）。未解决的 issue 约 45 个。部署时注意端口、账号和公开注册设置。第三方组件（含修改过的 obra/superpowers）见仓库里的 THIRD_PARTY_NOTICES.md。"
+            }
+          ],
+          "difficulty": {
+            "stars": 4,
+            "outOf": 5,
+            "timeEstimate": "平台版约 30–60 分钟；Local 版约 10 分钟",
+            "prerequisites": "平台版：先装 Git，安装脚本会检查 Docker、 Compose、 Python 3 和 curl；Local 版： Node.js 20+、 Python 3.8+ 和一个 AI 编程工具。跑 demo 不需要 API key，让 AI 真干活要对应工具的密钥。",
+            "note": "README 写明新账号会自动加入 demo 项目，里面「脚本 + 人工审批」的 SOP 不需要任何密钥就能跑。 前置条件来自仓库 README（2026-11-16 读取）；难度和耗时是估计。"
+          },
+          "searchText": "LoopForge Tencent/LoopForge 按固定流程让 AI 交付，关键处人批准 GitHub 上的开源项目，腾讯开源的「AI 写代码车间」，部署在你自己的服务器上。你在聊天里提需求，主控 bot （Main Bot）开一个 Docker 沙盒、拉下你的仓库，把活分给规划、实现、审查、测试几个角色，最后开 PR。用顺手的做法可以存成 SOP （标准作业流程），以后每次按同样的步骤走，关键节点停下来等人批准。干活的是 Claude Code、 Codex、 CodeBuddy 等十种 AI 编程工具。 开源协议 MIT （第三方组件按各自许可；GitHub 自动识别显示 NOASSERTION，以仓库 LICENSE 文件为准） 把「AI 一次性发挥」变成「每次按同一套流程交付」 直接让 AI「修个 bug」，结果全看那一次的运气：可能跳过计划、忘了测试、自己审自己。 LoopForge 把计划、实现、审查、测试拆给不同角色，中间插进不用 AI 的脚本（跑测试、跑检查）和人工审批。 README 记了一次真实运行：四个角色完成一个 Python 修复，三个真实测试通过，等人批准后，还核对了被批准的代码没有再被改动。 想让 AI 稳定交付、愿意花时间搭一套流程的独立开发者或小团队。只是偶尔让 AI 改改代码的人，用 Local 版或先学思路就够。 >_ AI 交付流水线 人工审批节点 自己部署 工程框架 后端 实用 skills 写代码 两种用法：和 Main Bot 聊天，适合探索和小修；跑 SOP，适合步骤固定、需要签字的交付。两条路挂在同一份「需求」上，每个改动对应哪个需求、花了多少钱都看得到。 SOP 设计器：在画布上摆「 Agent 节点、脚本节点、人工审批节点、子流程」，检查没过可以退回前面某一步重做。自带后端、前端、修 bug、产品文档几套模板。 每次运行都留记录：每个节点的状态、工具调用、日志和产出文件快照，可以暂停、重试，或从任意一步重跑。 不想搭服务器： LoopForge Local 用 npx -y loopforge-cli@latest install claude 把内置流程装进你现有的 AI 工具，再用 /start-devflow 开工。 缺点1：平台版体量大，默认设置面向「可信团队」。 要 Docker、 Compose、 Python 3，会起 MySQL 和平台服务；默认在所有网卡上监听 8090 端口，登录的人能看到整个实例的项目数据。 个人先用 LoopForge Local，或只在本机试玩。真要放上云服务器，先按官方部署文档配好 HTTPS、关掉公开注册（AGENTFLOW_ALLOW_SIGNUP=false），端口别直接暴露到公网。 缺点2：内置角色默认用腾讯的 CodeBuddy。 需求澄清、通知摘要、 Bot 回复和运行评估目前也走 CodeBuddy。 每个角色可以单独换执行工具和模型；先确认手上有哪家的密钥，再挑模板。 缺点3：项目很新，变化快。 2026 年 7 月创建，抓取时最新的是 v0.3.9 候选版；聊天工作台目前只有中文界面。 部署时锁定一个正式版本号，升级前看 CHANGELOG；先用 demo 项目里「脚本 + 人工审批」的示例 SOP 练手，不需要 API key。 技术含金量 价值在于把软件工程里成熟的做法搬给 AI：职责分离（写代码的和审代码的分开）、确定性步骤用脚本（README 的说法是「不需要 AI 的地方就不用 AI」）、关卡式审批、每一步留证据。AI 是流程里的工人，流程由人设计，能复用，能追溯。 它还把账算清楚：按公开报价统计每次运行、每段对话用了多少 token、花了多少钱。交付了什么和花了多少放在同一张表上，用 AI 干活才算真正管得住。 技术关联 ① 热门技术取舍： 一个人用一个 AI：用不上它， Plannotator 守住计划和合并两个关口就够。一个人同时开几个 AI：第三期的 worktrunk 管并行不打架。要固定流程、角色分工、审批和成本报表：用 LoopForge。全套都上管理成本高，个人开发者建议先把它的 SOP 思路抄成一份文字清单。 上榜原因 · 许可证与维护风险 上榜依据： GitHub Trending 日榜（今日 +423，2026-11-16 抓取）。大厂开源、 MIT 许可，切中「AI 交付要有人签字」这个需求；星数还不多，流程设计很值得学。 风险： MIT。腾讯团队维护，2026 年 7 月创建，更新频繁（一周内发了 v0.3.6、 v0.3.8 和 v0.3.9 候选版）。未解决的 issue 约 45 个。部署时注意端口、账号和公开注册设置。第三方组件（含修改过的 obra/superpowers）见仓库里的 THIRD_PARTY_NOTICES.md。"
+        },
+        {
+          "id": "p05",
+          "rank": "#05",
+          "name": "SkillEvaluator",
+          "featured": false,
+          "blurb": "给 skill 打分，看它有没有用",
+          "repo": "NVIDIA/SkillEvaluator",
+          "pills": [
+            ">_ skill 评测",
+            "三层质检",
+            "能接 CI"
+          ],
+          "tags": [
+            "实用 skills",
+            "工程框架"
+          ],
+          "stageKey": "qa",
+          "stageName": "测试、审查和安全",
+          "description": "GitHub 上的开源项目，NVIDIA 开源的 skill 评测工具。skill 是交给 AI 的一份任务说明书（一个文件夹，里面有 SKILL.md 和配套文件）。它先查这份说明书写得规不规范、安不安全，再找出重复、互相打架的内容，最后让 AI 带着 skill 和不带 skill 各做一遍任务，看这份 skill 到底有没有用。",
+          "license": "开源协议 Apache-2.0",
+          "metrics": [
+            {
+              "label": "★ STAR",
+              "value": "1,772",
+              "hint": ""
+            },
+            {
+              "label": "↗ 今日新增",
+              "value": "+122",
+              "hint": "日榜 · 2026-11-16"
+            },
+            {
+              "label": "</> 语言",
+              "value": "Python",
+              "hint": ""
+            },
+            {
+              "label": "⑂ FORKS",
+              "value": "234",
+              "hint": ""
+            }
+          ],
+          "starSnapshot": "1,772",
+          "canDo": [
+            "第一层「校验」：查格式、安全和兼容性，不需要 API key。官方示例 skill 得 86.2 分（B），默认 70 分及格。",
+            "第二层「去重」：找出说明里重复或重叠的内容；还能拿你的几个 skill 互相比，看有没有抢活的。",
+            "第三层「实测」：在沙盒里让 AI 带 / 不带这个 skill 做同样的任务，比较结果。需要模型服务、受支持的 AI 工具和 Docker。",
+            "接进 GitHub： skillevaluator ci init 自动开一个 PR，以后每次改 skill 都自动检查；也能当 skill 装进 Claude Code、 Codex，直接问「我的 skill 好不好」。"
+          ],
+          "highlightTitle": "给 skill 做体检，再做对照实验",
+          "highlight": "大家都在写 skill，很少有人测过它到底让 AI 变好了没有。 SkillEvaluator 拆成三层：前两层几分钟出结果，第一层连密钥都不用；第三层用对照实验看真实效果。写 skill 的人终于有了能量化的分数。",
+          "audience": "自己写 skill、或者装了很多别人 skill 的人。非程序员也能用第一层：把 skill 文件夹交给它，看报告里哪里扣分。",
+          "drawbacks": [
+            {
+              "problem": "缺点1：第三层门槛高，可能花钱。 要模型服务和沙盒（默认 Docker）， README 提醒模型和托管沙盒会产生费用。",
+              "response": "先只跑第一层（加 --tiers 1），确实需要再开第三层，开之前看官方的成本说明。"
+            },
+            {
+              "problem": "缺点2：分数只是参考。 第一层查的是写法，及格不等于好用；第三层自动生成的测试用例覆盖有限，README 也提醒要人工复核。",
+              "response": "给自己的 skill 写几条真实任务和期望结果，放进 evals/EVAL.md，让实测贴近你的用法。"
+            },
+            {
+              "problem": "缺点3：第一层会自动下载安全扫描工具，对 Python 版本有要求。 缺 SkillSpector、 Gitleaks 时会自动下载固定版本；需要 Python 3.12 以上。",
+              "response": "用 uv 运行，它会自动准备 Python；公司电脑先确认能不能下载这些工具。"
+            }
+          ],
+          "sections": [
+            {
+              "title": "技术含金量",
+              "text": "价值在于把「写说明书」变成能测的工程。三层逐级加码：便宜的静态检查挡住大部分问题，贵的实测只留给通过前两层的 skill，这是工程里常见的漏斗式质检。 第二层很有远见：skill 装多了，说明之间会重复、打架，AI 反而不知道听谁的。用相似度检测提前发现，和代码里「消除重复」是一个道理。它是 NVIDIA「 Verified Skills 」流程的一部分，还配了论文。"
+            },
+            {
+              "title": "技术关联",
+              "text": "① 热门技术取舍： 只写一两个 skill：第一层体检就够。skill 多了、开始互相干扰：加第二层。skill 要给很多人用，或者你想证明它真有效：上第三层。本期 modern-web-guidance 用的也是「装与不装」对照的思路，可以一起看。"
+            },
+            {
+              "title": "上榜原因 · 许可证与维护风险",
+              "text": "上榜依据： GitHub Trending 日榜（今日 +122，2026-11-16 抓取）。skill 是这几期反复出现的主题，这是第一个专门给 skill 打分的大厂工具，正好补上质量这一环。 风险： Apache-2.0。NVIDIA 团队维护，迭代很快（一周内从 v0.7.2 到 v0.9.0），命令和参数可能调整。未解决的 issue 约 10 个。用 NVIDIA Build 的免费额度有使用条款和频率限制。"
+            }
+          ],
+          "difficulty": {
+            "stars": 3,
+            "outOf": 5,
+            "timeEstimate": "约 15–30 分钟（只跑第一层）",
+            "prerequisites": "Git 和 uv （uv 会自动准备 Python 3.13）；也可以 pip install skillevaluator （Python 3.12–3.14）。第一层不需要 API key；用模型打分要 NVIDIA Build 的 API key；第三层还要 Docker。",
+            "note": "README 的「 Run without an LLM 」一节不需要 API key、 GPU 或 Docker，用自带示例几分钟就能出分。 前置条件来自仓库 README（2026-11-16 读取）；难度和耗时是估计。"
+          },
+          "searchText": "SkillEvaluator NVIDIA/SkillEvaluator 给 skill 打分，看它有没有用 GitHub 上的开源项目，NVIDIA 开源的 skill 评测工具。skill 是交给 AI 的一份任务说明书（一个文件夹，里面有 SKILL.md 和配套文件）。它先查这份说明书写得规不规范、安不安全，再找出重复、互相打架的内容，最后让 AI 带着 skill 和不带 skill 各做一遍任务，看这份 skill 到底有没有用。 开源协议 Apache-2.0 给 skill 做体检，再做对照实验 大家都在写 skill，很少有人测过它到底让 AI 变好了没有。 SkillEvaluator 拆成三层：前两层几分钟出结果，第一层连密钥都不用；第三层用对照实验看真实效果。写 skill 的人终于有了能量化的分数。 自己写 skill、或者装了很多别人 skill 的人。非程序员也能用第一层：把 skill 文件夹交给它，看报告里哪里扣分。 >_ skill 评测 三层质检 能接 CI 实用 skills 工程框架 测试、审查和安全 第一层「校验」：查格式、安全和兼容性，不需要 API key。官方示例 skill 得 86.2 分（B），默认 70 分及格。 第二层「去重」：找出说明里重复或重叠的内容；还能拿你的几个 skill 互相比，看有没有抢活的。 第三层「实测」：在沙盒里让 AI 带 / 不带这个 skill 做同样的任务，比较结果。需要模型服务、受支持的 AI 工具和 Docker。 接进 GitHub： skillevaluator ci init 自动开一个 PR，以后每次改 skill 都自动检查；也能当 skill 装进 Claude Code、 Codex，直接问「我的 skill 好不好」。 缺点1：第三层门槛高，可能花钱。 要模型服务和沙盒（默认 Docker）， README 提醒模型和托管沙盒会产生费用。 先只跑第一层（加 --tiers 1），确实需要再开第三层，开之前看官方的成本说明。 缺点2：分数只是参考。 第一层查的是写法，及格不等于好用；第三层自动生成的测试用例覆盖有限，README 也提醒要人工复核。 给自己的 skill 写几条真实任务和期望结果，放进 evals/EVAL.md，让实测贴近你的用法。 缺点3：第一层会自动下载安全扫描工具，对 Python 版本有要求。 缺 SkillSpector、 Gitleaks 时会自动下载固定版本；需要 Python 3.12 以上。 用 uv 运行，它会自动准备 Python；公司电脑先确认能不能下载这些工具。 技术含金量 价值在于把「写说明书」变成能测的工程。三层逐级加码：便宜的静态检查挡住大部分问题，贵的实测只留给通过前两层的 skill，这是工程里常见的漏斗式质检。 第二层很有远见：skill 装多了，说明之间会重复、打架，AI 反而不知道听谁的。用相似度检测提前发现，和代码里「消除重复」是一个道理。它是 NVIDIA「 Verified Skills 」流程的一部分，还配了论文。 技术关联 ① 热门技术取舍： 只写一两个 skill：第一层体检就够。skill 多了、开始互相干扰：加第二层。skill 要给很多人用，或者你想证明它真有效：上第三层。本期 modern-web-guidance 用的也是「装与不装」对照的思路，可以一起看。 上榜原因 · 许可证与维护风险 上榜依据： GitHub Trending 日榜（今日 +122，2026-11-16 抓取）。skill 是这几期反复出现的主题，这是第一个专门给 skill 打分的大厂工具，正好补上质量这一环。 风险： Apache-2.0。NVIDIA 团队维护，迭代很快（一周内从 v0.7.2 到 v0.9.0），命令和参数可能调整。未解决的 issue 约 10 个。用 NVIDIA Build 的免费额度有使用条款和频率限制。"
+        },
+        {
+          "id": "p06",
+          "rank": "#06",
+          "name": "stitch-skills",
+          "featured": false,
+          "blurb": "让 AI 出设计稿和 DESIGN.md",
+          "repo": "google-labs-code/stitch-skills · stitch.withgoogle.com",
+          "pills": [
+            ">_ AI 设计稿",
+            "Stitch MCP",
+            "设计 ⇄ 代码"
+          ],
+          "tags": [
+            "UI",
+            "前端",
+            "实用 skills"
+          ],
+          "stageKey": "ui",
+          "stageName": "界面",
+          "description": "GitHub 上的开源项目， Google Labs 给自家 AI 设计工具 Stitch 做的一套 skill。装进 Claude Code、 Codex、 Cursor 等工具后，AI 能帮你在 Stitch 里生成界面设计稿、改稿、出几个版本，再把设计稿转成 React 或 React Native 代码；也能反过来，从你现有的网页代码里整理出一份设计规范（DESIGN.md）传到 Stitch。",
+          "license": "开源协议 Apache-2.0",
+          "metrics": [
+            {
+              "label": "★ STAR",
+              "value": "9,356",
+              "hint": ""
+            },
+            {
+              "label": "↗ 今日新增",
+              "value": "+247",
+              "hint": "日榜 · 2026-11-16"
+            },
+            {
+              "label": "</> 语言",
+              "value": "TypeScript",
+              "hint": ""
+            },
+            {
+              "label": "⑂ FORKS",
+              "value": "1,130",
+              "hint": ""
+            }
+          ],
+          "starSnapshot": "9,356",
+          "canDo": [
+            "设计：用文字或图片生成新界面、改已有界面、出几个版本；把设计规范 DESIGN.md 套到所有页面上。",
+            "设计变代码：把 Stitch 设计稿转成 React 组件、 React Native 组件或 React + Vite 后台页面，并检查颜色、字号这些设计变量前后一致。",
+            "代码变设计：从现有前端代码里提取 DESIGN.md，或把正在运行的网页存成单个 HTML 再传到 Stitch。",
+            "小工具： enhance-prompt 把模糊的界面想法改写成专业的设计提示词；还能用 Remotion 把设计稿做成演示视频。"
+          ],
+          "highlightTitle": "设计规范写成一个 DESIGN.md，人和 AI 共用",
+          "highlight": "它把设计系统落成一个纯文本文件 DESIGN.md：颜色、字体、间距、组件风格都写在里面。AI 生成新页面时照着它来，换个工具也能接着用。没有设计师的独立开发者，靠它统一界面风格最省事。",
+          "audience": "没有设计师、想快速出界面草稿的独立开发者；想先看到「长什么样」再决定做不做的非程序员。",
+          "drawbacks": [
+            {
+              "problem": "缺点1：离不开 Google Stitch。 所有 skill 都要先配好 Stitch MCP 服务，设计稿存在 Google 的服务上。",
+              "response": "先在 Stitch 网页版试几次，觉得好用再装 skill。不想依赖云服务，就只学它的 DESIGN.md 写法。"
+            },
+            {
+              "problem": "缺点2：转代码只有 React 一系。 设计稿转代码只有 React、 React Native、React + Vite 几条路，没有手机原生界面框架的输出。",
+              "response": "原生 App 只把设计稿当参考图，再让 AI 照着截图用你自己的界面框架实现。"
+            },
+            {
+              "problem": "缺点3：仓库更新放缓，单独挑着装容易缺东西。 抓取时最近一次推送是 2026-08-18（北京时间），最新版 v1.0 发布于 2026 年 5 月；skill 之间有依赖。",
+              "response": "按 README 推荐的插件方式整套装；遇到问题先翻 issue （未解决约 12 个）。"
+            }
+          ],
+          "sections": [
+            {
+              "title": "技术含金量",
+              "text": "价值在于把设计变成 AI 能读、能改、能传递的文本。 DESIGN.md 相当于设计系统的「源代码」：放在仓库里，能看历史、能比差异。设计和代码双向转换，也是大厂设计团队在追的方向。 它按 Agent Skills 开放标准写，每个 skill 只管一件事（出图、提取规范、转代码、做视频），彼此靠 DESIGN.md 串起来，是「小模块 + 统一接口」的好例子。"
+            },
+            {
+              "title": "技术关联",
+              "text": "① 热门技术取舍： 只想让 AI 做的页面少点「AI 味」：第二期的 hallmark 或第一期的 impeccable 更直接，也不依赖云服务。想要看得见的设计稿、几个版本对比着挑：用 Stitch 加这套 skill。已经有成熟组件库：第三期 astryx 那类设计系统更合适。三条路选一条做主线， DESIGN.md 的写法哪条都能借鉴。"
+            },
+            {
+              "title": "上榜原因 · 许可证与维护风险",
+              "text": "上榜依据： GitHub Trending 日榜（今日 +247，2026-11-16 抓取）。Google 官方出品，覆盖「想法 → 设计稿 → 代码」一整段，对没有设计师的独立开发者很实用。 风险： Apache-2.0。 Google Labs 维护，但仓库最近三个月没有推送（最近一次 2026-08-18），可能进入低频维护。依赖 Stitch 云服务，服务条款和可用地区以 Google 为准。"
+            }
+          ],
+          "difficulty": {
+            "stars": 3,
+            "outOf": 5,
+            "timeEstimate": "约 30 分钟（含配置 Stitch MCP）",
+            "prerequisites": "一个支持 skill 的 AI 编程工具；能运行 npx （安装用 npx plugins add 或 npx skills add）；按 Stitch 官方说明配好 Stitch MCP 服务（需要 Google 账号）。",
+            "note": "README 写明所有 skill 都依赖 Stitch MCP，先按 Stitch 的 MCP 设置说明注册好服务，再装 skill。 前置条件来自仓库 README（2026-11-16 读取）；难度和耗时是估计。"
+          },
+          "searchText": "stitch-skills google-labs-code/stitch-skills · stitch.withgoogle.com 让 AI 出设计稿和 DESIGN.md GitHub 上的开源项目， Google Labs 给自家 AI 设计工具 Stitch 做的一套 skill。装进 Claude Code、 Codex、 Cursor 等工具后，AI 能帮你在 Stitch 里生成界面设计稿、改稿、出几个版本，再把设计稿转成 React 或 React Native 代码；也能反过来，从你现有的网页代码里整理出一份设计规范（DESIGN.md）传到 Stitch。 开源协议 Apache-2.0 设计规范写成一个 DESIGN.md，人和 AI 共用 它把设计系统落成一个纯文本文件 DESIGN.md：颜色、字体、间距、组件风格都写在里面。AI 生成新页面时照着它来，换个工具也能接着用。没有设计师的独立开发者，靠它统一界面风格最省事。 没有设计师、想快速出界面草稿的独立开发者；想先看到「长什么样」再决定做不做的非程序员。 >_ AI 设计稿 Stitch MCP 设计 ⇄ 代码 UI 前端 实用 skills 界面 设计：用文字或图片生成新界面、改已有界面、出几个版本；把设计规范 DESIGN.md 套到所有页面上。 设计变代码：把 Stitch 设计稿转成 React 组件、 React Native 组件或 React + Vite 后台页面，并检查颜色、字号这些设计变量前后一致。 代码变设计：从现有前端代码里提取 DESIGN.md，或把正在运行的网页存成单个 HTML 再传到 Stitch。 小工具： enhance-prompt 把模糊的界面想法改写成专业的设计提示词；还能用 Remotion 把设计稿做成演示视频。 缺点1：离不开 Google Stitch。 所有 skill 都要先配好 Stitch MCP 服务，设计稿存在 Google 的服务上。 先在 Stitch 网页版试几次，觉得好用再装 skill。不想依赖云服务，就只学它的 DESIGN.md 写法。 缺点2：转代码只有 React 一系。 设计稿转代码只有 React、 React Native、React + Vite 几条路，没有手机原生界面框架的输出。 原生 App 只把设计稿当参考图，再让 AI 照着截图用你自己的界面框架实现。 缺点3：仓库更新放缓，单独挑着装容易缺东西。 抓取时最近一次推送是 2026-08-18（北京时间），最新版 v1.0 发布于 2026 年 5 月；skill 之间有依赖。 按 README 推荐的插件方式整套装；遇到问题先翻 issue （未解决约 12 个）。 技术含金量 价值在于把设计变成 AI 能读、能改、能传递的文本。 DESIGN.md 相当于设计系统的「源代码」：放在仓库里，能看历史、能比差异。设计和代码双向转换，也是大厂设计团队在追的方向。 它按 Agent Skills 开放标准写，每个 skill 只管一件事（出图、提取规范、转代码、做视频），彼此靠 DESIGN.md 串起来，是「小模块 + 统一接口」的好例子。 技术关联 ① 热门技术取舍： 只想让 AI 做的页面少点「AI 味」：第二期的 hallmark 或第一期的 impeccable 更直接，也不依赖云服务。想要看得见的设计稿、几个版本对比着挑：用 Stitch 加这套 skill。已经有成熟组件库：第三期 astryx 那类设计系统更合适。三条路选一条做主线， DESIGN.md 的写法哪条都能借鉴。 上榜原因 · 许可证与维护风险 上榜依据： GitHub Trending 日榜（今日 +247，2026-11-16 抓取）。Google 官方出品，覆盖「想法 → 设计稿 → 代码」一整段，对没有设计师的独立开发者很实用。 风险： Apache-2.0。 Google Labs 维护，但仓库最近三个月没有推送（最近一次 2026-08-18），可能进入低频维护。依赖 Stitch 云服务，服务条款和可用地区以 Google 为准。"
+        },
+        {
+          "id": "p07",
+          "rank": "#07",
+          "name": "video-shotcraft",
+          "featured": false,
+          "blurb": "让 AI 按镜头配方做宣传片",
+          "repo": "Vincentwei1021/video-shotcraft · 镜头库 Gallery",
+          "pills": [
+            ">_ 产品宣传片",
+            "Remotion",
+            "剪映草稿"
+          ],
+          "tags": [
+            "实用 skills",
+            "UI",
+            "前端"
+          ],
+          "stageKey": "ship",
+          "stageName": "发布和内容",
+          "description": "GitHub 上的开源项目，开发者 Vincentwei1021 做的视频 skill。对 Claude Code 或 Codex 说一句「给我的产品做个宣传片」，AI 会截取产品的真实页面，从镜头库里挑镜头、写分镜，用 Remotion 做成动画，配上卡点音乐和音效，逐帧检查后交给你一个 MP4。画面都是代码照着你的截图和文案画出来的，清晰，还能接着改。",
+          "license": "开源协议 Apache-2.0 （渲染用的 Remotion 另有许可，见缺点2）",
+          "metrics": [
+            {
+              "label": "★ STAR",
+              "value": "20,105",
+              "hint": ""
+            },
+            {
+              "label": "↗ 本月新增",
+              "value": "+7,937",
+              "hint": "月榜 · 2026-11-16"
+            },
+            {
+              "label": "</> 语言",
+              "value": "TypeScript",
+              "hint": ""
+            },
+            {
+              "label": "⑂ FORKS",
+              "value": "1,878",
+              "hint": ""
+            }
+          ],
+          "starSnapshot": "20,105",
+          "canDo": [
+            "镜头库：124 张「镜头配方卡」、150 个镜头，分开场、运镜、转场、文字、界面入场、数据、收尾等 10 类，在线 Gallery 能预览、复制镜头名。",
+            "全流程：截取真实页面 → 定视觉方向 → 分镜 → Remotion 动画 → 卡点和音效 → 逐帧检查 → 输出 1920×1080 的 MP4。",
+            "出片后打开一个类似剪映的浏览器编辑器（Motion Workbench），能改文案、颜色、剪辑、换镜头再导出。",
+            "可以导出剪映草稿：镜头、字幕、音效、背景音乐分轨，在剪映里接着剪（README 写明在 macOS 剪映专业版 11.2 上验证过）。"
+          ],
+          "highlightTitle": "不会剪视频，也能让 AI 照着「镜头配方」做宣传片",
+          "highlight": "它把剪辑师的手艺拆成了 124 张配方卡：每个镜头怎么动、配什么节奏都写清楚，AI 照着配方拼片子。导出剪映草稿对中文创作者特别友好：AI 出初稿，人在剪映里精修。",
+          "audience": "要给产品、开源项目或自己的小红书账号做宣传视频的独立开发者和内容创作者。",
+          "drawbacks": [
+            {
+              "problem": "缺点1：环境要求不低，国内下载可能卡住。 要 Node.js 和 npm、 ffmpeg；卡点分析要 uv；截页面要 puppeteer。 Remotion 第一次渲染要下载自带的无头 Chrome，国内网络可能下不来。",
+              "response": "优先在 macOS 上用（作者主要在 macOS 测试）；下载卡住时按 README 的说明手动指定浏览器路径； GitHub 慢就从国内镜像 AtomGit 克隆。"
+            },
+            {
+              "problem": "缺点2：Remotion 的许可要看清楚。 个人、3 人以内的营利公司、非营利组织可以免费用，商用也行；更大的营利公司要买公司授权。",
+              "response": "个人账号做宣传片一般在免费范围内；团队变大前，先查 remotion.dev 上的授权条款。"
+            },
+            {
+              "problem": "缺点3：个人维护，风格比较固定。 镜头库是作者调出来的，偏「科技产品发布会」风格；剪映导出的 Windows 版还没测试。",
+              "response": "先用 Ink Press 模板跑通一条，再按需要挑镜头；最后的精修放到剪映里做。"
+            }
+          ],
+          "sections": [
+            {
+              "title": "技术含金量",
+              "text": "价值在于把审美变成能复用的配方。每张镜头卡写清动效、节奏和适用场景，再配一份能运行的 Remotion 代码。AI 从库里挑选、组合、调参数，结果稳定，也改得动。思路和设计系统一样：先攒零件，再拼成品。 逐帧检查是另一个亮点：渲染完用 ffmpeg 抽帧，按视觉检查标准自查一遍，才交给人。AI 产出先自检再交付，这条规矩放到任何内容生成上都适用。"
+            },
+            {
+              "title": "技术关联",
+              "text": "① 热门技术取舍： 第一期的 hyperframes 是「写 HTML 出视频」的通用底座；第二期的 OpenMontage 偏全流程视频制作； video-shotcraft 专做产品宣传片，带现成镜头库和剪映导出。只想做产品介绍短片，选它最快；要做讲解类的口播视频，看作者的姊妹项目 video-talkcraft。视频工具别同时装好几个，先选一个跑通。"
+            },
+            {
+              "title": "上榜原因 · 许可证与维护风险",
+              "text": "上榜依据： GitHub Trending 月榜（本月 +7,937，2026-11-16 抓取）。补上工具地图里「发布和内容」这一步，对要做小红书和产品宣传的独立开发者最直接。 风险： Apache-2.0， Remotion 另有许可（见缺点2）。个人维护，抓取时最近一次推送 2026-11-15 21:34（北京时间），未解决的 issue 约 5 个。 README 里有赞助商广告。可选的社交平台发布功能要调用第三方服务 Upload-Post，用之前先确认文案和平台。"
+            }
+          ],
+          "difficulty": {
+            "stars": 3,
+            "outOf": 5,
+            "timeEstimate": "约 30–60 分钟（含首次渲染）",
+            "prerequisites": "Node.js 和 npm、 ffmpeg / ffprobe；卡点分析要 uv；截页面要 puppeteer （脚本会按需安装）；再加上 Claude Code 或 Codex。 README 写明主要在 macOS 上测试。",
+            "note": "README 写明最简单的安装方式是把仓库链接直接发给 AI，让它帮你装；第一次渲染时 Remotion 会自动下载无头 Chrome。 前置条件来自仓库 README（2026-11-16 读取）；难度和耗时是估计。"
+          },
+          "searchText": "video-shotcraft Vincentwei1021/video-shotcraft · 镜头库 Gallery 让 AI 按镜头配方做宣传片 GitHub 上的开源项目，开发者 Vincentwei1021 做的视频 skill。对 Claude Code 或 Codex 说一句「给我的产品做个宣传片」，AI 会截取产品的真实页面，从镜头库里挑镜头、写分镜，用 Remotion 做成动画，配上卡点音乐和音效，逐帧检查后交给你一个 MP4。画面都是代码照着你的截图和文案画出来的，清晰，还能接着改。 开源协议 Apache-2.0 （渲染用的 Remotion 另有许可，见缺点2） 不会剪视频，也能让 AI 照着「镜头配方」做宣传片 它把剪辑师的手艺拆成了 124 张配方卡：每个镜头怎么动、配什么节奏都写清楚，AI 照着配方拼片子。导出剪映草稿对中文创作者特别友好：AI 出初稿，人在剪映里精修。 要给产品、开源项目或自己的小红书账号做宣传视频的独立开发者和内容创作者。 >_ 产品宣传片 Remotion 剪映草稿 实用 skills UI 前端 发布和内容 镜头库：124 张「镜头配方卡」、150 个镜头，分开场、运镜、转场、文字、界面入场、数据、收尾等 10 类，在线 Gallery 能预览、复制镜头名。 全流程：截取真实页面 → 定视觉方向 → 分镜 → Remotion 动画 → 卡点和音效 → 逐帧检查 → 输出 1920×1080 的 MP4。 出片后打开一个类似剪映的浏览器编辑器（Motion Workbench），能改文案、颜色、剪辑、换镜头再导出。 可以导出剪映草稿：镜头、字幕、音效、背景音乐分轨，在剪映里接着剪（README 写明在 macOS 剪映专业版 11.2 上验证过）。 缺点1：环境要求不低，国内下载可能卡住。 要 Node.js 和 npm、 ffmpeg；卡点分析要 uv；截页面要 puppeteer。 Remotion 第一次渲染要下载自带的无头 Chrome，国内网络可能下不来。 优先在 macOS 上用（作者主要在 macOS 测试）；下载卡住时按 README 的说明手动指定浏览器路径； GitHub 慢就从国内镜像 AtomGit 克隆。 缺点2：Remotion 的许可要看清楚。 个人、3 人以内的营利公司、非营利组织可以免费用，商用也行；更大的营利公司要买公司授权。 个人账号做宣传片一般在免费范围内；团队变大前，先查 remotion.dev 上的授权条款。 缺点3：个人维护，风格比较固定。 镜头库是作者调出来的，偏「科技产品发布会」风格；剪映导出的 Windows 版还没测试。 先用 Ink Press 模板跑通一条，再按需要挑镜头；最后的精修放到剪映里做。 技术含金量 价值在于把审美变成能复用的配方。每张镜头卡写清动效、节奏和适用场景，再配一份能运行的 Remotion 代码。AI 从库里挑选、组合、调参数，结果稳定，也改得动。思路和设计系统一样：先攒零件，再拼成品。 逐帧检查是另一个亮点：渲染完用 ffmpeg 抽帧，按视觉检查标准自查一遍，才交给人。AI 产出先自检再交付，这条规矩放到任何内容生成上都适用。 技术关联 ① 热门技术取舍： 第一期的 hyperframes 是「写 HTML 出视频」的通用底座；第二期的 OpenMontage 偏全流程视频制作； video-shotcraft 专做产品宣传片，带现成镜头库和剪映导出。只想做产品介绍短片，选它最快；要做讲解类的口播视频，看作者的姊妹项目 video-talkcraft。视频工具别同时装好几个，先选一个跑通。 上榜原因 · 许可证与维护风险 上榜依据： GitHub Trending 月榜（本月 +7,937，2026-11-16 抓取）。补上工具地图里「发布和内容」这一步，对要做小红书和产品宣传的独立开发者最直接。 风险： Apache-2.0， Remotion 另有许可（见缺点2）。个人维护，抓取时最近一次推送 2026-11-15 21:34（北京时间），未解决的 issue 约 5 个。 README 里有赞助商广告。可选的社交平台发布功能要调用第三方服务 Upload-Post，用之前先确认文案和平台。"
+        }
+      ]
+    }
+  ]
+}

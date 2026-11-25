@@ -66,6 +66,12 @@ node xhs-widget/dev/check.mjs
 - 本目录里新写的代码（`app.js`、`app.css`、`index.html` 的结构、`dev/build_reader.py`）沿用仓库代码许可：PolyForm Noncommercial 1.0.0。`index.html` 开头注释里有 Required Notice 和许可文本网址。页面上不把网址做成链接。
 - 嵌进去的卡片、释义等文字仍是 CC BY-NC-SA 4.0，没有改原许可。
 
+## 和 Skill 源码包不是同一个 ZIP
+
+平台如果报「文件夹中缺少 SKILL.md」，那是 Skill 源码入口，不是这个小工具容器包。小工具包根目录仍然只有 `index.html`、`app.css`、`app.js`、`data.js`，不要把 `SKILL.md` 塞进来冒充。
+
+Skill 发行包在仓库的 `xhs-skill/`，另打成根目录含 `SKILL.md` 的 ZIP。两套格式并存，阅读页不用改。
+
 ## 不能当成审核通过
 
 附件 PDF 是两页扫描图。容器能力清单读过了，但文中指向的详细规范链接在材料里没有给出全文。本包只是按读到的清单做成的离线候选，没有提交小红书，也不能保证审核通过。差异和未覆盖项见 `SCAN-REPORT.md`。
