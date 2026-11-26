@@ -1,0 +1,82 @@
+  <article class="project" id="p03">
+    <div class="rank">#03</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ 上架前检查</span>
+        <span class="pill">iOS</span>
+        <span class="pill">Android</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">🛡️</div>
+        <div>
+          <h2 class="pname">app-store-compliance</h2>
+          <p class="pdesc">GitHub 上的开源项目。它是一份上架手册，加一道提交前扫描：对照 App Store 和 Google Play 里常见的拒因，在你把应用交出去之前先找问题。扫描能指出代码里对得上的风险，并给出对应指南和修改建议；它看不全审核员能看到的所有东西，也不保证一定过审。</p>
+          <p class="prepo"><a href="https://github.com/mjmirza/app-store-compliance" target="_blank" rel="noopener">mjmirza/app-store-compliance</a> · <a href="https://mjmirza.github.io/app-store-compliance/" target="_blank" rel="noopener">mjmirza.github.io/app-store-compliance</a></p>
+          <span class="license">开源协议 OpenRoots Agent License 2.3（GitHub 显示 NOASSERTION，以仓库 LICENSE 为准）</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">6,527</div></div>
+      <div class="metric"><div class="label">↗ 今日新增</div><div class="value">+858</div><div class="hint">日榜 · 2026-11-26</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">Shell</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">422</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li>两条命令就能扫描一次：先克隆仓库，再对你的 Xcode 或 Android 项目文件夹跑 guard 脚本。不改你的应用代码。</li>
+          <li>结果很直白：<code>BLOCKED</code> 表示有高风险要先修，<code>CLEAR</code> 表示代码里没扫到关键项（仍要人工核对清单），规则超过 60 天会提示 <code>STALE</code>。</li>
+          <li>也可装进 Claude Code、Cursor、Codex、Grok 等工具，在上传到 App Store Connect 或 Google Play 之前自动拦截。</li>
+          <li>不会写代码也可以用仓库里的提交前清单。作者强调最常见的两类问题：可用的演示账号加真实在线的后台，以及隐私声明和 App 实际行为一致。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">把「等审核被打回再猜」改成「提交前就能改」</div>
+          <p>一次拒审往往要再等好几天。这份手册把常见拒因写成可核对的模式和修改建议，扫描只是其中一环。它自己也写明：过审仍然要靠人把演示账号、隐私表格和商店材料准备齐。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>准备把 iOS 或 Android 应用交到苹果或谷歌商店的人。产品、运营不会写代码，也可以先走清单。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：扫描看不到审核员能看到的所有东西。</strong>演示账号是否能登录、后台是否在线、商店文案写得清不清楚，都要人来核。
+          <span class="fix">应对：即使出现 CLEAR，也要把清单走完，再决定提交。</span></li>
+        <li><strong>缺点2：许可证不是常见的 MIT。</strong>仓库使用 OpenRoots Agent License 2.3。个人、非营利和年收入不超过 2000 万美元的公司通常可免费使用；把这份手册本身拿去转卖，或用它训练模型，另有限制。
+          <span class="fix">应对：商用前阅读官方许可证文本；不要用仓库内容训练模型。</span></li>
+        <li><strong>缺点3：规则会过期。</strong>超过 60 天会提示 STALE；商店政策也经常变。
+          <span class="fix">应对：扫描前先 <code>git pull</code>；最终以苹果和谷歌当前指南为准。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>它把「审核」当成一次你无法解释意图的集成测试：演示账号、后台、权限说明和隐私表格，提交时就必须是齐的、能用的。扫描负责抓住代码里对得上的模式；清单负责抓住扫描看不见的部分。这种「机器先拦一层，人再确认一层」的拆法，做上架检查时很实用。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>第一期的 security-audit-skill 侧重代码安全审计；第四期的 open-code-review 侧重合并前挑程序错误。app-store-compliance 专管商店审核规则，和前两者不是同一件事。做手机应用要上架时，先用这一个；安全审计仍然要另外做。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 日榜今日 +858（2026-11-26 抓取）。对要上架的独立开发者非常具体，不会写代码也能先用清单。</p>
+          <div class="risk"><strong>风险：</strong>OpenRoots Agent License 2.3，GitHub 显示 NOASSERTION，以 LICENSE 指向的官方文本为准。抓取时最新版 v2.5.2（2026-11-25 发布），未解决的 issue 约 35 个。规则和商店政策都会变，扫描通过不等于过审。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>

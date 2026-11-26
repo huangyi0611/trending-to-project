@@ -1,0 +1,109 @@
+{
+  "issue": "05",
+  "title": "GitHub 热榜拆解 · 个人项目适配与技术精进 / 第五期 · 2026年11月26日",
+  "date": "2026-11-26",
+  "summary": "先听清最近 30 天真实讨论，再把作品做出来、发出去。另外还有短视频剪辑、上架前检查、编辑部风图表、给 AI 用的命令行、模型收口和个人助手。",
+  "lead": "mvanhorn/last30days-skill",
+  "projects": [
+    "last30days",
+    "AutoClip",
+    "app-store-compliance",
+    "diagram-design",
+    "CLI-Anything",
+    "magpie",
+    "Nod"
+  ],
+  "kit_note_suffix": "前置条件来自仓库 README（2026-11-26 读取）；难度和耗时是估计。",
+  "kit_labels": {
+    "mine_title": "① 给你的项目用",
+    "mine_sub_public": "连接你的项目后生成",
+    "generic_title": "② 通用版",
+    "generic_sub": "谁都能用"
+  },
+  "cards": {
+    "p01": {
+      "stars": 2,
+      "time": "约 10–20 分钟（装上并跑完一次简报）",
+      "prereq": "任选一种安装方式：Claude Code 用 <code>/plugin marketplace add mvanhorn/last30days-skill</code> 再 <code>/plugin install last30days</code>；Cursor、Codex、Gemini CLI 等用 <code>npx skills add mvanhorn/last30days-skill -g</code>（需要 Node）；Grok（xAI Build CLI）用 <code>grok plugin marketplace add mvanhorn/last30days-skill</code> 再 <code>grok plugin install last30days</code>。跑引擎或 Claude Desktop 的安装包时，需要 Python 3.12+。Reddit、Hacker News、Polymarket 和 GitHub 不用密钥；要加 X、YouTube 等来源，按首次运行的向导在本机配置，密钥不要贴到聊天里。",
+      "note": "装上就能用免费来源跑通；配更多来源会多花一点时间。",
+      "generic": "我不是程序员。我想在动手做产品或写内容之前，先搞清某个主题最近 30 天大家在真实讨论什么。请参考 GitHub 项目 mvanhorn/last30days-skill，一步步带我：\n1. 用大白话解释 /last30days 会做什么，以及 Reddit、Hacker News、Polymarket、GitHub 为什么可以先不用密钥。\n2. 检查我的电脑适合哪种安装方式（Claude Code、Cursor、Codex、Gemini CLI 或 Grok），按 README 带我装上。每一步等我回复「好了」再继续。\n3. 用我指定的主题跑一次简报。主题是：____。\n4. 教我怎么核对简报里的引用；重要结论要点开原文看，不要只信摘要。\n5. 如果我想加 X 或 YouTube：只告诉我在本机哪里填密钥或登录，不要让我把密钥或验证码贴到聊天里，也不要写进代码。",
+      "scene_tags": [
+        "实用 skills",
+        "后端",
+        "前端"
+      ]
+    },
+    "p02": {
+      "stars": 2,
+      "time": "约 15–30 分钟（装桌面版并剪出第一条）",
+      "prereq": "最省事：从 GitHub Releases 下载桌面安装包（Apple 芯片的 Mac 用 aarch64.dmg，Windows 10/11 x64 用 x64-setup.exe；安装包已带 Python 和 FFmpeg）。Intel Mac 或 Linux 用 Docker 和 Compose v2：按 README 复制 env.example 为 .env 后运行 <code>docker compose up -d --build</code>。若要给 AI 工具用命令行：需要 Python 3.10+（建议 3.11）和 FFmpeg，可用 <code>uvx autoclip-mcp</code> 或 <code>npx skills add zhouxiaoka/autoclip</code>。云端分析或转写要用你自己的 API key，放在软件设置里；也可以用本机的 Ollama / LM Studio + Whisper / SenseVoice，不配云端密钥。",
+      "note": "桌面版下载即用；Intel Mac 和 Linux 要走 Docker，会多花时间。",
+      "generic": "我不是程序员。我有一段播客、访谈或课程长视频（或一个视频链接），想在自己电脑上剪成适合小红书、抖音、TikTok 或 YouTube Shorts 的短片，并带上字幕、封面和标题。请参考 GitHub 项目 zhouxiaoka/autoclip，一步步带我：\n1. 先确认我的电脑（我的电脑是：____）该下载哪个安装包，还是该用 Docker。\n2. 按 README 的 Quick Start 带我安装。如果系统提示「未验证开发者」，解释原因（代码签名和公证还在进行），并告诉我如何从官方 Releases 核对文件，来源不确定就停下来。\n3. 先用内置示例或本地文件试剪一条，先不要打开云端转写。如果必须用云端：只让我在软件设置里自己填 API key，不要让我把密钥贴到聊天或写进代码。\n4. 说明成片还要我自己看一遍再发布：字幕对不对、有没有用到别人的素材、平台规则是否允许。\n5. 每一步等我回复「好了」再继续。",
+      "scene_tags": [
+        "实用 skills",
+        "前端",
+        "UI设计"
+      ]
+    },
+    "p03": {
+      "stars": 2,
+      "time": "约 5–15 分钟（扫描一次或走完清单前两项）",
+      "prereq": "一次性扫描：电脑上有 git 和 bash，把仓库克隆下来后运行 <code>bash ~/repositories/app-store-compliance/agent-os/hooks/app-store-compliance-guard.sh \"/path/to/your/app\"</code>（把路径换成你的 Xcode 或 Android 项目文件夹）。装进 AI 工具：再运行 <code>bash ~/repositories/app-store-compliance/scripts/install.sh --tool all</code>（或改成某一个工具名）。Claude Code 之外的工具还需要 python3。不会写代码也可以：打开仓库里的 PRE-SUBMISSION-CHECKLIST.md，先做前两项检查。它不保证一定过审。",
+      "note": "两条命令就能扫一次；把检查装进每次提交前，要再花几分钟。",
+      "generic": "我准备把一个 iOS 或 Android 应用提交到 App Store 或 Google Play，想在提交前先检查常见拒因。请参考 GitHub 项目 mjmirza/app-store-compliance，一步步带我：\n1. 用大白话说明它能检查什么、不能检查什么，并强调它不保证过审。\n2. 如果我不是程序员：打开 PRE-SUBMISSION-CHECKLIST.md，带我做前两项（可用的演示账号和真实在线的后台、隐私声明和 App 实际行为一致）。\n3. 如果我能打开终端：按 README 的「Start here」克隆仓库并扫描我的项目文件夹。解释 BLOCKED、CLEAR、STALE、NOT CHECKED 各是什么意思。\n4. 扫描通过后，仍然带我人工核对演示账号、隐私表格和商店页面，不要直接提交。\n5. 密钥、证书和登录验证码只让我自己在官方后台或本机填写，不要写进代码或贴到聊天里。提交前再让我确认一遍。",
+      "scene_tags": [
+        "工程框架",
+        "实用 skills",
+        "前端"
+      ]
+    },
+    "p04": {
+      "stars": 1,
+      "time": "约 10 分钟（装上并出第一张图）",
+      "prereq": "任意支持 Agent Skills 的工具即可，一条命令：<code>npx skills add cathrynlavery/diagram-design</code>（需要 Node）。Claude Code 也可用 <code>/plugin marketplace add cathrynlavery/diagram-design</code> 再 <code>/plugin install diagram-design@diagram-design</code>。出图不需要再装绘图软件。想检查成品可运行仓库里的 <code>python3 skills/diagram-design/scripts/self_check.py</code>（需要 Python 3）。",
+      "note": "一条命令装好；第一张图的质量取决于你用的模型。",
+      "generic": "我不是程序员，想让 AI 帮我画一张看起来干净、适合放进文章或说明里的图（比如产品结构、流程、先后步骤）。请参考 GitHub 项目 cathrynlavery/diagram-design，一步步带我：\n1. 用大白话说明它的产出是什么：一个可以双击打开的 HTML 文件，里面是 SVG 图。\n2. 按 README 用 npx skills add cathrynlavery/diagram-design 帮我安装。每一步等我回复「好了」再继续。\n3. 先让 AI 说出准备用哪一种图、突出哪一两处，再画。我的主题是：____。\n4. 打开生成的 HTML 给我看该怎么检查：文字有没有重叠、能不能离线打开。如果默认会加载 Google Fonts，教我改成系统字体。\n5. 如果这张图以后要经常随代码改动，告诉我更适合改用 Mermaid，不要坚持用这一种。",
+      "scene_tags": [
+        "UI设计",
+        "前端",
+        "实用 skills"
+      ]
+    },
+    "p05": {
+      "stars": 3,
+      "time": "约 20 分钟（装 CLI-Hub 并用一个现成 CLI）；自己生成新 CLI 会再花数小时，视软件而定",
+      "prereq": "先用现成工具箱：<code>pip install cli-anything-hub</code>（需要 Python 3.10+），然后用 <code>cli-hub list</code>、<code>cli-hub search</code>、<code>cli-hub install</code>、<code>cli-hub launch</code>。让 AI 自己查找工具：<code>npx skills add HKUDS/CLI-Anything --skill cli-hub-meta-skill -g -y</code>（需要 Node）。若要为某个软件生成新的命令行，还要在本地或网上能拿到该软件或源码，并使用 Claude Code、Cursor、Codex 等受支持的 AI 编程工具。被包起来的软件（如 GIMP、Blender）需要另外安装原软件。",
+      "note": "现成工具箱相对好上手；从零生成一条新命令行会难得多。",
+      "generic": "我想让 AI 更稳地操作我电脑上的软件，听说 GitHub 项目 HKUDS/CLI-Anything 可以先用现成的命令行工具箱，没有再用生成器做一个。请一步步带我：\n1. 用大白话解释 CLI（命令行）对 AI 意味着什么，以及 CLI-Hub 和「生成新 CLI」有什么区别。\n2. 先带我安装 cli-anything-hub（需要 Python 3.10+），用 cli-hub search 和 cli-hub list 找一个和我任务相关的现成工具。我的任务是：____。\n3. 安装前先用 cli-hub info 看它依赖什么原软件，没有的话先告诉我，不要偷偷装。\n4. 只有现成工具没有时，再考虑生成器。生成过程要分步进行，每一步等我回复「好了」再继续；生成结果要我验收后才能当真用。\n5. 不要把密钥写进命令或代码；会改文件、删数据或发布的操作，必须先问我。",
+      "scene_tags": [
+        "工程框架",
+        "实用 skills",
+        "后端"
+      ]
+    },
+    "p06": {
+      "stars": 2,
+      "time": "约 15 分钟（装上、加一个模型来源、给一个 AI 工具选好模型）",
+      "prereq": "从 <code>https://usemagpie.ai</code> 下载应用，或运行 <code>curl -fsSL https://usemagpie.ai/install.sh | sh</code>。支持 macOS、Windows、Linux（也有 Docker）。打开应用后：在 Providers 里添加一个模型来源（粘贴 API key，或登录已有订阅），再到 Agents 页给每个 AI 工具选模型。密钥只填在 magpie 里，不要写进项目代码。不想让它读取本机已登录的订阅，可在设置 → 隐私关闭「订阅账号」。",
+      "note": "安装本身简单；要同时管多个账号和路由时，再花时间看设置。",
+      "generic": "我同时用好几个 AI 编程工具，也有不止一个模型账号，想把它们收到一处切换。请参考 GitHub 项目 yetone/magpie，一步步带我：\n1. 用大白话说明 magpie 是什么：一个本地网关加菜单栏应用，让不同 AI 工具可以选用你已经有的模型。\n2. 按 README 帮我安装（我的电脑是：____）。安装后先不要改一堆设置。\n3. 带我添加一个 provider，并给一个 AI 工具选中模型。API key 只让我在软件里自己粘贴，不要出现在聊天或代码里。\n4. 告诉我它可能会改 AI 工具的配置、也可能发现本机已登录的订阅；不想被读取时，怎么在设置里关掉。\n5. 建议我打开隐私脱敏。每一步等我回复「好了」再继续。更新很快、未解决的 issue 很多，先小范围试用，出问题再查官方说明。",
+      "scene_tags": [
+        "工程框架",
+        "实用 skills",
+        "后端"
+      ]
+    },
+    "p07": {
+      "stars": 2,
+      "time": "约 10–20 分钟（装上、接好模型、先试一件小事）",
+      "prereq": "从 GitHub Releases 下载安装包：Apple 芯片的 Mac 用 nod-arm64.dmg（macOS 14+；Intel Mac 用 nod-x64.dmg），Windows 11 用 nod-Setup-x64.exe（仍是预览），Linux x64 也是预览，见官方文档。需要 ChatGPT Plus 或 Pro，或你自己的模型 API key。从源码运行才需要 Node.js 24.21 或更新、pnpm 和 Docker。它是研究预览：替你改东西或对外说话之前应保持先批准。",
+      "note": "装包约 10 分钟；把权限和批准规则设对，要再花一点时间。",
+      "generic": "我想在自己电脑上试一个会跑腿、但做事之前先问我的个人助手。请参考 GitHub 项目 n8n-io/nod，一步步带我：\n1. 说明 Nod 是 n8n 团队做的独立应用，和 n8n 本身不是同一个软件；它目前是研究预览。\n2. 确认我的电脑（我的电脑是：____）该下载哪个安装包，按官方 Install guide 安装。\n3. 接好模型。API key 只让我在软件里自己填，不要贴到聊天或写进代码。密码、验证码和卡片走它的 Vault，不要让模型看见。\n4. 先试一件小事（比如整理一份本地说明），所有会发送、会修改、会花钱的步骤都必须先问我。\n5. 告诉我：默认会向 n8n 分享基本使用数据，怎么在 设置 → 隐私与数据 里关掉；较弱的模型在测试里放过过不安全操作，要选更稳的模型。每一步等我回复「好了」再继续。",
+      "scene_tags": [
+        "工程框架",
+        "实用 skills",
+        "前端"
+      ]
+    }
+  }
+}

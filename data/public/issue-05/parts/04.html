@@ -1,0 +1,82 @@
+  <article class="project" id="p04">
+    <div class="rank">#04</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ 编辑部风图表</span>
+        <span class="pill">HTML + SVG</span>
+        <span class="pill">Agent Skill</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">📐</div>
+        <div>
+          <h2 class="pname">diagram-design</h2>
+          <p class="pdesc">GitHub 上的开源项目。它是一个给 AI 编程工具用的绘图 skill：你用平常说话的方式描述要画的图，AI 选出合适的类型，写出一个可双击打开的 HTML 文件，图以 SVG 内嵌其中。共 52 种图。风格克制：细线、少阴影、突出一两处重点。也可以从 Mermaid、draw.io、Excalidraw、PlantUML 导入后重画。</p>
+          <p class="prepo"><a href="https://github.com/cathrynlavery/diagram-design" target="_blank" rel="noopener">cathrynlavery/diagram-design</a> · <a href="https://diagramdesign.dev" target="_blank" rel="noopener">diagramdesign.dev</a></p>
+          <span class="license">开源协议 MIT</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">73,104</div></div>
+      <div class="metric"><div class="label">↗ 今日新增</div><div class="value">+1,141</div><div class="hint">日榜 · 2026-11-26</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">HTML</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">4,865</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li>一条命令安装：<code>npx skills add cathrynlavery/diagram-design</code>。Claude Code、Codex、Cursor、GitHub Copilot 等也有对应的插件装法。</li>
+          <li>能画架构图、流程图、时序图、状态图、数据模型等；也可按你的网站提取颜色和字体，让后续的图跟品牌一致。</li>
+          <li>成品是单个 HTML 文件，可再导出为 PNG 或 SVG。仓库提供 <code>self_check.py</code> 检查重叠和裁切。</li>
+          <li>作者自己也写明：要跟代码一起频繁改动的图，仍更适合 Mermaid。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">对 AI 说一句人话，得到一张能拿去发布的图</div>
+          <p>默认的 AI 绘图常常是圆角方块加阴影。这个 skill 把「口味」写进了规则：一种强调色、细线、坐标对齐到 4 的倍数，阅读时先看到那一两处重点。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>要为文章、说明文档或产品介绍配图的人。不会写代码也可以：装上 skill，用一句话说出你想画什么。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：效果取决于你用的模型。</strong>同一句提示，两次布局可能不一样。
+          <span class="fix">应对：先让 AI 说出要用哪一种图、突出哪一两处，再画；用自带检查脚本看重叠；不满意就指定类型再画一次。</span></li>
+        <li><strong>缺点2：产出不是方便在 Git 里逐行对比的源码。</strong>改来改去会比较费事。
+          <span class="fix">应对：要经常随代码更新的图，用 Mermaid；要拿去发布、做封面或文章配图，用这个。</span></li>
+        <li><strong>缺点3：默认可能加载 Google Fonts，打开时会联网。</strong>
+          <span class="fix">应对：改用系统字体；需要离线检查时，按文档给检查脚本加上相应参数。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>它把设计规则写成 AI 能执行的约束：一种强调色、细线、网格对齐，并且先声明计划再落笔。产出是自包含的 HTML 和 SVG，发布时少依赖外部服务。作者还写了一条很好用的判断：如果一段写清楚的文字已经够了，就不要为了「有图」再画一张。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>第一、二期的 impeccable、hallmark 管的是页面和界面不要「AI 味」。diagram-design 专管图表。第四期的 stitch-skills 偏向出设计稿。需要一张能放进文章的结构图或流程图，用这一个；要改界面审美，去用前面那些。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 日榜今日 +1,141（2026-11-26 抓取），星数约 7.3 万。安装简单，产出能直接打开发布。</p>
+          <div class="risk"><strong>风险：</strong>MIT。由作者 Cathryn Lavery 维护，抓取时最近一次推送约 2026-11-25 12:53（北京时间），未解决的 issue 约 38 个。GitHub 上没有传统 Releases 列表，更新主要走插件市场或 <code>npx skills update</code>。官方安装源只认这个仓库。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>

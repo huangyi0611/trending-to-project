@@ -1,0 +1,82 @@
+  <article class="project" id="p05">
+    <div class="rank">#05</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ Agent 原生</span>
+        <span class="pill">命令行</span>
+        <span class="pill">工具箱</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">⌨️</div>
+        <div>
+          <h2 class="pname">CLI-Anything</h2>
+          <p class="pdesc">GitHub 上的开源项目，由香港大学数据科学实验室（HKUDS）开源。目标是让各种软件都能通过命令行（CLI）被人和 AI 稳定调用。你可以先用 CLI-Hub 浏览、安装已经做好的命令行工具；现成工具没有时，再用一套分 7 个阶段的生成流程，给某个软件或代码库做一条新的命令行。</p>
+          <p class="prepo"><a href="https://github.com/HKUDS/CLI-Anything" target="_blank" rel="noopener">HKUDS/CLI-Anything</a> · <a href="https://clianything.cc/" target="_blank" rel="noopener">clianything.cc</a></p>
+          <span class="license">开源协议 Apache-2.0</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">65,734</div></div>
+      <div class="metric"><div class="label">↗ 今日新增</div><div class="value">+1,106</div><div class="hint">日榜 · 2026-11-26</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">Python</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">5,982</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li>先装工具箱：<code>pip install cli-anything-hub</code>，再用 <code>cli-hub list</code>、<code>cli-hub search</code>、<code>cli-hub install</code>、<code>cli-hub launch</code> 查找和运行现成工具。</li>
+          <li>也可以给 AI 装上 meta-skill：<code>npx skills add HKUDS/CLI-Anything --skill cli-hub-meta-skill -g -y</code>，让它自己去工具箱里找合适的命令。</li>
+          <li>没有现成工具时，再在 Claude Code、Cursor、Codex 等环境里启动生成器，按 7 个阶段给目标软件做命令行和说明。</li>
+          <li>仓库里已有大量针对 GIMP、Blender、LibreOffice、OBS 等软件的示例。很多工具是「包着」原软件，原软件仍要另外安装。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">先用现成工具箱，没有再生成</div>
+          <p>AI 点图形界面又慢又容易点错。命令行输出结构清楚，适合反复调用。这个项目把「马上能用的工具」和「没有就做一个」分成两条路，独立开发者通常先走第一条就够。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>已经在用 AI 写代码，希望它能更稳地操作本机软件的人。完全不碰终端的人会觉得门槛偏高，可以先看演示，再决定要不要装。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：不少 CLI 包着已有的桌面软件。</strong>只装命令行包装，没有原软件，还是跑不起来。
+          <span class="fix">应对：安装前先用 <code>cli-hub info</code> 看依赖，缺什么再决定装不装。</span></li>
+        <li><strong>缺点2：自己生成新的命令行工作量大。</strong>7 个阶段都要跑，效果取决于软件复杂度和模型。
+          <span class="fix">应对：先在 CLI-Hub 找现成的；没有再用生成器，分步进行，每步人看一眼，结果要验收后才能当真用。</span></li>
+        <li><strong>缺点3：正式版本标签停在 2026 年 6 月的 v0.4.0。</strong>未解决的 issue 较多，仓库仍有更新，但不等于已经打磨好。
+          <span class="fix">应对：先当工具箱用；生成出来的命令要自己试，不要默认它已经适合生产环境。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>核心想法是：命令行是人和 AI 都能读的接口，带 <code>--help</code>，输出也可以是结构化的 JSON。生成器强调对接真实软件、管理会话，并给 AI 准备 SKILL.md。对大多数人来说，更值钱的是 CLI-Hub 这条「先发现、再安装」的路。先把现成工具用熟，再考虑生成。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>第三期的 agent-browser 适合让 AI 打开网页点按钮，做一次验收。CLI-Anything 适合把「经常做的软件操作」收成可重复的命令。两者可以一起用：偶尔点网页用 agent-browser，稳定重复的工作尽量走命令行。不要一上来就为所有软件生成新 CLI。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 日榜今日 +1,106（2026-11-26 抓取），星数约 6.6 万。选题覆盖「AI 如何操作已有软件」这个常见痛点。</p>
+          <div class="risk"><strong>风险：</strong>Apache-2.0。由 HKUDS 开源。抓取时最近一次推送约 2026-11-20 18:05（北京时间），最近的正式标签是 v0.4.0（2026-06-25），未解决的 issue 约 315 个。生成结果必须人工验收。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>

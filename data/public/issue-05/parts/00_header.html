@@ -1,0 +1,52 @@
+<body>
+<div class="page">
+
+  <header class="issue-header">
+    <div>
+      <h1>GitHub 热榜拆解 / 第五期<span class="branch-tag">个人项目适配与技术精进</span><span class="branch-tag plus-tag">复制给 AI · 公开版</span></h1>
+      <div class="date">2026年11月26日 · 北京时间</div>
+      <p class="issue-meta">
+        怎么选的：从 GitHub Trending 日榜、周榜、月榜里挑（2026-11-26 上午 10:35 抓取），避开第一到四期推过的仓库，再去掉和独立开发关系不大的（交易策略、手表表盘解锁、红队攻击包、底层推理组件、下载器）。和往期功能接近的（superpowers、stitch-skills、chrome-devtools-mcp）也让位。本期主线是「先听清最近在发生什么，再做成能发出去的作品」：用一份带出处的近 30 天简报做调研，把长视频切成短视频，上架前先拦住常见拒因，再用编辑部风格的图表把事讲清楚；另外还有给 AI 用的软件命令行、把多个模型收进菜单栏、以及做事之前会先问你的个人助手。
+      </p>
+      <div class="hint-line">选中或点按蓝色词条可看释义</div>
+    </div>
+  </header>
+
+
+  <section class="toolmap" id="toolmap" aria-label="独立开发者 GitHub 工具地图">
+    <div class="toolmap-hd">
+      <div>
+        <h2>独立开发者 GitHub 工具地图</h2>
+        <p class="sub">做一个产品，从想法到发布分 8 步。每个开源项目放在它负责的那一步：黑色是本期（点了跳到卡片），浅灰是往期（点了去 GitHub）。</p>
+      </div>
+    </div>
+    <div class="steps3">
+      <span><b>1</b>看地图：找到你卡在哪一步</span>
+      <span><b>2</b>看难度星：挑一个今天能装上的</span>
+      <span><b>3</b>复制提示词：交给 AI 带你做</span>
+    </div>
+    <div class="flow" id="flow"></div>
+    <div class="map-legend">
+      <span><i style="background:#c45c26"></i>本期最推荐</span>
+      <span><i style="background:#111"></i>本期项目 · 星数=上手难度</span>
+      <span><i style="background:#dcdce0"></i>往期项目（标期号）</span>
+    </div>
+    <div class="map-advice" id="map-advice">
+      <strong>非程序员三步上手：</strong>① 先装 <a href="#p01">last30days</a>（2 星，约 10–20 分钟），问一个你正在做的主题，拿到带出处的近 30 天简报；② 要发短视频，就装 <a href="#p02">AutoClip</a> 桌面版（2 星，约 15–30 分钟），把长视频切成适合小红书或抖音的短片；③ 做手机 App 准备上架，再跑 <a href="#p03">app-store-compliance</a> 的清单或扫描（2 星，约 5–15 分钟）。<a href="#p04">diagram-design</a> 只要 1 星，要出图再装；<a href="#p06">magpie</a> 等你同时用好几个模型和 AI 工具时再装；<a href="#p05">CLI-Anything</a> 先用现成的 CLI-Hub；<a href="#p07">Nod</a> 还是研究预览，先从一件小事试，并且每步要你点头才执行。
+    </div>
+  </section>
+
+  <nav class="toc">
+    <h2>本期目录 · 共 7 项</h2>
+    <ol>
+      <li><a href="#toolmap">独立开发者 GitHub 工具地图</a></li>
+      <li><a href="#p01">last30days</a><span class="rec-tag">本期最推荐</span><span class="diff-mini" title="上手难度">★★</span><span class="time-mini">约 10–20 分钟</span></li>
+      <li><a href="#p02">AutoClip</a><span class="diff-mini" title="上手难度">★★</span><span class="time-mini">约 15–30 分钟</span></li>
+      <li><a href="#p03">app-store-compliance</a><span class="diff-mini" title="上手难度">★★</span><span class="time-mini">约 5–15 分钟</span></li>
+      <li><a href="#p04">diagram-design</a><span class="diff-mini" title="上手难度">★</span><span class="time-mini">约 10 分钟</span></li>
+      <li><a href="#p05">CLI-Anything</a><span class="diff-mini" title="上手难度">★★★</span><span class="time-mini">现成工具约 20 分钟</span></li>
+      <li><a href="#p06">magpie</a><span class="diff-mini" title="上手难度">★★</span><span class="time-mini">约 15 分钟</span></li>
+      <li><a href="#p07">Nod</a><span class="diff-mini" title="上手难度">★★</span><span class="time-mini">约 10–20 分钟</span></li>
+    </ol>
+  </nav>
+  <!--SLOT:connect-->

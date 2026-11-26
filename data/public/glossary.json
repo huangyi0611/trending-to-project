@@ -1,2344 +1,3041 @@
 {
- "entries": {
-  "auto-ontology": {
-   "what": "GitHub 开源项目，主要用于给公司数据建一份「业务词典」，再让 AI 按词典查数。",
-   "like": "像给新来的会计一本公司专用的科目手册。",
-   "why": "AI 查数最怕口径不一，先认准词，答案才可信。",
-   "src": "NVIDIA 开源，Apache-2.0。"
-  },
-  "astryx": {
-   "what": "GitHub 开源项目，主要用于做网页界面的现成零件（按钮、表单、页面模板），人和 AI 共用一套说明。",
-   "like": "像一盒说明书齐全的乐高。",
-   "why": "零件和说明统一，AI 搭出来的页面才不会东拼西凑。",
-   "src": "Meta 开源，MIT，目前是 Beta。"
-  },
-  "OpenMausBot": {
-   "what": "GitHub 开源项目，主要用于在自己电脑上管理一队 AI 助手，每个 bot 分工不同、危险操作要你批准。",
-   "like": "像一个装着几位 AI 同事的通讯录。",
-   "why": "一个全能助手容易乱，分工加审批更好管。",
-   "src": "作者 milind-soni；核心 Apache-2.0，企业目录另有许可。"
-  },
-  "worktrunk": {
-   "what": "GitHub 开源项目，主要用于让多个 AI 在同一个项目里各开一张「工作台」同时干活。",
-   "like": "像给每位装修师傅分一个房间，互不碍事。",
-   "why": "几个 AI 同时改同一个文件夹会互相覆盖。",
-   "src": "作者 max-sixty，用 Rust 写，MIT 或 Apache-2.0。"
-  },
-  "agent-browser": {
-   "what": "GitHub 开源项目，主要用于让 AI 用几条命令自己打开网页、看结构、点按钮。",
-   "like": "像给 AI 一个带编号的网页遥控器。",
-   "why": "AI 只看截图点坐标容易点歪，按编号点更稳。",
-   "src": "Vercel Labs 开源，Apache-2.0。"
-  },
-  "mattpocock/skills": {
-   "what": "GitHub 开源项目，主要用于一套日常写代码的 skill：先追问需求、建词汇表、先写测试。",
-   "like": "像一本资深工程师的做事清单。",
-   "why": "AI 动手前没对齐需求，就会做出「不对的东西」。",
-   "src": "作者 Matt Pocock，MIT。"
-  },
-  "pr-agent": {
-   "what": "GitHub 开源项目，主要用于在 GitHub 上每次有人提交改动（PR）时，让 AI 先审一遍。",
-   "like": "像交稿前先过一遍的 AI 校对员。",
-   "why": "人没空逐行看，先有一份审查意见能少漏问题。",
-   "src": "最早由 Qodo（原 CodiumAI）开源，现在由社区维护，MIT。"
-  },
-  "t3code": {
-   "what": "GitHub 开源项目，主要用于从手机或网页遥控你电脑上已登录的编程 AI。",
-   "like": "像出门在外也能给家里电脑派活的遥控器。",
-   "why": "人不在电脑前时，AI 也能继续干活。",
-   "src": "第二期收录，作者 pingdotgg。"
-  },
-  "agent-desktop": {
-   "what": "GitHub 开源项目，主要用于让 AI 读取电脑桌面程序的结构，再去点击、输入。",
-   "like": "agent-browser 的桌面版。",
-   "why": "按结构点比按截图坐标点更准。",
-   "src": "第二期收录，Vercel Labs 出品。"
-  },
-  "hallmark": {
-   "what": "GitHub 开源项目，主要用于让 AI 做的网页避开「一眼假」的模板脸。",
-   "like": "像一位帮你挑掉俗气配色的设计顾问。",
-   "why": "AI 生成的页面常常千篇一律。",
-   "src": "第二期收录，作者 Nutlope。"
-  },
-  "impeccable": {
-   "what": "GitHub 开源项目，主要用于用几句明确指令，让 AI 把界面调得更好看。",
-   "like": "给 AI 的一本设计口语手册。",
-   "why": "只说「好看点」，AI 不知道怎么改。",
-   "src": "第一期收录，作者 pbakaus。"
-  },
-  "context-mode": {
-   "what": "GitHub 开源项目，主要用于把 AI 工具跑出来的大段内容放到外面，只把摘要留在对话里。",
-   "like": "像开会只带纪要，原始材料放档案室。",
-   "why": "对话塞太满，AI 会忘事、变慢、更贵。",
-   "src": "第一期收录，作者 mksglu。"
-  },
-  "claude-mem": {
-   "what": "GitHub 开源项目，主要用于给 AI 编程工具加一个外挂记忆，跨对话记住之前做过什么。",
-   "like": "像 AI 的工作日记本。",
-   "why": "新开一次对话，AI 默认什么都不记得。",
-   "src": "第一期收录，作者 thedotmack。"
-  },
-  "anthropics/skills": {
-   "what": "GitHub 开源项目，主要用于示范 skill 该怎么写（文件夹结构、说明文件怎么组织）。",
-   "like": "官方出的 skill 写法范本。",
-   "why": "照着范本写，各家 AI 工具才认得出来。",
-   "src": "Anthropic 官方，第二期收录。"
-  },
-  "elephant-goldfish-model": {
-   "what": "GitHub 开源项目，主要用于写需求时让一个 AI 带着背景写，另一个故意不看背景来挑刺。",
-   "like": "像一个熟悉情况的人写方案，再找个外人来审。",
-   "why": "只有自己人看，容易漏掉别人看不懂的地方。",
-   "src": "Google 开源，第一期收录。"
-  },
-  "hyperframes": {
-   "what": "GitHub 开源项目，主要用于用网页代码写画面，再渲染成视频。",
-   "like": "像用排版文档的方式剪视频。",
-   "why": "改文字就能改片子，方便 AI 参与。",
-   "src": "HeyGen 开源，第一期收录。"
-  },
-  "knowledge-work-plugins": {
-   "what": "GitHub 开源项目，主要用于给 Claude 准备的岗位工具箱样板（销售、法务等）。",
-   "like": "像一套按岗位配好的工具包。",
-   "why": "让 AI 一上手就按某个岗位的流程做事。",
-   "src": "Anthropic 开源，第一期收录。"
-  },
-  "security-audit-skill": {
-   "what": "GitHub 开源项目，主要用于让 AI 按步骤给代码做安全检查。",
-   "like": "像一份安全检查员的巡检清单。",
-   "why": "上线前多一道关，少出安全事故。",
-   "src": "Cloudflare 开源，第一期收录。"
-  },
-  "superpowers": {
-   "what": "GitHub 开源项目，主要用于一整套带着 AI 做研发的规矩：先问清需求、分块确认、再写代码。",
-   "like": "像一本带 AI 干活的军规手册。",
-   "why": "AI 一上来就写代码，常常方向跑偏。",
-   "src": "作者 obra，第二期收录。"
-  },
-  "DeepTutor": {
-   "what": "GitHub 开源项目，主要用于做个性化的 AI 辅导和学习空间。",
-   "like": "像一位会根据你进度调整的私人家教。",
-   "why": "适合做「教 / 学」类产品时参考。",
-   "src": "香港大学 HKUDS 团队开源，第二期收录。"
-  },
-  "OpenMontage": {
-   "what": "GitHub 开源项目，主要用于让 AI 走完视频制作全流程：调研、写脚本、找素材、剪辑。",
-   "like": "像一条 AI 视频流水线。",
-   "why": "做视频的环节多，串起来能省大量手工。",
-   "src": "作者 calesthio，AGPL-3.0 许可，第二期收录。"
-  },
-  "GitHub": {
-   "what": "全球最大的代码托管网站。",
-   "like": "程序员的网盘加朋友圈。",
-   "why": "开源项目基本都放在这里，能看代码、提问题、提改动。",
-   "src": "微软旗下。"
-  },
-  "GitHub Trending": {
-   "what": "GitHub 官方的热门项目榜，分日榜和周榜。",
-   "like": "GitHub 上的热搜榜。",
-   "why": "快速看到最近大家在关注什么项目。",
-   "src": "github.com/trending。"
-  },
-  "STAR": {
-   "what": "GitHub 上的收藏数。",
-   "like": "像点赞加收藏。",
-   "why": "数越大，说明关注的人越多。",
-   "src": ""
-  },
-  "FORKS": {
-   "what": "被别人复制一份到自己账号下的次数。",
-   "like": "像把别人的菜谱抄一份回家改。",
-   "why": "数越大，说明拿去改着用的人越多。",
-   "src": ""
-  },
-  "README": {
-   "what": "每个项目首页的说明书文件。",
-   "like": "产品包装盒里的说明书。",
-   "why": "怎么装、怎么用、要注意什么，都先看它。",
-   "src": "惯例文件名，常见是 README.md。"
-  },
-  "issue": {
-   "what": "GitHub 上给项目提问题、报 bug 的帖子。",
-   "like": "项目的意见箱。",
-   "why": "看 issue 数量和内容，能判断项目坑多不多。",
-   "src": ""
-  },
-  "PR": {
-   "what": "Pull Request：把一份改动提交给项目，等人审过再合并。",
-   "like": "像交作业前先给老师批改。",
-   "why": "改动先经过审查，主线才不会被改坏。",
-   "src": "GitHub 的叫法；GitLab 叫 Merge Request。"
-  },
-  "Git": {
-   "what": "记录代码每一次改动的版本管理工具。",
-   "like": "文档的时光机，每一版都能找回。",
-   "why": "改坏了能退回，多人能同时改。",
-   "src": "Linus Torvalds 2005 年开发，几乎所有公司都在用。"
-  },
-  "分支": {
-   "what": "Git 里一条独立的改动线。",
-   "like": "在草稿纸上改，满意了再誊到正本上。",
-   "why": "试新东西不影响主线。",
-   "src": ""
-  },
-  "main": {
-   "what": "Git 项目里的主分支，存放正式版本。",
-   "like": "文件柜里的正本。",
-   "why": "合进 main 就算正式生效，所以要人把关。",
-   "src": ""
-  },
-  "worktree": {
-   "what": "Git 自带功能：同一个项目同时打开多个工作文件夹，各自对应一条分支。",
-   "like": "同一套房子分出几个独立房间。",
-   "why": "多个 AI 同时干活时，各在各的房间，不会互相覆盖。",
-   "src": ""
-  },
-  "fork": {
-   "what": "把别人的项目复制一份到自己账号下。",
-   "like": "抄一份别人的菜谱回家改。",
-   "why": "想改别人的项目又不影响原版时用。",
-   "src": ""
-  },
-  "diff": {
-   "what": "两版文件之间的改动对比。",
-   "like": "文档的「修订模式」。",
-   "why": "看 diff 就知道到底改了哪几行。",
-   "src": ""
-  },
-  "releases": {
-   "what": "GitHub 项目的正式发布页，放安装包和更新说明。",
-   "like": "软件的新品发布栏。",
-   "why": "下载稳定版本、看每版改了什么。",
-   "src": ""
-  },
-  "SECURITY": {
-   "what": "项目里的安全说明文件，写怎么报告漏洞、有哪些已知风险。",
-   "like": "产品的安全须知。",
-   "why": "正式使用前先看，避免踩已知的坑。",
-   "src": ""
-  },
-  "ticket": {
-   "what": "一张任务单，写清楚要做的一件事。",
-   "like": "餐厅的点菜单。",
-   "why": "把大需求拆成一张张小单，方便分给 AI 去做。",
-   "src": ""
-  },
-  "GitLab": {
-   "what": "和 GitHub 类似的代码托管平台。",
-   "like": "GitHub 的同行。",
-   "why": "很多公司自建 GitLab 放内部代码。",
-   "src": ""
-  },
-  "Bitbucket": {
-   "what": "Atlassian 公司的代码托管平台。",
-   "like": "另一个 GitHub 的同行。",
-   "why": "用 Jira 的团队常配套用它。",
-   "src": ""
-  },
-  "Azure DevOps": {
-   "what": "微软的代码托管和项目管理平台。",
-   "like": "微软家的 GitHub 加任务看板。",
-   "why": "很多用微软云的企业在用。",
-   "src": ""
-  },
-  "Agent": {
-   "what": "能自己拆步骤、调工具、改文件的 AI。",
-   "like": "能动手干活的实习生，重要决定还得你点头。",
-   "why": "聊天 AI 只会回答，Agent 能把事做完。",
-   "src": "Claude Code、Codex、Cursor 都属于这一类。"
-  },
-  "MCP": {
-   "what": "Model Context Protocol：AI 工具连接外部服务的通用接口标准。",
-   "like": "AI 世界的万能插座。",
-   "why": "一个服务做一次 MCP，各家 AI 工具都能接。",
-   "src": "Anthropic 2024 年提出，OpenAI、Google 等都已支持。"
-  },
-  "RAG": {
-   "what": "检索增强生成：先从资料里搜出相关片段，再让 AI 根据片段回答。",
-   "like": "开卷考试，先翻书再作答。",
-   "why": "让 AI 回答你自己的资料，少瞎编。",
-   "src": "2020 年 Meta 的论文提出，现在是知识库问答的常用做法。"
-  },
-  "token": {
-   "what": "AI 处理文字的计量单位，一个字或半个词。",
-   "like": "AI 的字数计费单位。",
-   "why": "token 越多越慢越贵，还可能超出 AI 能记住的长度。",
-   "src": ""
-  },
-  "harness": {
-   "what": "包在 AI 模型外面、负责调工具、管文件和权限的那层程序。",
-   "like": "给马套上的缰绳和车，马才能拉货。",
-   "why": "模型本身只会说话，harness 让它能动手。",
-   "src": "Claude Code、Codex 本身就是一种 harness。"
-  },
-  "transcript": {
-   "what": "AI 对话或工作过程的完整记录。",
-   "like": "会议的逐字稿。",
-   "why": "出了问题能回看 AI 当时做了什么。",
-   "src": ""
-  },
-  "Computer Use": {
-   "what": "让 AI 像人一样操作电脑：看屏幕、点鼠标、打字。",
-   "like": "给 AI 一双手和一双眼。",
-   "why": "很多事没有接口，只能点界面完成。",
-   "src": "Anthropic 2024 年用这个名字推出该能力。"
-  },
-  "vibe coding": {
-   "what": "凭感觉让 AI 写代码，不细看、不验证。",
-   "like": "闭着眼让司机随便开。",
-   "why": "做小玩具可以，做正经产品容易埋坑。",
-   "src": "2025 年 Andrej Karpathy 提出的说法。"
-  },
-  "grill": {
-   "what": "让 AI 一个接一个地追问你，直到需求问清楚。",
-   "like": "找个较真的产品经理先把你问一遍。",
-   "why": "开工前问清楚，比做完再返工省事。",
-   "src": "mattpocock/skills 里的做法。"
-  },
-  "TDD": {
-   "what": "测试驱动开发：先写一个会失败的测试，再写代码让它通过。",
-   "like": "先定好验收标准，再开始装修。",
-   "why": "AI 写的代码有测试兜底，改坏了马上知道。",
-   "src": "Kent Beck 推广，很多大厂工程团队在用。"
-  },
-  "ADR": {
-   "what": "架构决策记录：把一个重要技术决定写成一页短文（为什么这么选）。",
-   "like": "项目的会议决议存档。",
-   "why": "过半年没人记得当初为什么这么做，AI 更不知道。",
-   "src": "Michael Nygard 2011 年提出。"
-  },
-  "Text-to-SQL": {
-   "what": "把日常语言的问题自动翻译成数据库查询语句。",
-   "like": "一位会把你的问题翻成查账指令的翻译。",
-   "why": "不会写 SQL 也能查数据。",
-   "src": ""
-  },
-  "语义层": {
-   "what": "数据库和使用者之间的一层「业务词典」，规定每个指标怎么算。",
-   "like": "公司内部统一的名词解释手册。",
-   "why": "同一个「收入」，各部门算法不同，就会吵架。",
-   "src": "数据行业常用概念，dbt、Looker 等工具都有。"
-  },
-  "Ontology": {
-   "what": "本体：一份写清楚「有哪些概念、概念之间什么关系」的结构化词典。",
-   "like": "家谱加名词解释。",
-   "why": "AI 先懂概念关系，才不会张冠李戴。",
-   "src": "来自哲学，后来用在知识图谱和数据领域。"
-  },
-  "上下文": {
-   "what": "AI 这一轮能看到的全部内容（对话、文件、说明）。",
-   "like": "AI 的短期记忆。",
-   "why": "上下文装太多，AI 会漏看重点。",
-   "src": ""
-  },
-  "无障碍树": {
-   "what": "浏览器或系统为读屏软件整理的页面结构：有哪些按钮、输入框、文字。",
-   "like": "给盲人用的网页目录。",
-   "why": "AI 读这份目录，比看截图更准确、更省 token。",
-   "src": "所有主流浏览器和操作系统都有。"
-  },
-  "Claude": {
-   "what": "Anthropic 公司的 AI 模型和聊天产品。",
-   "like": "和 ChatGPT 同类的 AI 助手。",
-   "why": "写代码和长文能力强，很多编程工具默认用它。",
-   "src": "Anthropic 出品。"
-  },
-  "Claude Code": {
-   "what": "Anthropic 出的命令行编程 AI，能直接读写你电脑上的项目。",
-   "like": "住在终端里的 AI 程序员。",
-   "why": "比网页聊天更能直接改代码、跑命令。",
-   "src": "Anthropic 2025 年发布。"
-  },
-  "Claude Desktop": {
-   "what": "Claude 的电脑桌面版应用。",
-   "like": "装在电脑上的 Claude 聊天窗口。",
-   "why": "能通过 MCP 接本地工具。",
-   "src": "Anthropic 出品。"
-  },
-  "Codex": {
-   "what": "OpenAI 出的编程 AI，有命令行版和云端版。",
-   "like": "OpenAI 家的 AI 程序员。",
-   "why": "和 Claude Code 是同类工具，可按喜好选。",
-   "src": "OpenAI 出品。"
-  },
-  "Cursor": {
-   "what": "内置 AI 的代码编辑器。",
-   "like": "带 AI 助手的 Word，只不过写的是代码。",
-   "why": "边写边让 AI 改，门槛低。",
-   "src": "Anysphere 公司出品。"
-  },
-  "Grok": {
-   "what": "xAI 公司的 AI 模型和聊天产品，也有命令行版。",
-   "like": "和 ChatGPT 同类的 AI 助手。",
-   "why": "OpenMausBot 能接已登录的 Grok 命令行工具。",
-   "src": "xAI 出品。"
-  },
-  "xAI": {
-   "what": "马斯克创办的 AI 公司，做 Grok 模型。",
-   "like": "AI 行业的一家大公司。",
-   "why": "",
-   "src": ""
-  },
-  "Anthropic": {
-   "what": "做 Claude 模型的 AI 公司。",
-   "like": "AI 行业的一家大公司。",
-   "why": "",
-   "src": ""
-  },
-  "Gemini": {
-   "what": "Google 的 AI 模型。",
-   "like": "Google 家的 ChatGPT。",
-   "why": "",
-   "src": "Google 出品。"
-  },
-  "Gemini CLI": {
-   "what": "Google 出的命令行编程 AI。",
-   "like": "Google 家的 Claude Code。",
-   "why": "",
-   "src": "Google 出品。"
-  },
-  "Copilot": {
-   "what": "GitHub（微软）出的 AI 编程助手。",
-   "like": "编辑器里的 AI 搭档。",
-   "why": "",
-   "src": "GitHub 出品。"
-  },
-  "VS Code": {
-   "what": "微软出的免费代码编辑器，用的人最多。",
-   "like": "程序员的 Word。",
-   "why": "",
-   "src": "微软出品。"
-  },
-  "Ollama": {
-   "what": "在自己电脑上运行开源 AI 模型的工具。",
-   "like": "本地版的 AI 模型播放器。",
-   "why": "数据不出电脑，适合敏感内容。",
-   "src": ""
-  },
-  "Manus": {
-   "what": "一家做通用 AI Agent 的公司和产品。",
-   "like": "",
-   "why": "OpenMausBot 声明和它无关。",
-   "src": ""
-  },
-  "Qodo": {
-   "what": "一家做 AI 代码审查的商业公司（原名 CodiumAI）。",
-   "like": "pr-agent 的「原东家」。",
-   "why": "它的托管产品和开源 pr-agent 是两套东西，别配混。",
-   "src": ""
-  },
-  "Vercel": {
-   "what": "做网站托管和前端工具的公司，Next.js 就是它出的。",
-   "like": "前端圈的大厂。",
-   "why": "",
-   "src": ""
-  },
-  "Composio": {
-   "what": "一家提供「应用连接器」的服务，让 AI 接 Gmail、Slack、GitHub 等。",
-   "like": "AI 的万能转接头商店。",
-   "why": "省去一个个对接应用的麻烦，但授权范围要自己把关。",
-   "src": ""
-  },
-  "Slack": {
-   "what": "国外常用的团队聊天软件。",
-   "like": "国外版钉钉 / 飞书。",
-   "why": "",
-   "src": ""
-  },
-  "ElevenLabs": {
-   "what": "做 AI 语音合成的公司。",
-   "like": "AI 配音服务。",
-   "why": "OpenMausBot 里是可选的语音功能。",
-   "src": ""
-  },
-  "Boat": {
-   "what": "OpenMausBot 可选接入的一项云电脑服务（以其 README 为准）。",
-   "like": "",
-   "why": "不填也能用。",
-   "src": ""
-  },
-  "NVIDIA NIM": {
-   "what": "NVIDIA 的模型托管服务：用接口调用它云上跑好的 AI 模型。",
-   "like": "NVIDIA 开的 AI 模型租用柜台。",
-   "why": "不用自己买显卡也能用模型。",
-   "src": "NVIDIA 出品。"
-  },
-  "KumoRFM": {
-   "what": "Kumo 公司的预测模型服务，可以根据表格数据做预测。",
-   "like": "一个外包的数据预测师。",
-   "why": "auto-ontology 用它回答「预测类」问题，但会把数据上传到对方。",
-   "src": ""
-  },
-  "Apache Ossie": {
-   "what": "一种在不同工具之间交换语义模型的格式。",
-   "like": "数据词典的通用文件格式。",
-   "why": "以后要跨工具共享词典时才用得上。",
-   "src": ""
-  },
-  "LiteLLM": {
-   "what": "一个把各家 AI 模型接口统一成同一种调用方式的工具。",
-   "like": "AI 模型的万能转接头。",
-   "why": "想换模型时改一行配置就行。",
-   "src": "BerriAI 开源。"
-  },
-  "GSD": {
-   "what": "一种让 AI 接管整个开发流程的方法论 / 工具包。",
-   "like": "",
-   "why": "mattpocock 认为这类方法太重。",
-   "src": ""
-  },
-  "BMAD": {
-   "what": "一种让多个 AI 角色按固定流程开发的方法论。",
-   "like": "",
-   "why": "mattpocock 认为这类方法太重。",
-   "src": ""
-  },
-  "Spec-Kit": {
-   "what": "GitHub 出的「先写规格再让 AI 实现」的工具包。",
-   "like": "",
-   "why": "mattpocock 认为这类方法太重。",
-   "src": ""
-  },
-  "A Philosophy of Software Design": {
-   "what": "斯坦福教授 John Ousterhout 写的软件设计书，提出「深模块」。",
-   "like": "",
-   "why": "讲怎么让代码越写越好改。",
-   "src": ""
-  },
-  "Matt Pocock": {
-   "what": "知名 TypeScript 讲师，mattpocock/skills 的作者。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "Python": {
-   "what": "一种好上手的编程语言，数据分析和 AI 领域用得最多。",
-   "like": "编程界的普通话。",
-   "why": "",
-   "src": "Google、Meta 等大厂大量使用。"
-  },
-  "TypeScript": {
-   "what": "带类型检查的 JavaScript，网页和 Node 项目常用。",
-   "like": "加了错别字检查的 JavaScript。",
-   "why": "代码一大，类型能提前抓错。",
-   "src": "微软开发。"
-  },
-  "Rust": {
-   "what": "一种运行快、内存安全的编程语言。",
-   "like": "又快又不容易出事故的跑车。",
-   "why": "很多新命令行工具用它写。",
-   "src": "Mozilla 发起，微软、Google 等在用。"
-  },
-  "Shell": {
-   "what": "在终端里打命令的环境，也指一行行命令写成的脚本。",
-   "like": "用打字代替点鼠标来操作电脑。",
-   "why": "",
-   "src": ""
-  },
-  "FastAPI": {
-   "what": "用 Python 写后端接口的框架。",
-   "like": "搭建 App 后台服务的半成品厨房。",
-   "why": "写接口快、自带文档页。",
-   "src": "Sebastián Ramírez 开源，微软、Uber 等公开在用。"
-  },
-  "Postgres": {
-   "what": "PostgreSQL，一款开源数据库。",
-   "like": "一个非常结实的电子账本柜。",
-   "why": "App 的用户、任务这些数据都存在这里。",
-   "src": "苹果、Instagram 等公开在用。"
-  },
-  "pgvector": {
-   "what": "Postgres 的一个插件，能按「意思相近」来搜索内容。",
-   "like": "给账本柜加了一个「找相似」的检索功能。",
-   "why": "AI 搜资料时常用。",
-   "src": ""
-  },
-  "SQL": {
-   "what": "查数据库用的语言。",
-   "like": "向数据库提问的标准句式。",
-   "why": "数据存在库里，要用 SQL 才能取出来。",
-   "src": ""
-  },
-  "schema": {
-   "what": "数据库的表结构：有哪些表、每张表有哪些列。",
-   "like": "账本的目录和栏目设计。",
-   "why": "",
-   "src": ""
-  },
-  "Next.js": {
-   "what": "基于 React 的网站开发框架。",
-   "like": "做网站的精装修套餐。",
-   "why": "auto-ontology 的网页前端用它做。",
-   "src": "Vercel 出品。"
-  },
-  "React": {
-   "what": "Meta 出的网页界面开发库。",
-   "like": "做网页界面的积木体系。",
-   "why": "现在最流行的网页界面写法之一。",
-   "src": "Meta 出品，大量网站在用。"
-  },
-  "React 19": {
-   "what": "React 的第 19 版。",
-   "like": "",
-   "why": "astryx 要求项目用 React 19 或更新版本。",
-   "src": ""
-  },
-  "StyleX": {
-   "what": "Meta 出的写网页样式的工具。",
-   "like": "给网页零件统一上色、排版的工具。",
-   "why": "",
-   "src": "Meta 出品。"
-  },
-  "Tailwind": {
-   "what": "一种写网页样式的流行工具，用一串短类名拼出样式。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "CSS": {
-   "what": "控制网页长什么样（颜色、字号、布局）的语言。",
-   "like": "网页的化妆品。",
-   "why": "",
-   "src": ""
-  },
-  "HTML": {
-   "what": "网页的结构语言。",
-   "like": "网页的骨架。",
-   "why": "",
-   "src": ""
-  },
-  "Electron": {
-   "what": "用网页技术做电脑桌面软件的框架。",
-   "like": "把网页装进一个桌面程序壳里。",
-   "why": "一套代码就能出 Mac、Windows 版本。",
-   "src": "VS Code、Slack 桌面版都用它。"
-  },
-  "Markdown": {
-   "what": "一种用简单符号排版的纯文本格式（# 是标题，- 是列表）。",
-   "like": "带格式的记事本。",
-   "why": "人好读，AI 也好读。",
-   "src": ""
-  },
-  "className": {
-   "what": "网页代码里给元素起的样式名字。",
-   "like": "给零件贴的样式标签。",
-   "why": "改 className 就能换样式，不用改组件本身。",
-   "src": ""
-  },
-  "props": {
-   "what": "传给界面组件的参数（比如按钮的文字、颜色）。",
-   "like": "点菜时的口味备注。",
-   "why": "参数写法统一，AI 才能用对组件。",
-   "src": "React 里的叫法。"
-  },
-  "swizzle": {
-   "what": "把组件库里的某个组件源码复制到自己项目里来改。",
-   "like": "把成品家具拆开自己改。",
-   "why": "能大改，但官方以后的更新就同步不过来了。",
-   "src": ""
-  },
-  "codemod": {
-   "what": "按规则批量自动改代码的脚本。",
-   "like": "文档里的「全部替换」，只是更聪明。",
-   "why": "升级版本时省得手改几百处。",
-   "src": ""
-  },
-  "Storybook": {
-   "what": "把界面组件一个个摆出来展示和试用的网页。",
-   "like": "组件的样品陈列室。",
-   "why": "",
-   "src": ""
-  },
-  "Sandbox": {
-   "what": "可以在线试玩代码的页面。",
-   "like": "试衣间。",
-   "why": "不装任何东西就能先试。",
-   "src": ""
-  },
-  "canary": {
-   "what": "抢先体验版，最新但可能不稳定。",
-   "like": "还在试吃阶段的新菜。",
-   "why": "能尝鲜，但正式产品别依赖它。",
-   "src": ""
-  },
-  "changelog": {
-   "what": "更新日志，写每个版本改了什么。",
-   "like": "软件的改版记录。",
-   "why": "升级前看一眼，知道有没有坑。",
-   "src": ""
-  },
-  "Material": {
-   "what": "Google 的设计系统 Material Design。",
-   "like": "Google 家的界面零件盒。",
-   "why": "",
-   "src": "Google 出品。"
-  },
-  "Ant Design": {
-   "what": "蚂蚁集团的设计系统，中后台网页常用。",
-   "like": "蚂蚁家的界面零件盒。",
-   "why": "",
-   "src": "蚂蚁集团出品。"
-  },
-  "UI": {
-   "what": "用户界面：用户看到和点的那一层。",
-   "like": "产品的门面。",
-   "why": "",
-   "src": ""
-  },
-  "Web": {
-   "what": "网页 / 网站。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "Beta": {
-   "what": "测试版：功能能用，但还可能大改。",
-   "like": "试营业。",
-   "why": "",
-   "src": ""
-  },
-  "API": {
-   "what": "程序之间互相调用的接口。",
-   "like": "餐厅的点餐窗口：按格式点，后厨出餐。",
-   "why": "不用打开界面，程序之间就能对接。",
-   "src": ""
-  },
-  "REST API": {
-   "what": "最常见的一种 API 写法，通过网址加请求方式来调用。",
-   "like": "按固定格式填写的点单表。",
-   "why": "",
-   "src": ""
-  },
-  "CLI": {
-   "what": "命令行工具：在终端里打字使用、没有图形界面的软件。",
-   "like": "给电脑发文字指令。",
-   "why": "命令能写进脚本，AI 也能直接调用。",
-   "src": ""
-  },
-  "bot": {
-   "what": "能自动回复或干活的程序，这里指一个 AI 助手。",
-   "like": "一位 AI 同事。",
-   "why": "",
-   "src": ""
-  },
-  "local-first": {
-   "what": "数据默认存在你自己电脑上，云端只是可选。",
-   "like": "钱放自家保险柜，银行只当备用。",
-   "why": "隐私更可控，断网也能用。",
-   "src": ""
-  },
-  "source-available": {
-   "what": "源码公开可看，但不是开源许可，商用有限制。",
-   "like": "菜谱能看，开店要授权。",
-   "why": "",
-   "src": ""
-  },
-  "open-core": {
-   "what": "核心免费开源，企业功能另外收费。",
-   "like": "基础款免费，高级款付费。",
-   "why": "",
-   "src": ""
-  },
-  "OSS": {
-   "what": "开源软件（Open Source Software）。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "Apache-2.0": {
-   "what": "一种宽松的开源许可证，可免费商用，要保留版权声明。",
-   "like": "可自由使用的公共菜谱，注明出处即可。",
-   "why": "",
-   "src": "Apache 软件基金会发布。"
-  },
-  "MIT": {
-   "what": "最宽松的开源许可证之一，基本只要求保留版权声明。",
-   "like": "",
-   "why": "",
-   "src": "麻省理工学院起草。"
-  },
-  "MIT OR Apache-2.0": {
-   "what": "双许可证：MIT 和 Apache-2.0 任选其一。",
-   "like": "",
-   "why": "",
-   "src": "Rust 项目常见做法。"
-  },
-  "SPDX": {
-   "what": "给开源许可证编的标准代号（比如 MIT、Apache-2.0）。",
-   "like": "许可证的身份证号。",
-   "why": "GitHub 靠它自动识别项目用的什么许可证。",
-   "src": "Linux 基金会维护。"
-  },
-  "NOASSERTION": {
-   "what": "GitHub 没认出许可证时显示的标记。",
-   "like": "",
-   "why": "要以仓库里的 LICENSE 文件为准。",
-   "src": ""
-  },
-  "LICENSE": {
-   "what": "仓库里写明开源许可证的文件。",
-   "like": "使用授权书。",
-   "why": "",
-   "src": ""
-  },
-  "THIRD_PARTY_NOTICES": {
-   "what": "项目里列出第三方组件及其许可证的说明文件。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "Data Privacy": {
-   "what": "pr-agent 仓库里的数据隐私说明。",
-   "like": "",
-   "why": "看清代码会发给谁。",
-   "src": ""
-  },
-  "Docker": {
-   "what": "把软件和它需要的环境一起打包，在哪台电脑上都能一样运行。",
-   "like": "装好所有配菜的便当盒。",
-   "why": "省掉「在我电脑上能跑」的麻烦。",
-   "src": "Docker 公司 2013 年推出，大厂普遍在用。"
-  },
-  "Docker Compose": {
-   "what": "用一个配置文件一次启动多个 Docker 程序（网页、后端、数据库）。",
-   "like": "一张点菜单，一桌菜一起上。",
-   "why": "",
-   "src": "Docker 官方工具。"
-  },
-  "Compose v2": {
-   "what": "Docker Compose 的第 2 代版本，命令是 docker compose。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "uv": {
-   "what": "一个很快的 Python 安装工具，用来装依赖、跑脚本。",
-   "like": "Python 的一键装零件工具。",
-   "why": "",
-   "src": "Astral 公司开源。"
-  },
-  "npm": {
-   "what": "Node.js 的安装工具，用来装 JavaScript 的代码包。",
-   "like": "前端的应用商店。",
-   "why": "",
-   "src": "随 Node.js 一起提供。"
-  },
-  "npm install": {
-   "what": "让 npm 把项目需要的代码包全部装好的命令。",
-   "like": "",
-   "why": "每个新文件夹都要跑一遍，很费时间。",
-   "src": ""
-  },
-  "npx": {
-   "what": "npm 自带的命令：不安装，直接下载并运行一个工具。",
-   "like": "试吃，不用买整包。",
-   "why": "",
-   "src": ""
-  },
-  "mcp-remote": {
-   "what": "一个可以用 npx 运行的小工具，让 Claude Desktop 连上远程的 MCP 服务。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "Node": {
-   "what": "Node.js：让 JavaScript 能在电脑上直接运行的环境。",
-   "like": "JavaScript 的发动机。",
-   "why": "很多开发工具要先装它才能跑。",
-   "src": "OpenJS 基金会维护。"
-  },
-  "Node 22+": {
-   "what": "Node.js 22 或更新版本。",
-   "like": "",
-   "why": "astryx 仓库本身的开发要求。",
-   "src": ""
-  },
-  "Node 24+": {
-   "what": "Node.js 24 或更新版本。",
-   "like": "",
-   "why": "从源码运行 OpenMausBot、agent-browser 时要求。",
-   "src": ""
-  },
-  "pnpm": {
-   "what": "另一个 Node 安装工具，比 npm 更快、更省空间。",
-   "like": "npm 的省空间版。",
-   "why": "",
-   "src": ""
-  },
-  "pnpm 11": {
-   "what": "pnpm 的第 11 版。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "yarn": {
-   "what": "又一个 Node 安装工具，和 npm 同类。",
-   "like": "",
-   "why": "",
-   "src": "Meta 发起。"
-  },
-  "pip": {
-   "what": "Python 自带的安装工具。",
-   "like": "Python 的应用商店。",
-   "why": "",
-   "src": ""
-  },
-  "Homebrew": {
-   "what": "Mac 和 Linux 上用命令装软件的工具，命令是 brew。",
-   "like": "命令版的应用商店。",
-   "why": "",
-   "src": "社区开源。"
-  },
-  "Cargo": {
-   "what": "Rust 语言自带的安装和编译工具。",
-   "like": "",
-   "why": "",
-   "src": "Rust 官方。"
-  },
-  "Cargo.toml": {
-   "what": "Rust 项目的配置文件，写着名字、版本、许可证等。",
-   "like": "项目的身份证。",
-   "why": "",
-   "src": ""
-  },
-  "Winget": {
-   "what": "Windows 自带的命令行装软件工具。",
-   "like": "Windows 版的 brew。",
-   "why": "",
-   "src": "微软官方。"
-  },
-  "Linux": {
-   "what": "一种开源操作系统，服务器上用得最多。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "Ubuntu": {
-   "what": "最常见的一种 Linux 系统。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "Wayland": {
-   "what": "Linux 上的一种桌面显示方式。",
-   "like": "",
-   "why": "OpenMausBot 在它下面暂时不能控制本机。",
-   "src": ""
-  },
-  "APFS": {
-   "what": "苹果电脑现在默认的磁盘格式。",
-   "like": "",
-   "why": "支持写时复制，worktrunk 能借此共享缓存。",
-   "src": ""
-  },
-  "copy-on-write": {
-   "what": "写时复制：复制文件时先不真正复制，等要改了才复制那一份。",
-   "like": "先共用一本书，谁要在上面写字才另印一本。",
-   "why": "多个文件夹共用缓存，省空间省时间。",
-   "src": ""
-  },
-  "hooks": {
-   "what": "到某个时刻自动执行的一段命令。",
-   "like": "门铃：门一开就响。",
-   "why": "开新工位时自动装依赖，不用手动。",
-   "src": ""
-  },
-  "node_modules": {
-   "what": "Node 项目装好的代码包都放在这个文件夹里，通常很大。",
-   "like": "项目的零件仓库。",
-   "why": "",
-   "src": ""
-  },
-  "target/": {
-   "what": "Rust 项目编译出来的文件放在这个文件夹里。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "Chrome for Testing": {
-   "what": "Google 专门给自动化测试用的 Chrome，版本固定、不自动更新。",
-   "like": "考试专用的标准浏览器。",
-   "why": "",
-   "src": "Google Chrome 团队提供。"
-  },
-  "Safari": {
-   "what": "苹果的浏览器。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "iOS 模拟器": {
-   "what": "Xcode 自带的虚拟 iPhone，在 Mac 上就能运行 App。",
-   "like": "电脑里的一台假 iPhone。",
-   "why": "不用真机就能测试。",
-   "src": "Apple 官方工具。"
-  },
-  "API key": {
-   "what": "调用在线服务用的密码串，用来认人和计费。",
-   "like": "会员卡，谁拿到都能刷。",
-   "why": "千万别写进代码或发到聊天里。",
-   "src": ""
-  },
-  ".env": {
-   "what": "项目里存密钥和配置的文件，不提交到 Git。",
-   "like": "贴在自己电脑上的便签，不随代码发出去。",
-   "why": "",
-   "src": ""
-  },
-  "Quickstart": {
-   "what": "README 里的「快速上手」章节。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "build.nvidia.com": {
-   "what": "NVIDIA 的模型服务网站，在这里申请 API key。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "nvapi-": {
-   "what": "NVIDIA API key 的开头几个字符。",
-   "like": "",
-   "why": "看到这个开头就知道是 NVIDIA 的密钥。",
-   "src": ""
-  },
-  "KUMO_RFM_API_KEY": {
-   "what": "auto-ontology 里开启 KumoRFM 预测功能用的密钥设置项。",
-   "like": "",
-   "why": "填了它，数据就会上传给 Kumo。",
-   "src": ""
-  },
-  "OPENAI_KEY": {
-   "what": "pr-agent 示例里存 OpenAI 密钥的设置项名字。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "GITHUB_TOKEN": {
-   "what": "GitHub Actions 运行时自动发的临时通行证。",
-   "like": "一次性门禁卡。",
-   "why": "不用自己申请，流程结束就失效。",
-   "src": ""
-  },
-  "GitHub Actions": {
-   "what": "GitHub 自带的自动化流程：代码一有动静就按清单执行任务。",
-   "like": "仓库里的自动值班员。",
-   "why": "",
-   "src": "GitHub 官方。"
-  },
-  "GitHub Secrets": {
-   "what": "GitHub 仓库设置里存密钥的保险柜，代码里看不到真实值。",
-   "like": "保险柜。",
-   "why": "",
-   "src": "GitHub 官方。"
-  },
-  "Settings": {
-   "what": "GitHub 仓库的设置页。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "workflow": {
-   "what": "GitHub Actions 的流程配置文件，放在 .github/workflows/ 下。",
-   "like": "自动值班员的排班表。",
-   "why": "",
-   "src": ""
-  },
-  ".github/workflows/pr-agent.yml": {
-   "what": "要在你仓库里新建的一个 workflow 文件，让 pr-agent 自动运行。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "Vite": {
-   "what": "一个创建和运行网页项目的工具，启动很快。",
-   "like": "网页项目的快速开工包。",
-   "why": "",
-   "src": ""
-  },
-  "example.com": {
-   "what": "专门用来做示例的公开网址。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "CDP": {
-   "what": "Chrome DevTools Protocol：远程控制 Chrome 浏览器的接口。",
-   "like": "浏览器的遥控器接口。",
-   "why": "让程序一直连着同一个浏览器，不用每步重开。",
-   "src": "Google 定义。"
-  },
-  "cookie": {
-   "what": "网站存在浏览器里的小数据，常用来记住登录状态。",
-   "like": "网站发给你的会员手环。",
-   "why": "",
-   "src": ""
-  },
-  "session": {
-   "what": "一次连续的使用过程，常包含登录状态。",
-   "like": "一次入场到离场。",
-   "why": "",
-   "src": ""
-  },
-  "auth": {
-   "what": "登录验证。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "DOM": {
-   "what": "浏览器里网页的结构树。",
-   "like": "网页的骨架图。",
-   "why": "DOM 一变，旧的元素编号就失效。",
-   "src": ""
-  },
-  "canvas": {
-   "what": "网页里的「画布」，内容是画出来的图像，没有结构。",
-   "like": "",
-   "why": "AI 读不到画布里的按钮。",
-   "src": ""
-  },
-  "WebFetch": {
-   "what": "直接抓取网页文字内容的工具，不打开浏览器。",
-   "like": "",
-   "why": "抓公开信息更快、更省事。",
-   "src": ""
-  },
-  "Playwright": {
-   "what": "微软出的浏览器自动化测试工具。",
-   "like": "",
-   "why": "适合写固定的自动测试。",
-   "src": "微软出品。"
-  },
-  "Puppeteer": {
-   "what": "Google 出的浏览器自动化工具。",
-   "like": "",
-   "why": "",
-   "src": "Google 出品。"
-  },
-  "Scrapling": {
-   "what": "一个开源的网页抓取框架。",
-   "like": "",
-   "why": "适合批量采集网页数据。",
-   "src": ""
-  },
-  "snapshot": {
-   "what": "agent-browser 的命令：把当前网页拍成带编号的文字快照。",
-   "like": "给网页拍一张带标号的地图。",
-   "why": "",
-   "src": ""
-  },
-  "@e1": {
-   "what": "agent-browser 快照里元素的编号，按它来点击。",
-   "like": "地图上的标号。",
-   "why": "页面一变，编号就失效。",
-   "src": ""
-  },
-  "agent-browser 命令": {
-   "what": "agent-browser 的基本命令：open 打开网页、snapshot 拍快照、click 点击、close 关闭。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "agent-browser install": {
-   "what": "agent-browser 的命令：下载它要用的浏览器。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "agent-browser skills get core": {
-   "what": "agent-browser 的命令：取出和当前版本匹配的操作说明。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "npx agent-browser": {
-   "what": "不安装、直接试用 agent-browser 的命令。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "--with-deps": {
-   "what": "安装命令的参数：顺便把系统缺的依赖一起装上（Linux 用）。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "wt": {
-   "what": "worktrunk 的命令名。",
-   "like": "",
-   "why": "和 Windows 自带的 Windows Terminal 命令重名。",
-   "src": ""
-  },
-  "git-wt": {
-   "what": "worktrunk 在 Windows 上的命令名，用来避开重名。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "wt switch -c": {
-   "what": "worktrunk 的命令：新建一条分支和工作文件夹，并进入。",
-   "like": "开一张新工位。",
-   "why": "",
-   "src": ""
-  },
-  "-x claude": {
-   "what": "wt 命令的参数：开好工位后马上启动 Claude Code。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "wt list": {
-   "what": "worktrunk 的命令：列出所有工作文件夹和状态。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "wt remove": {
-   "what": "worktrunk 的命令：清理做完的工作文件夹。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "wt config shell install": {
-   "what": "worktrunk 装完要跑一次的命令，让终端能直接切换文件夹。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "git worktree add": {
-   "what": "Git 自带的新建 worktree 命令，比较啰嗦。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "Windows Terminal": {
-   "what": "Windows 自带的终端软件，命令也叫 wt。",
-   "like": "",
-   "why": "",
-   "src": "微软出品。"
-  },
-  "/setup-matt-pocock-skills": {
-   "what": "mattpocock/skills 里的一个命令：在项目里做一次初始设置。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "/grill-with-docs": {
-   "what": "mattpocock/skills 里的一个命令：让 AI 追问你需求，并把结论写进项目文档。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "/to-spec": {
-   "what": "mattpocock/skills 里的一个命令：把讨论结果整理成需求说明。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "/to-tickets": {
-   "what": "mattpocock/skills 里的一个命令：把需求拆成一张张任务单。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "/implement": {
-   "what": "mattpocock/skills 里的一个命令：按任务单去写代码。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "/triage": {
-   "what": "mattpocock/skills 里的一个命令：给收到的问题分轻重缓急。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "/tdd": {
-   "what": "mattpocock/skills 里的一个命令：按「先写失败的测试，再写代码」的节奏开发。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "/diagnosing-bugs": {
-   "what": "mattpocock/skills 里的一个命令：一步步排查 bug。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "/code-review": {
-   "what": "mattpocock/skills 里的一个命令：审查代码。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "/codebase-design": {
-   "what": "mattpocock/skills 里的一个命令：检查代码结构设计合不合理。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "/improve-codebase-architecture": {
-   "what": "mattpocock/skills 里的一个命令：找出代码结构里值得改的地方（只找不改）。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "/pr": {
-   "what": "mattpocock/skills 里的一个命令：写 PR 说明（摘要、证据、风险）。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "GLOSSARY.md": {
-   "what": "项目里的词汇表文件，写每个业务词的意思。",
-   "like": "项目的名词解释手册。",
-   "why": "AI 和人用同一套说法。",
-   "src": ""
-  },
-  "skills.sh": {
-   "what": "一种安装 skill 的方式，会把 skill 文件复制进你的项目。",
-   "like": "",
-   "why": "复制来的文件可以自己改，但不会自动更新。",
-   "src": ""
-  },
-  "plugin": {
-   "what": "插件：装进某个软件里的附加功能。",
-   "like": "手机上的应用扩展。",
-   "why": "",
-   "src": ""
-  },
-  "/review": {
-   "what": "pr-agent 的一个命令：给 PR 写审查意见。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "/describe": {
-   "what": "pr-agent 的一个命令：自动写 PR 说明。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "/improve": {
-   "what": "pr-agent 的一个命令：给出具体的改代码建议。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "/ask": {
-   "what": "pr-agent 的一个命令：就这个 PR 提问。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "/help_docs": {
-   "what": "pr-agent 的一个命令：查文档；因可能泄露凭据，从 v0.36.1 起暂时关闭。",
-   "like": "",
-   "why": "别开它。",
-   "src": ""
-  },
-  "pragent/pr-agent": {
-   "what": "pr-agent 现在正确的 Docker 镜像名（0.34.2 及以上）。",
-   "like": "",
-   "why": "用错旧名字可能拿到过期版本。",
-   "src": ""
-  },
-  "check_answerable": {
-   "what": "auto-ontology 的一个工具：先判断这个问题数据能不能答。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "~/.openmausbot": {
-   "what": "OpenMausBot 在你电脑上存数据的文件夹。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "enterprise/": {
-   "what": "OpenMausBot 里的企业版功能目录，许可证另算。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "SKILL.md": {
-   "what": "每个 skill 文件夹里的说明文件，写这个 skill 做什么、按什么步骤做。",
-   "like": "skill 的使用说明书。",
-   "why": "",
-   "src": ""
-  },
-  "skills/": {
-   "what": "auto-ontology 仓库里放三个官方 skill 的文件夹。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "@astryxdesign/core": {
-   "what": "astryx 的核心组件包，用 npm 安装。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "@astryxdesign/cli": {
-   "what": "astryx 的命令行工具包，用 npm 安装。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "core": {
-   "what": "这里指一个项目最基础的那部分，比如 astryx 的核心组件包、agent-browser 的基础 skill。",
-   "like": "",
-   "why": "",
-   "src": ""
-  },
-  "bug": {
-   "what": "程序里的错误或缺陷。",
-   "like": "产品上的瑕疵。",
-   "why": "",
-   "src": ""
-  },
-  "my-project.yaml": {
-   "what": "你在自己电脑上填写的项目简介文件（项目做什么、用什么技术）。它被 .gitignore 忽略，不会提交、不会上传。",
-   "like": "一张只留在你抽屉里的项目名片。",
-   "why": "「适合场景」「给你的项目用」要结合你的项目才写得准。",
-   "src": "本仓库的约定文件名。"
-  },
-  "my-project.example.yaml": {
-   "what": "本仓库自带的虚构示例，照着它填你自己的 my-project.yaml。",
-   "like": "填表前看的样表。",
-   "why": "",
-   "src": "本仓库自带。"
-  },
-  "skills/project-fit/SKILL.md": {
-   "what": "本仓库自带的 skill：读你的 my-project.yaml 和本期公开卡片，在本地生成「适合场景」「对照你的项目」和专属提示词。",
-   "like": "一张交给你自己 AI 助手的任务单。",
-   "why": "个性化内容只在你自己的电脑或 AI 工具里生成，本仓库拿不到。",
-   "src": "本仓库（trending-to-project）自带，英文名 project-fit：Match trending GitHub repos to your own project, locally and privately."
-  },
-  "Plannotator": {
-   "what": "GitHub 开源项目，主要用于在浏览器里批注 AI 的计划、文档和代码改动，再把意见发回 AI。",
-   "like": "像老师批改作文的红笔。",
-   "why": "AI 动手前先过人眼，方向错了能早改。",
-   "src": "作者 backnotprop；MIT 或 Apache-2.0 双许可。"
-  },
-  "modern-web-guidance": {
-   "what": "GitHub 开源项目，主要用于给 AI 编程工具补上最新的网页写法指南。",
-   "like": "像给厨师一本常年更新的新菜谱。",
-   "why": "模型学过的老代码多，查指南能少写过时代码。",
-   "src": "Google Chrome 团队牵头，Edge、Firefox、MDN 团队参与；Apache-2.0。"
-  },
-  "open-code-review": {
-   "what": "GitHub 开源项目，主要用于让 AI 审查 Git 改动，给出精确到行的意见。",
-   "like": "像先按清单逐项检查、再请老师傅判断的质检线。",
-   "why": "合并前多一道检查，少把 bug 带上线。",
-   "src": "阿里巴巴开源，Apache-2.0。"
-  },
-  "LoopForge": {
-   "what": "GitHub 开源项目，主要用于在自己的服务器上，按固定流程指挥多个 AI 编程工具交付代码。",
-   "like": "像一条设了质检岗和签字岗的流水线。",
-   "why": "让 AI 每次交付都走同样的步骤，关键处有人批准。",
-   "src": "腾讯开源，MIT。"
-  },
-  "LoopForge Local": {
-   "what": "LoopForge 的轻量版，把内置流程直接装进你现有的 AI 工具，不用搭服务器。",
-   "like": "像流水线的便携工具箱。",
-   "why": "个人开发者上手更快。",
-   "src": "出自 LoopForge README。"
-  },
-  "SkillEvaluator": {
-   "what": "GitHub 开源项目，主要用于给 AI 的 skill 打分：查写法、查重复、做对照实验。",
-   "like": "像给说明书先体检、再试用。",
-   "why": "知道一份 skill 到底有没有让 AI 变好。",
-   "src": "NVIDIA 开源，Apache-2.0。"
-  },
-  "stitch-skills": {
-   "what": "GitHub 开源项目，主要用于让 AI 编程工具操作 Google Stitch：出设计稿、整理设计规范、把设计稿转成代码。",
-   "like": "像给设计软件配了一位听指令的助手。",
-   "why": "没有设计师也能快速出界面草稿。",
-   "src": "Google Labs 出品，Apache-2.0。"
-  },
-  "video-shotcraft": {
-   "what": "GitHub 开源项目，主要用于让 Claude Code、Codex 照着镜头配方给产品做宣传视频。",
-   "like": "像一本带示范片的分镜菜谱。",
-   "why": "不会剪辑也能出一条能接着改的宣传片。",
-   "src": "作者 Vincentwei1021，Apache-2.0。"
-  },
-  "video-talkcraft": {
-   "what": "GitHub 开源项目，主要用于做口播讲解类视频，让画面动效跟着配音走；video-shotcraft 的姊妹项目。",
-   "like": "像给讲解自动配上对拍的动画。",
-   "why": "讲解类内容用它比宣传片模板合适。",
-   "src": "同一作者 Vincentwei1021。"
-  },
-  "Stitch": {
-   "what": "Google 的 AI 界面设计工具，用文字或图片生成界面设计稿。",
-   "like": "像一位照描述画草图的设计助理。",
-   "why": "先看到长什么样，再决定做不做。",
-   "src": "Google Labs 推出，stitch.withgoogle.com。"
-  },
-  "Stitch MCP": {
-   "what": "Stitch 提供的 MCP 服务，让 AI 工具能直接调用 Stitch。",
-   "like": "像把设计软件接到 AI 上的插座。",
-   "why": "stitch-skills 的所有 skill 都靠它。",
-   "src": "出自 stitch-skills README。"
-  },
-  "Google Labs": {
-   "what": "Google 做实验性产品的团队。",
-   "like": "像大公司的新品试验田。",
-   "why": "",
-   "src": ""
-  },
-  "Remotion": {
-   "what": "用写网页代码的方式做视频的框架。",
-   "like": "像用乐高积木拼动画片。",
-   "why": "画面能改、能复用，适合批量出片。",
-   "src": "remotion.dev；个人、3 人以内的营利公司和非营利组织可免费用，更大的营利公司要买授权。"
-  },
-  "Motion Workbench": {
-   "what": "video-shotcraft 出片后打开的浏览器剪辑器，能改文案、颜色、镜头再导出。",
-   "like": "像网页版的简易剪映。",
-   "why": "AI 出初稿，人能接着改。",
-   "src": "出自 video-shotcraft README。"
-  },
-  "Ink Press": {
-   "what": "video-shotcraft 自带的一套完整视频模板。",
-   "like": "像现成的 PPT 模板。",
-   "why": "换上截图和文案，出片最快。",
-   "src": "出自 video-shotcraft README。"
-  },
-  "Gallery": {
-   "what": "在线镜头库预览页，能看动效、复制镜头名。",
-   "like": "像菜单上的菜品照片。",
-   "why": "挑镜头前先看效果。",
-   "src": "出自 video-shotcraft。"
-  },
-  "AtomGit": {
-   "what": "国内的代码托管平台。",
-   "like": "像国内版的 GitHub。",
-   "why": "GitHub 访问慢时，可以从这里的镜像下载。",
-   "src": ""
-  },
-  "Upload-Post": {
-   "what": "把视频发布到多个社交平台的第三方服务。",
-   "like": "像一次投递多家的快递站。",
-   "why": "video-shotcraft 的可选发布功能会用到，内容会发给这家服务。",
-   "src": "出自 video-shotcraft README。"
-  },
-  "ffmpeg": {
-   "what": "处理音视频的命令行工具，能剪切、转码、抽帧。",
-   "like": "像视频界的瑞士军刀。",
-   "why": "抽帧检查、合成声音都靠它。",
-   "src": "开源项目，大量视频软件在用。"
-  },
-  "ffprobe": {
-   "what": "ffmpeg 自带的小工具，查看视频的时长、分辨率等信息。",
-   "like": "像视频的体检单。",
-   "why": "出片后核对参数。",
-   "src": "随 ffmpeg 一起发布。"
-  },
-  "MP4": {
-   "what": "最常见的视频文件格式。",
-   "like": "像视频界的 JPG。",
-   "why": "几乎所有手机和平台都能播放。",
-   "src": ""
-  },
-  "Chrome": {
-   "what": "Google 推出的网页浏览器。",
-   "like": "像上网用的一扇窗。",
-   "why": "网页新功能常先在这里上线。",
-   "src": "Google 2008 年推出。"
-  },
-  "Microsoft Edge": {
-   "what": "微软推出的网页浏览器。",
-   "like": "像 Windows 自带的上网窗口。",
-   "why": "",
-   "src": "微软。"
-  },
-  "Mozilla Firefox": {
-   "what": "Mozilla 基金会推出的开源浏览器。",
-   "like": "像一扇由非营利组织维护的窗。",
-   "why": "",
-   "src": "Mozilla。"
-  },
-  "MDN": {
-   "what": "Mozilla 维护的网页技术文档网站。",
-   "like": "像网页开发的字典。",
-   "why": "查 HTML、CSS、JavaScript 用法最常用的地方之一。",
-   "src": "Mozilla 维护。"
-  },
-  "JavaScript": {
-   "what": "网页里的编程语言，让页面能响应点击、会动。",
-   "like": "像网页的肌肉。",
-   "why": "",
-   "src": "1995 年诞生，所有浏览器都支持。"
-  },
-  "Antigravity": {
-   "what": "Google 推出的 AI 编程工具。",
-   "like": "像 Google 版的 Cursor。",
-   "why": "本期好几个项目都支持它。",
-   "src": "Google 推出。"
-  },
-  "CodeBuddy": {
-   "what": "腾讯推出的 AI 编程助手。",
-   "like": "像腾讯版的 Claude Code。",
-   "why": "LoopForge 内置角色默认用它。",
-   "src": "腾讯推出。"
-  },
-  "OpenCode": {
-   "what": "开源的命令行 AI 编程工具。",
-   "like": "像开源版的 Claude Code。",
-   "why": "能接多家模型。",
-   "src": "opencode.ai。"
-  },
-  "Droid": {
-   "what": "Factory 公司推出的 AI 编程工具。",
-   "like": "像又一位会写代码的 AI 同事。",
-   "why": "",
-   "src": "Factory 推出。"
-  },
-  "Copilot CLI": {
-   "what": "GitHub Copilot 的命令行版本。",
-   "like": "像把 Copilot 搬进命令窗口。",
-   "why": "",
-   "src": "GitHub 推出。"
-  },
-  "Obsidian": {
-   "what": "本地笔记软件，笔记就是 Markdown 文件，能互相链接。",
-   "like": "像能自动连线的笔记本。",
-   "why": "Plannotator 能把批准过的计划自动存进去。",
-   "src": ""
-  },
-  "Notion": {
-   "what": "在线笔记和协作文档工具。",
-   "like": "像能拼积木的网上笔记本。",
-   "why": "",
-   "src": ""
-  },
-  "Bear": {
-   "what": "苹果设备上的笔记软件。",
-   "like": "像一本简洁的电子手账。",
-   "why": "",
-   "src": ""
-  },
-  "Jina Reader": {
-   "what": "把网页转成适合 AI 阅读的纯文本的在线服务。",
-   "like": "像去掉广告、只留正文的复印机。",
-   "why": "Plannotator 批注网址时默认经过它，会联网。",
-   "src": "Jina AI 推出。"
-  },
-  "Inbox": {
-   "what": "Plannotator 的收件箱窗口，几个 AI 把问题和待审内容都投到这里。",
-   "like": "像办公室门口的待办信箱。",
-   "why": "AI 不用干等，你有空再统一回复。",
-   "src": "出自 Plannotator README。"
-  },
-  "Workspaces": {
-   "what": "Plannotator 另外做的托管团队协作产品，不在开源范围里。",
-   "like": "像同一品牌的付费会员区。",
-   "why": "团队共享时用；内容会存到对方的服务上。",
-   "src": "出自 Plannotator README。"
-  },
-  "Human-in-the-loop": {
-   "what": "关键步骤由人拍板的 AI 工作方式。",
-   "like": "像开辅助驾驶时手不离方向盘。",
-   "why": "AI 会出错，最要紧的几步由人把关。",
-   "src": "AI 和自动化领域的常用说法。"
-  },
-  "plan": {
-   "what": "AI 动手前写的计划，说明要改什么、怎么改。",
-   "like": "像装修前的施工图。",
-   "why": "先看计划，方向错了改起来便宜。",
-   "src": "Claude Code 等工具的「计划模式」会生成。"
-  },
-  "Stop 钩子": {
-   "what": "Codex 在 AI 结束一轮工作时触发的钩子，目前还在实验阶段。",
-   "like": "像下班打卡时自动响的提醒。",
-   "why": "Plannotator 靠它在 Codex 里弹出计划。",
-   "src": "出自 Plannotator README。"
-  },
-  "WSL": {
-   "what": "Windows 里运行 Linux 的功能。",
-   "like": "像在 Windows 里开了一间 Linux 小屋。",
-   "why": "很多开发工具只支持 macOS 和 Linux，靠它在 Windows 上用。",
-   "src": "微软推出。"
-  },
-  "PowerShell": {
-   "what": "Windows 自带的命令行工具。",
-   "like": "像 Windows 的高级命令窗口。",
-   "why": "Windows 上运行安装脚本要用。",
-   "src": "微软推出。"
-  },
-  "curl": {
-   "what": "在命令行里下载网页或文件的工具。",
-   "like": "像命令行里的下载按钮。",
-   "why": "很多安装脚本靠它下载。",
-   "src": "开源工具，主流系统基本都自带。"
-  },
-  "/plugin marketplace add backnotprop/plannotator": {
-   "what": "Claude Code 里添加 Plannotator 插件市场的命令。",
-   "like": "像先把一家店加进购物 App 的关注列表。",
-   "why": "加了之后才能装它的插件。",
-   "src": "出自 Plannotator README。"
-  },
-  "/plannotator-review": {
-   "what": "打开审查页面，查看本地改动或一个 PR 的命令。",
-   "like": "像把作业摊开逐行批改。",
-   "why": "合并前过一遍人眼。",
-   "src": "出自 Plannotator README。"
-  },
-  "/plannotator-annotate": {
-   "what": "打开文件、文件夹、网址或 HTML 来批注的命令。",
-   "like": "像在打印稿上用红笔圈画。",
-   "why": "指着原文提意见，比口头描述快。",
-   "src": "出自 Plannotator README。"
-  },
-  "/plannotator-last": {
-   "what": "批注 AI 刚才那条回复的命令。",
-   "like": "像回邮件时引用原文逐句点评。",
-   "why": "",
-   "src": "出自 Plannotator README。"
-  },
-  "PLANNOTATOR_SHARE=disabled": {
-   "what": "关掉 Plannotator 分享链接的设置。",
-   "like": "像把备用钥匙收回来。",
-   "why": "私密项目防止内容跟着链接外流。",
-   "src": "出自 Plannotator README。"
-  },
-  "--minimal": {
-   "what": "Plannotator 安装脚本的选项：只装主程序，不改各 AI 工具的配置。",
-   "like": "像只买主机、不要套餐。",
-   "why": "想少动配置时用。",
-   "src": "出自 Plannotator README。"
-  },
-  "plannotator uninstall": {
-   "what": "卸载 Plannotator 的命令，默认保留你的计划和历史。",
-   "like": "像搬家时拆走家具、留下相册。",
-   "why": "",
-   "src": "出自 Plannotator README。"
-  },
-  "git --version": {
-   "what": "查看电脑上 Git 版本号的命令。",
-   "like": "像看软件的出厂日期。",
-   "why": "open-code-review 要求 Git 2.41 以上。",
-   "src": "Git 自带。"
-  },
-  "Git 2.41": {
-   "what": "Git 的 2.41 版本，open-code-review 要求不低于它。",
-   "like": "像要求手机系统升到某个版本以上。",
-   "why": "它靠 Git 生成改动、搜索代码，版本太旧可能用不了。",
-   "src": "出自 open-code-review README。"
-  },
-  "Gemini CLI 0.36.0+": {
-   "what": "Gemini CLI 的 0.36.0 或更新版本。",
-   "like": "像要求手机系统升到某个版本以上。",
-   "why": "README 写明 Plannotator 的自动配置需要这个版本。",
-   "src": "出自 Plannotator README。"
-  },
-  "Node.js": {
-   "what": "让 JavaScript 能在电脑上（浏览器之外）运行的环境。",
-   "like": "像给网页语言配了一台发动机。",
-   "why": "很多命令行工具和 npx 都靠它。",
-   "src": "开源项目，2009 年发布。"
-  },
-  "Node.js 20+": {
-   "what": "Node.js 的 20 或更新版本。",
-   "like": "像要求手机系统升到某个版本以上。",
-   "why": "LoopForge Local 的最低要求。",
-   "src": "出自 LoopForge README。"
-  },
-  "Python 3.8+": {
-   "what": "Python 的 3.8 或更新版本。",
-   "like": "像要求手机系统升到某个版本以上。",
-   "why": "LoopForge Local 的最低要求。",
-   "src": "出自 LoopForge README。"
-  },
-  "Python 3.12–3.14": {
-   "what": "Python 的 3.12 到 3.14 版本。",
-   "like": "像只认某几代的充电口。",
-   "why": "SkillEvaluator 支持的 Python 范围。",
-   "src": "出自 SkillEvaluator README。"
-  },
-  "Python 3.12": {
-   "what": "Python 的 3.12 版本，SkillEvaluator 要求不低于它。",
-   "like": "像要求手机系统升到某个版本以上。",
-   "why": "",
-   "src": "出自 SkillEvaluator README。"
-  },
-  "Python 3.13": {
-   "what": "Python 的 3.13 版本，uv 会自动准备好。",
-   "like": "像搬家公司自带的工具。",
-   "why": "不用自己装 Python。",
-   "src": "出自 SkillEvaluator README。"
-  },
-  "npx modern-web-guidance@latest install": {
-   "what": "启动 modern-web-guidance 安装向导的命令。",
-   "like": "像跟着向导一步步装 App。",
-   "why": "",
-   "src": "出自 modern-web-guidance README。"
-  },
-  "npx skills add": {
-   "what": "skills 命令行工具里「安装一个 skill」的命令。",
-   "like": "像应用商店的「获取」按钮。",
-   "why": "很多 skill 仓库都支持这种装法。",
-   "src": "Vercel 推出，见 skills.sh。"
-  },
-  "gh": {
-   "what": "GitHub 官方的命令行工具。",
-   "like": "像不用开网页就能操作 GitHub 的遥控器。",
-   "why": "",
-   "src": "GitHub 推出。"
-  },
-  "gh skill install": {
-   "what": "用 gh 安装 skill 的命令。",
-   "like": "像用 GitHub 自家的商店装插件。",
-   "why": "",
-   "src": "出自 modern-web-guidance README。"
-  },
-  "search": {
-   "what": "modern-web-guidance 的搜索命令，按关键词找指南。",
-   "like": "像翻菜谱的目录。",
-   "why": "",
-   "src": "出自 modern-web-guidance README。"
-  },
-  "retrieve": {
-   "what": "modern-web-guidance 按编号取出一篇指南全文的命令。",
-   "like": "像按页码翻到那一页。",
-   "why": "",
-   "src": "出自 modern-web-guidance README。"
-  },
-  "legacy-scan .": {
-   "what": "扫描当前文件夹的代码，找出能换成新写法的老代码。",
-   "like": "像给老房子做一次翻新评估。",
-   "why": "先列清单，再挑着改。",
-   "src": "出自 modern-web-guidance README。"
-  },
-  "dark mode": {
-   "what": "深色模式的英文说法。",
-   "like": "像手机的夜间模式。",
-   "why": "",
-   "src": ""
-  },
-  "DISABLE_TELEMETRY=1": {
-   "what": "关掉匿名使用统计的环境变量设置。",
-   "like": "像在 App 里关掉「体验改进计划」。",
-   "why": "不想让工具上报使用数据时用。",
-   "src": "出自 modern-web-guidance README。"
-  },
-  "Telemetry": {
-   "what": "软件自动上报使用数据的功能，也叫遥测。",
-   "like": "像汽车把行驶数据传回厂家。",
-   "why": "厂家靠它改进产品，介意可以关。",
-   "src": ""
-  },
-  "OpenTelemetry": {
-   "what": "一套开源的观测标准，收集程序运行时的日志、指标和调用链。",
-   "like": "像给程序装上行车记录仪。",
-   "why": "出问题时能追到哪一步慢、哪一步错。",
-   "src": "CNCF 托管的开源项目。"
-  },
-  "Manifest V3": {
-   "what": "Chrome 扩展的第三版配置规范。",
-   "like": "像新版建筑规范。",
-   "why": "新上架的 Chrome 扩展要按它写。",
-   "src": "Google Chrome 推出。"
-  },
-  "Chrome Web Store": {
-   "what": "Chrome 扩展的官方商店。",
-   "like": "像浏览器插件的应用商店。",
-   "why": "",
-   "src": "Google 运营。"
-  },
-  "XSS": {
-   "what": "跨站脚本攻击：坏人往网页里塞恶意脚本。",
-   "like": "像有人往留言板贴了一张会偷钥匙的纸条。",
-   "why": "网页常见漏洞，审查时要重点查。",
-   "src": "OWASP 把它列为常见网页风险。"
-  },
-  "Recall": {
-   "what": "查全率：真问题里被找出来的比例。",
-   "like": "像渔网能捞上多少鱼。",
-   "why": "越高漏掉的越少，但误报往往会变多。",
-   "src": "机器学习常用指标。"
-  },
-  "Delegation Mode": {
-   "what": "open-code-review 的委托模式：它挑文件、配规则，审查交给你正在用的 AI 工具。",
-   "like": "像监工列好清单，交给你的老员工去干。",
-   "why": "不用再单独配模型密钥。",
-   "src": "出自 open-code-review README。"
-  },
-  "JSON": {
-   "what": "一种结构化的数据格式，人和程序都能读。",
-   "like": "像一张分好栏目的表格。",
-   "why": "结果存成它，AI 能接着处理。",
-   "src": ""
-  },
-  "AACR-Bench": {
-   "what": "open-code-review 公开的代码审查评测集。",
-   "like": "像一套带标准答案的考卷。",
-   "why": "用来比较不同 AI 审代码的水平。",
-   "src": "阿里巴巴发布，放在 Hugging Face 上。"
-  },
-  "Go": {
-   "what": "Google 推出的编程语言，常用来写命令行工具和服务器。",
-   "like": "像结实耐用的工业级工具。",
-   "why": "编译后是单个文件，分发方便。",
-   "src": "Google 2009 年发布。"
-  },
-  "ocr": {
-   "what": "open-code-review 装好后的命令名。",
-   "like": "像遥控器上的总开关。",
-   "why": "审查、扫描、配置都从它开始。",
-   "src": "出自 open-code-review README。"
-  },
-  "ocr review": {
-   "what": "让 open-code-review 审查改动的命令。",
-   "like": "像交作业前请人批改。",
-   "why": "合并前找出问题。",
-   "src": "出自 open-code-review README。"
-  },
-  "ocr scan": {
-   "what": "不看改动、直接扫描整个仓库或某个目录的命令。",
-   "like": "像全屋大扫除。",
-   "why": "老代码也能查一遍。",
-   "src": "出自 open-code-review README。"
-  },
-  "ocr config provider": {
-   "what": "选择模型服务的命令。",
-   "like": "像选一家快递公司。",
-   "why": "",
-   "src": "出自 open-code-review README。"
-  },
-  "ocr config model": {
-   "what": "选择具体模型的命令。",
-   "like": "像选快递的哪种服务。",
-   "why": "",
-   "src": "出自 open-code-review README。"
-  },
-  "npm install -g @alibaba-group/open-code-review": {
-   "what": "用 npm 全局安装 open-code-review 的命令。",
-   "like": "像把工具放进全家共用的工具箱。",
-   "why": "装好后在哪个文件夹都能用 ocr。",
-   "src": "出自 open-code-review README。"
-  },
-  "SOP": {
-   "what": "标准作业流程，规定一件事按哪些步骤做。",
-   "like": "像连锁餐厅的操作手册。",
-   "why": "让每次交付都走同样的步骤。",
-   "src": "制造业和大公司常用。"
-  },
-  "Main Bot": {
-   "what": "LoopForge 的主控机器人，听你的需求，再分派给各个角色。",
-   "like": "像项目经理。",
-   "why": "",
-   "src": "出自 LoopForge README。"
-  },
-  "MySQL": {
-   "what": "常用的开源关系型数据库。",
-   "like": "像一个分门别类的大档案柜。",
-   "why": "LoopForge 平台版用它存数据。",
-   "src": "Oracle 维护，大量网站在用。"
-  },
-  "HTTPS": {
-   "what": "加密的网页访问方式。",
-   "like": "像寄信时用上锁的信封。",
-   "why": "服务放到公网前必须配，防止密码被偷看。",
-   "src": ""
-  },
-  "AGENTFLOW_ALLOW_SIGNUP=false": {
-   "what": "LoopForge 里关掉公开注册的设置。",
-   "like": "像把公司大门改成刷卡进。",
-   "why": "防止陌生人自己注册进来。",
-   "src": "出自 LoopForge README。"
-  },
-  "npx -y loopforge-cli@latest install claude": {
-   "what": "把 LoopForge Local 装进 Claude Code 的命令。",
-   "like": "像给现有工具装一个流程插件。",
-   "why": "",
-   "src": "出自 LoopForge README。"
-  },
-  "/start-devflow": {
-   "what": "LoopForge Local 里启动内置交付流程的命令。",
-   "like": "像按下流水线的开工按钮。",
-   "why": "",
-   "src": "出自 LoopForge README。"
-  },
-  "THIRD_PARTY_NOTICES.md": {
-   "what": "列出项目用到的第三方组件和它们许可证的文件。",
-   "like": "像食品包装上的配料表。",
-   "why": "用之前知道里面装了谁的代码。",
-   "src": ""
-  },
-  "demo": {
-   "what": "演示用的示例。",
-   "like": "像售楼处的样板间。",
-   "why": "先拿它试，不碰真东西。",
-   "src": ""
-  },
-  "CI": {
-   "what": "持续集成：每次提交代码，自动跑检查和测试。",
-   "like": "像流水线上每件产品都过一遍质检。",
-   "why": "问题早发现，越晚越难修。",
-   "src": ""
-  },
-  "skillevaluator ci init": {
-   "what": "让 SkillEvaluator 给你的 GitHub 仓库自动开一个「接入检查」PR 的命令。",
-   "like": "像请物业上门装门禁。",
-   "why": "以后每次改 skill 都自动体检。",
-   "src": "出自 SkillEvaluator README。"
-  },
-  "--tiers 1": {
-   "what": "SkillEvaluator 只跑第一层检查的选项。",
-   "like": "像体检只做基础项目。",
-   "why": "不需要密钥、不花钱。",
-   "src": "出自 SkillEvaluator README。"
-  },
-  "--no-llm": {
-   "what": "SkillEvaluator 不调用大模型的选项。",
-   "like": "像只做不用抽血的体检项目。",
-   "why": "不需要 API key。",
-   "src": "出自 SkillEvaluator README。"
-  },
-  "evals/EVAL.md": {
-   "what": "写给评测用的任务说明文件。",
-   "like": "像考试大纲。",
-   "why": "写清真实任务和期望结果，实测才贴近你的用法。",
-   "src": "出自 SkillEvaluator README。"
-  },
-  "pip install skillevaluator": {
-   "what": "用 pip 安装 SkillEvaluator 的命令。",
-   "like": "像在应用商店点「安装」。",
-   "why": "",
-   "src": "出自 SkillEvaluator README。"
-  },
-  "Run without an LLM": {
-   "what": "SkillEvaluator README 里「不用大模型也能跑」的一节。",
-   "like": "像说明书里的免费体验章节。",
-   "why": "",
-   "src": "出自 SkillEvaluator README。"
-  },
-  "SkillSpector": {
-   "what": "NVIDIA 开源的 skill 安全扫描工具。",
-   "like": "像机场的安检机。",
-   "why": "查 skill 里有没有危险指令。",
-   "src": "NVIDIA 开源。"
-  },
-  "Gitleaks": {
-   "what": "开源的密钥泄露扫描工具。",
-   "like": "像出门前检查钥匙有没有落在门上。",
-   "why": "防止密码、密钥被提交进代码。",
-   "src": "开源项目，常放进 CI 里用。"
-  },
-  "GPU": {
-   "what": "显卡里的计算芯片，擅长大量并行计算。",
-   "like": "像一大群能同时开工的工人。",
-   "why": "跑大模型常要用。",
-   "src": ""
-  },
-  "NVIDIA Build": {
-   "what": "NVIDIA 的在线模型平台，开发者能申请 API key 免费试用模型。",
-   "like": "像模型的试吃柜台。",
-   "why": "SkillEvaluator 用模型打分时可以用它。",
-   "src": "build.nvidia.com，有使用条款和频率限制。"
-  },
-  "Verified Skills": {
-   "what": "NVIDIA 给 skill 做审核认证的流程。",
-   "like": "像商品上的质检合格标签。",
-   "why": "",
-   "src": "NVIDIA。"
-  },
-  "DESIGN.md": {
-   "what": "用纯文本写的设计规范：颜色、字体、间距、组件风格。",
-   "like": "像装修风格说明书。",
-   "why": "AI 照着它出页面，风格才统一。",
-   "src": "stitch-skills 推广的写法。"
-  },
-  "enhance-prompt": {
-   "what": "stitch-skills 里把模糊想法改写成专业设计提示词的 skill。",
-   "like": "像请文案帮你润色需求。",
-   "why": "",
-   "src": "出自 stitch-skills README。"
-  },
-  "extract-design-md": {
-   "what": "stitch-skills 里从现有前端代码提取 DESIGN.md 的 skill。",
-   "like": "像照着成品倒推出图纸。",
-   "why": "",
-   "src": "出自 stitch-skills README。"
-  },
-  "generate-design": {
-   "what": "stitch-skills 里用文字或图片生成、修改界面设计稿的 skill。",
-   "like": "像让设计助理照描述画稿。",
-   "why": "",
-   "src": "出自 stitch-skills README。"
-  },
-  "stitch-design": {
-   "what": "stitch-skills 的设计类插件包，管出稿和设计规范。",
-   "like": "像工具箱里的画图那一层。",
-   "why": "",
-   "src": "出自 stitch-skills README。"
-  },
-  "stitch-utilities": {
-   "what": "stitch-skills 的工具类插件包，比如润色提示词、生成 DESIGN.md。",
-   "like": "像工具箱里的小零件那一层。",
-   "why": "",
-   "src": "出自 stitch-skills README。"
-  },
-  "React Native": {
-   "what": "用 React 写手机 App 的框架。",
-   "like": "像一套图纸同时盖 iOS 和安卓两栋楼。",
-   "why": "",
-   "src": "Meta 开源。"
-  },
-  "Agent Skills": {
-   "what": "skill 的开放标准，规定 skill 文件夹怎么写。",
-   "like": "像统一的插头规格。",
-   "why": "照它写的 skill 能在多个 AI 工具里用。",
-   "src": "agentskills.io。"
-  },
-  "npx plugins add": {
-   "what": "一个命令行工具里「安装插件」的命令，stitch-skills 用它装进 Claude Code 或 Cursor。",
-   "like": "像一键装插件的按钮。",
-   "why": "",
-   "src": "出自 stitch-skills README。"
-  },
-  "logo": {
-   "what": "品牌标志。",
-   "like": "像店铺招牌上的图案。",
-   "why": "",
-   "src": ""
-  },
-  "PolyForm Noncommercial 1.0.0": {
-   "what": "一种只允许非商业使用的源码许可证。",
-   "like": "像「仅限自用、不得转卖」的使用协议。",
-   "why": "本仓库的代码用它。",
-   "src": "PolyForm Project 发布。"
-  },
-  "CC BY-NC-SA 4.0": {
-   "what": "知识共享许可的一种：要署名、不能商用、改编后按同样方式共享。",
-   "like": "像「转载请注明出处、不得商用」的声明。",
-   "why": "本仓库的文字内容用它。",
-   "src": "Creative Commons 发布。"
-  },
-  "SaaS": {
-   "what": "软件即服务：在网上订阅使用的软件。",
-   "like": "像租房，不用买房。",
-   "why": "",
-   "src": ""
-  },
-  "NOTICE.md": {
-   "what": "本仓库的著作权和免责说明文件。",
-   "like": "像商品说明书最后的声明页。",
-   "why": "",
-   "src": ""
-  },
-  "v0.28.65": {
-   "what": "Plannotator 的一个版本号。",
-   "like": "像同一款产品的批次编号。",
-   "why": "0 开头的版本通常表示还在快速改动。",
-   "src": "见该仓库的 Releases 页面。"
-  },
-  "v0.3.6": {
-   "what": "LoopForge 的一个版本号。",
-   "like": "像同一款产品的批次编号。",
-   "why": "0 开头的版本通常表示还在快速改动。",
-   "src": "见该仓库的 Releases 页面。"
-  },
-  "v0.3.8": {
-   "what": "LoopForge 的一个版本号。",
-   "like": "像同一款产品的批次编号。",
-   "why": "0 开头的版本通常表示还在快速改动。",
-   "src": "见该仓库的 Releases 页面。"
-  },
-  "v0.3.9": {
-   "what": "LoopForge 的一个版本号。",
-   "like": "像同一款产品的批次编号。",
-   "why": "0 开头的版本通常表示还在快速改动。",
-   "src": "见该仓库的 Releases 页面。"
-  },
-  "v0.7.2": {
-   "what": "SkillEvaluator 的一个版本号。",
-   "like": "像同一款产品的批次编号。",
-   "why": "0 开头的版本通常表示还在快速改动。",
-   "src": "见该仓库的 Releases 页面。"
-  },
-  "v0.9.0": {
-   "what": "SkillEvaluator 的一个版本号。",
-   "like": "像同一款产品的批次编号。",
-   "why": "0 开头的版本通常表示还在快速改动。",
-   "src": "见该仓库的 Releases 页面。"
-  },
-  "v1.0": {
-   "what": "stitch-skills 的一个版本号。",
-   "like": "像同一款产品的批次编号。",
-   "why": "",
-   "src": "见该仓库的 Releases 页面。"
-  },
-  "v1.13.10": {
-   "what": "open-code-review 的一个版本号。",
-   "like": "像同一款产品的批次编号。",
-   "why": "",
-   "src": "见该仓库的 Releases 页面。"
-  }
- },
- "aliases": {
-  "Auto Ontology": "auto-ontology",
-  "NVIDIA/auto-ontology": "auto-ontology",
-  "Astryx": "astryx",
-  "meta/astryx": "astryx",
-  "astryx.atmeta.com": "astryx",
-  "milind-soni/OpenMausBot": "OpenMausBot",
-  "openmausbot.com": "OpenMausBot",
-  "Worktrunk": "worktrunk",
-  "max-sixty/worktrunk": "worktrunk",
-  "worktrunk.dev": "worktrunk",
-  "vercel-labs/agent-browser": "agent-browser",
-  "agent-browser.dev": "agent-browser",
-  "aihero.dev/skills": "mattpocock/skills",
-  "mattpocock": "mattpocock/skills",
-  "PR-Agent": "pr-agent",
-  "The-PR-Agent/pr-agent": "pr-agent",
-  "docs.pr-agent.ai": "pr-agent",
-  "pingdotgg/t3code": "t3code",
-  "vercel-labs/agent-desktop": "agent-desktop",
-  "Nutlope/hallmark": "hallmark",
-  "pbakaus/impeccable": "impeccable",
-  "mksglu/context-mode": "context-mode",
-  "thedotmack/claude-mem": "claude-mem",
-  "google/elephant-goldfish-model": "elephant-goldfish-model",
-  "heygen-com/hyperframes": "hyperframes",
-  "anthropics/knowledge-work-plugins": "knowledge-work-plugins",
-  "cloudflare/security-audit-skill": "security-audit-skill",
-  "obra/superpowers": "superpowers",
-  "HKUDS/DeepTutor": "DeepTutor",
-  "calesthio/OpenMontage": "OpenMontage",
-  "Trending": "GitHub Trending",
-  "Star": "STAR",
-  "Forks": "FORKS",
-  "fork": "FORKS",
-  "issues": "issue",
-  "Issue": "issue",
-  "git": "Git",
-  "Security": "SECURITY",
-  "Cursor Agent": "Agent",
-  "grilling": "grill",
-  "/grill-me": "grill",
-  "grill-me": "grill",
-  "accessibility tree": "无障碍树",
-  "Accessibility tree": "无障碍树",
-  "claude": "Claude Code",
-  "codex": "Codex",
-  "grok": "Grok",
-  "Vercel Labs": "Vercel",
-  "NIM": "NVIDIA NIM",
-  "Ossie": "Apache Ossie",
-  "shell": "Shell",
-  "shell 别名": "Shell",
-  "PostgreSQL": "Postgres",
-  "Material Design": "Material",
-  "Ant": "Ant Design",
-  "LICENSING": "LICENSE",
-  "LICENSING.md": "LICENSE",
-  "Compose": "Docker Compose",
-  "Node.js": "Node",
-  "brew": "Homebrew",
-  "winget": "Winget",
-  "btrfs": "APFS",
-  "XFS": "APFS",
-  "CoW": "copy-on-write",
-  "hook": "hooks",
-  "post-start": "hooks",
-  "post-start hook": "hooks",
-  "Mobile Safari": "Safari",
-  "iOS Simulator": "iOS 模拟器",
-  "key": "API key",
-  "Quick start": "Quickstart",
-  "Install": "Quickstart",
-  "nvapi": "nvapi-",
-  "secrets.OPENAI_KEY": "OPENAI_KEY",
-  "Action": "GitHub Actions",
-  "Actions": "GitHub Actions",
-  "GitHub Action": "GitHub Actions",
-  "Secrets": "GitHub Secrets",
-  "secret": "GitHub Secrets",
-  ".github/workflows/": "workflow",
-  "Chrome DevTools Protocol": "CDP",
-  "@e": "@e1",
-  "open": "agent-browser 命令",
-  "click": "agent-browser 命令",
-  "close": "agent-browser 命令",
-  "click @e1": "agent-browser 命令",
-  "switch": "wt switch -c",
-  "list": "wt list",
-  "remove": "wt remove",
-  "/implement-spec": "/implement",
-  "code-review": "/code-review",
-  "v0.36.1": "/help_docs",
-  "enterprise": "enterprise/",
-  "plannotator": "Plannotator",
-  "backnotprop/plannotator": "Plannotator",
-  "plannotator.ai": "Plannotator",
-  "backnotprop": "Plannotator",
-  "modern-web-guidance-src": "modern-web-guidance",
-  "GoogleChrome/modern-web-guidance": "modern-web-guidance",
-  "GoogleChrome/modern-web-guidance-src": "modern-web-guidance",
-  "developer.chrome.com/docs/modern-web-guidance": "modern-web-guidance",
-  "modern-web-guidance@latest": "modern-web-guidance",
-  "alibaba/open-code-review": "open-code-review",
-  "open-codereview.ai": "open-code-review",
-  "@alibaba-group/open-code-review": "npm install -g @alibaba-group/open-code-review",
-  "Tencent/LoopForge": "LoopForge",
-  "loopforge-cli@latest": "npx -y loopforge-cli@latest install claude",
-  "NVIDIA/SkillEvaluator": "SkillEvaluator",
-  "skillevaluator": "SkillEvaluator",
-  "google-labs-code/stitch-skills": "stitch-skills",
-  "stitch.withgoogle.com": "Stitch",
-  "Vincentwei1021/video-shotcraft": "video-shotcraft",
-  "Vincentwei1021": "video-shotcraft",
-  "remotion.dev": "Remotion",
-  "Jina": "Jina Reader",
-  "人在回路": "Human-in-the-loop",
-  "PLANNOTATOR_SHARE": "PLANNOTATOR_SHARE=disabled",
-  "DISABLE_TELEMETRY": "DISABLE_TELEMETRY=1",
-  "AGENTFLOW_ALLOW_SIGNUP": "AGENTFLOW_ALLOW_SIGNUP=false",
-  "legacy-scan": "legacy-scan .",
-  "--tiers": "--tiers 1",
-  "Git ≥ 2.41": "Git 2.41",
-  "Edge": "Microsoft Edge",
-  "Firefox": "Mozilla Firefox",
-  "Workbench": "Motion Workbench",
-  "Local 版": "LoopForge Local"
- },
- "nowrap": [
-  "skills",
-  "skill",
-  "Skills",
-  "AI",
-  "App",
-  "iOS",
-  "iPhone",
-  "macOS",
-  "Windows",
-  "Excel",
-  "ChatGPT",
-  "Gmail",
-  "Google",
-  "Meta",
-  "NVIDIA",
-  "OpenAI",
-  "Apple",
-  "PDF",
-  "Mac",
-  "v2",
-  "HKUDS",
-  "Linus Torvalds",
-  "Microsoft",
-  "Mozilla",
-  "Tencent",
-  "Alibaba"
- ],
- "stop": [
-  "设计系统",
-  "skill",
-  "skills",
-  "Skills"
- ]
+  "entries": {
+    "auto-ontology": {
+      "what": "GitHub 开源项目，主要用于给公司数据建一份「业务词典」，再让 AI 按词典查数。",
+      "like": "像给新来的会计一本公司专用的科目手册。",
+      "why": "AI 查数最怕口径不一，先认准词，答案才可信。",
+      "src": "NVIDIA 开源，Apache-2.0。"
+    },
+    "astryx": {
+      "what": "GitHub 开源项目，主要用于做网页界面的现成零件（按钮、表单、页面模板），人和 AI 共用一套说明。",
+      "like": "像一盒说明书齐全的乐高。",
+      "why": "零件和说明统一，AI 搭出来的页面才不会东拼西凑。",
+      "src": "Meta 开源，MIT，目前是 Beta。"
+    },
+    "OpenMausBot": {
+      "what": "GitHub 开源项目，主要用于在自己电脑上管理一队 AI 助手，每个 bot 分工不同、危险操作要你批准。",
+      "like": "像一个装着几位 AI 同事的通讯录。",
+      "why": "一个全能助手容易乱，分工加审批更好管。",
+      "src": "作者 milind-soni；核心 Apache-2.0，企业目录另有许可。"
+    },
+    "worktrunk": {
+      "what": "GitHub 开源项目，主要用于让多个 AI 在同一个项目里各开一张「工作台」同时干活。",
+      "like": "像给每位装修师傅分一个房间，互不碍事。",
+      "why": "几个 AI 同时改同一个文件夹会互相覆盖。",
+      "src": "作者 max-sixty，用 Rust 写，MIT 或 Apache-2.0。"
+    },
+    "agent-browser": {
+      "what": "GitHub 开源项目，主要用于让 AI 用几条命令自己打开网页、看结构、点按钮。",
+      "like": "像给 AI 一个带编号的网页遥控器。",
+      "why": "AI 只看截图点坐标容易点歪，按编号点更稳。",
+      "src": "Vercel Labs 开源，Apache-2.0。"
+    },
+    "mattpocock/skills": {
+      "what": "GitHub 开源项目，主要用于一套日常写代码的 skill：先追问需求、建词汇表、先写测试。",
+      "like": "像一本资深工程师的做事清单。",
+      "why": "AI 动手前没对齐需求，就会做出「不对的东西」。",
+      "src": "作者 Matt Pocock，MIT。"
+    },
+    "pr-agent": {
+      "what": "GitHub 开源项目，主要用于在 GitHub 上每次有人提交改动（PR）时，让 AI 先审一遍。",
+      "like": "像交稿前先过一遍的 AI 校对员。",
+      "why": "人没空逐行看，先有一份审查意见能少漏问题。",
+      "src": "最早由 Qodo（原 CodiumAI）开源，现在由社区维护，MIT。"
+    },
+    "t3code": {
+      "what": "GitHub 开源项目，主要用于从手机或网页遥控你电脑上已登录的编程 AI。",
+      "like": "像出门在外也能给家里电脑派活的遥控器。",
+      "why": "人不在电脑前时，AI 也能继续干活。",
+      "src": "第二期收录，作者 pingdotgg。"
+    },
+    "agent-desktop": {
+      "what": "GitHub 开源项目，主要用于让 AI 读取电脑桌面程序的结构，再去点击、输入。",
+      "like": "agent-browser 的桌面版。",
+      "why": "按结构点比按截图坐标点更准。",
+      "src": "第二期收录，Vercel Labs 出品。"
+    },
+    "hallmark": {
+      "what": "GitHub 开源项目，主要用于让 AI 做的网页避开「一眼假」的模板脸。",
+      "like": "像一位帮你挑掉俗气配色的设计顾问。",
+      "why": "AI 生成的页面常常千篇一律。",
+      "src": "第二期收录，作者 Nutlope。"
+    },
+    "impeccable": {
+      "what": "GitHub 开源项目，主要用于用几句明确指令，让 AI 把界面调得更好看。",
+      "like": "给 AI 的一本设计口语手册。",
+      "why": "只说「好看点」，AI 不知道怎么改。",
+      "src": "第一期收录，作者 pbakaus。"
+    },
+    "context-mode": {
+      "what": "GitHub 开源项目，主要用于把 AI 工具跑出来的大段内容放到外面，只把摘要留在对话里。",
+      "like": "像开会只带纪要，原始材料放档案室。",
+      "why": "对话塞太满，AI 会忘事、变慢、更贵。",
+      "src": "第一期收录，作者 mksglu。"
+    },
+    "claude-mem": {
+      "what": "GitHub 开源项目，主要用于给 AI 编程工具加一个外挂记忆，跨对话记住之前做过什么。",
+      "like": "像 AI 的工作日记本。",
+      "why": "新开一次对话，AI 默认什么都不记得。",
+      "src": "第一期收录，作者 thedotmack。"
+    },
+    "anthropics/skills": {
+      "what": "GitHub 开源项目，主要用于示范 skill 该怎么写（文件夹结构、说明文件怎么组织）。",
+      "like": "官方出的 skill 写法范本。",
+      "why": "照着范本写，各家 AI 工具才认得出来。",
+      "src": "Anthropic 官方，第二期收录。"
+    },
+    "elephant-goldfish-model": {
+      "what": "GitHub 开源项目，主要用于写需求时让一个 AI 带着背景写，另一个故意不看背景来挑刺。",
+      "like": "像一个熟悉情况的人写方案，再找个外人来审。",
+      "why": "只有自己人看，容易漏掉别人看不懂的地方。",
+      "src": "Google 开源，第一期收录。"
+    },
+    "hyperframes": {
+      "what": "GitHub 开源项目，主要用于用网页代码写画面，再渲染成视频。",
+      "like": "像用排版文档的方式剪视频。",
+      "why": "改文字就能改片子，方便 AI 参与。",
+      "src": "HeyGen 开源，第一期收录。"
+    },
+    "knowledge-work-plugins": {
+      "what": "GitHub 开源项目，主要用于给 Claude 准备的岗位工具箱样板（销售、法务等）。",
+      "like": "像一套按岗位配好的工具包。",
+      "why": "让 AI 一上手就按某个岗位的流程做事。",
+      "src": "Anthropic 开源，第一期收录。"
+    },
+    "security-audit-skill": {
+      "what": "GitHub 开源项目，主要用于让 AI 按步骤给代码做安全检查。",
+      "like": "像一份安全检查员的巡检清单。",
+      "why": "上线前多一道关，少出安全事故。",
+      "src": "Cloudflare 开源，第一期收录。"
+    },
+    "superpowers": {
+      "what": "GitHub 开源项目，主要用于一整套带着 AI 做研发的规矩：先问清需求、分块确认、再写代码。",
+      "like": "像一本带 AI 干活的军规手册。",
+      "why": "AI 一上来就写代码，常常方向跑偏。",
+      "src": "作者 obra，第二期收录。"
+    },
+    "DeepTutor": {
+      "what": "GitHub 开源项目，主要用于做个性化的 AI 辅导和学习空间。",
+      "like": "像一位会根据你进度调整的私人家教。",
+      "why": "适合做「教 / 学」类产品时参考。",
+      "src": "香港大学 HKUDS 团队开源，第二期收录。"
+    },
+    "OpenMontage": {
+      "what": "GitHub 开源项目，主要用于让 AI 走完视频制作全流程：调研、写脚本、找素材、剪辑。",
+      "like": "像一条 AI 视频流水线。",
+      "why": "做视频的环节多，串起来能省大量手工。",
+      "src": "作者 calesthio，AGPL-3.0 许可，第二期收录。"
+    },
+    "GitHub": {
+      "what": "全球最大的代码托管网站。",
+      "like": "程序员的网盘加朋友圈。",
+      "why": "开源项目基本都放在这里，能看代码、提问题、提改动。",
+      "src": "微软旗下。"
+    },
+    "GitHub Trending": {
+      "what": "GitHub 官方的热门项目榜，分日榜和周榜。",
+      "like": "GitHub 上的热搜榜。",
+      "why": "快速看到最近大家在关注什么项目。",
+      "src": "github.com/trending。"
+    },
+    "STAR": {
+      "what": "GitHub 上的收藏数。",
+      "like": "像点赞加收藏。",
+      "why": "数越大，说明关注的人越多。",
+      "src": ""
+    },
+    "FORKS": {
+      "what": "被别人复制一份到自己账号下的次数。",
+      "like": "像把别人的菜谱抄一份回家改。",
+      "why": "数越大，说明拿去改着用的人越多。",
+      "src": ""
+    },
+    "README": {
+      "what": "每个项目首页的说明书文件。",
+      "like": "产品包装盒里的说明书。",
+      "why": "怎么装、怎么用、要注意什么，都先看它。",
+      "src": "惯例文件名，常见是 README.md。"
+    },
+    "issue": {
+      "what": "GitHub 上给项目提问题、报 bug 的帖子。",
+      "like": "项目的意见箱。",
+      "why": "看 issue 数量和内容，能判断项目坑多不多。",
+      "src": ""
+    },
+    "PR": {
+      "what": "Pull Request：把一份改动提交给项目，等人审过再合并。",
+      "like": "像交作业前先给老师批改。",
+      "why": "改动先经过审查，主线才不会被改坏。",
+      "src": "GitHub 的叫法；GitLab 叫 Merge Request。"
+    },
+    "Git": {
+      "what": "记录代码每一次改动的版本管理工具。",
+      "like": "文档的时光机，每一版都能找回。",
+      "why": "改坏了能退回，多人能同时改。",
+      "src": "Linus Torvalds 2005 年开发，几乎所有公司都在用。"
+    },
+    "分支": {
+      "what": "Git 里一条独立的改动线。",
+      "like": "在草稿纸上改，满意了再誊到正本上。",
+      "why": "试新东西不影响主线。",
+      "src": ""
+    },
+    "main": {
+      "what": "Git 项目里的主分支，存放正式版本。",
+      "like": "文件柜里的正本。",
+      "why": "合进 main 就算正式生效，所以要人把关。",
+      "src": ""
+    },
+    "worktree": {
+      "what": "Git 自带功能：同一个项目同时打开多个工作文件夹，各自对应一条分支。",
+      "like": "同一套房子分出几个独立房间。",
+      "why": "多个 AI 同时干活时，各在各的房间，不会互相覆盖。",
+      "src": ""
+    },
+    "fork": {
+      "what": "把别人的项目复制一份到自己账号下。",
+      "like": "抄一份别人的菜谱回家改。",
+      "why": "想改别人的项目又不影响原版时用。",
+      "src": ""
+    },
+    "diff": {
+      "what": "两版文件之间的改动对比。",
+      "like": "文档的「修订模式」。",
+      "why": "看 diff 就知道到底改了哪几行。",
+      "src": ""
+    },
+    "releases": {
+      "what": "GitHub 项目的正式发布页，放安装包和更新说明。",
+      "like": "软件的新品发布栏。",
+      "why": "下载稳定版本、看每版改了什么。",
+      "src": ""
+    },
+    "SECURITY": {
+      "what": "项目里的安全说明文件，写怎么报告漏洞、有哪些已知风险。",
+      "like": "产品的安全须知。",
+      "why": "正式使用前先看，避免踩已知的坑。",
+      "src": ""
+    },
+    "ticket": {
+      "what": "一张任务单，写清楚要做的一件事。",
+      "like": "餐厅的点菜单。",
+      "why": "把大需求拆成一张张小单，方便分给 AI 去做。",
+      "src": ""
+    },
+    "GitLab": {
+      "what": "和 GitHub 类似的代码托管平台。",
+      "like": "GitHub 的同行。",
+      "why": "很多公司自建 GitLab 放内部代码。",
+      "src": ""
+    },
+    "Bitbucket": {
+      "what": "Atlassian 公司的代码托管平台。",
+      "like": "另一个 GitHub 的同行。",
+      "why": "用 Jira 的团队常配套用它。",
+      "src": ""
+    },
+    "Azure DevOps": {
+      "what": "微软的代码托管和项目管理平台。",
+      "like": "微软家的 GitHub 加任务看板。",
+      "why": "很多用微软云的企业在用。",
+      "src": ""
+    },
+    "Agent": {
+      "what": "能自己拆步骤、调工具、改文件的 AI。",
+      "like": "能动手干活的实习生，重要决定还得你点头。",
+      "why": "聊天 AI 只会回答，Agent 能把事做完。",
+      "src": "Claude Code、Codex、Cursor 都属于这一类。"
+    },
+    "MCP": {
+      "what": "Model Context Protocol：AI 工具连接外部服务的通用接口标准。",
+      "like": "AI 世界的万能插座。",
+      "why": "一个服务做一次 MCP，各家 AI 工具都能接。",
+      "src": "Anthropic 2024 年提出，OpenAI、Google 等都已支持。"
+    },
+    "RAG": {
+      "what": "检索增强生成：先从资料里搜出相关片段，再让 AI 根据片段回答。",
+      "like": "开卷考试，先翻书再作答。",
+      "why": "让 AI 回答你自己的资料，少瞎编。",
+      "src": "2020 年 Meta 的论文提出，现在是知识库问答的常用做法。"
+    },
+    "token": {
+      "what": "AI 处理文字的计量单位，一个字或半个词。",
+      "like": "AI 的字数计费单位。",
+      "why": "token 越多越慢越贵，还可能超出 AI 能记住的长度。",
+      "src": ""
+    },
+    "harness": {
+      "what": "包在 AI 模型外面、负责调工具、管文件和权限的那层程序。",
+      "like": "给马套上的缰绳和车，马才能拉货。",
+      "why": "模型本身只会说话，harness 让它能动手。",
+      "src": "Claude Code、Codex 本身就是一种 harness。"
+    },
+    "transcript": {
+      "what": "AI 对话或工作过程的完整记录。",
+      "like": "会议的逐字稿。",
+      "why": "出了问题能回看 AI 当时做了什么。",
+      "src": ""
+    },
+    "Computer Use": {
+      "what": "让 AI 像人一样操作电脑：看屏幕、点鼠标、打字。",
+      "like": "给 AI 一双手和一双眼。",
+      "why": "很多事没有接口，只能点界面完成。",
+      "src": "Anthropic 2024 年用这个名字推出该能力。"
+    },
+    "vibe coding": {
+      "what": "凭感觉让 AI 写代码，不细看、不验证。",
+      "like": "闭着眼让司机随便开。",
+      "why": "做小玩具可以，做正经产品容易埋坑。",
+      "src": "2025 年 Andrej Karpathy 提出的说法。"
+    },
+    "grill": {
+      "what": "让 AI 一个接一个地追问你，直到需求问清楚。",
+      "like": "找个较真的产品经理先把你问一遍。",
+      "why": "开工前问清楚，比做完再返工省事。",
+      "src": "mattpocock/skills 里的做法。"
+    },
+    "TDD": {
+      "what": "测试驱动开发：先写一个会失败的测试，再写代码让它通过。",
+      "like": "先定好验收标准，再开始装修。",
+      "why": "AI 写的代码有测试兜底，改坏了马上知道。",
+      "src": "Kent Beck 推广，很多大厂工程团队在用。"
+    },
+    "ADR": {
+      "what": "架构决策记录：把一个重要技术决定写成一页短文（为什么这么选）。",
+      "like": "项目的会议决议存档。",
+      "why": "过半年没人记得当初为什么这么做，AI 更不知道。",
+      "src": "Michael Nygard 2011 年提出。"
+    },
+    "Text-to-SQL": {
+      "what": "把日常语言的问题自动翻译成数据库查询语句。",
+      "like": "一位会把你的问题翻成查账指令的翻译。",
+      "why": "不会写 SQL 也能查数据。",
+      "src": ""
+    },
+    "语义层": {
+      "what": "数据库和使用者之间的一层「业务词典」，规定每个指标怎么算。",
+      "like": "公司内部统一的名词解释手册。",
+      "why": "同一个「收入」，各部门算法不同，就会吵架。",
+      "src": "数据行业常用概念，dbt、Looker 等工具都有。"
+    },
+    "Ontology": {
+      "what": "本体：一份写清楚「有哪些概念、概念之间什么关系」的结构化词典。",
+      "like": "家谱加名词解释。",
+      "why": "AI 先懂概念关系，才不会张冠李戴。",
+      "src": "来自哲学，后来用在知识图谱和数据领域。"
+    },
+    "上下文": {
+      "what": "AI 这一轮能看到的全部内容（对话、文件、说明）。",
+      "like": "AI 的短期记忆。",
+      "why": "上下文装太多，AI 会漏看重点。",
+      "src": ""
+    },
+    "无障碍树": {
+      "what": "浏览器或系统为读屏软件整理的页面结构：有哪些按钮、输入框、文字。",
+      "like": "给盲人用的网页目录。",
+      "why": "AI 读这份目录，比看截图更准确、更省 token。",
+      "src": "所有主流浏览器和操作系统都有。"
+    },
+    "Claude": {
+      "what": "Anthropic 公司的 AI 模型和聊天产品。",
+      "like": "和 ChatGPT 同类的 AI 助手。",
+      "why": "写代码和长文能力强，很多编程工具默认用它。",
+      "src": "Anthropic 出品。"
+    },
+    "Claude Code": {
+      "what": "Anthropic 出的命令行编程 AI，能直接读写你电脑上的项目。",
+      "like": "住在终端里的 AI 程序员。",
+      "why": "比网页聊天更能直接改代码、跑命令。",
+      "src": "Anthropic 2025 年发布。"
+    },
+    "Claude Desktop": {
+      "what": "Claude 的电脑桌面版应用。",
+      "like": "装在电脑上的 Claude 聊天窗口。",
+      "why": "能通过 MCP 接本地工具。",
+      "src": "Anthropic 出品。"
+    },
+    "Codex": {
+      "what": "OpenAI 出的编程 AI，有命令行版和云端版。",
+      "like": "OpenAI 家的 AI 程序员。",
+      "why": "和 Claude Code 是同类工具，可按喜好选。",
+      "src": "OpenAI 出品。"
+    },
+    "Cursor": {
+      "what": "内置 AI 的代码编辑器。",
+      "like": "带 AI 助手的 Word，只不过写的是代码。",
+      "why": "边写边让 AI 改，门槛低。",
+      "src": "Anysphere 公司出品。"
+    },
+    "Grok": {
+      "what": "xAI 公司的 AI 模型和聊天产品，也有命令行版。",
+      "like": "和 ChatGPT 同类的 AI 助手。",
+      "why": "OpenMausBot 能接已登录的 Grok 命令行工具。",
+      "src": "xAI 出品。"
+    },
+    "xAI": {
+      "what": "马斯克创办的 AI 公司，做 Grok 模型。",
+      "like": "AI 行业的一家大公司。",
+      "why": "",
+      "src": ""
+    },
+    "Anthropic": {
+      "what": "做 Claude 模型的 AI 公司。",
+      "like": "AI 行业的一家大公司。",
+      "why": "",
+      "src": ""
+    },
+    "Gemini": {
+      "what": "Google 的 AI 模型。",
+      "like": "Google 家的 ChatGPT。",
+      "why": "",
+      "src": "Google 出品。"
+    },
+    "Gemini CLI": {
+      "what": "Google 出的命令行编程 AI。",
+      "like": "Google 家的 Claude Code。",
+      "why": "",
+      "src": "Google 出品。"
+    },
+    "Copilot": {
+      "what": "GitHub（微软）出的 AI 编程助手。",
+      "like": "编辑器里的 AI 搭档。",
+      "why": "",
+      "src": "GitHub 出品。"
+    },
+    "VS Code": {
+      "what": "微软出的免费代码编辑器，用的人最多。",
+      "like": "程序员的 Word。",
+      "why": "",
+      "src": "微软出品。"
+    },
+    "Ollama": {
+      "what": "在自己电脑上运行开源 AI 模型的工具。",
+      "like": "本地版的 AI 模型播放器。",
+      "why": "数据不出电脑，适合敏感内容。",
+      "src": ""
+    },
+    "Manus": {
+      "what": "一家做通用 AI Agent 的公司和产品。",
+      "like": "",
+      "why": "OpenMausBot 声明和它无关。",
+      "src": ""
+    },
+    "Qodo": {
+      "what": "一家做 AI 代码审查的商业公司（原名 CodiumAI）。",
+      "like": "pr-agent 的「原东家」。",
+      "why": "它的托管产品和开源 pr-agent 是两套东西，别配混。",
+      "src": ""
+    },
+    "Vercel": {
+      "what": "做网站托管和前端工具的公司，Next.js 就是它出的。",
+      "like": "前端圈的大厂。",
+      "why": "",
+      "src": ""
+    },
+    "Composio": {
+      "what": "一家提供「应用连接器」的服务，让 AI 接 Gmail、Slack、GitHub 等。",
+      "like": "AI 的万能转接头商店。",
+      "why": "省去一个个对接应用的麻烦，但授权范围要自己把关。",
+      "src": ""
+    },
+    "Slack": {
+      "what": "国外常用的团队聊天软件。",
+      "like": "国外版钉钉 / 飞书。",
+      "why": "",
+      "src": ""
+    },
+    "ElevenLabs": {
+      "what": "做 AI 语音合成的公司。",
+      "like": "AI 配音服务。",
+      "why": "OpenMausBot 里是可选的语音功能。",
+      "src": ""
+    },
+    "Boat": {
+      "what": "OpenMausBot 可选接入的一项云电脑服务（以其 README 为准）。",
+      "like": "",
+      "why": "不填也能用。",
+      "src": ""
+    },
+    "NVIDIA NIM": {
+      "what": "NVIDIA 的模型托管服务：用接口调用它云上跑好的 AI 模型。",
+      "like": "NVIDIA 开的 AI 模型租用柜台。",
+      "why": "不用自己买显卡也能用模型。",
+      "src": "NVIDIA 出品。"
+    },
+    "KumoRFM": {
+      "what": "Kumo 公司的预测模型服务，可以根据表格数据做预测。",
+      "like": "一个外包的数据预测师。",
+      "why": "auto-ontology 用它回答「预测类」问题，但会把数据上传到对方。",
+      "src": ""
+    },
+    "Apache Ossie": {
+      "what": "一种在不同工具之间交换语义模型的格式。",
+      "like": "数据词典的通用文件格式。",
+      "why": "以后要跨工具共享词典时才用得上。",
+      "src": ""
+    },
+    "LiteLLM": {
+      "what": "一个把各家 AI 模型接口统一成同一种调用方式的工具。",
+      "like": "AI 模型的万能转接头。",
+      "why": "想换模型时改一行配置就行。",
+      "src": "BerriAI 开源。"
+    },
+    "GSD": {
+      "what": "一种让 AI 接管整个开发流程的方法论 / 工具包。",
+      "like": "",
+      "why": "mattpocock 认为这类方法太重。",
+      "src": ""
+    },
+    "BMAD": {
+      "what": "一种让多个 AI 角色按固定流程开发的方法论。",
+      "like": "",
+      "why": "mattpocock 认为这类方法太重。",
+      "src": ""
+    },
+    "Spec-Kit": {
+      "what": "GitHub 出的「先写规格再让 AI 实现」的工具包。",
+      "like": "",
+      "why": "mattpocock 认为这类方法太重。",
+      "src": ""
+    },
+    "A Philosophy of Software Design": {
+      "what": "斯坦福教授 John Ousterhout 写的软件设计书，提出「深模块」。",
+      "like": "",
+      "why": "讲怎么让代码越写越好改。",
+      "src": ""
+    },
+    "Matt Pocock": {
+      "what": "知名 TypeScript 讲师，mattpocock/skills 的作者。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "Python": {
+      "what": "一种好上手的编程语言，数据分析和 AI 领域用得最多。",
+      "like": "编程界的普通话。",
+      "why": "",
+      "src": "Google、Meta 等大厂大量使用。"
+    },
+    "TypeScript": {
+      "what": "带类型检查的 JavaScript，网页和 Node 项目常用。",
+      "like": "加了错别字检查的 JavaScript。",
+      "why": "代码一大，类型能提前抓错。",
+      "src": "微软开发。"
+    },
+    "Rust": {
+      "what": "一种运行快、内存安全的编程语言。",
+      "like": "又快又不容易出事故的跑车。",
+      "why": "很多新命令行工具用它写。",
+      "src": "Mozilla 发起，微软、Google 等在用。"
+    },
+    "Shell": {
+      "what": "在终端里打命令的环境，也指一行行命令写成的脚本。",
+      "like": "用打字代替点鼠标来操作电脑。",
+      "why": "",
+      "src": ""
+    },
+    "FastAPI": {
+      "what": "用 Python 写后端接口的框架。",
+      "like": "搭建 App 后台服务的半成品厨房。",
+      "why": "写接口快、自带文档页。",
+      "src": "Sebastián Ramírez 开源，微软、Uber 等公开在用。"
+    },
+    "Postgres": {
+      "what": "PostgreSQL，一款开源数据库。",
+      "like": "一个非常结实的电子账本柜。",
+      "why": "App 的用户、任务这些数据都存在这里。",
+      "src": "苹果、Instagram 等公开在用。"
+    },
+    "pgvector": {
+      "what": "Postgres 的一个插件，能按「意思相近」来搜索内容。",
+      "like": "给账本柜加了一个「找相似」的检索功能。",
+      "why": "AI 搜资料时常用。",
+      "src": ""
+    },
+    "SQL": {
+      "what": "查数据库用的语言。",
+      "like": "向数据库提问的标准句式。",
+      "why": "数据存在库里，要用 SQL 才能取出来。",
+      "src": ""
+    },
+    "schema": {
+      "what": "数据库的表结构：有哪些表、每张表有哪些列。",
+      "like": "账本的目录和栏目设计。",
+      "why": "",
+      "src": ""
+    },
+    "Next.js": {
+      "what": "基于 React 的网站开发框架。",
+      "like": "做网站的精装修套餐。",
+      "why": "auto-ontology 的网页前端用它做。",
+      "src": "Vercel 出品。"
+    },
+    "React": {
+      "what": "Meta 出的网页界面开发库。",
+      "like": "做网页界面的积木体系。",
+      "why": "现在最流行的网页界面写法之一。",
+      "src": "Meta 出品，大量网站在用。"
+    },
+    "React 19": {
+      "what": "React 的第 19 版。",
+      "like": "",
+      "why": "astryx 要求项目用 React 19 或更新版本。",
+      "src": ""
+    },
+    "StyleX": {
+      "what": "Meta 出的写网页样式的工具。",
+      "like": "给网页零件统一上色、排版的工具。",
+      "why": "",
+      "src": "Meta 出品。"
+    },
+    "Tailwind": {
+      "what": "一种写网页样式的流行工具，用一串短类名拼出样式。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "CSS": {
+      "what": "控制网页长什么样（颜色、字号、布局）的语言。",
+      "like": "网页的化妆品。",
+      "why": "",
+      "src": ""
+    },
+    "HTML": {
+      "what": "网页的结构语言。",
+      "like": "网页的骨架。",
+      "why": "",
+      "src": ""
+    },
+    "Electron": {
+      "what": "用网页技术做电脑桌面软件的框架。",
+      "like": "把网页装进一个桌面程序壳里。",
+      "why": "一套代码就能出 Mac、Windows 版本。",
+      "src": "VS Code、Slack 桌面版都用它。"
+    },
+    "Markdown": {
+      "what": "一种用简单符号排版的纯文本格式（# 是标题，- 是列表）。",
+      "like": "带格式的记事本。",
+      "why": "人好读，AI 也好读。",
+      "src": ""
+    },
+    "className": {
+      "what": "网页代码里给元素起的样式名字。",
+      "like": "给零件贴的样式标签。",
+      "why": "改 className 就能换样式，不用改组件本身。",
+      "src": ""
+    },
+    "props": {
+      "what": "传给界面组件的参数（比如按钮的文字、颜色）。",
+      "like": "点菜时的口味备注。",
+      "why": "参数写法统一，AI 才能用对组件。",
+      "src": "React 里的叫法。"
+    },
+    "swizzle": {
+      "what": "把组件库里的某个组件源码复制到自己项目里来改。",
+      "like": "把成品家具拆开自己改。",
+      "why": "能大改，但官方以后的更新就同步不过来了。",
+      "src": ""
+    },
+    "codemod": {
+      "what": "按规则批量自动改代码的脚本。",
+      "like": "文档里的「全部替换」，只是更聪明。",
+      "why": "升级版本时省得手改几百处。",
+      "src": ""
+    },
+    "Storybook": {
+      "what": "把界面组件一个个摆出来展示和试用的网页。",
+      "like": "组件的样品陈列室。",
+      "why": "",
+      "src": ""
+    },
+    "Sandbox": {
+      "what": "可以在线试玩代码的页面。",
+      "like": "试衣间。",
+      "why": "不装任何东西就能先试。",
+      "src": ""
+    },
+    "canary": {
+      "what": "抢先体验版，最新但可能不稳定。",
+      "like": "还在试吃阶段的新菜。",
+      "why": "能尝鲜，但正式产品别依赖它。",
+      "src": ""
+    },
+    "changelog": {
+      "what": "更新日志，写每个版本改了什么。",
+      "like": "软件的改版记录。",
+      "why": "升级前看一眼，知道有没有坑。",
+      "src": ""
+    },
+    "Material": {
+      "what": "Google 的设计系统 Material Design。",
+      "like": "Google 家的界面零件盒。",
+      "why": "",
+      "src": "Google 出品。"
+    },
+    "Ant Design": {
+      "what": "蚂蚁集团的设计系统，中后台网页常用。",
+      "like": "蚂蚁家的界面零件盒。",
+      "why": "",
+      "src": "蚂蚁集团出品。"
+    },
+    "UI": {
+      "what": "用户界面：用户看到和点的那一层。",
+      "like": "产品的门面。",
+      "why": "",
+      "src": ""
+    },
+    "Web": {
+      "what": "网页 / 网站。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "Beta": {
+      "what": "测试版：功能能用，但还可能大改。",
+      "like": "试营业。",
+      "why": "",
+      "src": ""
+    },
+    "API": {
+      "what": "程序之间互相调用的接口。",
+      "like": "餐厅的点餐窗口：按格式点，后厨出餐。",
+      "why": "不用打开界面，程序之间就能对接。",
+      "src": ""
+    },
+    "REST API": {
+      "what": "最常见的一种 API 写法，通过网址加请求方式来调用。",
+      "like": "按固定格式填写的点单表。",
+      "why": "",
+      "src": ""
+    },
+    "CLI": {
+      "what": "命令行工具：在终端里打字使用、没有图形界面的软件。",
+      "like": "给电脑发文字指令。",
+      "why": "命令能写进脚本，AI 也能直接调用。",
+      "src": ""
+    },
+    "bot": {
+      "what": "能自动回复或干活的程序，这里指一个 AI 助手。",
+      "like": "一位 AI 同事。",
+      "why": "",
+      "src": ""
+    },
+    "local-first": {
+      "what": "数据默认存在你自己电脑上，云端只是可选。",
+      "like": "钱放自家保险柜，银行只当备用。",
+      "why": "隐私更可控，断网也能用。",
+      "src": ""
+    },
+    "source-available": {
+      "what": "源码公开可看，但不是开源许可，商用有限制。",
+      "like": "菜谱能看，开店要授权。",
+      "why": "",
+      "src": ""
+    },
+    "open-core": {
+      "what": "核心免费开源，企业功能另外收费。",
+      "like": "基础款免费，高级款付费。",
+      "why": "",
+      "src": ""
+    },
+    "OSS": {
+      "what": "开源软件（Open Source Software）。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "Apache-2.0": {
+      "what": "一种宽松的开源许可证，可免费商用，要保留版权声明。",
+      "like": "可自由使用的公共菜谱，注明出处即可。",
+      "why": "",
+      "src": "Apache 软件基金会发布。"
+    },
+    "MIT": {
+      "what": "最宽松的开源许可证之一，基本只要求保留版权声明。",
+      "like": "",
+      "why": "",
+      "src": "麻省理工学院起草。"
+    },
+    "MIT OR Apache-2.0": {
+      "what": "双许可证：MIT 和 Apache-2.0 任选其一。",
+      "like": "",
+      "why": "",
+      "src": "Rust 项目常见做法。"
+    },
+    "SPDX": {
+      "what": "给开源许可证编的标准代号（比如 MIT、Apache-2.0）。",
+      "like": "许可证的身份证号。",
+      "why": "GitHub 靠它自动识别项目用的什么许可证。",
+      "src": "Linux 基金会维护。"
+    },
+    "NOASSERTION": {
+      "what": "GitHub 在无法自动识别许可证时显示的标记，意思是「系统没断言是哪一种」。",
+      "like": "像标签还没贴清楚的包裹，要打开说明书才知道。",
+      "why": "要以仓库里的 LICENSE 文件和官方文本为准。",
+      "src": "GitHub 许可证识别说明。本期 app-store-compliance 就是这种情况。"
+    },
+    "LICENSE": {
+      "what": "仓库里写明开源许可证的文件。",
+      "like": "使用授权书。",
+      "why": "",
+      "src": ""
+    },
+    "THIRD_PARTY_NOTICES": {
+      "what": "项目里列出第三方组件及其许可证的说明文件。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "Data Privacy": {
+      "what": "pr-agent 仓库里的数据隐私说明。",
+      "like": "",
+      "why": "看清代码会发给谁。",
+      "src": ""
+    },
+    "Docker": {
+      "what": "把软件和它需要的环境一起打包，在哪台电脑上都能一样运行。",
+      "like": "装好所有配菜的便当盒。",
+      "why": "省掉「在我电脑上能跑」的麻烦。",
+      "src": "Docker 公司 2013 年推出，大厂普遍在用。"
+    },
+    "Docker Compose": {
+      "what": "用一个配置文件一次启动多个 Docker 程序（网页、后端、数据库）。",
+      "like": "一张点菜单，一桌菜一起上。",
+      "why": "",
+      "src": "Docker 官方工具。"
+    },
+    "Compose v2": {
+      "what": "Docker Compose 的第 2 代版本，命令是 docker compose。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "uv": {
+      "what": "一个很快的 Python 安装工具，用来装依赖、跑脚本。",
+      "like": "Python 的一键装零件工具。",
+      "why": "",
+      "src": "Astral 公司开源。"
+    },
+    "npm": {
+      "what": "Node.js 的安装工具，用来装 JavaScript 的代码包。",
+      "like": "前端的应用商店。",
+      "why": "",
+      "src": "随 Node.js 一起提供。"
+    },
+    "npm install": {
+      "what": "让 npm 把项目需要的代码包全部装好的命令。",
+      "like": "",
+      "why": "每个新文件夹都要跑一遍，很费时间。",
+      "src": ""
+    },
+    "npx": {
+      "what": "npm 自带的命令：不安装，直接下载并运行一个工具。",
+      "like": "试吃，不用买整包。",
+      "why": "",
+      "src": ""
+    },
+    "mcp-remote": {
+      "what": "一个可以用 npx 运行的小工具，让 Claude Desktop 连上远程的 MCP 服务。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "Node": {
+      "what": "Node.js：让 JavaScript 能在电脑上直接运行的环境。",
+      "like": "JavaScript 的发动机。",
+      "why": "很多开发工具要先装它才能跑。",
+      "src": "OpenJS 基金会维护。"
+    },
+    "Node 22+": {
+      "what": "Node.js 22 或更新版本。",
+      "like": "",
+      "why": "astryx 仓库本身的开发要求。",
+      "src": ""
+    },
+    "Node 24+": {
+      "what": "Node.js 24 或更新版本。",
+      "like": "",
+      "why": "从源码运行 OpenMausBot、agent-browser 时要求。",
+      "src": ""
+    },
+    "pnpm": {
+      "what": "另一个 Node 安装工具，比 npm 更快、更省空间。",
+      "like": "npm 的省空间版。",
+      "why": "",
+      "src": ""
+    },
+    "pnpm 11": {
+      "what": "pnpm 的第 11 版。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "yarn": {
+      "what": "又一个 Node 安装工具，和 npm 同类。",
+      "like": "",
+      "why": "",
+      "src": "Meta 发起。"
+    },
+    "pip": {
+      "what": "Python 自带的安装工具。",
+      "like": "Python 的应用商店。",
+      "why": "",
+      "src": ""
+    },
+    "Homebrew": {
+      "what": "Mac 和 Linux 上用命令装软件的工具，命令是 brew。",
+      "like": "命令版的应用商店。",
+      "why": "",
+      "src": "社区开源。"
+    },
+    "Cargo": {
+      "what": "Rust 语言自带的安装和编译工具。",
+      "like": "",
+      "why": "",
+      "src": "Rust 官方。"
+    },
+    "Cargo.toml": {
+      "what": "Rust 项目的配置文件，写着名字、版本、许可证等。",
+      "like": "项目的身份证。",
+      "why": "",
+      "src": ""
+    },
+    "Winget": {
+      "what": "Windows 自带的命令行装软件工具。",
+      "like": "Windows 版的 brew。",
+      "why": "",
+      "src": "微软官方。"
+    },
+    "Linux": {
+      "what": "一种开源操作系统，服务器上用得最多。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "Ubuntu": {
+      "what": "最常见的一种 Linux 系统。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "Wayland": {
+      "what": "Linux 上的一种桌面显示方式。",
+      "like": "",
+      "why": "OpenMausBot 在它下面暂时不能控制本机。",
+      "src": ""
+    },
+    "APFS": {
+      "what": "苹果电脑现在默认的磁盘格式。",
+      "like": "",
+      "why": "支持写时复制，worktrunk 能借此共享缓存。",
+      "src": ""
+    },
+    "copy-on-write": {
+      "what": "写时复制：复制文件时先不真正复制，等要改了才复制那一份。",
+      "like": "先共用一本书，谁要在上面写字才另印一本。",
+      "why": "多个文件夹共用缓存，省空间省时间。",
+      "src": ""
+    },
+    "hooks": {
+      "what": "到某个时刻自动执行的一段命令。",
+      "like": "门铃：门一开就响。",
+      "why": "开新工位时自动装依赖，不用手动。",
+      "src": ""
+    },
+    "node_modules": {
+      "what": "Node 项目装好的代码包都放在这个文件夹里，通常很大。",
+      "like": "项目的零件仓库。",
+      "why": "",
+      "src": ""
+    },
+    "target/": {
+      "what": "Rust 项目编译出来的文件放在这个文件夹里。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "Chrome for Testing": {
+      "what": "Google 专门给自动化测试用的 Chrome，版本固定、不自动更新。",
+      "like": "考试专用的标准浏览器。",
+      "why": "",
+      "src": "Google Chrome 团队提供。"
+    },
+    "Safari": {
+      "what": "苹果的浏览器。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "iOS 模拟器": {
+      "what": "Xcode 自带的虚拟 iPhone，在 Mac 上就能运行 App。",
+      "like": "电脑里的一台假 iPhone。",
+      "why": "不用真机就能测试。",
+      "src": "Apple 官方工具。"
+    },
+    "API key": {
+      "what": "调用在线服务用的密码串，用来认人和计费。",
+      "like": "会员卡，谁拿到都能刷。",
+      "why": "千万别写进代码或发到聊天里。",
+      "src": ""
+    },
+    ".env": {
+      "what": "项目里存密钥和配置的文件，不提交到 Git。",
+      "like": "贴在自己电脑上的便签，不随代码发出去。",
+      "why": "",
+      "src": ""
+    },
+    "Quickstart": {
+      "what": "README 里的「快速上手」章节。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "build.nvidia.com": {
+      "what": "NVIDIA 的模型服务网站，在这里申请 API key。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "nvapi-": {
+      "what": "NVIDIA API key 的开头几个字符。",
+      "like": "",
+      "why": "看到这个开头就知道是 NVIDIA 的密钥。",
+      "src": ""
+    },
+    "KUMO_RFM_API_KEY": {
+      "what": "auto-ontology 里开启 KumoRFM 预测功能用的密钥设置项。",
+      "like": "",
+      "why": "填了它，数据就会上传给 Kumo。",
+      "src": ""
+    },
+    "OPENAI_KEY": {
+      "what": "pr-agent 示例里存 OpenAI 密钥的设置项名字。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "GITHUB_TOKEN": {
+      "what": "GitHub Actions 运行时自动发的临时通行证。",
+      "like": "一次性门禁卡。",
+      "why": "不用自己申请，流程结束就失效。",
+      "src": ""
+    },
+    "GitHub Actions": {
+      "what": "GitHub 自带的自动化流程：代码一有动静就按清单执行任务。",
+      "like": "仓库里的自动值班员。",
+      "why": "",
+      "src": "GitHub 官方。"
+    },
+    "GitHub Secrets": {
+      "what": "GitHub 仓库设置里存密钥的保险柜，代码里看不到真实值。",
+      "like": "保险柜。",
+      "why": "",
+      "src": "GitHub 官方。"
+    },
+    "Settings": {
+      "what": "GitHub 仓库的设置页。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "workflow": {
+      "what": "GitHub Actions 的流程配置文件，放在 .github/workflows/ 下。",
+      "like": "自动值班员的排班表。",
+      "why": "",
+      "src": ""
+    },
+    ".github/workflows/pr-agent.yml": {
+      "what": "要在你仓库里新建的一个 workflow 文件，让 pr-agent 自动运行。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "Vite": {
+      "what": "一个创建和运行网页项目的工具，启动很快。",
+      "like": "网页项目的快速开工包。",
+      "why": "",
+      "src": ""
+    },
+    "example.com": {
+      "what": "专门用来做示例的公开网址。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "CDP": {
+      "what": "Chrome DevTools Protocol：远程控制 Chrome 浏览器的接口。",
+      "like": "浏览器的遥控器接口。",
+      "why": "让程序一直连着同一个浏览器，不用每步重开。",
+      "src": "Google 定义。"
+    },
+    "cookie": {
+      "what": "网站存在浏览器里的小数据，常用来记住登录状态。",
+      "like": "网站发给你的会员手环。",
+      "why": "",
+      "src": ""
+    },
+    "session": {
+      "what": "一次连续的使用过程，常包含登录状态。",
+      "like": "一次入场到离场。",
+      "why": "",
+      "src": ""
+    },
+    "auth": {
+      "what": "登录验证。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "DOM": {
+      "what": "浏览器里网页的结构树。",
+      "like": "网页的骨架图。",
+      "why": "DOM 一变，旧的元素编号就失效。",
+      "src": ""
+    },
+    "canvas": {
+      "what": "网页里的「画布」，内容是画出来的图像，没有结构。",
+      "like": "",
+      "why": "AI 读不到画布里的按钮。",
+      "src": ""
+    },
+    "WebFetch": {
+      "what": "直接抓取网页文字内容的工具，不打开浏览器。",
+      "like": "",
+      "why": "抓公开信息更快、更省事。",
+      "src": ""
+    },
+    "Playwright": {
+      "what": "微软出的浏览器自动化测试工具。",
+      "like": "",
+      "why": "适合写固定的自动测试。",
+      "src": "微软出品。"
+    },
+    "Puppeteer": {
+      "what": "Google 出的浏览器自动化工具。",
+      "like": "",
+      "why": "",
+      "src": "Google 出品。"
+    },
+    "Scrapling": {
+      "what": "一个开源的网页抓取框架。",
+      "like": "",
+      "why": "适合批量采集网页数据。",
+      "src": ""
+    },
+    "snapshot": {
+      "what": "agent-browser 的命令：把当前网页拍成带编号的文字快照。",
+      "like": "给网页拍一张带标号的地图。",
+      "why": "",
+      "src": ""
+    },
+    "@e1": {
+      "what": "agent-browser 快照里元素的编号，按它来点击。",
+      "like": "地图上的标号。",
+      "why": "页面一变，编号就失效。",
+      "src": ""
+    },
+    "agent-browser 命令": {
+      "what": "agent-browser 的基本命令：open 打开网页、snapshot 拍快照、click 点击、close 关闭。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "agent-browser install": {
+      "what": "agent-browser 的命令：下载它要用的浏览器。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "agent-browser skills get core": {
+      "what": "agent-browser 的命令：取出和当前版本匹配的操作说明。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "npx agent-browser": {
+      "what": "不安装、直接试用 agent-browser 的命令。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "--with-deps": {
+      "what": "安装命令的参数：顺便把系统缺的依赖一起装上（Linux 用）。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "wt": {
+      "what": "worktrunk 的命令名。",
+      "like": "",
+      "why": "和 Windows 自带的 Windows Terminal 命令重名。",
+      "src": ""
+    },
+    "git-wt": {
+      "what": "worktrunk 在 Windows 上的命令名，用来避开重名。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "wt switch -c": {
+      "what": "worktrunk 的命令：新建一条分支和工作文件夹，并进入。",
+      "like": "开一张新工位。",
+      "why": "",
+      "src": ""
+    },
+    "-x claude": {
+      "what": "wt 命令的参数：开好工位后马上启动 Claude Code。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "wt list": {
+      "what": "worktrunk 的命令：列出所有工作文件夹和状态。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "wt remove": {
+      "what": "worktrunk 的命令：清理做完的工作文件夹。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "wt config shell install": {
+      "what": "worktrunk 装完要跑一次的命令，让终端能直接切换文件夹。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "git worktree add": {
+      "what": "Git 自带的新建 worktree 命令，比较啰嗦。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "Windows Terminal": {
+      "what": "Windows 自带的终端软件，命令也叫 wt。",
+      "like": "",
+      "why": "",
+      "src": "微软出品。"
+    },
+    "/setup-matt-pocock-skills": {
+      "what": "mattpocock/skills 里的一个命令：在项目里做一次初始设置。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "/grill-with-docs": {
+      "what": "mattpocock/skills 里的一个命令：让 AI 追问你需求，并把结论写进项目文档。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "/to-spec": {
+      "what": "mattpocock/skills 里的一个命令：把讨论结果整理成需求说明。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "/to-tickets": {
+      "what": "mattpocock/skills 里的一个命令：把需求拆成一张张任务单。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "/implement": {
+      "what": "mattpocock/skills 里的一个命令：按任务单去写代码。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "/triage": {
+      "what": "mattpocock/skills 里的一个命令：给收到的问题分轻重缓急。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "/tdd": {
+      "what": "mattpocock/skills 里的一个命令：按「先写失败的测试，再写代码」的节奏开发。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "/diagnosing-bugs": {
+      "what": "mattpocock/skills 里的一个命令：一步步排查 bug。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "/code-review": {
+      "what": "mattpocock/skills 里的一个命令：审查代码。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "/codebase-design": {
+      "what": "mattpocock/skills 里的一个命令：检查代码结构设计合不合理。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "/improve-codebase-architecture": {
+      "what": "mattpocock/skills 里的一个命令：找出代码结构里值得改的地方（只找不改）。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "/pr": {
+      "what": "mattpocock/skills 里的一个命令：写 PR 说明（摘要、证据、风险）。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "GLOSSARY.md": {
+      "what": "项目里的词汇表文件，写每个业务词的意思。",
+      "like": "项目的名词解释手册。",
+      "why": "AI 和人用同一套说法。",
+      "src": ""
+    },
+    "skills.sh": {
+      "what": "一种安装 skill 的方式，会把 skill 文件复制进你的项目。",
+      "like": "",
+      "why": "复制来的文件可以自己改，但不会自动更新。",
+      "src": ""
+    },
+    "plugin": {
+      "what": "插件：装进某个软件里的附加功能。",
+      "like": "手机上的应用扩展。",
+      "why": "",
+      "src": ""
+    },
+    "/review": {
+      "what": "pr-agent 的一个命令：给 PR 写审查意见。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "/describe": {
+      "what": "pr-agent 的一个命令：自动写 PR 说明。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "/improve": {
+      "what": "pr-agent 的一个命令：给出具体的改代码建议。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "/ask": {
+      "what": "pr-agent 的一个命令：就这个 PR 提问。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "/help_docs": {
+      "what": "pr-agent 的一个命令：查文档；因可能泄露凭据，从 v0.36.1 起暂时关闭。",
+      "like": "",
+      "why": "别开它。",
+      "src": ""
+    },
+    "pragent/pr-agent": {
+      "what": "pr-agent 现在正确的 Docker 镜像名（0.34.2 及以上）。",
+      "like": "",
+      "why": "用错旧名字可能拿到过期版本。",
+      "src": ""
+    },
+    "check_answerable": {
+      "what": "auto-ontology 的一个工具：先判断这个问题数据能不能答。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "~/.openmausbot": {
+      "what": "OpenMausBot 在你电脑上存数据的文件夹。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "enterprise/": {
+      "what": "OpenMausBot 里的企业版功能目录，许可证另算。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "SKILL.md": {
+      "what": "每个 skill 文件夹里的说明文件，写这个 skill 做什么、按什么步骤做。",
+      "like": "skill 的使用说明书。",
+      "why": "",
+      "src": ""
+    },
+    "skills/": {
+      "what": "auto-ontology 仓库里放三个官方 skill 的文件夹。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "@astryxdesign/core": {
+      "what": "astryx 的核心组件包，用 npm 安装。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "@astryxdesign/cli": {
+      "what": "astryx 的命令行工具包，用 npm 安装。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "core": {
+      "what": "这里指一个项目最基础的那部分，比如 astryx 的核心组件包、agent-browser 的基础 skill。",
+      "like": "",
+      "why": "",
+      "src": ""
+    },
+    "bug": {
+      "what": "程序里的错误或缺陷。",
+      "like": "产品上的瑕疵。",
+      "why": "",
+      "src": ""
+    },
+    "my-project.yaml": {
+      "what": "你在自己电脑上填写的项目简介文件（项目做什么、用什么技术）。它被 .gitignore 忽略，不会提交、不会上传。",
+      "like": "一张只留在你抽屉里的项目名片。",
+      "why": "「适合场景」「给你的项目用」要结合你的项目才写得准。",
+      "src": "本仓库的约定文件名。"
+    },
+    "my-project.example.yaml": {
+      "what": "本仓库自带的虚构示例，照着它填你自己的 my-project.yaml。",
+      "like": "填表前看的样表。",
+      "why": "",
+      "src": "本仓库自带。"
+    },
+    "skills/project-fit/SKILL.md": {
+      "what": "本仓库自带的 skill：读你的 my-project.yaml 和本期公开卡片，在本地生成「适合场景」「对照你的项目」和专属提示词。",
+      "like": "一张交给你自己 AI 助手的任务单。",
+      "why": "个性化内容只在你自己的电脑或 AI 工具里生成，本仓库拿不到。",
+      "src": "本仓库（trending-to-project）自带，英文名 project-fit：Match trending GitHub repos to your own project, locally and privately."
+    },
+    "Plannotator": {
+      "what": "GitHub 开源项目，主要用于在浏览器里批注 AI 的计划、文档和代码改动，再把意见发回 AI。",
+      "like": "像老师批改作文的红笔。",
+      "why": "AI 动手前先过人眼，方向错了能早改。",
+      "src": "作者 backnotprop；MIT 或 Apache-2.0 双许可。"
+    },
+    "modern-web-guidance": {
+      "what": "GitHub 开源项目，主要用于给 AI 编程工具补上最新的网页写法指南。",
+      "like": "像给厨师一本常年更新的新菜谱。",
+      "why": "模型学过的老代码多，查指南能少写过时代码。",
+      "src": "Google Chrome 团队牵头，Edge、Firefox、MDN 团队参与；Apache-2.0。"
+    },
+    "open-code-review": {
+      "what": "GitHub 开源项目，主要用于让 AI 审查 Git 改动，给出精确到行的意见。",
+      "like": "像先按清单逐项检查、再请老师傅判断的质检线。",
+      "why": "合并前多一道检查，少把 bug 带上线。",
+      "src": "阿里巴巴开源，Apache-2.0。"
+    },
+    "LoopForge": {
+      "what": "GitHub 开源项目，主要用于在自己的服务器上，按固定流程指挥多个 AI 编程工具交付代码。",
+      "like": "像一条设了质检岗和签字岗的流水线。",
+      "why": "让 AI 每次交付都走同样的步骤，关键处有人批准。",
+      "src": "腾讯开源，MIT。"
+    },
+    "LoopForge Local": {
+      "what": "LoopForge 的轻量版，把内置流程直接装进你现有的 AI 工具，不用搭服务器。",
+      "like": "像流水线的便携工具箱。",
+      "why": "个人开发者上手更快。",
+      "src": "出自 LoopForge README。"
+    },
+    "SkillEvaluator": {
+      "what": "GitHub 开源项目，主要用于给 AI 的 skill 打分：查写法、查重复、做对照实验。",
+      "like": "像给说明书先体检、再试用。",
+      "why": "知道一份 skill 到底有没有让 AI 变好。",
+      "src": "NVIDIA 开源，Apache-2.0。"
+    },
+    "stitch-skills": {
+      "what": "GitHub 开源项目，主要用于让 AI 编程工具操作 Google Stitch：出设计稿、整理设计规范、把设计稿转成代码。",
+      "like": "像给设计软件配了一位听指令的助手。",
+      "why": "没有设计师也能快速出界面草稿。",
+      "src": "Google Labs 出品，Apache-2.0。"
+    },
+    "video-shotcraft": {
+      "what": "GitHub 开源项目，主要用于让 Claude Code、Codex 照着镜头配方给产品做宣传视频。",
+      "like": "像一本带示范片的分镜菜谱。",
+      "why": "不会剪辑也能出一条能接着改的宣传片。",
+      "src": "作者 Vincentwei1021，Apache-2.0。"
+    },
+    "video-talkcraft": {
+      "what": "GitHub 开源项目，主要用于做口播讲解类视频，让画面动效跟着配音走；video-shotcraft 的姊妹项目。",
+      "like": "像给讲解自动配上对拍的动画。",
+      "why": "讲解类内容用它比宣传片模板合适。",
+      "src": "同一作者 Vincentwei1021。"
+    },
+    "Stitch": {
+      "what": "Google 的 AI 界面设计工具，用文字或图片生成界面设计稿。",
+      "like": "像一位照描述画草图的设计助理。",
+      "why": "先看到长什么样，再决定做不做。",
+      "src": "Google Labs 推出，stitch.withgoogle.com。"
+    },
+    "Stitch MCP": {
+      "what": "Stitch 提供的 MCP 服务，让 AI 工具能直接调用 Stitch。",
+      "like": "像把设计软件接到 AI 上的插座。",
+      "why": "stitch-skills 的所有 skill 都靠它。",
+      "src": "出自 stitch-skills README。"
+    },
+    "Google Labs": {
+      "what": "Google 做实验性产品的团队。",
+      "like": "像大公司的新品试验田。",
+      "why": "",
+      "src": ""
+    },
+    "Remotion": {
+      "what": "用写网页代码的方式做视频的框架。",
+      "like": "像用乐高积木拼动画片。",
+      "why": "画面能改、能复用，适合批量出片。",
+      "src": "remotion.dev；个人、3 人以内的营利公司和非营利组织可免费用，更大的营利公司要买授权。"
+    },
+    "Motion Workbench": {
+      "what": "video-shotcraft 出片后打开的浏览器剪辑器，能改文案、颜色、镜头再导出。",
+      "like": "像网页版的简易剪映。",
+      "why": "AI 出初稿，人能接着改。",
+      "src": "出自 video-shotcraft README。"
+    },
+    "Ink Press": {
+      "what": "video-shotcraft 自带的一套完整视频模板。",
+      "like": "像现成的 PPT 模板。",
+      "why": "换上截图和文案，出片最快。",
+      "src": "出自 video-shotcraft README。"
+    },
+    "Gallery": {
+      "what": "在线镜头库预览页，能看动效、复制镜头名。",
+      "like": "像菜单上的菜品照片。",
+      "why": "挑镜头前先看效果。",
+      "src": "出自 video-shotcraft。"
+    },
+    "AtomGit": {
+      "what": "国内的代码托管平台。",
+      "like": "像国内版的 GitHub。",
+      "why": "GitHub 访问慢时，可以从这里的镜像下载。",
+      "src": ""
+    },
+    "Upload-Post": {
+      "what": "把视频发布到多个社交平台的第三方服务。",
+      "like": "像一次投递多家的快递站。",
+      "why": "video-shotcraft 的可选发布功能会用到，内容会发给这家服务。",
+      "src": "出自 video-shotcraft README。"
+    },
+    "ffmpeg": {
+      "what": "处理音视频的命令行工具，能剪切、转码、抽帧。",
+      "like": "像视频界的瑞士军刀。",
+      "why": "抽帧检查、合成声音都靠它。",
+      "src": "开源项目，大量视频软件在用。"
+    },
+    "ffprobe": {
+      "what": "ffmpeg 自带的小工具，查看视频的时长、分辨率等信息。",
+      "like": "像视频的体检单。",
+      "why": "出片后核对参数。",
+      "src": "随 ffmpeg 一起发布。"
+    },
+    "MP4": {
+      "what": "最常见的视频文件格式。",
+      "like": "像视频界的 JPG。",
+      "why": "几乎所有手机和平台都能播放。",
+      "src": ""
+    },
+    "Chrome": {
+      "what": "Google 推出的网页浏览器。",
+      "like": "像上网用的一扇窗。",
+      "why": "网页新功能常先在这里上线。",
+      "src": "Google 2008 年推出。"
+    },
+    "Microsoft Edge": {
+      "what": "微软推出的网页浏览器。",
+      "like": "像 Windows 自带的上网窗口。",
+      "why": "",
+      "src": "微软。"
+    },
+    "Mozilla Firefox": {
+      "what": "Mozilla 基金会推出的开源浏览器。",
+      "like": "像一扇由非营利组织维护的窗。",
+      "why": "",
+      "src": "Mozilla。"
+    },
+    "MDN": {
+      "what": "Mozilla 维护的网页技术文档网站。",
+      "like": "像网页开发的字典。",
+      "why": "查 HTML、CSS、JavaScript 用法最常用的地方之一。",
+      "src": "Mozilla 维护。"
+    },
+    "JavaScript": {
+      "what": "网页里的编程语言，让页面能响应点击、会动。",
+      "like": "像网页的肌肉。",
+      "why": "",
+      "src": "1995 年诞生，所有浏览器都支持。"
+    },
+    "Antigravity": {
+      "what": "Google 推出的 AI 编程工具。",
+      "like": "像 Google 版的 Cursor。",
+      "why": "本期好几个项目都支持它。",
+      "src": "Google 推出。"
+    },
+    "CodeBuddy": {
+      "what": "腾讯推出的 AI 编程助手。",
+      "like": "像腾讯版的 Claude Code。",
+      "why": "LoopForge 内置角色默认用它。",
+      "src": "腾讯推出。"
+    },
+    "OpenCode": {
+      "what": "开源的命令行 AI 编程工具。",
+      "like": "像开源版的 Claude Code。",
+      "why": "能接多家模型。",
+      "src": "opencode.ai。"
+    },
+    "Droid": {
+      "what": "Factory 公司推出的 AI 编程工具。",
+      "like": "像又一位会写代码的 AI 同事。",
+      "why": "",
+      "src": "Factory 推出。"
+    },
+    "Copilot CLI": {
+      "what": "GitHub Copilot 的命令行版本。",
+      "like": "像把 Copilot 搬进命令窗口。",
+      "why": "",
+      "src": "GitHub 推出。"
+    },
+    "Obsidian": {
+      "what": "本地笔记软件，笔记就是 Markdown 文件，能互相链接。",
+      "like": "像能自动连线的笔记本。",
+      "why": "Plannotator 能把批准过的计划自动存进去。",
+      "src": ""
+    },
+    "Notion": {
+      "what": "在线笔记和协作文档工具。",
+      "like": "像能拼积木的网上笔记本。",
+      "why": "",
+      "src": ""
+    },
+    "Bear": {
+      "what": "苹果设备上的笔记软件。",
+      "like": "像一本简洁的电子手账。",
+      "why": "",
+      "src": ""
+    },
+    "Jina Reader": {
+      "what": "把网页转成适合 AI 阅读的纯文本的在线服务。",
+      "like": "像去掉广告、只留正文的复印机。",
+      "why": "Plannotator 批注网址时默认经过它，会联网。",
+      "src": "Jina AI 推出。"
+    },
+    "Inbox": {
+      "what": "Plannotator 的收件箱窗口，几个 AI 把问题和待审内容都投到这里。",
+      "like": "像办公室门口的待办信箱。",
+      "why": "AI 不用干等，你有空再统一回复。",
+      "src": "出自 Plannotator README。"
+    },
+    "Workspaces": {
+      "what": "Plannotator 另外做的托管团队协作产品，不在开源范围里。",
+      "like": "像同一品牌的付费会员区。",
+      "why": "团队共享时用；内容会存到对方的服务上。",
+      "src": "出自 Plannotator README。"
+    },
+    "Human-in-the-loop": {
+      "what": "关键步骤由人拍板的 AI 工作方式。",
+      "like": "像开辅助驾驶时手不离方向盘。",
+      "why": "AI 会出错，最要紧的几步由人把关。",
+      "src": "AI 和自动化领域的常用说法。"
+    },
+    "plan": {
+      "what": "AI 动手前写的计划，说明要改什么、怎么改。",
+      "like": "像装修前的施工图。",
+      "why": "先看计划，方向错了改起来便宜。",
+      "src": "Claude Code 等工具的「计划模式」会生成。"
+    },
+    "Stop 钩子": {
+      "what": "Codex 在 AI 结束一轮工作时触发的钩子，目前还在实验阶段。",
+      "like": "像下班打卡时自动响的提醒。",
+      "why": "Plannotator 靠它在 Codex 里弹出计划。",
+      "src": "出自 Plannotator README。"
+    },
+    "WSL": {
+      "what": "Windows 里运行 Linux 的功能。",
+      "like": "像在 Windows 里开了一间 Linux 小屋。",
+      "why": "很多开发工具只支持 macOS 和 Linux，靠它在 Windows 上用。",
+      "src": "微软推出。"
+    },
+    "PowerShell": {
+      "what": "Windows 自带的命令行工具。",
+      "like": "像 Windows 的高级命令窗口。",
+      "why": "Windows 上运行安装脚本要用。",
+      "src": "微软推出。"
+    },
+    "curl": {
+      "what": "在命令行里下载网页或文件的工具。",
+      "like": "像命令行里的下载按钮。",
+      "why": "很多安装脚本靠它下载。",
+      "src": "开源工具，主流系统基本都自带。"
+    },
+    "/plugin marketplace add backnotprop/plannotator": {
+      "what": "Claude Code 里添加 Plannotator 插件市场的命令。",
+      "like": "像先把一家店加进购物 App 的关注列表。",
+      "why": "加了之后才能装它的插件。",
+      "src": "出自 Plannotator README。"
+    },
+    "/plannotator-review": {
+      "what": "打开审查页面，查看本地改动或一个 PR 的命令。",
+      "like": "像把作业摊开逐行批改。",
+      "why": "合并前过一遍人眼。",
+      "src": "出自 Plannotator README。"
+    },
+    "/plannotator-annotate": {
+      "what": "打开文件、文件夹、网址或 HTML 来批注的命令。",
+      "like": "像在打印稿上用红笔圈画。",
+      "why": "指着原文提意见，比口头描述快。",
+      "src": "出自 Plannotator README。"
+    },
+    "/plannotator-last": {
+      "what": "批注 AI 刚才那条回复的命令。",
+      "like": "像回邮件时引用原文逐句点评。",
+      "why": "",
+      "src": "出自 Plannotator README。"
+    },
+    "PLANNOTATOR_SHARE=disabled": {
+      "what": "关掉 Plannotator 分享链接的设置。",
+      "like": "像把备用钥匙收回来。",
+      "why": "私密项目防止内容跟着链接外流。",
+      "src": "出自 Plannotator README。"
+    },
+    "--minimal": {
+      "what": "Plannotator 安装脚本的选项：只装主程序，不改各 AI 工具的配置。",
+      "like": "像只买主机、不要套餐。",
+      "why": "想少动配置时用。",
+      "src": "出自 Plannotator README。"
+    },
+    "plannotator uninstall": {
+      "what": "卸载 Plannotator 的命令，默认保留你的计划和历史。",
+      "like": "像搬家时拆走家具、留下相册。",
+      "why": "",
+      "src": "出自 Plannotator README。"
+    },
+    "git --version": {
+      "what": "查看电脑上 Git 版本号的命令。",
+      "like": "像看软件的出厂日期。",
+      "why": "open-code-review 要求 Git 2.41 以上。",
+      "src": "Git 自带。"
+    },
+    "Git 2.41": {
+      "what": "Git 的 2.41 版本，open-code-review 要求不低于它。",
+      "like": "像要求手机系统升到某个版本以上。",
+      "why": "它靠 Git 生成改动、搜索代码，版本太旧可能用不了。",
+      "src": "出自 open-code-review README。"
+    },
+    "Gemini CLI 0.36.0+": {
+      "what": "Gemini CLI 的 0.36.0 或更新版本。",
+      "like": "像要求手机系统升到某个版本以上。",
+      "why": "README 写明 Plannotator 的自动配置需要这个版本。",
+      "src": "出自 Plannotator README。"
+    },
+    "Node.js": {
+      "what": "让 JavaScript 能在电脑上（浏览器之外）运行的环境。",
+      "like": "像给网页语言配了一台发动机。",
+      "why": "很多命令行工具和 npx 都靠它。",
+      "src": "开源项目，2009 年发布。"
+    },
+    "Node.js 20+": {
+      "what": "Node.js 的 20 或更新版本。",
+      "like": "像要求手机系统升到某个版本以上。",
+      "why": "LoopForge Local 的最低要求。",
+      "src": "出自 LoopForge README。"
+    },
+    "Python 3.8+": {
+      "what": "Python 的 3.8 或更新版本。",
+      "like": "像要求手机系统升到某个版本以上。",
+      "why": "LoopForge Local 的最低要求。",
+      "src": "出自 LoopForge README。"
+    },
+    "Python 3.12–3.14": {
+      "what": "Python 的 3.12 到 3.14 版本。",
+      "like": "像只认某几代的充电口。",
+      "why": "SkillEvaluator 支持的 Python 范围。",
+      "src": "出自 SkillEvaluator README。"
+    },
+    "Python 3.12": {
+      "what": "Python 的 3.12 版本，SkillEvaluator 要求不低于它。",
+      "like": "像要求手机系统升到某个版本以上。",
+      "why": "",
+      "src": "出自 SkillEvaluator README。"
+    },
+    "Python 3.13": {
+      "what": "Python 的 3.13 版本，uv 会自动准备好。",
+      "like": "像搬家公司自带的工具。",
+      "why": "不用自己装 Python。",
+      "src": "出自 SkillEvaluator README。"
+    },
+    "npx modern-web-guidance@latest install": {
+      "what": "启动 modern-web-guidance 安装向导的命令。",
+      "like": "像跟着向导一步步装 App。",
+      "why": "",
+      "src": "出自 modern-web-guidance README。"
+    },
+    "npx skills add": {
+      "what": "skills 命令行工具里「安装一个 skill」的命令。",
+      "like": "像应用商店的「获取」按钮。",
+      "why": "很多 skill 仓库都支持这种装法。",
+      "src": "Vercel 推出，见 skills.sh。"
+    },
+    "gh": {
+      "what": "GitHub 官方的命令行工具。",
+      "like": "像不用开网页就能操作 GitHub 的遥控器。",
+      "why": "",
+      "src": "GitHub 推出。"
+    },
+    "gh skill install": {
+      "what": "用 gh 安装 skill 的命令。",
+      "like": "像用 GitHub 自家的商店装插件。",
+      "why": "",
+      "src": "出自 modern-web-guidance README。"
+    },
+    "search": {
+      "what": "modern-web-guidance 的搜索命令，按关键词找指南。",
+      "like": "像翻菜谱的目录。",
+      "why": "",
+      "src": "出自 modern-web-guidance README。"
+    },
+    "retrieve": {
+      "what": "modern-web-guidance 按编号取出一篇指南全文的命令。",
+      "like": "像按页码翻到那一页。",
+      "why": "",
+      "src": "出自 modern-web-guidance README。"
+    },
+    "legacy-scan .": {
+      "what": "扫描当前文件夹的代码，找出能换成新写法的老代码。",
+      "like": "像给老房子做一次翻新评估。",
+      "why": "先列清单，再挑着改。",
+      "src": "出自 modern-web-guidance README。"
+    },
+    "dark mode": {
+      "what": "深色模式的英文说法。",
+      "like": "像手机的夜间模式。",
+      "why": "",
+      "src": ""
+    },
+    "DISABLE_TELEMETRY=1": {
+      "what": "关掉匿名使用统计的环境变量设置。",
+      "like": "像在 App 里关掉「体验改进计划」。",
+      "why": "不想让工具上报使用数据时用。",
+      "src": "出自 modern-web-guidance README。"
+    },
+    "Telemetry": {
+      "what": "软件自动上报使用数据的功能，也叫遥测。",
+      "like": "像汽车把行驶数据传回厂家。",
+      "why": "厂家靠它改进产品，介意可以关。",
+      "src": ""
+    },
+    "OpenTelemetry": {
+      "what": "一套开源的观测标准，收集程序运行时的日志、指标和调用链。",
+      "like": "像给程序装上行车记录仪。",
+      "why": "出问题时能追到哪一步慢、哪一步错。",
+      "src": "CNCF 托管的开源项目。"
+    },
+    "Manifest V3": {
+      "what": "Chrome 扩展的第三版配置规范。",
+      "like": "像新版建筑规范。",
+      "why": "新上架的 Chrome 扩展要按它写。",
+      "src": "Google Chrome 推出。"
+    },
+    "Chrome Web Store": {
+      "what": "Chrome 扩展的官方商店。",
+      "like": "像浏览器插件的应用商店。",
+      "why": "",
+      "src": "Google 运营。"
+    },
+    "XSS": {
+      "what": "跨站脚本攻击：坏人往网页里塞恶意脚本。",
+      "like": "像有人往留言板贴了一张会偷钥匙的纸条。",
+      "why": "网页常见漏洞，审查时要重点查。",
+      "src": "OWASP 把它列为常见网页风险。"
+    },
+    "Recall": {
+      "what": "查全率：真问题里被找出来的比例。",
+      "like": "像渔网能捞上多少鱼。",
+      "why": "越高漏掉的越少，但误报往往会变多。",
+      "src": "机器学习常用指标。"
+    },
+    "Delegation Mode": {
+      "what": "open-code-review 的委托模式：它挑文件、配规则，审查交给你正在用的 AI 工具。",
+      "like": "像监工列好清单，交给你的老员工去干。",
+      "why": "不用再单独配模型密钥。",
+      "src": "出自 open-code-review README。"
+    },
+    "JSON": {
+      "what": "一种结构化的数据格式，人和程序都能读。",
+      "like": "像一张分好栏目的表格。",
+      "why": "结果存成它，AI 能接着处理。",
+      "src": ""
+    },
+    "AACR-Bench": {
+      "what": "open-code-review 公开的代码审查评测集。",
+      "like": "像一套带标准答案的考卷。",
+      "why": "用来比较不同 AI 审代码的水平。",
+      "src": "阿里巴巴发布，放在 Hugging Face 上。"
+    },
+    "Go": {
+      "what": "Google 推出的编程语言，常用来写命令行工具和服务器。",
+      "like": "像结实耐用的工业级工具。",
+      "why": "编译后是单个文件，分发方便。",
+      "src": "Google 2009 年发布。"
+    },
+    "ocr": {
+      "what": "open-code-review 装好后的命令名。",
+      "like": "像遥控器上的总开关。",
+      "why": "审查、扫描、配置都从它开始。",
+      "src": "出自 open-code-review README。"
+    },
+    "ocr review": {
+      "what": "让 open-code-review 审查改动的命令。",
+      "like": "像交作业前请人批改。",
+      "why": "合并前找出问题。",
+      "src": "出自 open-code-review README。"
+    },
+    "ocr scan": {
+      "what": "不看改动、直接扫描整个仓库或某个目录的命令。",
+      "like": "像全屋大扫除。",
+      "why": "老代码也能查一遍。",
+      "src": "出自 open-code-review README。"
+    },
+    "ocr config provider": {
+      "what": "选择模型服务的命令。",
+      "like": "像选一家快递公司。",
+      "why": "",
+      "src": "出自 open-code-review README。"
+    },
+    "ocr config model": {
+      "what": "选择具体模型的命令。",
+      "like": "像选快递的哪种服务。",
+      "why": "",
+      "src": "出自 open-code-review README。"
+    },
+    "npm install -g @alibaba-group/open-code-review": {
+      "what": "用 npm 全局安装 open-code-review 的命令。",
+      "like": "像把工具放进全家共用的工具箱。",
+      "why": "装好后在哪个文件夹都能用 ocr。",
+      "src": "出自 open-code-review README。"
+    },
+    "SOP": {
+      "what": "标准作业流程，规定一件事按哪些步骤做。",
+      "like": "像连锁餐厅的操作手册。",
+      "why": "让每次交付都走同样的步骤。",
+      "src": "制造业和大公司常用。"
+    },
+    "Main Bot": {
+      "what": "LoopForge 的主控机器人，听你的需求，再分派给各个角色。",
+      "like": "像项目经理。",
+      "why": "",
+      "src": "出自 LoopForge README。"
+    },
+    "MySQL": {
+      "what": "常用的开源关系型数据库。",
+      "like": "像一个分门别类的大档案柜。",
+      "why": "LoopForge 平台版用它存数据。",
+      "src": "Oracle 维护，大量网站在用。"
+    },
+    "HTTPS": {
+      "what": "加密的网页访问方式。",
+      "like": "像寄信时用上锁的信封。",
+      "why": "服务放到公网前必须配，防止密码被偷看。",
+      "src": ""
+    },
+    "AGENTFLOW_ALLOW_SIGNUP=false": {
+      "what": "LoopForge 里关掉公开注册的设置。",
+      "like": "像把公司大门改成刷卡进。",
+      "why": "防止陌生人自己注册进来。",
+      "src": "出自 LoopForge README。"
+    },
+    "npx -y loopforge-cli@latest install claude": {
+      "what": "把 LoopForge Local 装进 Claude Code 的命令。",
+      "like": "像给现有工具装一个流程插件。",
+      "why": "",
+      "src": "出自 LoopForge README。"
+    },
+    "/start-devflow": {
+      "what": "LoopForge Local 里启动内置交付流程的命令。",
+      "like": "像按下流水线的开工按钮。",
+      "why": "",
+      "src": "出自 LoopForge README。"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "what": "列出项目用到的第三方组件和它们许可证的文件。",
+      "like": "像食品包装上的配料表。",
+      "why": "用之前知道里面装了谁的代码。",
+      "src": ""
+    },
+    "demo": {
+      "what": "演示用的示例。",
+      "like": "像售楼处的样板间。",
+      "why": "先拿它试，不碰真东西。",
+      "src": ""
+    },
+    "CI": {
+      "what": "持续集成：每次提交代码，自动跑检查和测试。",
+      "like": "像流水线上每件产品都过一遍质检。",
+      "why": "问题早发现，越晚越难修。",
+      "src": ""
+    },
+    "skillevaluator ci init": {
+      "what": "让 SkillEvaluator 给你的 GitHub 仓库自动开一个「接入检查」PR 的命令。",
+      "like": "像请物业上门装门禁。",
+      "why": "以后每次改 skill 都自动体检。",
+      "src": "出自 SkillEvaluator README。"
+    },
+    "--tiers 1": {
+      "what": "SkillEvaluator 只跑第一层检查的选项。",
+      "like": "像体检只做基础项目。",
+      "why": "不需要密钥、不花钱。",
+      "src": "出自 SkillEvaluator README。"
+    },
+    "--no-llm": {
+      "what": "SkillEvaluator 不调用大模型的选项。",
+      "like": "像只做不用抽血的体检项目。",
+      "why": "不需要 API key。",
+      "src": "出自 SkillEvaluator README。"
+    },
+    "evals/EVAL.md": {
+      "what": "写给评测用的任务说明文件。",
+      "like": "像考试大纲。",
+      "why": "写清真实任务和期望结果，实测才贴近你的用法。",
+      "src": "出自 SkillEvaluator README。"
+    },
+    "pip install skillevaluator": {
+      "what": "用 pip 安装 SkillEvaluator 的命令。",
+      "like": "像在应用商店点「安装」。",
+      "why": "",
+      "src": "出自 SkillEvaluator README。"
+    },
+    "Run without an LLM": {
+      "what": "SkillEvaluator README 里「不用大模型也能跑」的一节。",
+      "like": "像说明书里的免费体验章节。",
+      "why": "",
+      "src": "出自 SkillEvaluator README。"
+    },
+    "SkillSpector": {
+      "what": "NVIDIA 开源的 skill 安全扫描工具。",
+      "like": "像机场的安检机。",
+      "why": "查 skill 里有没有危险指令。",
+      "src": "NVIDIA 开源。"
+    },
+    "Gitleaks": {
+      "what": "开源的密钥泄露扫描工具。",
+      "like": "像出门前检查钥匙有没有落在门上。",
+      "why": "防止密码、密钥被提交进代码。",
+      "src": "开源项目，常放进 CI 里用。"
+    },
+    "GPU": {
+      "what": "显卡里的计算芯片，擅长大量并行计算。",
+      "like": "像一大群能同时开工的工人。",
+      "why": "跑大模型常要用。",
+      "src": ""
+    },
+    "NVIDIA Build": {
+      "what": "NVIDIA 的在线模型平台，开发者能申请 API key 免费试用模型。",
+      "like": "像模型的试吃柜台。",
+      "why": "SkillEvaluator 用模型打分时可以用它。",
+      "src": "build.nvidia.com，有使用条款和频率限制。"
+    },
+    "Verified Skills": {
+      "what": "NVIDIA 给 skill 做审核认证的流程。",
+      "like": "像商品上的质检合格标签。",
+      "why": "",
+      "src": "NVIDIA。"
+    },
+    "DESIGN.md": {
+      "what": "用纯文本写的设计规范：颜色、字体、间距、组件风格。",
+      "like": "像装修风格说明书。",
+      "why": "AI 照着它出页面，风格才统一。",
+      "src": "stitch-skills 推广的写法。"
+    },
+    "enhance-prompt": {
+      "what": "stitch-skills 里把模糊想法改写成专业设计提示词的 skill。",
+      "like": "像请文案帮你润色需求。",
+      "why": "",
+      "src": "出自 stitch-skills README。"
+    },
+    "extract-design-md": {
+      "what": "stitch-skills 里从现有前端代码提取 DESIGN.md 的 skill。",
+      "like": "像照着成品倒推出图纸。",
+      "why": "",
+      "src": "出自 stitch-skills README。"
+    },
+    "generate-design": {
+      "what": "stitch-skills 里用文字或图片生成、修改界面设计稿的 skill。",
+      "like": "像让设计助理照描述画稿。",
+      "why": "",
+      "src": "出自 stitch-skills README。"
+    },
+    "stitch-design": {
+      "what": "stitch-skills 的设计类插件包，管出稿和设计规范。",
+      "like": "像工具箱里的画图那一层。",
+      "why": "",
+      "src": "出自 stitch-skills README。"
+    },
+    "stitch-utilities": {
+      "what": "stitch-skills 的工具类插件包，比如润色提示词、生成 DESIGN.md。",
+      "like": "像工具箱里的小零件那一层。",
+      "why": "",
+      "src": "出自 stitch-skills README。"
+    },
+    "React Native": {
+      "what": "用 React 写手机 App 的框架。",
+      "like": "像一套图纸同时盖 iOS 和安卓两栋楼。",
+      "why": "",
+      "src": "Meta 开源。"
+    },
+    "Agent Skills": {
+      "what": "skill 的开放标准，规定 skill 文件夹怎么写。",
+      "like": "像统一的插头规格。",
+      "why": "照它写的 skill 能在多个 AI 工具里用。",
+      "src": "agentskills.io。"
+    },
+    "npx plugins add": {
+      "what": "一个命令行工具里「安装插件」的命令，stitch-skills 用它装进 Claude Code 或 Cursor。",
+      "like": "像一键装插件的按钮。",
+      "why": "",
+      "src": "出自 stitch-skills README。"
+    },
+    "logo": {
+      "what": "品牌标志。",
+      "like": "像店铺招牌上的图案。",
+      "why": "",
+      "src": ""
+    },
+    "PolyForm Noncommercial 1.0.0": {
+      "what": "一种只允许非商业使用的源码许可证。",
+      "like": "像「仅限自用、不得转卖」的使用协议。",
+      "why": "本仓库的代码用它。",
+      "src": "PolyForm Project 发布。"
+    },
+    "CC BY-NC-SA 4.0": {
+      "what": "知识共享许可的一种：要署名、不能商用、改编后按同样方式共享。",
+      "like": "像「转载请注明出处、不得商用」的声明。",
+      "why": "本仓库的文字内容用它。",
+      "src": "Creative Commons 发布。"
+    },
+    "SaaS": {
+      "what": "软件即服务：在网上订阅使用的软件。",
+      "like": "像租房，不用买房。",
+      "why": "",
+      "src": ""
+    },
+    "NOTICE.md": {
+      "what": "本仓库的著作权和免责说明文件。",
+      "like": "像商品说明书最后的声明页。",
+      "why": "",
+      "src": ""
+    },
+    "v0.28.65": {
+      "what": "Plannotator 的一个版本号。",
+      "like": "像同一款产品的批次编号。",
+      "why": "0 开头的版本通常表示还在快速改动。",
+      "src": "见该仓库的 Releases 页面。"
+    },
+    "v0.3.6": {
+      "what": "LoopForge 的一个版本号。",
+      "like": "像同一款产品的批次编号。",
+      "why": "0 开头的版本通常表示还在快速改动。",
+      "src": "见该仓库的 Releases 页面。"
+    },
+    "v0.3.8": {
+      "what": "LoopForge 的一个版本号。",
+      "like": "像同一款产品的批次编号。",
+      "why": "0 开头的版本通常表示还在快速改动。",
+      "src": "见该仓库的 Releases 页面。"
+    },
+    "v0.3.9": {
+      "what": "LoopForge 的一个版本号。",
+      "like": "像同一款产品的批次编号。",
+      "why": "0 开头的版本通常表示还在快速改动。",
+      "src": "见该仓库的 Releases 页面。"
+    },
+    "v0.7.2": {
+      "what": "SkillEvaluator 的一个版本号。",
+      "like": "像同一款产品的批次编号。",
+      "why": "0 开头的版本通常表示还在快速改动。",
+      "src": "见该仓库的 Releases 页面。"
+    },
+    "v0.9.0": {
+      "what": "SkillEvaluator 的一个版本号。",
+      "like": "像同一款产品的批次编号。",
+      "why": "0 开头的版本通常表示还在快速改动。",
+      "src": "见该仓库的 Releases 页面。"
+    },
+    "v1.0": {
+      "what": "stitch-skills 的一个版本号。",
+      "like": "像同一款产品的批次编号。",
+      "why": "",
+      "src": "见该仓库的 Releases 页面。"
+    },
+    "v1.13.10": {
+      "what": "open-code-review 的一个版本号。",
+      "like": "像同一款产品的批次编号。",
+      "why": "",
+      "src": "见该仓库的 Releases 页面。"
+    },
+    "last30days": {
+      "what": "GitHub 开源项目，主要用于调研一个主题最近 30 天在 Reddit、Hacker News、GitHub 等平台的真实讨论，并写成带引用的简报。",
+      "like": "像把好几个社区的近况剪报订成一本。",
+      "why": "动手前先听到最近的真实讨论，少拿过时页面当近况。",
+      "src": "作者 Matt Van Horn，MIT。仓库名 mvanhorn/last30days-skill。"
+    },
+    "AutoClip": {
+      "what": "GitHub 开源项目，主要用于在自己电脑上把播客、访谈等长视频剪成适合小红书、抖音等平台的短片，并生成字幕、封面和标题。",
+      "like": "像一位常驻你电脑里的剪辑助理。",
+      "why": "剪辑在本地完成，不用先把整段片子上传到剪辑网站。",
+      "src": "仓库 zhouxiaoka/autoclip，MIT。最新桌面版见 GitHub Releases。"
+    },
+    "app-store-compliance": {
+      "what": "GitHub 开源项目，主要用于在提交到 App Store 或 Google Play 之前，对照常见拒因做扫描和清单检查。",
+      "like": "像出发前的安检，不保证一定放行，但能先拦住常见问题。",
+      "why": "一次拒审往往要再等好几天，提交前改更便宜。",
+      "src": "作者 mjmirza，OpenRoots Agent License 2.3。"
+    },
+    "diagram-design": {
+      "what": "GitHub 开源项目，主要用于让 AI 按你的一句话画出可双击打开的 HTML 图表，风格偏编辑部，共 52 种图。",
+      "like": "像一位记住了排版规矩的画图助手。",
+      "why": "需要一张能发布的说明图时，少出现默认的圆角阴影风格。",
+      "src": "作者 Cathryn Lavery，MIT。"
+    },
+    "CLI-Anything": {
+      "what": "GitHub 开源项目，主要用于给各种软件补上能被人和 AI 调用的命令行，并提供现成工具箱 CLI-Hub。",
+      "like": "像给不会听口令的家电统一加装遥控器。",
+      "why": "命令行输出清楚、可重复，AI 比点来点去更稳。",
+      "src": "香港大学 HKUDS 开源，Apache-2.0。"
+    },
+    "CLI-Hub": {
+      "what": "CLI-Anything 提供的命令行工具箱，用来浏览、安装和启动已经做好的命令行工具。",
+      "like": "像命令行版的应用商店。",
+      "why": "先找现成工具，常常不必自己再做一个。",
+      "src": "同属 HKUDS/CLI-Anything，安装命令是 pip install cli-anything-hub。"
+    },
+    "magpie": {
+      "what": "GitHub 开源项目，主要用于在本机用一个菜单栏应用和本地网关，让不同 AI 工具共用你已有的模型和账号。",
+      "like": "像一台总交换机，把多条线路收到一个开关上。",
+      "why": "多个工具、多个账号时，切换和额度管理会轻松很多。",
+      "src": "作者 yetone，MIT。官网 usemagpie.ai。"
+    },
+    "Nod": {
+      "what": "GitHub 开源项目，主要用于在自己电脑上运行一个个人助手：它有工作区和浏览器，做事之前会先问你。",
+      "like": "像一位会跑腿、但出门前必须向你请示的助理。",
+      "why": "处理真实网站上的杂事时，先批准再行动更稳妥。",
+      "src": "n8n 团队，Apache-2.0。官方标明是研究预览。"
+    },
+    "n8n": {
+      "what": "一家做自动化和工作流工具的公司，也是 Nod 的出品方。",
+      "like": "像专门做「把重复步骤接起来」的工作室。",
+      "why": "看到 n8n 时，要分清它的工作流产品和这次的 Nod 不是同一个软件。",
+      "src": "n8n.io；Nod 仓库是 n8n-io/nod。"
+    },
+    "App Store": {
+      "what": "苹果公司的应用商店，iPhone 等设备上的应用大多从这里下载。",
+      "like": "像手机里的官方柜台。",
+      "why": "上架要过审核，常见拒因值得提交前先查。",
+      "src": "Apple。"
+    },
+    "Google Play": {
+      "what": "谷歌的应用商店，多数 Android 手机从这里下载应用。",
+      "like": "像 Android 手机里的官方柜台。",
+      "why": "和 App Store 一样有审核和隐私声明要求。",
+      "src": "Google。"
+    },
+    "App Store Connect": {
+      "what": "开发者向 App Store 提交应用、填写资料和查看审核状态的后台。",
+      "like": "像寄件柜台后面的工作台。",
+      "why": "真正上传应用前，要在这里完成资料和构建上传。",
+      "src": "Apple 开发者文档。"
+    },
+    "Privacy Manifest": {
+      "what": "苹果要求的隐私清单，用来声明应用用了哪些敏感数据和接口。",
+      "like": "像行李申报单，里面有什么就要写什么。",
+      "why": "声明和实际行为不一致，是常见拒因。",
+      "src": "Apple 开发者文档。"
+    },
+    "Data safety": {
+      "what": "Google Play 要求填写的数据安全说明，向用户公开应用收集和分享哪些数据。",
+      "like": "像包装上的配料表。",
+      "why": "填法和应用实际行为不一致，审核或上架后都可能出问题。",
+      "src": "Google Play 政策。"
+    },
+    "OpenRoots Agent License 2.3": {
+      "what": "一种开源许可协议。个人、非营利和年收入不超过约 2000 万美元的公司通常可免费使用；另有转售和训练模型方面的限制。",
+      "like": "像一份写明「什么人可以免费用、什么情况要另谈」的使用约定。",
+      "why": "它不是 MIT，用之前要读官方文本，不要想当然。",
+      "src": "openroots.org/licenses/ora/2.3。app-store-compliance 使用此许可。"
+    },
+    "Whisper": {
+      "what": "把说话声转成文字的语音识别模型，可在自己电脑上运行。",
+      "like": "像一位本地速记员。",
+      "why": "转写不必把音频传到云端。",
+      "src": "OpenAI 开源的模型，许多工具可本地调用。"
+    },
+    "SenseVoice": {
+      "what": "可在本地运行的语音识别模型，常用来把说话声转成文字。",
+      "like": "像另一位本地速记员。",
+      "why": "和 Whisper 一样，可减少把音频上传到云端。",
+      "src": "AutoClip README 将其与 Whisper 并列，作为本地转写选项。"
+    },
+    "LM Studio": {
+      "what": "在自己电脑上运行开源 AI 模型的桌面应用。",
+      "like": "像本地模型的控制台。",
+      "why": "不想把内容送到云端时，可在本机选模型。",
+      "src": "lmstudio.ai。"
+    },
+    "Tauri": {
+      "what": "用网页技术做桌面应用外壳的开源框架，体积通常比传统方案更小。",
+      "like": "像给网页套一层本地窗口。",
+      "why": "AutoClip 的桌面版用它来打包。",
+      "src": "tauri.app。"
+    },
+    "yt-dlp": {
+      "what": "开源的视频下载和媒体提取工具，常被用来处理视频链接。",
+      "like": "像一位专门负责「把链接收成文件」的搬运工。",
+      "why": "很多本地剪辑和调研工具靠它获取音视频。",
+      "src": "开源项目 yt-dlp/yt-dlp。"
+    },
+    "Xcode": {
+      "what": "苹果官方的应用开发工具，用来编写和打包 iPhone 等设备上的 App。",
+      "like": "像苹果世界的工作台。",
+      "why": "扫描 iOS 项目时，要指向这个工程所在的文件夹。",
+      "src": "Apple。"
+    },
+    "Android": {
+      "what": "谷歌的手机操作系统，许多品牌的手机都在用。",
+      "like": "像另一条主流的手机轨道。",
+      "why": "上架 Google Play 的应用要按它的规则来准备。",
+      "src": "Google。"
+    },
+    "Mermaid": {
+      "what": "用纯文本描述流程图、时序图的写法，GitHub 等网站能直接渲染。",
+      "like": "像用几行字就能画出的草图语言。",
+      "why": "要跟代码一起改、还要能对比差异时，它更合适。",
+      "src": "mermaid.js.org。"
+    },
+    "SVG": {
+      "what": "一种用数学形状描述的图片格式，放大也不会发糊。",
+      "like": "像矢量图纸，不是一张拍出来的照片。",
+      "why": "图表放进网页里清晰、也便于再导出。",
+      "src": "W3C 的开放图形格式。"
+    },
+    "PNG": {
+      "what": "一种常见的图片文件格式，适合截图、图标和配图导出。",
+      "like": "像一张不会随放大而重新计算的照片文件。",
+      "why": "把图发到不支持 SVG 的地方时常用它。",
+      "src": "常见网页和设计导出格式。"
+    },
+    "PlantUML": {
+      "what": "用文本描述各类软件图的工具和语法。",
+      "like": "像另一套「用字画图」的说明书写法。",
+      "why": "已有的 PlantUML 文件可以被 diagram-design 重画。",
+      "src": "plantuml.com。"
+    },
+    "Excalidraw": {
+      "what": "一种手绘风格的在线白板和文件格式，常用来快速画草图。",
+      "like": "像一块可以导出的白板。",
+      "why": "已有的草图可以交给 diagram-design 重画成更整齐的图。",
+      "src": "excalidraw.com。"
+    },
+    "draw.io": {
+      "what": "常用的流程图、架构图画图工具，也叫 diagrams.net。",
+      "like": "像一盒可以拖拽的形状零件。",
+      "why": "已有的 draw.io 文件可以被 diagram-design 导入重画。",
+      "src": "diagrams.net。"
+    },
+    "Google Fonts": {
+      "what": "谷歌提供的在线字体库，网页打开时可能从网上加载字体。",
+      "like": "像要从网上下载的一套专用字模。",
+      "why": "会联网；需要完全离线打开的页面，应改用系统字体。",
+      "src": "fonts.google.com。"
+    },
+    "Hacker News": {
+      "what": "一个技术圈常去的新闻和讨论网站，简称 HN。",
+      "like": "像技术人员的公告栏。",
+      "why": "上面的讨论常能反映开发者最近在关心什么。",
+      "src": "news.ycombinator.com。"
+    },
+    "Polymarket": {
+      "what": "一个预测市场网站，人们用真金白银对事件结果下注，页面会显示概率。",
+      "like": "像把看法标了价的公告板。",
+      "why": "它给出的是带资金的概率，可当作一种公开信号，仍要自己判断。",
+      "src": "polymarket.com。"
+    },
+    "arXiv": {
+      "what": "科研人员常用的论文预印本网站，许多新论文会先出现在这里。",
+      "like": "像论文的公共货架。",
+      "why": "查一个技术最近有没有新研究时，常会用到。",
+      "src": "arxiv.org。"
+    },
+    "OBS": {
+      "what": "开源的录屏和直播软件，全称 OBS Studio。",
+      "like": "像一台软件做的导播台。",
+      "why": "AutoClip 可以从它的回放里取材。",
+      "src": "obsproject.com。"
+    },
+    "WebSocket": {
+      "what": "一种让浏览器或应用与服务器保持双向实时连接的技术。",
+      "like": "像一条可以两边随时说话的专线。",
+      "why": "OBS 等软件常用它来接收控制或状态。",
+      "src": "网页标准技术。"
+    },
+    "Telegram": {
+      "what": "一款跨平台即时通讯应用，也有机器人接口。",
+      "like": "像一条可安装机器人的聊天通道。",
+      "why": "有些助手（如 Nod）可以在这里接收你的交待。",
+      "src": "telegram.org。"
+    },
+    "WhatsApp": {
+      "what": "一款广泛使用的即时通讯应用。",
+      "like": "像另一条常用的聊天通道。",
+      "why": "Nod 也可以在这里接收任务。",
+      "src": "Meta 旗下产品。"
+    },
+    "Twitch": {
+      "what": "一个主要做游戏和直播的视频平台。",
+      "like": "像直播回放的货架。",
+      "why": "AutoClip 可以从这类回放里取材。",
+      "src": "twitch.tv。"
+    },
+    "YouTube Shorts": {
+      "what": "YouTube 上的竖版短视频形式。",
+      "like": "像 YouTube 里的短视频货架。",
+      "why": "剪短视频时要按它的尺寸和时长来导出。",
+      "src": "YouTube。"
+    },
+    "Reels": {
+      "what": "Instagram 上的短视频形式。",
+      "like": "像 Instagram 里的短视频货架。",
+      "why": "导出短片时要按对应平台的尺寸来。",
+      "src": "Instagram / Meta。"
+    },
+    "Bilibili": {
+      "what": "一个视频网站，也支持短视频投稿。",
+      "like": "像国内常用的视频站之一。",
+      "why": "AutoClip 可以把成片导出为适合它的格式。",
+      "src": "bilibili.com。"
+    },
+    "OpenRoots": {
+      "what": "一套开源许可的发布方，OpenRoots Agent License 就由它维护。",
+      "like": "像一份许可证的官方发行处。",
+      "why": "遇到这种许可时，要读它的官方文本，不要只看 GitHub 上的自动识别结果。",
+      "src": "openroots.org。"
+    },
+    "Python 3.10+": {
+      "what": "要求电脑上的 Python 版本是 3.10 或更新。",
+      "like": "像工具要求的最低系统版本。",
+      "why": "版本不够，安装或运行常会失败。",
+      "src": "各项目 README 的环境要求。"
+    },
+    "Python 3.11": {
+      "what": "Python 语言的 3.11 版本，有的项目建议用它。",
+      "like": "像厂家建议的那一档型号。",
+      "why": "按建议版本装，少遇到奇怪的安装问题。",
+      "src": "AutoClip README 建议 CLI 使用 3.11。"
+    },
+    "Python 3.12+": {
+      "what": "要求电脑上的 Python 版本是 3.12 或更新。",
+      "like": "像工具要求的最低系统版本。",
+      "why": "版本不够，引擎可能跑不起来。",
+      "src": "last30days README。"
+    },
+    "Node.js 24.21": {
+      "what": "从源码运行 Nod 时要求的 Node.js 最低版本。",
+      "like": "像启动前要核对的引擎型号。",
+      "why": "版本不够，从源码安装可能失败。普通用户下载安装包通常不必管它。",
+      "src": "n8n-io/nod README。"
+    },
+    "macOS 14+": {
+      "what": "要求苹果电脑的系统是 macOS 14 或更新版本。",
+      "like": "像门票上标注的入场年份。",
+      "why": "系统太旧，安装包可能装不上。",
+      "src": "Nod README。"
+    },
+    "Apple 芯片": {
+      "what": "苹果自研的电脑处理器，常见名称是 M 系列，和 Intel 芯片不是同一类。",
+      "like": "像两种不同接口的电池，不能拿错充电器。",
+      "why": "下载桌面安装包时要对上芯片类型，否则可能装不上或要改走 Docker。",
+      "src": "Apple Silicon。AutoClip、Nod 的安装说明都有区分。"
+    },
+    "Intel Mac": {
+      "what": "仍使用英特尔处理器的苹果电脑，和 Apple 芯片的 Mac 不是同一类。",
+      "like": "像老款接口的设备，安装包往往要另选。",
+      "why": "有的桌面应用没有为它提供同样的安装包，需要看 README 的替代装法。",
+      "src": "各项目 Releases 和安装说明。"
+    },
+    "SHA-256": {
+      "what": "一种常用的文件校验算法，用来确认下载的文件有没有被改过。",
+      "like": "像包裹上的防拆封条编号。",
+      "why": "从网上装软件时，可用它核对文件是不是官方那一份。",
+      "src": "常见校验方式。AutoClip 的构建证明里会提供。"
+    },
+    "uvx": {
+      "what": "uv 工具提供的命令，用来临时运行一个 Python 应用，不必先手动建一整套环境。",
+      "like": "像「先试开一瓶，不必把整套餐具买回家」。",
+      "why": "可用来快速试用 autoclip-mcp 这类命令行工具。",
+      "src": "Astral 的 uv 工具。"
+    },
+    "autoclip-mcp": {
+      "what": "AutoClip 提供给 AI 工具调用的命令行和 MCP 接口包。",
+      "like": "像给助手准备的遥控器，不必打开整个桌面窗口。",
+      "why": "想让 AI 直接调用剪辑流程时会用到。",
+      "src": "仓库 zhouxiaoka/autoclip。"
+    },
+    "cli-anything-hub": {
+      "what": "安装 CLI-Hub 工具箱的 Python 包名。",
+      "like": "像工具箱的官方包装盒名字。",
+      "why": "要用 pip 安装现成命令行工具箱时，输入的是这个名字。",
+      "src": "HKUDS/CLI-Anything README。"
+    },
+    "cli-hub": {
+      "what": "CLI-Hub 安装后在终端里使用的命令，例如 list、search、install、launch。",
+      "like": "像工具箱上的那一排按钮。",
+      "why": "查找和启动现成命令行工具时都走它。",
+      "src": "pip install cli-anything-hub 之后可用。"
+    },
+    "self_check.py": {
+      "what": "diagram-design 仓库里用来检查生成图表的脚本，可发现重叠、裁切等问题。",
+      "like": "像出图之后的质检清单。",
+      "why": "模型画图可能对不齐，检查一遍更稳。",
+      "src": "cathrynlavery/diagram-design。"
+    },
+    "Providers": {
+      "what": "在 magpie 里添加模型来源的那一页，例如填入 API key 或登录订阅。",
+      "like": "像「供货商」列表。",
+      "why": "先有来源，才能给各个 AI 工具选模型。",
+      "src": "magpie 应用界面与 README。"
+    },
+    "路由组": {
+      "what": "magpie 里把多个模型或账号绑成一组，按你设的规则自动切换。",
+      "like": "像一组备用线路，一条不通就换下一条。",
+      "why": "额度用完或某个模型不可用时，可以按规则继续工作。",
+      "src": "magpie README。"
+    },
+    "脱敏": {
+      "what": "在请求离开电脑前，把密钥、密码等信息替换成占位符，回复时再换回来。",
+      "like": "像寄信前先把证件号贴上纸条。",
+      "why": "减少模型厂商看到你真实密钥的机会。",
+      "src": "magpie 的隐私功能，默认关闭，需在设置里打开。"
+    },
+    "Vault": {
+      "what": "Nod 里用来私下填写密码、验证码和卡片信息的保险柜功能，这些内容不交给模型。",
+      "like": "像助理面前的保险箱，钥匙只有你能用。",
+      "why": "登录和支付信息不应该出现在模型能看见的提示词里。",
+      "src": "Nod README 与官方文档。"
+    },
+    "研究预览": {
+      "what": "产品还在试验阶段的官方说法，功能和安全策略都可能再变。",
+      "like": "像试营业，能用，但不保证已经定型。",
+      "why": "要按「可能变化、可能出错」来用，重要操作必须人确认。",
+      "src": "Nod README 标明 status: research preview。"
+    },
+    "Usage": {
+      "what": "Nod 里查看它做过哪些操作、花了多少钱的记录页面。",
+      "like": "像一本可翻看的流水账。",
+      "why": "助手出过手之后，要能回头核对。",
+      "src": "Nod README。"
+    },
+    "BLOCKED": {
+      "what": "app-store-compliance 扫描结果之一，表示发现了需要先修的高风险项。",
+      "like": "像安检口亮了红灯。",
+      "why": "出现它时不要继续上传，先按提示修改再扫一次。",
+      "src": "该项目 README 的结果说明。"
+    },
+    "CLEAR": {
+      "what": "app-store-compliance 扫描结果之一，表示代码里没扫到关键风险，但仍需人工核对清单。",
+      "like": "像机器安检通过了，还要再看一眼托盘。",
+      "why": "它不等于审核通过。",
+      "src": "该项目 README。"
+    },
+    "STALE": {
+      "what": "app-store-compliance 的提示，表示规则包超过约 60 天没更新。",
+      "like": "像过期的对照表。",
+      "why": "要先更新手册再扫，否则可能按旧规则判断。",
+      "src": "该项目 README。"
+    },
+    "NOT CHECKED": {
+      "what": "app-store-compliance 扫描结果之一，表示没找到 iOS 或 Android 工程，或无法写入扫描文件。",
+      "like": "像把检测仪对错了抽屉。",
+      "why": "要改成正确的项目文件夹再跑。",
+      "src": "该项目 README。"
+    },
+    "/last30days": {
+      "what": "last30days 装好后，在 AI 工具里发起一次调研的命令。",
+      "like": "像对助手说「去把近 30 天的剪报拿来」。",
+      "why": "后面加上主题，就能开始跑简报。",
+      "src": "mvanhorn/last30days-skill。"
+    },
+    "/app-store-audit": {
+      "what": "把 app-store-compliance 装进部分 AI 工具后，用来手动发起一次上架检查的命令。",
+      "like": "像开工前按一次自检按钮。",
+      "why": "不必等到真正上传，也能先跑一遍扫描。",
+      "src": "mjmirza/app-store-compliance README。"
+    },
+    "PRE-SUBMISSION-CHECKLIST.md": {
+      "what": "app-store-compliance 仓库里的提交前清单文件，用大白话列出人要核对的项。",
+      "like": "像出发前的纸质核对表。",
+      "why": "不会写代码的人也可以先做前两项检查。",
+      "src": "该仓库 docs 目录。"
+    },
+    "usemagpie.ai": {
+      "what": "magpie 的官方网站，用来下载应用和查阅文档。",
+      "like": "像产品的官方门店地址。",
+      "why": "安装包和说明要以这里或官方 GitHub 为准。",
+      "src": "yetone/magpie README。"
+    },
+    "clianything.cc": {
+      "what": "CLI-Anything 的官方网站和工具目录入口。",
+      "like": "像这个项目的对外大门。",
+      "why": "想浏览现成命令行工具时可以先到这里看。",
+      "src": "HKUDS/CLI-Anything。"
+    },
+    "127.0.0.1:3425": {
+      "what": "magpie 在本机开启网关时使用的地址和端口，只在你这台电脑上有效。",
+      "like": "像家里插座的编号，外人插不上。",
+      "why": "AI 工具把请求发到这里，再由 magpie 转到你选的模型。",
+      "src": "magpie README。"
+    },
+    "env.example": {
+      "what": "项目提供的环境变量示例文件，复制后改名再填自己的值。",
+      "like": "像一张空白登记表。",
+      "why": "用 Docker 启动 AutoClip 时，要先复制它为 .env。",
+      "src": "常见开源项目惯例。本期见于 AutoClip。"
+    },
+    "GIMP": {
+      "what": "开源的图像编辑软件，常作为 Photoshop 的替代。",
+      "like": "像一套免费的修图工作台。",
+      "why": "CLI-Anything 的示例里包含为它生成命令行；要用这些命令，仍需先安装原软件。",
+      "src": "gimp.org。"
+    },
+    "Blender": {
+      "what": "开源的三维建模和动画软件。",
+      "like": "像一套免费的立体工作室。",
+      "why": "CLI-Anything 的示例里包含它；命令行包装仍然依赖原软件。",
+      "src": "blender.org。"
+    },
+    "LibreOffice": {
+      "what": "开源的办公套件，包含文字、表格和演示文稿。",
+      "like": "像一套免费的办公桌工具。",
+      "why": "CLI-Anything 也可能为它提供命令行包装。",
+      "src": "libreoffice.org。"
+    },
+    "HKUDS": {
+      "what": "香港大学数据科学实验室的简称，是 CLI-Anything 的开源方。",
+      "like": "像这项工具的出品实验室。",
+      "why": "看到仓库名前缀 HKUDS 时，指的是这个实验室。",
+      "src": "香港大学。仓库 HKUDS/CLI-Anything。"
+    },
+    "ChatGPT Plus": {
+      "what": "ChatGPT 的付费订阅档之一，部分应用允许用它登录来调用模型。",
+      "like": "像一张能在指定商店消费的会员卡。",
+      "why": "Nod 可以用它，也可以改用你自己的 API key。",
+      "src": "OpenAI。Nod README 有说明。"
+    },
+    "DeepSeek": {
+      "what": "一家模型提供方，也常用来称呼它出品的模型。",
+      "like": "像货架上的一个模型品牌。",
+      "why": "magpie 这类工具可以把某个 AI 编程工具接到它上面。",
+      "src": "deepseek.com。"
+    },
+    "Kimi": {
+      "what": "月之暗面出品的 AI 助手和模型系列。",
+      "like": "像货架上的另一个模型品牌。",
+      "why": "magpie 可以把 Claude Code 等工具接到它上面。",
+      "src": "月之暗面 / kimi.com。"
+    },
+    "OpenRouter": {
+      "what": "一个把多家模型接口汇总到一起的中转服务。",
+      "like": "像模型界的转乘站。",
+      "why": "不想在本机做网关时，也可以继续用这类网上中转。",
+      "src": "openrouter.ai。"
+    },
+    "iOS": {
+      "what": "苹果 iPhone、iPad 使用的操作系统。",
+      "like": "像这台手机的内部规章。",
+      "why": "上架 App Store 的应用要按它的规则来准备工程和隐私声明。",
+      "src": "Apple。"
+    },
+    "macOS": {
+      "what": "苹果电脑使用的操作系统。",
+      "like": "像这台电脑的内部规章。",
+      "why": "下载桌面安装包前要确认系统和芯片类型。",
+      "src": "Apple。"
+    },
+    "Windows": {
+      "what": "微软的电脑操作系统。",
+      "like": "像另一条常见的电脑轨道。",
+      "why": "桌面应用通常要选对应的安装包，有的功能仍是预览。",
+      "src": "Microsoft。"
+    },
+    "ChatGPT": {
+      "what": "OpenAI 推出的对话式 AI 产品。",
+      "like": "像一个可以问答的通用助手。",
+      "why": "提示词可以贴到它里面用；有的应用也支持用它的订阅登录。",
+      "src": "OpenAI。"
+    },
+    "Reddit": {
+      "what": "一个按主题分论坛的讨论网站，用户可以用赞同票给帖子和评论打分。",
+      "like": "像很多个兴趣小组共用的布告栏。",
+      "why": "上面常有未经编辑过滤的真实讨论，last30days 会把它当作重要来源。",
+      "src": "reddit.com。"
+    },
+    "YouTube": {
+      "what": "一个大型视频网站，许多访谈和教程会发布在这里。",
+      "like": "像一个巨大的影像货架。",
+      "why": "调研时可检索字幕，剪辑时也可作为视频来源或发布目标。",
+      "src": "Google 旗下产品。"
+    },
+    "TikTok": {
+      "what": "一个短视频平台。",
+      "like": "像竖版短视频的商场。",
+      "why": "剪短视频时要按它的尺寸和习惯来导出。",
+      "src": "字节跳动旗下产品。国内常见对应产品是抖音。"
+    },
+    "Instagram": {
+      "what": "一个图片和短视频社交应用，短视频形态叫 Reels。",
+      "like": "像以图片和短视频为主的社交柜台。",
+      "why": "导出短片时可能要对准它的尺寸。",
+      "src": "Meta 旗下产品。"
+    },
+    "/plugin marketplace add mvanhorn/last30days-skill": {
+      "what": "在 Claude Code 里把 last30days 的插件市场加进来的命令。",
+      "like": "像先把一家商店的地址存进购物 App。",
+      "why": "加完市场，才能安装和自动更新这个 skill。",
+      "src": "last30days README 推荐的 Claude Code 装法。"
+    },
+    "/plugin install last30days": {
+      "what": "在已添加的市场里，把 last30days 插件安装进 Claude Code 的命令。",
+      "like": "像在已打开的商店里点「获取」。",
+      "why": "只加市场还不够，要再执行安装才能用。",
+      "src": "last30days README。"
+    },
+    "npx skills add mvanhorn/last30days-skill -g": {
+      "what": "用 skills 命令行把 last30days 装到当前用户全局环境的命令，所有项目都能用。",
+      "like": "像把工具装进「所有抽屉都能拿到」的公用抽屉。",
+      "why": "Cursor、Codex、Gemini CLI 等许多工具都支持这种装法。",
+      "src": "last30days README。需要先有 Node。"
+    },
+    "grok plugin marketplace add mvanhorn/last30days-skill": {
+      "what": "在 Grok（xAI Build CLI）里添加 last30days 插件市场的命令。",
+      "like": "像先把商店地址存进 Grok 的购物清单。",
+      "why": "用 Grok 安装时，要先加市场再装插件。",
+      "src": "last30days README。"
+    },
+    "grok plugin install last30days": {
+      "what": "在 Grok（xAI Build CLI）里安装 last30days 插件的命令。",
+      "like": "像在 Grok 里点「获取」这个插件。",
+      "why": "加完市场后，用这条命令真正装上。",
+      "src": "last30days README。"
+    },
+    "docker compose up -d --build": {
+      "what": "用 Docker Compose 在后台构建并启动一组容器的命令。",
+      "like": "像按图纸把整套设备组装好，再在后台运行。",
+      "why": "Intel Mac 或 Linux 上跑 AutoClip 网页版时会用到。",
+      "src": "Docker Compose 常用命令。AutoClip README 有示例。"
+    },
+    "npx skills add zhouxiaoka/autoclip": {
+      "what": "把 AutoClip 的 skill 安装进支持 Agent Skills 的 AI 工具的命令。",
+      "like": "像给助手装上「去剪片子」的能力包。",
+      "why": "不想只用桌面窗口、而想让 AI 调用剪辑流程时用它。",
+      "src": "AutoClip README。需要 Node。"
+    },
+    "git pull": {
+      "what": "Git 命令，用来把远程仓库的最新改动拉到本地。",
+      "like": "像把最新一版说明书取回来。",
+      "why": "扫描规则会过期，跑检查前先更新手册。",
+      "src": "Git 基础命令。"
+    },
+    "bash ~/repositories/app-store-compliance/agent-os/hooks/app-store-compliance-guard.sh \"/path/to/your/app\"": {
+      "what": "对你的应用文件夹执行一次上架前扫描的命令，不会改应用代码。",
+      "like": "像把检测仪对准一个指定的行李箱。",
+      "why": "路径要换成你真实的项目文件夹，并保持引号。",
+      "src": "app-store-compliance README 的 Start here。"
+    },
+    "bash ~/repositories/app-store-compliance/scripts/install.sh --tool all": {
+      "what": "把上架前检查安装进本机已发现的各种 AI 编程工具的命令。",
+      "like": "像给家里每把钥匙都配上一道同样的安检。",
+      "why": "以后在提交前会自动拦截高风险项。也可以改成只装某一个工具。",
+      "src": "app-store-compliance README。"
+    },
+    "npx skills add cathrynlavery/diagram-design": {
+      "what": "把 diagram-design 这个绘图 skill 安装进支持 Agent Skills 的 AI 工具的命令。",
+      "like": "像给助手装上「按规矩画图」的能力包。",
+      "why": "这是该项目最通用的安装方式。",
+      "src": "diagram-design README。需要 Node。"
+    },
+    "npx skills update": {
+      "what": "把通过 npx skills 安装的 skill 更新到新版本的命令。",
+      "like": "像给已经装上的能力包检查更新。",
+      "why": "diagram-design 没有传统 Releases 列表时，常用这种方式更新。",
+      "src": "skills 命令行工具。diagram-design README 有提到。"
+    },
+    "/plugin marketplace add cathrynlavery/diagram-design": {
+      "what": "在 Claude Code 里添加 diagram-design 插件市场的命令。",
+      "like": "像先把画图工具的商店地址存下来。",
+      "why": "走插件市场安装，后续更新更方便。",
+      "src": "diagram-design README。"
+    },
+    "/plugin install diagram-design@diagram-design": {
+      "what": "从已添加的市场里安装 diagram-design 插件的命令。",
+      "like": "像在指定商店里购买并安装这个画图插件。",
+      "why": "加完市场后，用这条命令真正装上。",
+      "src": "diagram-design README。"
+    },
+    "python3 skills/diagram-design/scripts/self_check.py": {
+      "what": "运行 diagram-design 自带检查脚本的命令，用来查看生成的图有没有重叠或裁切问题。",
+      "like": "像出图后按一下质检按钮。",
+      "why": "模型画图可能对不齐，检查一遍更稳。",
+      "src": "diagram-design 仓库脚本。需要 Python 3。"
+    },
+    "npx skills add HKUDS/CLI-Anything --skill cli-hub-meta-skill -g -y": {
+      "what": "把 CLI-Hub 的 meta-skill 全局安装进 AI 工具的命令，让它能自己去工具箱里找命令。",
+      "like": "像给助手一本工具目录，并允许它按目录去取工具。",
+      "why": "不想自己记得每条 cli-hub 命令时，可以让 AI 代找。",
+      "src": "CLI-Anything README。需要 Node。"
+    },
+    "--help": {
+      "what": "许多命令行工具都支持的参数，用来打印用法说明。",
+      "like": "像电器上的「使用说明」按钮。",
+      "why": "AI 和人都可以先读说明，再决定怎么调用。",
+      "src": "命令行软件的常见惯例。"
+    },
+    "https://usemagpie.ai": {
+      "what": "magpie 官方网站地址，用于下载应用和查阅文档。",
+      "like": "像产品的官方门店地址。",
+      "why": "安装包要以官方站点或官方 GitHub 为准。",
+      "src": "yetone/magpie README。"
+    },
+    "curl -fsSL https://usemagpie.ai/install.sh | sh": {
+      "what": "下载并运行 magpie 官方安装脚本的命令。",
+      "like": "像按官方说明书一键安装，但仍要确认地址是官方的。",
+      "why": "这是 README 提供的一种安装方式；运行前应确认来源是 usemagpie.ai。",
+      "src": "magpie README。"
+    }
+  },
+  "aliases": {
+    "Auto Ontology": "auto-ontology",
+    "NVIDIA/auto-ontology": "auto-ontology",
+    "Astryx": "astryx",
+    "meta/astryx": "astryx",
+    "astryx.atmeta.com": "astryx",
+    "milind-soni/OpenMausBot": "OpenMausBot",
+    "openmausbot.com": "OpenMausBot",
+    "Worktrunk": "worktrunk",
+    "max-sixty/worktrunk": "worktrunk",
+    "worktrunk.dev": "worktrunk",
+    "vercel-labs/agent-browser": "agent-browser",
+    "agent-browser.dev": "agent-browser",
+    "aihero.dev/skills": "mattpocock/skills",
+    "mattpocock": "mattpocock/skills",
+    "PR-Agent": "pr-agent",
+    "The-PR-Agent/pr-agent": "pr-agent",
+    "docs.pr-agent.ai": "pr-agent",
+    "pingdotgg/t3code": "t3code",
+    "vercel-labs/agent-desktop": "agent-desktop",
+    "Nutlope/hallmark": "hallmark",
+    "pbakaus/impeccable": "impeccable",
+    "mksglu/context-mode": "context-mode",
+    "thedotmack/claude-mem": "claude-mem",
+    "google/elephant-goldfish-model": "elephant-goldfish-model",
+    "heygen-com/hyperframes": "hyperframes",
+    "anthropics/knowledge-work-plugins": "knowledge-work-plugins",
+    "cloudflare/security-audit-skill": "security-audit-skill",
+    "obra/superpowers": "superpowers",
+    "HKUDS/DeepTutor": "DeepTutor",
+    "calesthio/OpenMontage": "OpenMontage",
+    "Trending": "GitHub Trending",
+    "Star": "STAR",
+    "Forks": "FORKS",
+    "fork": "FORKS",
+    "issues": "issue",
+    "Issue": "issue",
+    "git": "Git",
+    "Security": "SECURITY",
+    "Cursor Agent": "Agent",
+    "grilling": "grill",
+    "/grill-me": "grill",
+    "grill-me": "grill",
+    "accessibility tree": "无障碍树",
+    "Accessibility tree": "无障碍树",
+    "claude": "Claude Code",
+    "codex": "Codex",
+    "grok": "Grok",
+    "Vercel Labs": "Vercel",
+    "NIM": "NVIDIA NIM",
+    "Ossie": "Apache Ossie",
+    "shell": "Shell",
+    "shell 别名": "Shell",
+    "PostgreSQL": "Postgres",
+    "Material Design": "Material",
+    "Ant": "Ant Design",
+    "LICENSING": "LICENSE",
+    "LICENSING.md": "LICENSE",
+    "Compose": "Docker Compose",
+    "Node.js": "Node",
+    "brew": "Homebrew",
+    "winget": "Winget",
+    "btrfs": "APFS",
+    "XFS": "APFS",
+    "CoW": "copy-on-write",
+    "hook": "hooks",
+    "post-start": "hooks",
+    "post-start hook": "hooks",
+    "Mobile Safari": "Safari",
+    "iOS Simulator": "iOS 模拟器",
+    "key": "API key",
+    "Quick start": "Quickstart",
+    "Install": "Quickstart",
+    "nvapi": "nvapi-",
+    "secrets.OPENAI_KEY": "OPENAI_KEY",
+    "Action": "GitHub Actions",
+    "Actions": "GitHub Actions",
+    "GitHub Action": "GitHub Actions",
+    "Secrets": "GitHub Secrets",
+    "secret": "GitHub Secrets",
+    ".github/workflows/": "workflow",
+    "Chrome DevTools Protocol": "CDP",
+    "@e": "@e1",
+    "open": "agent-browser 命令",
+    "click": "agent-browser 命令",
+    "close": "agent-browser 命令",
+    "click @e1": "agent-browser 命令",
+    "switch": "wt switch -c",
+    "list": "wt list",
+    "remove": "wt remove",
+    "/implement-spec": "/implement",
+    "code-review": "/code-review",
+    "v0.36.1": "/help_docs",
+    "enterprise": "enterprise/",
+    "plannotator": "Plannotator",
+    "backnotprop/plannotator": "Plannotator",
+    "plannotator.ai": "Plannotator",
+    "backnotprop": "Plannotator",
+    "modern-web-guidance-src": "modern-web-guidance",
+    "GoogleChrome/modern-web-guidance": "modern-web-guidance",
+    "GoogleChrome/modern-web-guidance-src": "modern-web-guidance",
+    "developer.chrome.com/docs/modern-web-guidance": "modern-web-guidance",
+    "modern-web-guidance@latest": "modern-web-guidance",
+    "alibaba/open-code-review": "open-code-review",
+    "open-codereview.ai": "open-code-review",
+    "@alibaba-group/open-code-review": "npm install -g @alibaba-group/open-code-review",
+    "Tencent/LoopForge": "LoopForge",
+    "loopforge-cli@latest": "npx -y loopforge-cli@latest install claude",
+    "NVIDIA/SkillEvaluator": "SkillEvaluator",
+    "skillevaluator": "SkillEvaluator",
+    "google-labs-code/stitch-skills": "stitch-skills",
+    "stitch.withgoogle.com": "Stitch",
+    "Vincentwei1021/video-shotcraft": "video-shotcraft",
+    "Vincentwei1021": "video-shotcraft",
+    "remotion.dev": "Remotion",
+    "Jina": "Jina Reader",
+    "人在回路": "Human-in-the-loop",
+    "PLANNOTATOR_SHARE": "PLANNOTATOR_SHARE=disabled",
+    "DISABLE_TELEMETRY": "DISABLE_TELEMETRY=1",
+    "AGENTFLOW_ALLOW_SIGNUP": "AGENTFLOW_ALLOW_SIGNUP=false",
+    "legacy-scan": "legacy-scan .",
+    "--tiers": "--tiers 1",
+    "Git ≥ 2.41": "Git 2.41",
+    "Edge": "Microsoft Edge",
+    "Firefox": "Mozilla Firefox",
+    "Workbench": "Motion Workbench",
+    "Local 版": "LoopForge Local",
+    "last30days-skill": "last30days",
+    "mvanhorn/last30days-skill": "last30days",
+    "/last30days": "/last30days",
+    "zhouxiaoka/autoclip": "AutoClip",
+    "autoclip": "AutoClip",
+    "mjmirza/app-store-compliance": "app-store-compliance",
+    "cathrynlavery/diagram-design": "diagram-design",
+    "HKUDS/CLI-Anything": "CLI-Anything",
+    "cli-anything": "CLI-Anything",
+    "yetone/magpie": "magpie",
+    "n8n-io/nod": "Nod",
+    "nod": "Nod",
+    "FFmpeg": "ffmpeg",
+    "OpenRoots Agent License": "OpenRoots Agent License 2.3",
+    "ORA 2.3": "OpenRoots Agent License 2.3",
+    "LicenseRef-OpenRoots-ORA-2.3": "OpenRoots Agent License 2.3",
+    "Privacy manifest": "Privacy Manifest",
+    "privacy manifest": "Privacy Manifest",
+    "Data Safety": "Data safety",
+    "OBS Studio": "OBS",
+    "diagrams.net": "draw.io",
+    "Draw.io": "draw.io",
+    "HN": "Hacker News",
+    "research preview": "研究预览",
+    "Apple Silicon": "Apple 芯片",
+    "aarch64.dmg": "Apple 芯片",
+    "cli-hub list": "cli-hub",
+    "cli-hub search": "cli-hub",
+    "cli-hub install": "cli-hub",
+    "cli-hub info": "cli-hub",
+    "cli-hub launch": "cli-hub",
+    "pip install cli-anything-hub": "cli-anything-hub",
+    "uvx autoclip-mcp": "autoclip-mcp",
+    "Google Play 商店": "Google Play",
+    "x64-setup.exe": "Windows",
+    "nod-arm64.dmg": "Nod",
+    "nod-x64.dmg": "Nod",
+    "ChatGPT Pro": "ChatGPT Plus"
+  },
+  "nowrap": [
+    "skills",
+    "skill",
+    "Skills",
+    "AI",
+    "App",
+    "iOS",
+    "iPhone",
+    "macOS",
+    "Windows",
+    "Excel",
+    "ChatGPT",
+    "Gmail",
+    "Google",
+    "Meta",
+    "NVIDIA",
+    "OpenAI",
+    "Apple",
+    "PDF",
+    "Mac",
+    "v2",
+    "HKUDS",
+    "Linus Torvalds",
+    "Microsoft",
+    "Mozilla",
+    "Tencent",
+    "Alibaba",
+    "last30days",
+    "AutoClip",
+    "app-store-compliance",
+    "diagram-design",
+    "CLI-Anything",
+    "CLI-Hub",
+    "magpie",
+    "Nod",
+    "n8n",
+    "App Store",
+    "Google Play",
+    "App Store Connect",
+    "Privacy Manifest",
+    "Data safety",
+    "OpenRoots Agent License 2.3",
+    "LM Studio",
+    "Hacker News",
+    "Google Fonts",
+    "YouTube Shorts",
+    "Apple 芯片",
+    "Intel Mac",
+    "ChatGPT Plus",
+    "PRE-SUBMISSION-CHECKLIST.md"
+  ],
+  "stop": [
+    "设计系统",
+    "skill",
+    "skills",
+    "Skills"
+  ]
 }

@@ -1,0 +1,82 @@
+  <article class="project" id="p06">
+    <div class="rank">#06</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ 模型路由</span>
+        <span class="pill">菜单栏</span>
+        <span class="pill">本地网关</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">🔀</div>
+        <div>
+          <h2 class="pname">magpie</h2>
+          <p class="pdesc">GitHub 上的开源项目。它在你的电脑上提供一个本地网关和菜单栏应用，让不同的 AI 编程工具可以选用你已经有的模型：比如 Claude Code 走 Kimi，Codex 走 DeepSeek。多个账号可以按你设的规则切换。打开脱敏后，请求离开电脑前会在本地把密钥、密码等替换成占位符。</p>
+          <p class="prepo"><a href="https://github.com/yetone/magpie" target="_blank" rel="noopener">yetone/magpie</a> · <a href="https://usemagpie.ai" target="_blank" rel="noopener">usemagpie.ai</a></p>
+          <span class="license">开源协议 MIT</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">41,533</div></div>
+      <div class="metric"><div class="label">↗ 本月新增</div><div class="value">+20,593</div><div class="hint">月榜 · 2026-11-26</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">Go</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">3,812</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li>从官网下载应用，或运行安装脚本。支持 macOS、Windows、Linux，也有 Docker。</li>
+          <li>在 Providers 里添加模型来源（API key 或已有订阅），再到 Agents 页给每个 AI 工具选模型。它只改配置里该改的那一项。</li>
+          <li>路由组可按顺序、轮换或额度来切换账号和模型。用量和剩余额度能在应用里查看。</li>
+          <li>隐私脱敏默认关闭，可在设置里打开：密钥在本地替换，回复时再换回；原值只留在内存里。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">多个工具、多个模型，在菜单栏里统一切换</div>
+          <p>每个 AI 工具本来都把自己的模型写在不同的配置文件里。magpie 把选择收到一处。只用一个工具、只用它自家订阅而且够用，就不必装。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>同时用两个以上 AI 编程工具，或有多个模型账号、想节省切换成本的人。Mac、Windows、Linux 都可以。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：未解决的 issue 非常多，版本号跳得极快。</strong>抓取时约 5,150 个未解决问题，一天内可能连发多个版本，行为可能突然变化。
+          <span class="fix">应对：先在一台电脑上小范围试；更新前看发布说明；出问题先查已有 issue。</span></li>
+        <li><strong>缺点2：它会改各 AI 工具的配置，并可能读取本机已登录的订阅信息。</strong>
+          <span class="fix">应对：在设置 → 隐私里关闭不需要的「订阅账号」发现；卸载脚本可先恢复原配置再删除；动手前先备份配置。</span></li>
+        <li><strong>缺点3：脱敏默认关闭。</strong>打开后，模型看不到真实密钥，某些排错会受影响。
+          <span class="fix">应对：打开脱敏；要把某个值留给模型处理时，再加入「从不脱敏」。密钥不要写进代码，也不要贴到聊天里。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>它在本机 <code>127.0.0.1:3425</code> 上做了一个能同时听懂多种模型接口的网关，并在工具之间做格式转换。路由组解决的是额度用完以后怎么办；脱敏解决的是「AI 把 .env 里的密钥读进了提示词」。这两件事对同时用多个模型和多个工具的人很实际。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>如果只用一个 AI 工具和它自家的订阅，不需要 magpie。已经在用 OpenRouter 这类网上中转，也可以继续用，只是请求会离开你的电脑。想把多个本地工具和多个账号收在一起，并加上脱敏，再考虑 magpie。先从「加一个来源、改一个工具」开始，不要一上来就配复杂路由。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 月榜本月 +20,593（2026-11-26 抓取），星数约 4.2 万。对同时使用多个模型和多个 AI 工具的人非常具体。</p>
+          <div class="risk"><strong>风险：</strong>MIT。主要由作者 yetone 维护，更新极快（抓取时最新版 v0.1.4824，2026-11-26 发布）。未解决的 issue 约 5,150 个，这是明显的维护压力，使用时要有心理准备。Mac 版 README 写明已签名并公证。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>

@@ -1,0 +1,82 @@
+  <article class="project" id="p02">
+    <div class="rank">#02</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ 本地剪辑</span>
+        <span class="pill">短视频</span>
+        <span class="pill">播客</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">🎬</div>
+        <div>
+          <h2 class="pname">AutoClip</h2>
+          <p class="pdesc">GitHub 上的开源项目。把视频链接、本地文件或直播回放丢进去，它会找出适合单独看的片段，跟上说话的人，烧上字幕，再生成封面和标题，导出适合小红书、抖音、TikTok、YouTube Shorts、Reels 和 Bilibili 的成片。剪辑和渲染在你自己电脑上完成，不按月收费。</p>
+          <p class="prepo"><a href="https://github.com/zhouxiaoka/autoclip" target="_blank" rel="noopener">zhouxiaoka/autoclip</a> · <a href="https://zhouxiaoka.github.io/autoclip_intro/" target="_blank" rel="noopener">zhouxiaoka.github.io/autoclip_intro</a></p>
+          <span class="license">开源协议 MIT</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">16,241</div></div>
+      <div class="metric"><div class="label">↗ 日榜在列</div><div class="value">—</div><div class="hint">日榜 · 2026-11-26</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">Python</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">2,339</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li>支持链接、本地文件，以及 OBS、Twitch、YouTube 等直播回放；选好目标平台后一键生成。</li>
+          <li>桌面应用可从 Releases 下载，安装包已带 Python 和 FFmpeg。也可以用命令行或 MCP 给 AI 工具调用，或用 Docker 自己托管网页版。</li>
+          <li>云端模型用你自己的 API key；也可以全程本地：Ollama / LM Studio 加 Whisper / SenseVoice。</li>
+          <li>README 给出的参考：一段已有字幕的 1 小时 43 分钟英文访谈，在 Apple 芯片 Mac 上约 7.5 分钟剪出 10 条，面向小红书。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">长视频在自己电脑上变成可发布的短片</div>
+          <p>字幕、封面、标题和平台尺寸一起出，不用先把整段片子上传到某家剪辑网站。本地先剪完，再由你决定发不发、发到哪。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>手里有播客、访谈、课程或直播回放，想切成短视频去发的人。不会写代码也可以：下载桌面版，先跑内置示例。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：桌面安装包目前主要支持 Apple 芯片的 Mac 和 Windows 10/11 x64。</strong>Intel Mac 和 Linux 要走 Docker。
+          <span class="fix">应对：先看清自己的电脑再下载；Intel Mac 或 Linux 按 README 用 Docker Compose。</span></li>
+        <li><strong>缺点2：代码签名和苹果公证还在进行（仓库 issue #119）。</strong>系统可能提示「未验证开发者」。
+          <span class="fix">应对：只从官方 Releases 下载，并对照构建证明里的 SHA-256；来源不确定就不要装。</span></li>
+        <li><strong>缺点3：选用云端转写会上传音频；云端分析可能发送文稿或抽帧。</strong>
+          <span class="fix">应对：用本地 Whisper / SenseVoice 和 Ollama / LM Studio 保持离线；在设置里关掉分析和崩溃报告。成片发布前自己审一遍字幕和素材来源。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>它把「找高光、裁切、字幕、封面、多平台尺寸」收成一条能看见结果的流水线，底层是 FastAPI、React、Tauri、FFmpeg、yt-dlp 和 Whisper。对独立开发者更有用的，是「默认本地、云端可选」：能离线就离线，要质量再按需把文稿或音频送出去。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>第四期的 video-shotcraft 擅长按镜头配方做宣传片；AutoClip 擅长把现成的长视频切成短视频。只想要底层剪辑命令：看本月也在榜上的 ffmpeg-skill。先发内容，从 AutoClip 桌面版开始就够。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 日榜在列（2026-11-26 抓取；页面未解析到当日新增数，故不写）。定位直接对准播客和短视频平台，桌面版当天能装。</p>
+          <div class="risk"><strong>风险：</strong>MIT。作者写明目前是独立维护，回复可能较慢。抓取时最新桌面版 v1.6.1（2026-11-25 发布），未解决的 issue 约 42 个。签名和公证尚未完成，安装时要自己核对来源。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>

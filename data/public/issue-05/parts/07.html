@@ -1,0 +1,82 @@
+  <article class="project" id="p07">
+    <div class="rank">#07</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ 个人助手</span>
+        <span class="pill">先问再做</span>
+        <span class="pill">本机运行</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">🙋</div>
+        <div>
+          <h2 class="pname">Nod</h2>
+          <p class="pdesc">GitHub 上的开源项目，由 n8n 团队推出。它是一个跑在你自己电脑上的个人助手：有自己的工作区和浏览器，能在真实网站上处理催发票、准备会议简报、取消试用这类杂事。会对外说话或改动重要内容之前，它先问你。模型由你自己选。官方标明目前是研究预览。</p>
+          <p class="prepo"><a href="https://github.com/n8n-io/nod" target="_blank" rel="noopener">n8n-io/nod</a> · <a href="https://nod.n8n.io/" target="_blank" rel="noopener">nod.n8n.io</a></p>
+          <span class="license">开源协议 Apache-2.0</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">3,596</div></div>
+      <div class="metric"><div class="label">↗ 本周新增</div><div class="value">+1,008</div><div class="hint">周榜 · 2026-11-26</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">TypeScript</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">572</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li>从 Releases 下载 Mac 或 Windows 安装包（Linux 和 Windows 目前是预览）。接好模型后，可在应用、Telegram 或 WhatsApp 里交待任务。</li>
+          <li>文件、记忆和已保存的登录信息留在运行它的那台电脑上。密码、验证码和卡片走 Vault，不交给模型。</li>
+          <li>记忆可见、可改、可忘记。它从你自己的消息里学习，不从它读过的页面或邮件里偷偷记事。</li>
+          <li>官方在测试环境公布过完成率和安全检查结果，并写明那是测试、不是保证。较弱的模型在测试里放过过不安全操作。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">它有自己的电脑，但替你出手之前会先问</div>
+          <p>很多助手能「自动把事做完」，错了才发现。Nod 把批准放在会改动、会发送的步骤前面，并且留下操作记录。这很适合处理真实账号上的杂事，前提是你认真看每一次确认。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>希望有一个本机助手帮忙跑腿，又必须自己把关发送和修改的人。完全把权限交给它、期望它永远正确，现在还不合适。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：官方标明是研究预览，安全判断靠模型。</strong>测试里，较弱的模型放过了不安全操作。
+          <span class="fix">应对：选更稳的模型；所有会发送、会修改、会花钱的步骤都保持先批准；在 Usage 里核对它做过什么。</span></li>
+        <li><strong>缺点2：默认会向 n8n 分享基本使用数据；连接应用会走 n8n 托管的连接服务。</strong>
+          <span class="fix">应对：在 设置 → 隐私与数据 里关掉「分享使用数据」；先少连账号。密码和验证码走 Vault，不要让模型看见，也不要写进代码或贴到聊天里。</span></li>
+        <li><strong>缺点3：笔记本合上就不工作；Windows 和 Linux 仍是预览。</strong>
+          <span class="fix">应对：需要一直在线时，按文档部署到一台常开的电脑或自己的服务器。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>它把「本机工作区 + 浏览器 + 批准 + 记忆 + Vault」做成一个完整产品。值得学的是权限设计：模型可以规划，真正改世界的步骤要过规则和你的确认；密钥不进模型上下文。官方还公开了评测方法和局限性，并写明测试结果不是保证。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>第三期的 OpenMausBot 是在本机管理一队 AI，偏分工写代码和调研。Nod 是带自己电脑和浏览器的个人助手，强调先批准再行动。两者不是同一个软件。已经有 OpenMausBot 且主要用来写代码，不必换成 Nod；想让助手在真实网站上跑腿并保持确认，再试 Nod。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 周榜本周 +1,008（2026-11-26 抓取）。由 n8n 团队维护，强调先问再做，和本期「听清再动手、发出去之前再确认」的主线一致。</p>
+          <div class="risk"><strong>风险：</strong>Apache-2.0。抓取时最新版 Nod v0.9.7（2026-11-25 发布），未解决的 issue 约 109 个。研究预览意味着功能和安全策略还可能变。捆绑的字体等第三方资源另有许可证，见仓库说明。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>

@@ -1,0 +1,84 @@
+  <article class="project featured" id="p01">
+    <div class="rank">#01</div>
+    <div class="rec-banner">★ 本期最推荐</div>
+    <section class="identity">
+      <div class="tags">
+        <span class="pill">&gt;_ 调研简报</span>
+        <span class="pill">多平台</span>
+        <span class="pill">Agent Skill</span>
+      </div>
+      <div class="identity-row">
+        <div class="avatar">🔎</div>
+        <div>
+          <h2 class="pname">last30days</h2>
+          <p class="pdesc">GitHub 上的开源项目。把它装进 AI 编程工具后，你输入一个主题（产品、技术、公司都行），它会并行搜索 Reddit、Hacker News、GitHub 等平台，按真实互动排序，再合成一份带引用的近 30 天简报。Reddit、Hacker News、Polymarket 和 GitHub 不用密钥就能搜；想加 X、YouTube、小红书等来源，首次运行时有配置向导。</p>
+          <p class="prepo"><a href="https://github.com/mvanhorn/last30days-skill" target="_blank" rel="noopener">mvanhorn/last30days-skill</a></p>
+          <span class="license">开源协议 MIT</span>
+        </div>
+      </div>
+    </section>
+    <div class="metrics">
+      <div class="metric"><div class="label">★ STAR</div><div class="value">75,159</div></div>
+      <div class="metric"><div class="label">↗ 本周新增</div><div class="value">+5,302</div><div class="hint">周榜 · 2026-11-26</div></div>
+      <div class="metric"><div class="label">&lt;/&gt; 语言</div><div class="value sm">Python</div></div>
+      <div class="metric"><div class="label">⑂ FORKS</div><div class="value">6,626</div></div>
+    </div>
+    <div class="body-grid">
+      <div class="panel soft">
+        <h3>它能做什么</h3>
+        <ul>
+          <li>输入 <code>/last30days</code> 加一个主题，得到一份近 30 天简报：把同一事件合并，按互动排序，并附上引用。</li>
+          <li>开箱即可搜 Reddit（含评论）、Hacker News、Polymarket 和 GitHub；公司类主题还会看招聘页和专利申请。首次运行约 30 秒的向导，可解锁更多来源。</li>
+          <li>可装进 Claude Code、Cursor、Codex、Gemini CLI、Grok 等 50 多种支持 Agent Skills 的工具；也有 claude.ai 和 Claude Desktop 的安装包。</li>
+          <li>可以把简报存进本地资料库，以后按主题再搜。公开发布是可选项，默认不开。</li>
+        </ul>
+      </div>
+      <div class="right-stack">
+        <div class="panel dark">
+          <h3>最突出的点</h3>
+          <div class="hl-title">先听清最近 30 天真实的人在说什么，再动手</div>
+          <p>搜索引擎常给出过时页面，聊天机器人又容易把旧印象说成近况。这个工具专门收「最近 30 天」的讨论，并写明出处。免费来源不用先准备一堆密钥，当天就能跑出第一份简报。</p>
+        </div>
+        <div class="panel">
+          <h3>适合谁用</h3>
+          <p>做新产品前想听用户在抱怨什么的人，写内容前想核对最近讨论的人。不会写代码也能用：装上以后用平常说话的方式问一个主题即可。</p>
+        </div>
+      </div>
+    </div>
+    <div class="cons-panel">
+      <h3>缺点与应对</h3>
+      <ol>
+        <li><strong>缺点1：更多来源要你自己的密钥或已登录的浏览器会话。</strong>X、YouTube 等平台默认进不去。
+          <span class="fix">应对：先用免费来源跑通；密钥只放本机配置或系统钥匙串，不要贴到聊天里，也不要写进代码。</span></li>
+        <li><strong>缺点2：结果依赖各平台接口和登录状态。</strong>有时会缺某个来源，摘要也可能漏掉细节。
+          <span class="fix">应对：看简报里的引用，重要结论点开原文核对，不要只信摘要。</span></li>
+        <li><strong>缺点3：若用来摸清某个人最近的行踪，容易越过边界。</strong>工具能搜到的，不等于就该去搜、该去传播。
+          <span class="fix">应对：主要用来调研主题、产品和技术。涉及个人时遵守平台规则和对方意愿，不要把含敏感信息的简报公开发出去。</span></li>
+      </ol>
+    </div>
+    <div class="extend">
+      <!--SLOT:scenes-->
+      <details open>
+        <summary>技术含金量</summary>
+        <div class="inner">
+          <p>价值在于把彼此隔开的平台接到一次查询里，再按真实互动排序，并写明出处，避免只堆一串链接。工作流程也清楚：识别对象 → 并行搜索 → 合并同一事件 → 写成带引用的简报。跑完一次，你可以接着追问「据此怎么改产品」，回答会落在刚才那些材料上。</p>
+          <p>可选的重排序会把主题和片段发给你配置的模型去打分；不配推理密钥时，它用本地评分，不为这件事外传内容。默认研究数据留在本机。</p>
+        </div>
+      </details>
+      <details open>
+        <summary>技术关联</summary>
+        <div class="inner">
+          <p><strong>① 热门技术取舍：</strong>只想抓网页正文：用通用的抓取工具就够。想听社区近 30 天在争论什么：用 last30days。两者可以叠加，但先装这一个就够开始调研。和第一期的 claude-mem 不同：claude-mem 记的是你自己和 AI 的对话，last30days 记的是外面世界上刚发生的讨论。</p>
+          <!--SLOT:mine-->
+        </div>
+      </details>
+      <details>
+        <summary>上榜原因 · 许可证与维护风险</summary>
+        <div class="inner">
+          <p><strong>上榜依据：</strong>GitHub Trending 日榜今日 +945、周榜本周 +5,302，同时在榜（2026-11-26 抓取）。星数约 7.5 万，装上当天就能跑，对独立开发者做调研很直接，所以选作本期最推荐。</p>
+          <div class="risk"><strong>风险：</strong>MIT，很宽松。主要由作者 Matt Van Horn 维护，更新快（抓取时最新版 v4.6.0，2026-11-22 发布）。未解决的 issue 约 28 个。运行时依赖 Python 3.12+、yt-dlp 等组件。可选的重排序会向你指定的模型服务发送片段，不需要时就不要配推理密钥。</div>
+        </div>
+      </details>
+    </div>
+<!--KIT-->
+  </article>
