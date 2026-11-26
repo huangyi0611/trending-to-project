@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+Required Notice: Copyright (c) 2026 假笑黄黄AI版（小红书）
+Code: PolyForm Noncommercial 1.0.0
+https://polyformproject.org/licenses/noncommercial/1.0.0
+Public writing in this page: CC BY-NC-SA 4.0
+https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans
+This file is an offline reader for the author's own public issues.
+It is not a Xiaohongshu official interface and is not a compliance certificate.
+-->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="no-referrer" />
+<title>GitHub 热榜拆解 · 离线阅读</title>
+<link rel="stylesheet" href="./app.css" />
+</head>
+<body>
+<div class="page">
+  <header class="hero">
+    <p class="eyebrow">离线快照阅读 · 作者自用</p>
+    <h1>GitHub 热榜拆解</h1>
+    <p class="sub">假笑黄黄AI版。手机优先的往期阅读页，只收录本仓库已经公开的第三期和第四期。星数是采样当天的数字，不会刷新。</p>
+    <p class="hint">点蓝色词看释义。仓库名只作文字，不跳转。这不是小红书官方界面。</p>
+  </header>
+
+  <div class="switch" id="issue-switch" role="tablist" aria-label="选择期数"></div>
+  <p class="snapshot" id="snapshot"></p>
+  <p class="lead" id="lead"></p>
+  <details class="fold" id="meta-fold">
+    <summary>本期是怎么选的</summary>
+    <div id="meta"></div>
+  </details>
+
+  <div class="search">
+    <label class="search-label" for="q">筛选本期卡片</label>
+    <div class="search-row">
+      <input id="q" type="text" enterkeyhint="search" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="项目名、仓库或正文关键词" />
+      <button type="button" id="filter-clear" hidden>清除</button>
+    </div>
+    <p class="search-count" id="search-count"></p>
+  </div>
+
+  <details class="fold toolmap" id="map-fold">
+    <summary>工具地图</summary>
+    <div id="toolmap">
+      <p class="sub" id="map-sub"></p>
+      <div class="flow" id="flow"></div>
+      <div class="map-legend">
+        <span><i class="lg-rec"></i>本期最推荐</span>
+        <span><i class="lg-cur"></i>本期项目 · 星号是上手难度</span>
+        <span><i class="lg-past"></i>往期名称，只对照，不跳转</span>
+      </div>
+      <div class="map-advice" id="advice"></div>
+    </div>
+  </details>
+
+  <section aria-label="本期卡片">
+    <h2 class="sec-title" id="list-title">本期卡片</h2>
+    <div class="card-list" id="list"></div>
+  </section>
+
+  <article class="detail" id="detail" aria-live="polite"></article>
+
+  <footer class="footer-note" id="foot"></footer>
+</div>
+
+<button type="button" id="pop-back" class="pop-back" hidden aria-label="关闭释义"></button>
+<div id="term-pop" role="dialog" aria-modal="false" aria-labelledby="pop-term" hidden>
+  <div class="pop-hd">
+    <div>
+      <div class="pop-title">词条释义</div>
+      <div class="pop-term" id="pop-term"></div>
+    </div>
+    <button type="button" id="pop-close" class="pop-x" aria-label="关闭">×</button>
+  </div>
+  <div id="pop-body"></div>
+</div>
+
+<script src="./data.js" defer></script>
+<script src="./app.js" defer></script>
+</body>
+</html>
